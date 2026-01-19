@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Example Concrete Pricing Sheet - The Remodelers Guide" />
+  <title>Example Concrete Pricing Sheet - Remodelers Guide</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    @media print {
+      header, .sidebar, footer, .mobile-nav-toggle, .breadcrumb,
+      button, #share-btn, #print-btn, small {
+        display: none !important;
+      }
+      .main-wrapper { margin: 0 !important; padding: 0 !important; }
+      main { margin: 0 !important; padding: 0 !important; }
+      article { margin: 0 !important; padding: 2rem !important; }
+      body { margin: 0; padding: 0; }
+      li { page-break-inside: avoid; margin-bottom: 0.5em; }
+      ul { list-style-type: none !important; }
+
+      .nav-item.active-section .submenu {
+        display: block !important;
+        max-height: none !important;
+      }
+      .sidebar nav a.active {
+        background: #d4edda;
+        color: #155724;
+        font-weight: 700;
+        border-left-color: #2c5f2d;
+      }
+      .sidebar nav ul { padding-left: 0; margin: 0; }
+      .sidebar nav li { margin: 0; padding: 0; }
+      .sidebar nav a { padding: 0.4rem 1rem; display: block; }
+      .sidebar .submenu { padding-left: 0; margin: 0.2rem 0; }
+      .sidebar .submenu li { margin: 0; }
+      .sidebar .submenu a { padding: 0.3rem 1rem 0.3rem 2rem; }
+
+      article ul { margin-left: 0; padding-left: 2em; }
+      article ul ul { margin-left: 0; padding-left: 2em; }
+      article li { margin-bottom: 0.5em; }
+      article ul { padding-left: 1.5em; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+  </header>
+
+  <button class="mobile-nav-toggle" aria-label="Toggle navigation"></button>
+
+  <div class="main-wrapper">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li class="nav-item"><a href="about.html">Home</a></li>
+          <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+          <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+          <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+          <li class="nav-item"><a href="footings.html">Footings</a></li>
+          <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+          <li class="nav-item active-section"><a href="flatwork-concrete.html" class="active">Flatwork</a></li>
+          <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+          <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+          <li class="nav-item"><a href="framing.html">Framing</a></li>
+          <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+          <li class="nav-item"><a href="windows.html">Windows</a></li>
+          <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+          <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+          <li class="nav-item"><a href="siding-and-trim.html">Siding Trim</a></li>
+          <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+          <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+          <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+          <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+          <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+          <li class="nav-item"><a href="products.html">Products</a></li>
+          <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main style="margin-left: 280px; padding: 2rem;">
+      <article>
+        <p class="breadcrumb">
+          <a href="flatwork-concrete.html">Flatwork</a> &gt; Example Concrete Pricing Sheet
+        </p>
+
+        <h2>Example Concrete Pricing Sheet</h2>
+        <h3>Sack Mix and PSI Pricing</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Strength Rating</th>
+                <th>Sack Mix Type (approx)</th>
+                <th>Price Per Yard</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2500 PSI</td>
+                <td>4.0 Sack</td>
+                <td>$160.00</td>
+              </tr>
+              <tr>
+                <td>3000 PSI</td>
+                <td>4.5 Sack</td>
+                <td>$164.00</td>
+              </tr>
+              <tr>
+                <td>3500 PSI</td>
+                <td>5.0 Sack</td>
+                <td>$168.00</td>
+              </tr>
+              <tr>
+                <td>3500 PSI</td>
+                <td>5.5 Sack</td>
+                <td>$172.00</td>
+              </tr>
+              <tr>
+                <td>4000 PSI</td>
+                <td>6.0 Sack</td>
+                <td>$176.00</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Performance Additives</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Additive</th>
+                <th>Price</th>
+                <th>Additive</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Calcium Chloride 1%</td>
+                <td>$2.75 / yd</td>
+                <td>Fiber, Residential</td>
+                <td>$9.00 / bag</td>
+              </tr>
+              <tr>
+                <td>Extra Sack Cement HE</td>
+                <td>$10.00 / yd</td>
+                <td>Fiber, Commercial</td>
+                <td>$9.50 / bag</td>
+              </tr>
+              <tr>
+                <td>Non-Chloride 1%</td>
+                <td>$6.00 / yd</td>
+                <td>Fiber, Macro</td>
+                <td>$9.50 / lb</td>
+              </tr>
+              <tr>
+                <td>Mid Range Water Reducer</td>
+                <td>$4.75 / yd</td>
+                <td>Steel Fiber</td>
+                <td>$1.40 / lb</td>
+              </tr>
+              <tr>
+                <td>Super Plasticizer</td>
+                <td>$6.00 / yd</td>
+                <td>Integral Sealer</td>
+                <td>$15.00 / yd</td>
+              </tr>
+            </tbody>
+          </table>
+          <h3>Delivery and Seasonal Fees</h3>
+          <ul>
+            <li><strong>Winter Heat (Dec 1 - Mar 31):</strong> $12.00 / yd</li>
+            <li><strong>Spring/Fall Heat (Apr/Nov):</strong> $6.50 / yd</li>
+            <li><strong>Saturday Delivery:</strong> $15.00 / yd</li>
+            <li><strong>Wash-Out Fee (Colored Loads):</strong> $125.00 / load</li>
+            <li><strong>Overtime Delivery Fee:</strong> $150.00 / hr (after 1 hr allowed)</li>
+          </ul>
+          <h3>Minimum Load Fees</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Volume</th>
+                <th>Fee per Load</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 Yard and under</td>
+                <td>$185.00</td>
+              </tr>
+              <tr>
+                <td>2 Yards and under</td>
+                <td>$175.00</td>
+              </tr>
+              <tr>
+                <td>3 Yards and under</td>
+                <td>$160.00</td>
+              </tr>
+              <tr>
+                <td>4 Yards and under</td>
+                <td>$125.00</td>
+              </tr>
+              <tr>
+                <td>5 Yards and under</td>
+                <td>$100.00</td>
+              </tr>
+            </tbody>
+          </table>
+        <p>
+          <button id="share-btn" type="button"
+            style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">
+            Share
+          </button>
+
+          <button id="print-btn" type="button"
+            style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">
+            Print
+          </button>
+          <br />
+        </p>
+
+        <p><small>Last revised: 01/04/2026</small></p>
+
+        <p class="breadcrumb">
+          <a href="flatwork-concrete.html">Flatwork</a> &gt; Example Concrete Pricing Sheet
+        </p>
+      </article>
+    </main>
+  </div>
+
+  <script>
+    // Share button
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+      shareBtn.addEventListener('click', () => {
+        navigator.share({
+          title: document.title,
+          url: window.location.href
+        }).catch(() => {});
+      });
+    } else if (shareBtn) {
+      shareBtn.style.display = 'none';
+    }
+
+    // Print button
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) {
+      printBtn.addEventListener('click', () => window.print());
+    }
+
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.querySelector('.mobile-nav-toggle');
+      const sidebar = document.querySelector('.sidebar');
+
+      if (navToggle && sidebar) {
+        navToggle.addEventListener('click', function () {
+          sidebar.classList.toggle('active');
+        });
+
+        document.addEventListener('click', function (e) {
+          if (window.innerWidth <= 768) {
+            if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+              sidebar.classList.remove('active');
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+  <footer>
+    &copy; 2025 Remodelers Guide. All rights reserved.
+    Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+  </footer>
+</body>
+</html>

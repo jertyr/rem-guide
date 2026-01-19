@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="End of Day Reminders - The Remodelers Guide">
+    <title>End of Day Reminders | Remodelers Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media print {
+            /* Hide navigation, header, footer, buttons, and breadcrumbs when printing */
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+
+            /* Remove margins and padding from main content */
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Add padding to article for print */
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+
+            /* Ensure content fills the page */
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Make list items print-friendly */
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+
+            /* Ensure checkboxes stay visible */
+            ul {
+                list-style-type: none !important;
+            }
+        }
+    </style>
+
+</head>
+<body>
+<header>
+        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+    </header>
+
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li class="nav-item"><a href="about.html">Home</a></li>
+                    <li class="nav-item active-section"><a href="pre-construction.html" class="active">Site Setup</a></li>
+					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                    <li class="nav-item"><a href="excavation.html">Excavation</a>
+                        <ul class="submenu">
+                            <li><a href="excavation-checklist.html">Excavation Checklist</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="footings.html">Footings</a>
+                        <ul class="submenu">
+                            <li><a href="footings-checklist.html">Footings Checklist</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="foundations.html">Foundations</a>
+                        <ul class="submenu">
+                            <li><a href="foundation-checklist.html">Foundation Checklist</a></li>
+                            <li><a href="flatwork-concrete.html">Flatwork</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="demolition.html">Demolition</a>
+                        <ul class="submenu">
+                            <li><a href="demolition-checklist.html">Demo Checklist</a></li>
+                            <li><a href="neighbor-letter.html">Neighbor Letter</a></li>
+                            <li><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="framing.html">Framing</a>
+                        <ul class="submenu">
+                            <li><a href="framing-checklist.html">Start Framing</a></li>
+                            <li><a href="complete-framing-checklist.html">Complete Framing</a></li>
+                            <li><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="windows.html">Windows</a>
+                        <ul class="submenu">
+                            <li><a href="window-order-form.html">Window Order Form</a></li>
+                            <li><a href="window-and-door-install-checklist.html">Install Checklist</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a>
+                        <ul class="submenu">
+                            <li><a href="exterior-door-order-form.html">Door Order Form</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="roofing.html">Roofing</a>
+                        <ul class="submenu">
+                            <li><a href="roofing-order-sheet-2.html">Roofing Order</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a>
+                        <ul class="submenu">
+                            <li><a href="siding-and-trim-order-sheat.html">Siding Order</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="gutters.html">Gutters</a>
+                        <ul class="submenu">
+                            <li><a href="gutter-example-price-sheet.html">Gutter Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                    <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                    <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                    <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                    <li class="nav-item"><a href="products.html">Products</a></li>
+                    <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main style="margin-left: 280px; padding: 2rem;">
+            <article>
+				<p class="breadcrumb"><a href="pre-construction.html">Site Setup</a> &gt; End of Day Checklist</p>
+				<h2>End of Day Checklist</h2>
+				<ul style="list-style-type: none">
+					<li>☐ Organize tools and materials</li>
+					<li>☐ Unplug battery chargers</li>
+					<li>☐ Unplug compressors</li>
+					<li>☐ Sweep up or vacuum</li>
+					<li>☐ Take out trash</li>
+					<li>☐ Turn the furnace/water heater back on</li>
+					<li>☐ Adjust the thermostat</li>
+					<li>☐ If you worked on gas - did you re-light the pilots?</li>
+					<li>☐ If you turned off breakers - did you label or turn them back on?</li>
+					<li>☐ Make sure fridges/freezers are plugged in</li>
+					<li>☐ Close and lock windows</li>
+					<li>☐ Take photos for your daily log</li>
+					<li>☐ Cover holes</li>
+					<li>☐ Make a list of supplies you need</li>					
+					<li>☐ Turn off the lights</li>
+					<li>☐ Lock the door!</li>
+				</ul>
+				<p>
+					<button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+					<button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+					<br>
+					<p><small>Last revised: 11/16/2025</small></p>
+				</p>
+				<p class="breadcrumb"><a href="pre-construction.html">Site Setup</a> &gt; End of Day Checklist</p>
+
+            </article>
+        </main>
+    </div>
+<script>
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+
+  if (shareBtn && navigator.share) {
+    shareBtn.addEventListener('click', () => {
+      navigator.share({
+        title: document.title || 'Pre-Construction Guide',
+        url: window.location.href
+      }).catch(() => {
+        // user cancelled or share failed; do nothing
+      });
+    });
+  } else if (shareBtn) {
+    // Hide button if Web Share API isn't available
+    shareBtn.style.display = 'none';
+  }
+
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print(); // opens the browser’s print dialog for the current page
+    });
+  }
+</script>
+    <script>
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.mobile-nav-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            if (navToggle && sidebar) {
+                navToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                            sidebar.classList.remove('active');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+    <footer>
+        &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+    </footer>
+</body>
+</html>

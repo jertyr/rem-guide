@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wage Calculator - The Remodelers Guide">
+    <title>Wage Calculator | Remodelers Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+    </header>
+
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                <li class="nav-item">
+                    <a href="about.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pre-construction.html">Site Setup</a>
+                    <ul class="submenu">
+                        <li><a href="site-set-up-checklist.html">Site Set Up Checklist</a></li>
+                        <li><a href="job-start-materials-checklist.html">Job Start Materials</a></li>
+                        <li><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                        <li><a href="jobsite-protection-checklist.html">Protection Checklist</a></li>
+                        <li><a href="end-of-day-reminders.html">End of Day</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="excavation.html">Excavation</a>
+                    <ul class="submenu">
+                        <li><a href="excavation-checklist.html">Excavation Checklist</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="footings.html">Footings</a>
+                    <ul class="submenu">
+                        <li><a href="footings-checklist.html">Footings Checklist</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="foundations.html">Foundations</a>
+                    <ul class="submenu">
+                        <li><a href="foundation-checklist.html">Foundation Checklist</a></li>
+                        <li><a href="flatwork-concrete.html">Flatwork</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="demolition.html">Demolition</a>
+                    <ul class="submenu">
+                        <li><a href="demolition-checklist.html">Demo Checklist</a></li>
+                        <li><a href="neighbor-letter.html">Neighbor Letter</a></li>
+                        <li><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="framing.html">Framing</a>
+                    <ul class="submenu">
+                        <li><a href="framing-checklist.html">Start Framing</a></li>
+                        <li><a href="complete-framing-checklist.html">Complete Framing</a></li>
+                        <li><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="windows.html">Windows</a>
+                    <ul class="submenu">
+                        <li><a href="window-order-form.html">Window Order Form</a></li>
+                        <li><a href="window-and-door-install-checklist.html">Install Checklist</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="exterior-doors.html">Exterior Doors</a>
+                    <ul class="submenu">
+                        <li><a href="exterior-door-order-form.html">Door Order Form</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="roofing.html">Roofing</a>
+                    <ul class="submenu">
+                        <li><a href="roofing-order-sheet-2.html">Roofing Order</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="siding-and-trim.html">Siding & Trim</a>
+                    <ul class="submenu">
+                        <li><a href="siding-and-trim-order-sheat.html">Siding Order</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="gutters.html">Gutters</a>
+                    <ul class="submenu">
+                        <li><a href="gutter-example-price-sheet.html">Gutter Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="pre-trade-checklist.html">Pre-Trade</a>
+                </li>
+                <li class="nav-item">
+                    <a href="mechanical-rough-install.html">HVAC</a>
+                </li>
+                <li class="nav-item">
+                    <a href="plumbing-rough-install.html">Plumbing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="stairs.html">Stairs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="wage-calculator.html" class="active">Wage Calculator</a>
+                </li>
+            </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <article>
+                <h2 class="wp-block-heading">Wage Calculator</h2> <div class="dbtcc-wrap" style="border:1px solid #e2e8f0;padding:16px;border-radius:8px;max-width:820px"> Total Compensation Calculator Gross pay per hour ($) Hours worked per week Overtime 1.5x over 40 hrs Holiday days per year Vacation days per year Employer health contribution ($/month) Employee health contribution ($/month) 401k employer match (% of pay) <div style="grid-column:1/-1;display:flex;gap:8px;margin-top:6px"> Calculate Reset </div> <div id="dbtcc_results" aria-live="polite" style="border-top:1px solid #e2e8f0;padding-top:12px;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial"></div> </div> (function(){ const HOURS_PER_DAY = 8; function $(id){ return document.getElementById(id); } function num(id){ return parseFloat($(id).value || 0); } function fmt0(n){ return n.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:0}); } function fmt2(n){ return n.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:2}); } function calc(){ const hourly = num('dbtcc_hourly'); const hpw = num('dbtcc_hours_per_week'); const otEnabled = $('dbtcc_ot_toggle').checked; const holidayDays = num('dbtcc_holiday_days'); const vacationDays = num('dbtcc_vacation_days'); const empHealthMonth = num('dbtcc_health_employer_month'); const eeHealthMonth = num('dbtcc_health_employee_month'); const matchPct = num('dbtcc_match_percent') / 100; const baseHours = otEnabled ? Math.min(hpw, 40) : hpw; const otHours = otEnabled ? Math.max(hpw - 40, 0) : 0; const weeklyBase = baseHours * hourly; const weeklyOT = otHours * hourly * 1.5; const annualWages = (weeklyBase + weeklyOT) * 52; const paidHolidayValue = holidayDays * HOURS_PER_DAY * hourly; const paidVacationValue = vacationDays * HOURS_PER_DAY * hourly; const employerHealthAnnual = empHealthMonth * 12; const employerMatch = annualWages * matchPct; const totalAnnualComp = annualWages + paidHolidayValue + paidVacationValue + employerHealthAnnual + employerMatch; const annualWorkedHours = (baseHours + otHours) * 52; const paidDaysHours = (holidayDays + vacationDays) * HOURS_PER_DAY; const effectiveHours = annualWorkedHours + paidDaysHours; const effectiveHourly = effectiveHours > 0 ? (totalAnnualComp / effectiveHours) : 0; const rows = , , , , , , , ]; let html = '<h4 style="margin:8px 0">Annualized Breakdown</h4>'; rows.forEach((r, idx) => { const strong = idx === rows.length - 1 ? 'font-weight:600;' : ''; html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #e5e7eb">' + '<span style="'+strong+'">'+r+'</span><span style="'+strong+'">'+r+'</span></div>'; }); html += '<h4 style="margin:8px 0">Effective Rates</h4>'; html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #e5e7eb"><span>Effective hourly (incl. benefits):</span><span style="font-weight:600">'+fmt2(effectiveHourly)+'</span></div>'; html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #e5e7eb"><span>Baseline hourly (input):</span><span>'+fmt2(hourly)+'</span></div>'; html += '<p style="color:#64748b;font-size:13px">Employee health entered: '+fmt0(eeHealthMonth*12)+' per year (not added to total compensation).</p>'; $('dbtcc_results').innerHTML = html; } function resetForm(){ $('dbtcc_hourly').value = 30; $('dbtcc_hours_per_week').value = 40; $('dbtcc_ot_toggle').checked = true; $('dbtcc_holiday_days').value = 6; $('dbtcc_vacation_days').value = 10; $('dbtcc_health_employer_month').value = 600; $('dbtcc_health_employee_month').value = 150; $('dbtcc_match_percent').value = 4; $('dbtcc_results').innerHTML = ''; } document.addEventListener('DOMContentLoaded', function(){ const c = document.getElementById('dbtcc_calc_btn'); const r = document.getElementById('dbtcc_reset_btn'); if(c) c.addEventListener('click', calc); if(r) r.addEventListener('click', resetForm); }); })();
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Remodelers Guide. Built by Jerry Tyrrell.</p>
+            <p><a href="about.html">Home</a> | <a href="mailto:geraldatyrrell@gmail.com">Contact</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile navigation toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.mobile-nav-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            if (navToggle && sidebar) {
+                navToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                            sidebar.classList.remove('active');
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

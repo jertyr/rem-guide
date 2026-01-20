@@ -111,7 +111,38 @@
                 <h1 class="wp-block-heading">Pre-Trade Checklist</h1> <p>What do the trades need so that they can do their best work</p> <ul class="wp-block-list">
 <li>Clean site</li> <li>Updated plan for subs</li> <li>Printed cabinet drawings - elevations on walls</li> <li>Printed appliance specs</li> <li>Printed plumbing specs</li> <li>Printed electrical specs</li> <li>Locations marked on walls or prints</li> <li>Door sizes and swings</li> <li>Cabinets laid out</li> <li>Appliances laid out with specs on site</li> <li>Bath fan locations</li> <li>Lighting and outlets laid out</li> <li>Mark floor finishes on site</li> <li>Lay out bathrooms</li> <li>Shower – Valve, elbow, head, handshower, rain fall, body sprays, etc</li> <li>Baseboard (toilet shut off location)</li> <li>Elevation for vanity – Floating, thickened top, splash height</li>
 </ul>
-            
+<p>
+    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+    <br>
+    <p><small>Last revised: 01/20/2026</small></p>
+</p>
+
+<script>
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn && navigator.share) {
+    shareBtn.addEventListener('click', () => {
+      navigator.share({
+        title: 'Pre-Trade Checklist',
+        url: window.location.href
+      }).catch(() => {
+        // user cancelled or share failed; do nothing
+      });
+    });
+  } else if (shareBtn) {
+    // Hide button if Web Share API isn't available
+    shareBtn.style.display = 'none';
+  }
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+</script>
+
             </article>
         </main>
     </div>

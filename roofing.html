@@ -223,7 +223,38 @@
 </ul> <h2 class="wp-block-heading">Photo Examples</h2> <figure class="wp-block-image size-large"><img src="images/image.jpeg" alt="" class="wp-image-467" /></figure> <figure class="wp-block-image size-large"><img src="images/image-2.jpeg" alt="" class="wp-image-469" /></figure> <figure class="wp-block-image size-large"><img src="images/image-3.jpeg" alt="" class="wp-image-470" /></figure> <figure class="wp-block-image size-large"><img src="images/image-1.jpeg" alt="" class="wp-image-468" /></figure> <h2 class="wp-block-heading">Resources</h2> <ul class="wp-block-list">
 <li>2015 Michigan Residential Code & 2021 IRC: R905.1.2, R905.2, R905.10, R905.13</li> <li><a href="https://www.bestbuymetals.com/wp-content/uploads/2019/02/standing-seam-architectural-install-guide.pdf">Metal Roofing Installation Guide</a></li> <li><a href="https://www.buildsite.com/pdf/johnsmanville/JM-JM-EPDM-Application-Guide-Installation-Instructions-635724.pdf">EPDM Roofing Installation Guide</a></li> <li><a href="https://remodelers.guide/wp-content/uploads/2025/09/roofing-order-sheet.pdf">Roofing Order Sheet</a></li>
 </ul> <p></p>
-            
+<p>
+    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+    <br>
+    <p><small>Last revised: 01/20/2026</small></p>
+</p>
+
+<script>
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn && navigator.share) {
+    shareBtn.addEventListener('click', () => {
+      navigator.share({
+        title: 'Roofing',
+        url: window.location.href
+      }).catch(() => {
+        // user cancelled or share failed; do nothing
+      });
+    });
+  } else if (shareBtn) {
+    // Hide button if Web Share API isn't available
+    shareBtn.style.display = 'none';
+  }
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+</script>
+
             </article>
         </main>
     </div>

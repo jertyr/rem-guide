@@ -129,7 +129,38 @@
 </ul> <h2 class="wp-block-heading">Fireblocking Materials</h2> <figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th>Blocking / Draftstop Material</th><th>Code Reference</th></tr></thead><tbody><tr><td>2 × sawn lumber</td><td>R302.11.1 #1</td></tr><tr><td>(2) 1 × boards with lap joint</td><td>#2</td></tr><tr><td>¾-in plywood or OSB</td><td>#3</td></tr><tr><td>½-in gypsum board</td><td>#5</td></tr><tr><td>¼-in cement millboard</td><td>#6</td></tr><tr><td>Mineral-wool / fiberglass batts (packed)</td><td>#7</td></tr><tr><td>Orange “fireblock” PU foam*</td><td>R302.11 Item 4</td></tr><tr><td>Red intumescent firestop caulk / collars*</td><td>R302.4</td></tr></tbody></table></figure> <p><em>*Foam and caulk must be <strong>specifically labeled</strong> for the intended use; orange foam is <strong>not</strong> a substitute for listed firestop caulk.</em></p> <h2 class="wp-block-heading">Resources</h2> <ul class="wp-block-list">
 <li>2015 Michigan Residential Code: R302.4, R302.11, R302.12 (ICC, 2015)</li> <li>2021 International Residential Code: same sections (ICC, 2021)</li> <li>ICC Residential Code Commentary Vol 1, pp. 139–147 (ICC, 2021)</li> <li>Hilti Firestop Systems Guide, System CFS-SL GA 0017 (Hilti, 2024)</li> <li>APA Technical Note “Blocking & Bridging” (APA – The Engineered Wood Assoc., 2023)</li>
 </ul>
-            
+<p>
+    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+    <br>
+    <p><small>Last revised: 01/20/2026</small></p>
+</p>
+
+<script>
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn && navigator.share) {
+    shareBtn.addEventListener('click', () => {
+      navigator.share({
+        title: 'Fireblocking and Draftstopping',
+        url: window.location.href
+      }).catch(() => {
+        // user cancelled or share failed; do nothing
+      });
+    });
+  } else if (shareBtn) {
+    // Hide button if Web Share API isn't available
+    shareBtn.style.display = 'none';
+  }
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+</script>
+
             </article>
         </main>
     </div>

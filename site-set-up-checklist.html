@@ -55,6 +55,26 @@
                 list-style-type: none !important;
             }
         }
+        .nav-item.active-section .submenu {
+            display: block !important;
+            max-height: none !important;
+        }
+        .sidebar nav a.active {
+            background: #d4edda;
+            color: #155724;
+            font-weight: 700;
+            border-left-color: #2c5f2d;
+        }
+        .sidebar nav ul { padding-left: 0; margin: 0; }
+        .sidebar nav li { margin: 0; padding: 0; }
+        .sidebar nav a { padding: 0.4rem 1rem; display: block; }
+        .sidebar .submenu { padding-left: 0; margin: 0.2rem 0; }
+        .sidebar .submenu li { margin: 0; }
+        .sidebar .submenu a { padding: 0.3rem 1rem 0.3rem 2rem; }
+        article ul { margin-left: 0; padding-left: 2em; }
+        article ul ul { margin-left: 0; padding-left: 2em; }
+        article li { margin-bottom: 0.5em; }
+        article > ul { padding-left: 1.5em; }
     </style>
 
 </head>
@@ -93,7 +113,7 @@
             </nav>
         </aside>
 
-        <main>
+        <main style="margin-left: 280px; padding: 2rem;">
             <article>
 				<p class="breadcrumb"><a href="pre-construction.html">Site Setup</a> &gt; Site Set Up Checklist</p>
 				<h2>Site Set Up Checklist</h2>
@@ -133,52 +153,39 @@
 					<p><small>Last revised: 11/16/2025</small></p>
 				</p>			
 
-<script>
-  // Share button
-  const shareBtn = document.getElementById('share-btn');
-
-  if (shareBtn && navigator.share) {
-    shareBtn.addEventListener('click', () => {
-      navigator.share({
-        title: document.title || 'Pre-Construction Guide',
-        url: window.location.href
-      }).catch(() => {
-        // user cancelled or share failed; do nothing
-      });
-    });
-  } else if (shareBtn) {
-    // Hide button if Web Share API isn't available
-    shareBtn.style.display = 'none';
-  }
-
-  // Print button
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print(); // opens the browser’s print dialog for the current page
-    });
-  }
-</script>
 <p class="breadcrumb"><a href="pre-construction.html">Site Setup</a> &gt; Site Set Up Checklist</p>
             </article>
         </main>
     </div>
 
-    <footer>
-        &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
-    </footer>
-
     <script>
+        // Share button
+        const shareBtn = document.getElementById('share-btn');
+        if (shareBtn && navigator.share) {
+            shareBtn.addEventListener('click', () => {
+                navigator.share({
+                    title: document.title || 'Site Set Up Checklist',
+                    url: window.location.href
+                }).catch(() => { });
+            });
+        } else if (shareBtn) {
+            shareBtn.style.display = 'none';
+        }
+        // Print button
+        const printBtn = document.getElementById('print-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', () => {
+                window.print();
+            });
+        }
         // Mobile navigation toggle
         document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.querySelector('.mobile-nav-toggle');
             const sidebar = document.querySelector('.sidebar');
-
             if (navToggle && sidebar) {
                 navToggle.addEventListener('click', function() {
                     sidebar.classList.toggle('active');
                 });
-
                 document.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
                         if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
@@ -189,5 +196,8 @@
             }
         });
     </script>
+    <footer>
+        &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+    </footer>
 </body>
 </html>

@@ -7,64 +7,62 @@
     <title>Exterior Door Order Form | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
+        }
         .nav-item.active-section .submenu {
             display: block !important;
             max-height: none !important;
         }
-
-        /* Highlight active links */
         .sidebar nav a.active {
             background: #d4edda;
             color: #155724;
             font-weight: 700;
             border-left-color: #2c5f2d;
         }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
-        }
+        .sidebar nav ul { padding-left: 0; margin: 0; }
+        .sidebar nav li { margin: 0; padding: 0; }
+        .sidebar nav a { padding: 0.4rem 1rem; display: block; }
+        .sidebar .submenu { padding-left: 0; margin: 0.2rem 0; }
+        .sidebar .submenu li { margin: 0; }
+        .sidebar .submenu a { padding: 0.3rem 1rem 0.3rem 2rem; }
+        article ul { margin-left: 0; padding-left: 2em; }
+        article ul ul { margin-left: 0; padding-left: 2em; }
+        article li { margin-bottom: 0.5em; }
+        article > ul { padding-left: 1.5em; }
     </style>
 
 </head>
@@ -107,24 +105,47 @@
 
         <main style="margin-left: 280px; padding: 2rem;">
             <article>
-
+                <p class="breadcrumb"><a href="exterior-doors.html">Exterior Doors</a> &gt; Exterior Door Order Form</p>
                 <h2 class="wp-block-heading">Exterior Door Order Form</h2> <p>Location: <span style="text-decoration: underline"> </span></p> <p>Brand: <span style="text-decoration: underline"> </span></p> <p>Line: <span style="text-decoration: underline"> </span></p> <p>Slider --- Double --- Triple --- Quad<br>Right Hand --- Left Hand<br>Inswing --- Outswing</p> <p>Draw<br>(swing)<br>(lites)<br>(grid)</p> <p>Rough Opening: <span style="text-decoration: underline"> </span> wide <span style="text-decoration: underline"> </span> tall<br>Frame Size: <span style="text-decoration: underline"> </span> wide <span style="text-decoration: underline"> </span> tall<br>Brickmold: <span style="text-decoration: underline"> </span> wide <span style="text-decoration: underline"> </span> tall</p> <p>Wall Thickness: 3 11/16" --- 4 9/16" --- 6 9/16"</p> <p>Installation Type: Vinyl --- Brick --- Hardie/Wood --- T1-11</p> <p>Lites: None --- Half --- Full<br>Grids: None --- Simulated Divided Lite --- Actual Divided Lite<br>Glass: Clear --- Privacy: <span style="text-decoration: underline"> </span><br>Safety: Self Closing --- Fire Rating: <span style="text-decoration: underline"> </span><br>Handle: Single Bore --- Double Bore<br>Hardware Color: <span style="text-decoration: underline"> </span></p> <p>Interior Color: <span style="text-decoration: underline"> </span> Exterior Color: <span style="text-decoration: underline"> </span></p> <p>Screens: <span style="text-decoration: underline"> </span><br>Screen Frame Color: <span style="text-decoration: underline"> </span><br>Screen Material: <span style="text-decoration: underline"> </span></p> <p>Storm Door: <span style="text-decoration: underline"> </span><br>Color: <span style="text-decoration: underline"> </span><br>Handle: <span style="text-decoration: underline"> </span></p>
-            
+                <p>
+                    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                    <br>
+                    <p><small>Last revised: 01/20/2026</small></p>
+                </p>
+                <p class="breadcrumb"><a href="exterior-doors.html">Exterior Doors</a> &gt; Exterior Door Order Form</p>
             </article>
         </main>
     </div>
 
     <script>
+        // Share button
+        const shareBtn = document.getElementById('share-btn');
+        if (shareBtn && navigator.share) {
+            shareBtn.addEventListener('click', () => {
+                navigator.share({
+                    title: document.title || 'Exterior Door Order Form',
+                    url: window.location.href
+                }).catch(() => { });
+            });
+        } else if (shareBtn) {
+            shareBtn.style.display = 'none';
+        }
+        // Print button
+        const printBtn = document.getElementById('print-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', () => {
+                window.print();
+            });
+        }
         // Mobile navigation toggle
         document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.querySelector('.mobile-nav-toggle');
             const sidebar = document.querySelector('.sidebar');
-
             if (navToggle && sidebar) {
                 navToggle.addEventListener('click', function() {
                     sidebar.classList.toggle('active');
                 });
-
                 document.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
                         if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
@@ -135,6 +156,8 @@
             }
         });
     </script>
-
+    <footer>
+        &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+    </footer>
 </body>
 </html>

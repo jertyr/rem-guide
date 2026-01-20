@@ -7,64 +7,62 @@
     <title>Start Framing Checklist | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
+        }
         .nav-item.active-section .submenu {
             display: block !important;
             max-height: none !important;
         }
-
-        /* Highlight active links */
         .sidebar nav a.active {
             background: #d4edda;
             color: #155724;
             font-weight: 700;
             border-left-color: #2c5f2d;
         }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
-        }
+        .sidebar nav ul { padding-left: 0; margin: 0; }
+        .sidebar nav li { margin: 0; padding: 0; }
+        .sidebar nav a { padding: 0.4rem 1rem; display: block; }
+        .sidebar .submenu { padding-left: 0; margin: 0.2rem 0; }
+        .sidebar .submenu li { margin: 0; }
+        .sidebar .submenu a { padding: 0.3rem 1rem 0.3rem 2rem; }
+        article ul { margin-left: 0; padding-left: 2em; }
+        article ul ul { margin-left: 0; padding-left: 2em; }
+        article li { margin-bottom: 0.5em; }
+        article > ul { padding-left: 1.5em; }
     </style>
 
 </head>
@@ -107,26 +105,62 @@
 
         <main style="margin-left: 280px; padding: 2rem;">
             <article>
-
-                <h2 class="wp-block-heading">Start Framing Checklist</h2> <ul class="wp-block-list">
-<li>Stage lumber in build order</li> <li>Plates, joists, blocks, subfloor, hangers, ledgerloks, anchor bolts, subfloor adhesive, sill seal, 2.5″ screws or ring shanked nails</li> <li>Plates, studs, headers, beams, sheathing, tape, pocket doors</li> <li>Rafters, ceiling joists, collar ties, ridge boards, sheathing, ply clips, underlayment, ice and water, skylights, sun tunnels, hold downs</li> <li>Temp bracing, lacers, fascia</li> <li>Flashing tape, shims, roofing nails, foam, sealant</li> <li>Plastic, tarps, hand drive nails, GRK screws</li> <li>Don’t forget overhangs</li> <li>Add blocking, bridging, fire-stops</li> <li>Blueprint, window order, truss specifications</li> <li>Note light and switch locations</li> <li>Note mirrors and medicine cabinets</li> <li>Note bathroom accessory locations for blocking</li>
+                <p class="breadcrumb"><a href="framing.html">Framing</a> &gt; Start Framing Checklist</p>
+                <h2>Start Framing Checklist</h2>
+                <ul style="list-style-type: none">
+<li>☐ Stage lumber in build order</li>
+<li>☐ Plates, joists, blocks, subfloor, hangers, ledgerloks, anchor bolts, subfloor adhesive, sill seal, 2.5″ screws or ring shanked nails</li>
+<li>☐ Plates, studs, headers, beams, sheathing, tape, pocket doors</li>
+<li>☐ Rafters, ceiling joists, collar ties, ridge boards, sheathing, ply clips, underlayment, ice and water, skylights, sun tunnels, hold downs</li>
+<li>☐ Temp bracing, lacers, fascia</li>
+<li>☐ Flashing tape, shims, roofing nails, foam, sealant</li>
+<li>☐ Plastic, tarps, hand drive nails, GRK screws</li>
+<li>☐ Don't forget overhangs</li>
+<li>☐ Add blocking, bridging, fire-stops</li>
+<li>☐ Blueprint, window order, truss specifications</li>
+<li>☐ Note light and switch locations</li>
+<li>☐ Note mirrors and medicine cabinets</li>
+<li>☐ Note bathroom accessory locations for blocking</li>
 </ul>
-            
+                <p>
+                    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                    <br>
+                    <p><small>Last revised: 01/20/2026</small></p>
+                </p>
+                <p class="breadcrumb"><a href="framing.html">Framing</a> &gt; Start Framing Checklist</p>
             </article>
         </main>
     </div>
 
     <script>
+        // Share button
+        const shareBtn = document.getElementById('share-btn');
+        if (shareBtn && navigator.share) {
+            shareBtn.addEventListener('click', () => {
+                navigator.share({
+                    title: document.title || 'Start Framing Checklist',
+                    url: window.location.href
+                }).catch(() => { });
+            });
+        } else if (shareBtn) {
+            shareBtn.style.display = 'none';
+        }
+        // Print button
+        const printBtn = document.getElementById('print-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', () => {
+                window.print();
+            });
+        }
         // Mobile navigation toggle
         document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.querySelector('.mobile-nav-toggle');
             const sidebar = document.querySelector('.sidebar');
-
             if (navToggle && sidebar) {
                 navToggle.addEventListener('click', function() {
                     sidebar.classList.toggle('active');
                 });
-
                 document.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
                         if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
@@ -137,6 +171,8 @@
             }
         });
     </script>
-
+    <footer>
+        &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+    </footer>
 </body>
 </html>

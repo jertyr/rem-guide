@@ -7,64 +7,62 @@
     <title>Gutter Example Price Sheet | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
+        }
         .nav-item.active-section .submenu {
             display: block !important;
             max-height: none !important;
         }
-
-        /* Highlight active links */
         .sidebar nav a.active {
             background: #d4edda;
             color: #155724;
             font-weight: 700;
             border-left-color: #2c5f2d;
         }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
-        }
+        .sidebar nav ul { padding-left: 0; margin: 0; }
+        .sidebar nav li { margin: 0; padding: 0; }
+        .sidebar nav a { padding: 0.4rem 1rem; display: block; }
+        .sidebar .submenu { padding-left: 0; margin: 0.2rem 0; }
+        .sidebar .submenu li { margin: 0; }
+        .sidebar .submenu a { padding: 0.3rem 1rem 0.3rem 2rem; }
+        article ul { margin-left: 0; padding-left: 2em; }
+        article ul ul { margin-left: 0; padding-left: 2em; }
+        article li { margin-bottom: 0.5em; }
+        article > ul { padding-left: 1.5em; }
     </style>
 
 </head>
@@ -107,34 +105,57 @@
 
         <main style="margin-left: 280px; padding: 2rem;">
             <article>
-
-                <h1 class="wp-block-heading">Gutter Example Price Sheet</h1> <p><strong>Generic Contractor Price List – July 2022</strong><br><em>(all prices in USD unless noted)</em></p> <hr class="wp-block-separator has-alpha-channel-opacity" /> <h3 class="wp-block-heading">5″ K‑Style Aluminum Gutter Products</h3> <ul class="wp-block-list">
-<li>White, Imperial Brown, Black gutter & downspout – <strong>$3.85 / ft</strong></li> <li>Additional stock colors – <strong>$3.95 / ft</strong></li> <li>Wedges (for angled fascia) – <strong>$1.00 / ft</strong></li> <li>Straphanger installation (no fascia board) – <strong>$1.75 / ft</strong></li> <li>Special‑order colors – <strong>$4.15 / ft + pre‑measure charge</strong></li>
-</ul> <h3 class="wp-block-heading">6″ K‑Style Aluminum Gutter Products (limited colors)</h3> <ul class="wp-block-list">
-<li>White, Royal Brown, Black gutters – <strong>$5.80 / ft</strong></li> <li>Other available colors – <strong>$6.00 / ft</strong></li> <li>3″ × 4″ commercial downspouts – <strong>$5.05 / ft</strong></li> <li>Wedges (for angled fascia) – <strong>$1.35 / ft</strong></li> <li>Straphanger installation (no fascia board) – <strong>$2.30 / ft</strong></li>
-</ul> <h3 class="wp-block-heading">Additional Products & Services</h3> <ul class="wp-block-list">
-<li>Remove & haul existing aluminum gutter – <strong>$0.40 / ft</strong></li> <li>Remove only (leave scrap on‑site) – <strong>$0.50 / ft</strong></li> <li>Haul away only – <strong>$0.35 / ft</strong></li> <li>Zip hinges (flip‑up extensions) – <strong>$11.00 / set</strong></li> <li>Irregular or bay corners – <strong>$33.00 / each</strong></li> <li>Hand‑cut corners – <strong>$44.00 / each</strong></li> <li>Expansion joints (5″/6″) – <strong>$45.00 / $55.00 each</strong></li> <li>1″ × 6″ primed gutter board (max 40′) – <strong>$10.00 / ft</strong></li> <li>1″ × 6″ rough‑sawn gutter board – <strong>$12.00 / ft</strong></li> <li>Stand‑off charge (overhangs ≥ 2′) – <strong>$1.00 / ft</strong></li> <li>Brackets to studs (open rafters) – <strong>$0.70 / ft</strong></li> <li>Deck cut‑through for downspout – <strong>$30.00 / each</strong></li> <li>Cement drains/crocks – <strong>$10.00 / each</strong></li> <li>Downspout reconnect or tie‑in – <strong>$15.00 / each</strong></li> <li>Downspout redirection (return visit) – <strong>$45.00 + materials</strong></li> <li>Decorative downspout box (5″/6″) – <strong>$105.00 / $140.00 each</strong></li> <li>Minimum charge (< 70 ft total) – <strong>$85.00 service + gutter cost</strong></li> <li>Service charge (projects > 2½ stories) – <strong>$0.50 / ft + man‑lift cost</strong></li> <li>Pre‑measure for special‑order colors (incl. material pickup) – <strong>$50.00</strong></li>
-</ul> <h3 class="wp-block-heading">Gutter Protection Products</h3> <p><em>(Clean‑out and re‑secure fees may apply to protection‑only jobs: $75 + $0.50/ft each)</em></p> <ul class="wp-block-list">
-<li>Aluminum mesh screens (5″/6″) – <strong>$4.20 / $4.50 per ft</strong></li> <li>Leaf‑Less PRO (5″/6″) – <strong>$4.60 / $5.05 per ft</strong></li> <li>Leaf‑Less PRO with T‑straps (5″/6″) – <strong>$5.95 / $6.85 per ft</strong></li> <li>Clean Sweep (5″/6″) – <strong>$4.50 / $4.95 per ft</strong></li> <li>Leaf Relief Retro‑Fit (5″/6″) – <strong>$6.10 / $6.30 per ft</strong></li>
-</ul> <h3 class="wp-block-heading">General Notes</h3> <ul class="wp-block-list">
-<li><strong>Trip charge</strong>: $1.00/mile for jobs 40–70 miles; $2.00/mile for projects ≥ 75 miles (e.g., 100 miles = $200).</li> <li><strong>Credit‑card payments</strong> incur a 4 % service fee.</li> <li><strong>Combination 5″/6″ jobs</strong>: additional $70 logistics charge.</li> <li><strong>Measurement equivalents</strong>: 1 miter = 3 ft; 1 elbow = 2 ft; 1 end cap = 1 ft; 1 outlet = 1 ft; minimum downspout length = 10 ft.</li> <li>For <strong>gutter protection estimates</strong>, use total footage of gutter <strong>plus</strong> miters.</li>
+                <p class="breadcrumb"><a href="gutters.html">Gutters</a> &gt; Gutter Example Price Sheet</p>
+                <h1 class="wp-block-heading">Gutter Example Price Sheet</h1> <p><strong>Generic Contractor Price List – July 2022</strong><br><em>(all prices in USD unless noted)</em></p> <hr class="wp-block-separator has-alpha-channel-opacity" /> <h3 class="wp-block-heading">5″ K‑Style Aluminum Gutter Products</h3> <ul style="list-style-type: none">
+<li>☐ White, Imperial Brown, Black gutter & downspout – <strong>$3.85 / ft</strong></li> <li>☐ Additional stock colors – <strong>$3.95 / ft</strong></li> <li>☐ Wedges (for angled fascia) – <strong>$1.00 / ft</strong></li> <li>☐ Straphanger installation (no fascia board) – <strong>$1.75 / ft</strong></li> <li>☐ Special‑order colors – <strong>$4.15 / ft + pre‑measure charge</strong></li>
+</ul> <h3 class="wp-block-heading">6″ K‑Style Aluminum Gutter Products (limited colors)</h3> <ul style="list-style-type: none">
+<li>☐ White, Royal Brown, Black gutters – <strong>$5.80 / ft</strong></li> <li>☐ Other available colors – <strong>$6.00 / ft</strong></li> <li>☐ 3″ × 4″ commercial downspouts – <strong>$5.05 / ft</strong></li> <li>☐ Wedges (for angled fascia) – <strong>$1.35 / ft</strong></li> <li>☐ Straphanger installation (no fascia board) – <strong>$2.30 / ft</strong></li>
+</ul> <h3 class="wp-block-heading">Additional Products & Services</h3> <ul style="list-style-type: none">
+<li>☐ Remove & haul existing aluminum gutter – <strong>$0.40 / ft</strong></li> <li>☐ Remove only (leave scrap on‑site) – <strong>$0.50 / ft</strong></li> <li>☐ Haul away only – <strong>$0.35 / ft</strong></li> <li>☐ Zip hinges (flip‑up extensions) – <strong>$11.00 / set</strong></li> <li>☐ Irregular or bay corners – <strong>$33.00 / each</strong></li> <li>☐ Hand‑cut corners – <strong>$44.00 / each</strong></li> <li>☐ Expansion joints (5″/6″) – <strong>$45.00 / $55.00 each</strong></li> <li>☐ 1″ × 6″ primed gutter board (max 40′) – <strong>$10.00 / ft</strong></li> <li>☐ 1″ × 6″ rough‑sawn gutter board – <strong>$12.00 / ft</strong></li> <li>☐ Stand‑off charge (overhangs ≥ 2′) – <strong>$1.00 / ft</strong></li> <li>☐ Brackets to studs (open rafters) – <strong>$0.70 / ft</strong></li> <li>☐ Deck cut‑through for downspout – <strong>$30.00 / each</strong></li> <li>☐ Cement drains/crocks – <strong>$10.00 / each</strong></li> <li>☐ Downspout reconnect or tie‑in – <strong>$15.00 / each</strong></li> <li>☐ Downspout redirection (return visit) – <strong>$45.00 + materials</strong></li> <li>☐ Decorative downspout box (5″/6″) – <strong>$105.00 / $140.00 each</strong></li> <li>☐ Minimum charge (< 70 ft total) – <strong>$85.00 service + gutter cost</strong></li> <li>☐ Service charge (projects > 2½ stories) – <strong>$0.50 / ft + man‑lift cost</strong></li> <li>☐ Pre‑measure for special‑order colors (incl. material pickup) – <strong>$50.00</strong></li>
+</ul> <h3 class="wp-block-heading">Gutter Protection Products</h3> <p><em>(Clean‑out and re‑secure fees may apply to protection‑only jobs: $75 + $0.50/ft each)</em></p> <ul style="list-style-type: none">
+<li>☐ Aluminum mesh screens (5″/6″) – <strong>$4.20 / $4.50 per ft</strong></li> <li>☐ Leaf‑Less PRO (5″/6″) – <strong>$4.60 / $5.05 per ft</strong></li> <li>☐ Leaf‑Less PRO with T‑straps (5″/6″) – <strong>$5.95 / $6.85 per ft</strong></li> <li>☐ Clean Sweep (5″/6″) – <strong>$4.50 / $4.95 per ft</strong></li> <li>☐ Leaf Relief Retro‑Fit (5″/6″) – <strong>$6.10 / $6.30 per ft</strong></li>
+</ul> <h3 class="wp-block-heading">General Notes</h3> <ul style="list-style-type: none">
+<li>☐ <strong>Trip charge</strong>: $1.00/mile for jobs 40–70 miles; $2.00/mile for projects ≥ 75 miles (e.g., 100 miles = $200).</li> <li>☐ <strong>Credit‑card payments</strong> incur a 4 % service fee.</li> <li>☐ <strong>Combination 5″/6″ jobs</strong>: additional $70 logistics charge.</li> <li>☐ <strong>Measurement equivalents</strong>: 1 miter = 3 ft; 1 elbow = 2 ft; 1 end cap = 1 ft; 1 outlet = 1 ft; minimum downspout length = 10 ft.</li> <li>☐ For <strong>gutter protection estimates</strong>, use total footage of gutter <strong>plus</strong> miters.</li>
 </ul>
-            
+                <p>
+                    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                    <br>
+                    <p><small>Last revised: 01/20/2026</small></p>
+                </p>
+                <p class="breadcrumb"><a href="gutters.html">Gutters</a> &gt; Gutter Example Price Sheet</p>
             </article>
         </main>
     </div>
 
     <script>
+        // Share button
+        const shareBtn = document.getElementById('share-btn');
+        if (shareBtn && navigator.share) {
+            shareBtn.addEventListener('click', () => {
+                navigator.share({
+                    title: document.title || 'Gutter Example Price Sheet',
+                    url: window.location.href
+                }).catch(() => { });
+            });
+        } else if (shareBtn) {
+            shareBtn.style.display = 'none';
+        }
+        // Print button
+        const printBtn = document.getElementById('print-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', () => {
+                window.print();
+            });
+        }
         // Mobile navigation toggle
         document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.querySelector('.mobile-nav-toggle');
             const sidebar = document.querySelector('.sidebar');
-
             if (navToggle && sidebar) {
                 navToggle.addEventListener('click', function() {
                     sidebar.classList.toggle('active');
                 });
-
                 document.addEventListener('click', function(e) {
                     if (window.innerWidth <= 768) {
                         if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
@@ -145,6 +166,8 @@
             }
         });
     </script>
-
+    <footer>
+        &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+    </footer>
 </body>
 </html>

@@ -125,7 +125,38 @@
 </ul> <figure class="wp-block-image size-large"><img src="images/gutter-design-2.jpg" alt="" class="wp-image-386" /></figure> <figure class="wp-block-image size-large"><img src="images/gutter-design.jpg" alt="" class="wp-image-387" /></figure> <figure class="wp-block-image size-large"><img src="images/gutters-underground-drains-1.jpg" alt="" class="wp-image-389" /></figure> <h2 class="wp-block-heading">Resources</h2> <ul class="wp-block-list">
 <li><a href="gutter-example-price-sheet.html">Gutter Example Price Sheet</a></li>
 </ul> <hr class="wp-block-separator has-alpha-channel-opacity" />
-            
+<p>
+    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+    <br>
+    <p><small>Last revised: 01/20/2026</small></p>
+</p>
+
+<script>
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn && navigator.share) {
+    shareBtn.addEventListener('click', () => {
+      navigator.share({
+        title: 'Gutters',
+        url: window.location.href
+      }).catch(() => {
+        // user cancelled or share failed; do nothing
+      });
+    });
+  } else if (shareBtn) {
+    // Hide button if Web Share API isn't available
+    shareBtn.style.display = 'none';
+  }
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+</script>
+
             </article>
         </main>
     </div>

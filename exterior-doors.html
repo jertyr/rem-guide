@@ -155,7 +155,38 @@
 </ol> <h3 class="wp-block-heading">Inspections</h3> <p>Doors separating attached garages from living spaces will likely have a fire rating. The 2021 IRC requires these doors to be self closing and latching.</p> <h3 class="wp-block-heading">Best Practices / Pro Tips</h3> <p>Flash the opening and take photos during the installation process to verify that the door was sealed correctly. Doors often don't include a nailing flange like North American windows, so special attention needs to be paid to these steps.</p> <h3 class="wp-block-heading">Client Interaction / Communication Notes</h3> <ul class="wp-block-list">
 <li>Advise that interior trim will not survive demo and will be replaced.</li> <li>Animals must be secured because the house will be open for a few hours during replacement.</li> <li>Sometimes the new door requires shoe moulding or similar trim on the interior side because the threshold is thicker or doesn't align with the old flooring depending on how plumb and square the opening is in the home.</li> <li>The builder should determine the size and fit of the new door and guide the client on a style that meets their goals.</li>
 </ul> <h3 class="wp-block-heading">Door Specification Examples</h3> <p>This is an example of a double door quote with a fixed and active swing panel.</p> <figure class="wp-block-image size-large"><img src="images/windows-door-quote-example.jpg" alt="" class="wp-image-330" /></figure> <p>This is an example from another brand</p> <figure class="wp-block-image size-large"><img src="images/windows-example-quote-2.jpg" alt="" class="wp-image-331" /></figure> <figure class="wp-block-image size-large"><img src="images/doors-sill-flashing.jpg" alt="" class="wp-image-334" /></figure> <figure class="wp-block-image size-large"><img src="images/doors-sill-sealant.jpg" alt="" class="wp-image-335" /></figure> <figure class="wp-block-image size-large"><img src="images/doors-foamed.jpg" alt="" class="wp-image-336" /></figure> <p></p> <h2 class="wp-block-heading">Resources</h2> <p><a href="exterior-door-order-form.html">Exterior Door Order Form</a></p> <p><a href="window-and-door-install-checklist.html">Window and Door Install Checklist</a></p>
-            
+<p>
+    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+    <br>
+    <p><small>Last revised: 01/20/2026</small></p>
+</p>
+
+<script>
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn && navigator.share) {
+    shareBtn.addEventListener('click', () => {
+      navigator.share({
+        title: 'Exterior Doors',
+        url: window.location.href
+      }).catch(() => {
+        // user cancelled or share failed; do nothing
+      });
+    });
+  } else if (shareBtn) {
+    // Hide button if Web Share API isn't available
+    shareBtn.style.display = 'none';
+  }
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+</script>
+
             </article>
         </main>
     </div>

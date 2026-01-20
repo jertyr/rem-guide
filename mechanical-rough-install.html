@@ -139,7 +139,38 @@
 </ul> <h2 class="wp-block-heading">Gas Pipe Sizing Reference</h2> <figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th>Nom. Black-Iron Ø</th><th>Max BTU @ 100 ft</th><th>Typical Load</th></tr></thead><tbody><tr><td>½ in</td><td>≈ 175 k</td><td>1 × 80 k furnace + WH</td></tr><tr><td>¾ in</td><td>≈ 360 k</td><td>2 furnaces, tankless WH</td></tr><tr><td>1 in</td><td>≈ 660 k</td><td>Large boiler + range</td></tr><tr><td>1¼ in</td><td>≈ 1.05 M</td><td>Multi-zone boiler bank</td></tr><tr><td>1½ in</td><td>≈ 1.6 M</td><td>Light commercial</td></tr></tbody></table></figure> <h2 class="wp-block-heading">Resources</h2> <ul class="wp-block-list">
 <li></li>
 </ul>
-            
+<p>
+    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+    <br>
+    <p><small>Last revised: 01/20/2026</small></p>
+</p>
+
+<script>
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn && navigator.share) {
+    shareBtn.addEventListener('click', () => {
+      navigator.share({
+        title: 'HVAC / Mechanical Rough Install',
+        url: window.location.href
+      }).catch(() => {
+        // user cancelled or share failed; do nothing
+      });
+    });
+  } else if (shareBtn) {
+    // Hide button if Web Share API isn't available
+    shareBtn.style.display = 'none';
+  }
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+</script>
+
             </article>
         </main>
     </div>

@@ -142,7 +142,38 @@
 </ul> <h3 class="wp-block-heading">Client Interaction / Communication Notes</h3> <ul class="wp-block-list">
 <li>Advise that interior trim may not survive full-frame demo; budget for replacement.</li> <li>The builder should determine the size and fit of the new windows and guide the client on a style that meets their goals.</li>
 </ul> <h3 class="wp-block-heading">Window Specification Examples</h3> <h4 class="wp-block-heading">Example Proposal/Contract Call Out</h4> <p>This is an example of what may be written in a build contract. Sometimes "final" window decisions are made before the contract is signed, but not always.</p> <figure class="wp-block-image size-large"><img src="images/windows-proposal-text.jpg" alt="" class="wp-image-276" /></figure> <h4 class="wp-block-heading">Example Blueprint Window Schedule</h4> <p>The blueprint often doesn't contain enough information to correctly or fully order a window. Compare the information here to the Example Window Quote below</p> <figure class="wp-block-image size-large"><img src="images/windows-blueprint-schedule.jpg" alt="" class="wp-image-272" /></figure> <h4 class="wp-block-heading">Example Window Quote</h4> <p>Note the jamb thickness, colors, screen style and color, slide direction, material, hardware specifics, etc. </p> <figure class="wp-block-image size-large"><img src="images/windows-example-quote.jpg" alt="" class="wp-image-273" /></figure> <h4 class="wp-block-heading">Additional Example Window Quote</h4> <figure class="wp-block-image size-large"><img src="images/windows-example-quote-3.jpg" alt="" class="wp-image-275" /></figure> <h3 class="wp-block-heading">Resources</h3> <p><a href="window-order-form.html">Window Order Form</a></p> <p><a href="window-and-door-install-checklist.html">Window and Door Install Checklist</a></p> <p>ASTM E2112 - Standard Practice for Installation of Exterior Windows</p> <p>AAMA 2400 - Standard Practice for Installation of Windows with a Mounting Flange</p>
-            
+<p>
+    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+    <br>
+    <p><small>Last revised: 01/20/2026</small></p>
+</p>
+
+<script>
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn && navigator.share) {
+    shareBtn.addEventListener('click', () => {
+      navigator.share({
+        title: 'Windows',
+        url: window.location.href
+      }).catch(() => {
+        // user cancelled or share failed; do nothing
+      });
+    });
+  } else if (shareBtn) {
+    // Hide button if Web Share API isn't available
+    shareBtn.style.display = 'none';
+  }
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+</script>
+
             </article>
         </main>
     </div>

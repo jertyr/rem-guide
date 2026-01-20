@@ -125,7 +125,38 @@
 </ul> <h2 class="wp-block-heading">Common Issues and How to Avoid Them</h2> <ul class="wp-block-list">
 <li>Mock up a wall to plan for valve depth location</li> <li>The builder should keep plumbing nail plates on hand during inspection</li> <li>Builder should have fire caulk on hand during inspection and do check before the inspector arrives</li> <li>Cover tubs or shower trays before they are installed, leave space around the flange and drain location</li> <li>Make a story pole or mark up the floor plate with tile thickness, backer, centerline etc so plumber doesn't have to guess.</li>
 </ul>
-            
+<p>
+    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+    <br>
+    <p><small>Last revised: 01/20/2026</small></p>
+</p>
+
+<script>
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn && navigator.share) {
+    shareBtn.addEventListener('click', () => {
+      navigator.share({
+        title: 'Plumbing Rough Install',
+        url: window.location.href
+      }).catch(() => {
+        // user cancelled or share failed; do nothing
+      });
+    });
+  } else if (shareBtn) {
+    // Hide button if Web Share API isn't available
+    shareBtn.style.display = 'none';
+  }
+  // Print button
+  const printBtn = document.getElementById('print-btn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+</script>
+
             </article>
         </main>
     </div>

@@ -3,188 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Framing | Remodelers Guide - The Remodelers Guide">
+    <meta name="description" content="Framing | Remodelers Guide">
     <title>Framing | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
-        .nav-item.active-section .submenu {
-            display: block !important;
-            max-height: none !important;
-        }
-
-        /* Highlight active links */
-        .sidebar nav a.active {
-            background: #d4edda;
-            color: #155724;
-            font-weight: 700;
-            border-left-color: #2c5f2d;
-        }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
         }
     </style>
-
 </head>
 <body>
 <header>
-        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
-    </header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
 
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
 
-    <div class="main-wrapper">
-        <aside class="sidebar">
-<nav>
-                <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item active-section"><a href="framing.html" class="active">Framing</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item"><a href="windows.html">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
-            </nav>
-        </aside>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item active-section"><a href="framing.html" class="active">Framing</a></li>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main style="margin-left: 280px; padding: 2rem;">
-            <article>
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <h1>Framing</h1>
 
-                <h1 class="wp-block-heading">Framing</h1> <p>Framing refers to the wooden structure that holds up a home. In the 1700's it was common to build post and beam style houses in our territory because that's what European settlers were used to doing. Our abundant forests and tall trees quickly changed the way we build and eventually it became popular to "balloon" frame with tall studs that ran from the bottom plate all the way to the roof. After the Chicago Fire builders began shifting to "Platform Framing" where you build a floor system, stand up walls, then build another floor or roof on top of that, and continue upward one story at a time. We still use platform framing today.</p> <h2 class="wp-block-heading">TLDR</h2> <ul class="wp-block-list">
-<li>Stage lumber in build order</li> <li>Plates, joists, blocks, subfloor, hangers, ledgerloks, anchor bolts, subfloor adhesive, sill seal, 2.5" screws or ring shanked nails</li> <li>Plates, studs, headers, beams, sheathing, tape, pocket doors</li> <li>Rafters, ceiling joists, ridge boards, sheathing, ply clips, ice and water, skylights, sun tunnels</li> <li>Temp bracing, lacers, fascia</li> <li>Flashing tape, shims, roofing nails, foam, sealant</li> <li>Plastic, tarps, hand drive nails, GRK screws</li> <li>Don't forget overhangs</li> <li>Add blocking, bridging, fire-stops</li> <li>Blueprint, window order, truss specifications</li> <li>Note light and switch locations</li> <li>Note mirrors and medicine cabinets</li> <li>Note bathroom accessory locations for blocking</li>
-</ul> <h2 class="wp-block-heading">Prerequisites</h2> <ul class="wp-block-list">
-<li>Print window schedule or better the actual window order</li> <li>Get lumber on site in build order and covered up</li> <li>Trusses must be designed and confirmed</li>
-</ul> <h2 class="wp-block-heading">Floor Systems</h2> <p>Floors consist basically of joists and sheathing. Sometimes a joist is doubled up to form a beam, or some other type of beam is incorporated. The layout is often 16" on center (OC) although not always. Joists can be solid sawn lumber like 2x8, 2x10, or 2x12. There are other types of joists including truss Joists, floor trusses, engineered joists like LVL, and steel joists although these are less common in residences.</p> <h3 class="wp-block-heading">Ledgers</h3> <p>Ledgers should be screwed to the existing rim joist of a house using Fastenmaster LedgerLok screws spaced according to the instructions on the package (there are other installation methods but this is the simplest). Follow the instructions and try to offset screws so they will still be visible after floor joists are installed.</p> <h3 class="wp-block-heading">Joists</h3> <p>Joists should either sit on a plated foundation wall or in a joist hanger. Crown the joist so that it rests like a mountain, not a valley. Joists should be fastened down to a plate with at least 3 toenails, 2 on one side and 1 opposing. They can also be held down with a hurricane tie or similar bracket for additional uplift support. When joists are longer than 8’ blocking can be installed to help reinforce and stiffen the floor system.</p> <p>Remember to square the joists and check spacing before installing subfloor, and space them so that they don't interfere with critical drain lines or ducts. When building above existing walls, line the joists up with the studs below to aid other trades when running utilities from wall to floor.</p> <h3 class="wp-block-heading">Subfloor</h3> <p>Subfloor or sheathing should be glued and nailed using ring shank nails or screwed down with 2.5” structural screws like GRKs. Use the appropriate subfloor glue, do not substitute for PL3X or another kind. Subfloor glue tubes should be cut square so the bead is large and round, it will form a skin on the top leaving the inside gooey. When you lay the sheet of subfloor down, the skin will dissolve back into the glue and bond correctly. Other glues do not do this.</p> <p>It is important that subfloor is nailed or screwed soon after placing to make sure it is tight against the joists before the glue begins to cure. Stagger joints and use full sheets whenever possible.</p> <p>Prepare for dropped subfloor in walk-in showers to keep slope low.</p> <figure class="wp-block-image size-large"><img src="images/framing-floor-joists.jpg" alt="" class="wp-image-240" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-dropped-floor.jpg" alt="" class="wp-image-239" /></figure> <h2 class="wp-block-heading">Walls</h2> <p>Walls are built with long plates at the top and bottom and studs between the two. They can also include headers to span openings.</p> <h3 class="wp-block-heading">Headers</h3> <p>Headers should be built on the ground when possible. For 2x6 walls put the framing toward the exterior allowing insulation and wiring to be installed in the cavity this forms toward the interior. Headers can usually be build with 3” sinkers and do not always need HeadLok screws.</p> <h3 class="wp-block-heading">Studs</h3> <p>Studs should lay out on top of floor joists to allow trades to install from floor cavity to wall cavity. Corners and wall bucks should be framed to allow the insulator access to fill later. Walls taller than 10’ will need blocking to keep cavities shorter than 10’ tall.</p> <p>Remember to frame walls with studs away from shower valves, light switch locations, etc.</p> <h3 class="wp-block-heading">Interior Door Openings</h3> <p>Drawings may call doors out in many different ways, here are the common equivalents and the Rough Opening (RO) that they require</p> <ul class="wp-block-list">
-<li>Callout: 2668</li> <li>Meaning: 2'6" wide x 6'8" tall door slab (not frame)</li> <li>Rough Opening: 2'8" x 6'10.25"</li>
-</ul> <h3 class="wp-block-heading">Blocking</h3> <p>Install blocking before trades arrive for the following items to be mounted later</p> <ul class="wp-block-list">
-<li>Toilet roll</li> <li>Grab bars</li> <li>Robe hooks</li> <li>Hand towel holders</li> <li>Towel rods</li> <li>Shower glass</li> <li>Tub rims</li> <li>Shower enclosure edges</li> <li>Closet rod/shelf</li> <li>Wall hung tvs</li> <li>Floating shelves</li> <li>Mirrors</li> <li>Medicine cabinets</li> <li>Cabinets</li> <li>Floating vanities</li> <li>Wainscoting</li> <li>Stair handrails</li>
-</ul> <h3 class="wp-block-heading">Sheathing</h3> <p>Install sheathing according to spacing called out in the 2015 Michigan Residential Building Code R602.3(3)</p> <ul class="wp-block-list">
-<li>Edge fastener spacing: 6" OC nailing</li> <li>Field fastener spacing: 12" OC nailing</li>
-</ul> <figure class="wp-block-image size-large"><img src="images/framing-walls-and-subfloor.jpg" alt="" class="wp-image-243" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-pocket-door.jpg" alt="" class="wp-image-244" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-bathroom-blocks-3.jpg" alt="" class="wp-image-247" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-bathroom-blocks-1.jpg" alt="" class="wp-image-248" /></figure> <figure class="wp-block-image size-large"><img src="images/blocking-cabinets.jpg" alt="" class="wp-image-257" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-door-opening-guide.png" alt="" class="wp-image-249" /></figure> <h2 class="wp-block-heading">Staircases</h2> <p>Remember that staircases have very specific requirements depending on which building code your jurisdiction enforces.</p> <ul class="wp-block-list">
-<li>Minimum clear width 36" measured above the handrail height. If handrails are installed on both sides, minimum clear width between handrails must be 27".</li> <li>Riser Height: Maximum 7 3/4" (7.75") with no more than 3/8" variation between landings.</li> <li>Tread Depth: Minimum 10" measured horizontally from nosing to nosing with no more than 3/8" variation between landings.</li> <li>Nosings are required if the tread depth is less than 11" and nosings must project between 3/4" and 1 1/4".</li> <li>Headroom: Minimum vertical clearance of 80" measured from tread nosing vertically to the ceiling.</li> <li>Handrails are required when there are four or more risers, and installed between 34" and 38" above the tread nosing. Handrails must be continuous for the full length of the stair flight, from the top riser to the bottom riser and return to the wall or newel post.</li> <li>Landings are required at the top and bottom of every stairway and a minimum of at least 36 inches.</li>
-</ul> <h2 class="wp-block-heading">Roofs</h2> <p>Roofs can be hand framed using dimensional lumber cut and installed on site or framed with trusses, which are ordered, manufactured off site and delivered on a flatbed truck.</p> <h3 class="wp-block-heading">Trusses</h3> <p>You must measure on site for trusses, do not trust that the drawing is accurate, although some designs offer more flexibility than others. Trusses can be designed for hipped roofs, vaulted or tray ceilings, overhangs, or with chases built in. Remember that they must be ordered a few weeks/months before you need them. Delivery must go right to the site because they are generally so large that they require a special permit to ship and the local lumber yard may not be equipped to do that. They will arrive on a flat bed truck and dropped off the back of it into the yard or street so you will have to arrange to hand carry them to the right location.</p> <p>Trusses are usually installed on 24” centers, and require lacers and drywall backing that isn’t always included in the lumber order. Make sure to account for this. Account for skylights when laying out framing. They are best used on standalone buildings or additions that are separated from the main structure, but can be used to extend an existing roofline but you'll want to confirm the heel height and roof slope before ordering.</p> <p>Remember to order</p> <ul class="wp-block-list">
-<li>Fascia (boral or azek) with the roof framing so that its ready for roofers</li> <li>Double check truss dimensions on site, do not trust the print</li> <li>Order lacers per the truss drawing</li>
-</ul> <h3 class="wp-block-heading">Hand Framing</h3> <p>Hand cutting a roof means you get dimensional lumber delivered to site and cut rafters rather than installing pre-made trusses. This option can take more time on site but may be a better option in some cases where there are some unknown conditions and flexibility is required. Best used on lay-on roofs or extensions of roofs where planing is important</p> <h3 class="wp-block-heading">Roof Sheathing</h3> <p>Roof sheathing should be 1/2" OSB. When you order your lumber you may want to order a few rolls of ice and water shield or roof underlayment so that you can waterproof the structure partially or temporarily before the roof is installed.</p> <p>Zip sheathing is nice for a roof because you can tape the seams and be mostly water tight but above a 5 or 6 pitch roof, the coating is quite slippery and much harder to walk safely than standard OSB.</p> <p>You'll want to install plywood clips when your roof framing is 24" OC</p> <figure class="wp-block-image size-large"><img src="images/framing-rafters-spring-boards-walls.jpg" alt="" class="wp-image-250" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-interior.jpg" alt="" class="wp-image-251" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-roof-waterproofing.jpg" alt="" class="wp-image-252" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-sunroom.jpg" alt="" class="wp-image-253" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-truss-confirmation.jpg" alt="" class="wp-image-254" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-trusses.jpg" alt="" class="wp-image-255" /></figure> <figure class="wp-block-image size-large"><img src="images/framing-skylight.jpg" alt="" class="wp-image-256" /></figure> <h2 class="wp-block-heading">Process</h2> <ul class="wp-block-list">
-<li>Call to order material <ul class="wp-block-list">
-<li>Treated sill plates</li> <li>Joists</li> <li>Floor sheathing</li> <li>Wall plates (single bottom, double or single top)</li> <li>Studs (precut or not)</li> <li>Ceiling joists</li> <li>Rafters</li> <li>Ridge boards</li> <li>Headers</li> <li>Beams</li> <li>Pocket door frames</li> <li>Stringers</li> <li>Temp framing</li> <li>Fascia</li> <li>Hardware </li> <li>Nails/staples</li> <li>Tapes</li> <li>WRB</li> <li>Skylights</li> <li>Sun Tunnels</li>
-</ul>
-</li> <li>Choose a delivery date and location</li> <li>Build flat, level, plumb, and square</li>
-</ul> <h3 class="wp-block-heading">Inspections</h3> <p>Concealed Space Inspection: Optional to look at spaces that will be concealed before the next inspection.</p> <p>Rough Building Inspection: This inspection is for the frame but cannot be completed until the trades have all completed their rough inspections. Some of the key items the inspector will look for are that all hardware is appropriately nailed with the correct fastener, that no hardware like joist hangers was missed. Staircases are compliant.</p> <h3 class="wp-block-heading">Best Practices / Pro Tips</h3> <p>Ship a tarp with the lumber so you can cover it to keep dry.</p> <p>Call out your lumber order to the yard with what each piece is so you can print that list for the carpenter: 2x8-10' SPF headers</p> <p>Have the yard stack the lumber upside down so your plates are on the top of the pile followed by joists, then floor sheathing, etc so you don't have to dig plates out from the bottom of the pile.</p> <p>Select a quality pocket door like the Johnson 1500 or better. The best doors have soft closing hardware and can be fitted with inlayed plywood to allow fastening to them during the finish phase. Inlay with actual plywood and not OSB for maximum screw holding.</p> <h3 class="wp-block-heading">Client Interaction / Communication Notes</h3> <p>Clients don't often understand that they need to make most if not all of their selections before this point. They can't still be deciding between bathrooms with mirrors or medicine cabinets because those things get built into the wall. Wainscoting or tile thickness can be important for how you set up those rooms. Some decisions can be left until after but the builder should explain that making changes later can mean rework and be very expensive.</p> <h2 class="wp-block-heading">Resources</h2> <p><a href="framing-checklist.html">Start Framing Checklist</a></p> <p><a href="complete-framing-checklist.html">Complete Framing Checklist</a></p> <p><a href="window-order-form.html">Window Order Form</a></p> <p><a href="window-and-door-install-checklist.html">Window and Door Install Checklist</a></p>
-<p>
-    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-    <br>
-    <p><small>Last revised: 01/20/2026</small></p>
-</p>
+            <p>Framing refers to the wooden structure that holds up a home. In the 1700s it was common to build post and beam style houses in our territory because that's what European settlers were used to doing. Our abundant forests and tall trees quickly changed the way we build, and eventually it became popular to "balloon" frame with tall studs that ran from the bottom plate all the way to the roof. After the Chicago Fire, builders began shifting to "Platform Framing" where you build a floor system, stand up walls, then build another floor or roof on top of that, and continue upward one story at a time. We still use platform framing today.</p>
+
+            <h2>Before You Start</h2>
+
+            <p>Print the window schedule or better yet the actual window order. Get lumber on site in build order and covered up. Trusses must be designed and confirmed.</p>
+
+            <p>Blueprint, window order, truss specifications: confirm you have what you actually plan to build, not just what's drawn.</p>
+
+            <p>Note light and switch locations early (they can affect stud layout, blocking, and where you want cavities clear).</p>
+
+            <h2>Floor Systems</h2>
+
+            <p>Floors consist basically of joists and sheathing. Sometimes a joist is doubled up to form a beam, or some other type of beam is incorporated. The layout is often 16" on center (OC) although not always. Joists can be solid sawn lumber like 2x8, 2x10, or 2x12. There are other types of joists including truss joists, floor trusses, engineered joists like LVL, and steel joists, although these are less common in residences.</p>
+
+            <p>Materials/hardware to plan for in typical floor framing:</p>
+            <ul>
+                <li>Joist hangers (as required).</li>
+                <li>Anchor bolts (as required).</li>
+                <li>Sill seal.</li>
+                <li>Fasteners: 2.5" structural screws (like GRKs) or ring shanked nails.</li>
+                <li>Subfloor adhesive (use the right one for subfloor).</li>
+            </ul>
+
+            <h3>Ledgers</h3>
+
+            <p>Ledgers should be screwed to the existing rim joist of a house using Fastenmaster LedgerLok screws spaced according to the instructions on the package. There are other installation methods, but this is the simplest. Follow the instructions and try to offset screws so they will still be visible after floor joists are installed.</p>
+
+            <h3>Joists</h3>
+
+            <p>Joists should either sit on a plated foundation wall or in a joist hanger. Crown the joist so that it rests like a mountain, not a valley. Joists should be fastened down to a plate with at least 3 toenails, 2 on one side and 1 opposing. They can also be held down with a hurricane tie or similar bracket for additional uplift support.</p>
+
+            <p>When joists are longer than 8', blocking can be installed to help reinforce and stiffen the floor system. Square the joists and check spacing before installing subfloor, and space them so that they don't interfere with critical drain lines or ducts. When building above existing walls, line the joists up with the studs below to aid other trades when running utilities from wall to floor.</p>
+
+            <h3>Subfloor</h3>
+
+            <p>Subfloor or sheathing should be glued and nailed using ring shank nails or screwed down with 2.5" structural screws like GRKs. Use the appropriate subfloor glue—do not substitute for PL3X or another kind. Subfloor glue tubes should be cut square so the bead is large and round; it will form a skin on top leaving the inside gooey. When you lay the sheet of subfloor down, the skin will dissolve back into the glue and bond correctly. Other glues do not do this.</p>
+
+            <p>It is important that subfloor is nailed or screwed soon after placing to make sure it is tight against the joists before the glue begins to cure. Stagger joints and use full sheets whenever possible.</p>
+
+            <p>Note: Prepare for dropped subfloor in walk-in showers to keep slope low.</p>
+
+            <figure>
+                <img src="images/framing-floor-joists.jpg" alt="Floor joists installation" />
+            </figure>
+            <figure>
+                <img src="images/framing-dropped-floor.jpg" alt="Dropped floor for shower" />
+            </figure>
+
+            <h2>Walls</h2>
+
+            <p>Walls are built with long plates at the top and bottom and studs between the two. They can also include headers to span openings.</p>
+
+            <h3>Headers</h3>
+
+            <p>Headers should be built on the ground when possible. For 2x6 walls, put the framing toward the exterior, allowing insulation and wiring to be installed in the cavity that forms toward the interior. Headers can usually be built with 3" sinkers and do not always need HeadLok screws.</p>
+
+            <h3>Studs</h3>
+
+            <p>Studs should lay out on top of floor joists to allow trades to install from floor cavity to wall cavity. Corners and wall bucks should be framed to allow the insulator access to fill later. Walls taller than 10' will need blocking to keep cavities shorter than 10' tall.</p>
+
+            <p>Remember to frame walls with studs away from shower valves, light switch locations, etc.</p>
+
+            <h3>Interior Door Openings</h3>
+
+            <p>Drawings may call doors out in many different ways. Here are the common equivalents and the Rough Opening (RO) that they require:</p>
+
+            <p><strong>Callout:</strong> 2668<br>
+            <strong>Meaning:</strong> 2'6" wide x 6'8" tall door slab (not frame)<br>
+            <strong>Rough Opening:</strong> 2'8" x 6'10.25"</p>
+
+            <h3>Blocking for Fixtures and Accessories</h3>
+
+            <p>Install blocking before trades arrive for the following items to be mounted later:</p>
+
+            <ul>
+                <li>Toilet roll</li>
+                <li>Grab bars</li>
+                <li>Robe hooks</li>
+                <li>Hand towel holders</li>
+                <li>Towel rods</li>
+                <li>Shower glass</li>
+                <li>Tub rims</li>
+                <li>Shower enclosure edges</li>
+                <li>Closet rod/shelf</li>
+                <li>Wall hung TVs</li>
+                <li>Floating shelves</li>
+                <li>Mirrors</li>
+                <li>Medicine cabinets</li>
+                <li>Cabinets</li>
+                <li>Floating vanities</li>
+                <li>Wainscoting</li>
+                <li>Stair handrails</li>
+            </ul>
+
+            <p>Note bathroom accessory locations for blocking (don't rely on memory once the walls are up).</p>
+
+            <p>Add blocking, bridging, fire-stops as required (plan it early so cavities aren't inaccessible later).</p>
+
+            <h3>Wall Sheathing</h3>
+
+            <p>Install sheathing according to spacing called out in the 2015 Michigan Residential Building Code R602.3(3):</p>
+
+            <ul>
+                <li><strong>Edge fastener spacing:</strong> 6" OC nailing</li>
+                <li><strong>Field fastener spacing:</strong> 12" OC nailing</li>
+            </ul>
+
+            <figure>
+                <img src="images/framing-walls-and-subfloor.jpg" alt="Walls and subfloor framing" />
+            </figure>
+            <figure>
+                <img src="images/framing-pocket-door.jpg" alt="Pocket door framing" />
+            </figure>
+            <figure>
+                <img src="images/framing-bathroom-blocks-3.jpg" alt="Bathroom blocking example" />
+            </figure>
+            <figure>
+                <img src="images/framing-bathroom-blocks-1.jpg" alt="Bathroom blocking detail" />
+            </figure>
+            <figure>
+                <img src="images/blocking-cabinets.jpg" alt="Cabinet blocking" />
+            </figure>
+            <figure>
+                <img src="images/framing-door-opening-guide.png" alt="Door opening guide" />
+            </figure>
+
+            <h2>Roofs</h2>
+
+            <p>Roofs can be hand framed using dimensional lumber cut and installed on site or framed with trusses, which are ordered, manufactured off site, and delivered on a flatbed truck.</p>
+
+            <p>Don't forget overhangs (confirm on drawings and account for them in framing, fascia, and roofing details).</p>
+
+            <p>Materials that often get missed until it's inconvenient:</p>
+            <ul>
+                <li>Flashing tape, shims, roofing nails, foam, sealant.</li>
+                <li>Plastic, tarps, hand drive nails, GRK screws.</li>
+            </ul>
+
+            <h3>Trusses</h3>
+
+            <p>You must measure on site for trusses; do not trust that the drawing is accurate, although some designs offer more flexibility than others. Trusses can be designed for hipped roofs, vaulted or tray ceilings, overhangs, or with chases built in. Remember that they must be ordered a few weeks or months before you need them.</p>
+
+            <p>Delivery must go right to the site because they are generally so large that they require a special permit to ship, and the local lumber yard may not be equipped to handle that. They will arrive on a flatbed truck and be dropped off the back of it into the yard or street, so you will have to arrange to hand carry them to the right location.</p>
+
+            <p>Trusses are usually installed on 24" centers and require lacers and drywall backing that isn't always included in the lumber order. Make sure to account for this. Account for skylights when laying out framing. They are best used on standalone buildings or additions that are separated from the main structure, but can be used to extend an existing roofline. Confirm the heel height and roof slope before ordering.</p>
+
+            <p>When ordering trusses, remember to:</p>
+            <ul>
+                <li>Order fascia (Boral or Azek) with the roof framing so that it's ready for roofers</li>
+                <li>Double check truss dimensions on site; do not trust the print</li>
+                <li>Order lacers per the truss drawing</li>
+            </ul>
+
+            <h3>Hand Framing</h3>
+
+            <p>Hand cutting a roof means you get dimensional lumber delivered to site and cut rafters rather than installing pre-made trusses. This option can take more time on site but may be a better option in some cases where there are unknown conditions and flexibility is required. It's best used on lay-on roofs or extensions of roofs where planning is important.</p>
+
+            <h3>Roof Sheathing</h3>
+
+            <p>Roof sheathing should be 1/2" OSB. When you order your lumber, you may want to order a few rolls of ice and water shield or roof underlayment so that you can waterproof the structure partially or temporarily before the roof is installed.</p>
+
+            <p>Zip sheathing is nice for a roof because you can tape the seams and be mostly water tight. However, above a 5 or 6 pitch roof, the coating is quite slippery and much harder to walk safely than standard OSB.</p>
+
+            <p>Install plywood clips when your roof framing is 24" OC.</p>
+
+            <figure>
+                <img src="images/framing-rafters-spring-boards-walls.jpg" alt="Rafters and spring boards" />
+            </figure>
+            <figure>
+                <img src="images/framing-interior.jpg" alt="Interior framing" />
+            </figure>
+            <figure>
+                <img src="images/framing-roof-waterproofing.jpg" alt="Roof waterproofing" />
+            </figure>
+            <figure>
+                <img src="images/framing-sunroom.jpg" alt="Sunroom framing" />
+            </figure>
+            <figure>
+                <img src="images/framing-truss-confirmation.jpg" alt="Truss confirmation" />
+            </figure>
+            <figure>
+                <img src="images/framing-trusses.jpg" alt="Trusses installed" />
+            </figure>
+            <figure>
+                <img src="images/framing-skylight.jpg" alt="Skylight framing" />
+            </figure>
+
+            <h2>Staircases</h2>
+
+            <p>Remember that staircases have very specific requirements depending on which building code your jurisdiction enforces. Per Michigan code:</p>
+
+            <ul>
+                <li><strong>Minimum clear width:</strong> 36" measured above the handrail height. If handrails are installed on both sides, minimum clear width between handrails must be 27"</li>
+                <li><strong>Riser Height:</strong> Maximum 7 3/4" (7.75") with no more than 3/8" variation between landings</li>
+                <li><strong>Tread Depth:</strong> Minimum 10" measured horizontally from nosing to nosing with no more than 3/8" variation between landings</li>
+                <li><strong>Nosings:</strong> Required if the tread depth is less than 11" and must project between 3/4" and 1 1/4"</li>
+                <li><strong>Headroom:</strong> Minimum vertical clearance of 80" measured from tread nosing vertically to the ceiling</li>
+                <li><strong>Handrails:</strong> Required when there are four or more risers, and installed between 34" and 38" above the tread nosing. Handrails must be continuous for the full length of the stair flight, from the top riser to the bottom riser and return to the wall or newel post</li>
+                <li><strong>Landings:</strong> Required at the top and bottom of every stairway, minimum of at least 36 inches</li>
+            </ul>
+
+            <h2>Material Order</h2>
+
+            <p>When calling to order material, include:</p>
+
+            <ul>
+                <li>Treated sill plates</li>
+                <li>Joists</li>
+                <li>Floor sheathing</li>
+                <li>Wall plates (single bottom, double or single top)</li>
+                <li>Studs (precut or not)</li>
+                <li>Ceiling joists</li>
+                <li>Rafters</li>
+                <li>Ridge boards</li>
+                <li>Headers</li>
+                <li>Beams</li>
+                <li>Pocket door frames</li>
+                <li>Stringers</li>
+                <li>Temp framing</li>
+                <li>Fascia</li>
+                <li>Hardware</li>
+                <li>Nails/staples</li>
+                <li>Tapes</li>
+                <li>WRB</li>
+                <li>Skylights</li>
+                <li>Sun tunnels</li>
+            </ul>
+
+            <p>Choose a delivery date and location, then build flat, level, plumb, and square.</p>
+
+            <h2>Best Practices</h2>
+
+            <p><strong>Lumber staging:</strong> Ship a tarp with the lumber so you can cover it to keep it dry. Call out your lumber order to the yard with what each piece is so you can print that list for the carpenter (e.g., "2x8-10' SPF headers"). Have the yard stack the lumber upside down so your plates are on top of the pile followed by joists, then floor sheathing, etc., so you don't have to dig plates out from the bottom of the pile.</p>
+
+            <p><strong>Pocket doors:</strong> Select a quality pocket door like the Johnson 1500 or better. The best doors have soft closing hardware and can be fitted with inlayed plywood to allow fastening to them during the finish phase. Inlay with actual plywood and not OSB for maximum screw holding.</p>
+
+            <h2>Inspections</h2>
+
+            <p><strong>Concealed Space Inspection:</strong> Optional inspection to look at spaces that will be concealed before the next inspection.</p>
+
+            <p><strong>Rough Building Inspection:</strong> This inspection is for the frame but cannot be completed until the trades have all completed their rough inspections. Key items the inspector will look for include that all hardware is appropriately nailed with the correct fastener, that no hardware like joist hangers was missed, and that staircases are compliant.</p>
+
+            <h2>Client Communication</h2>
+
+            <p>Clients don't often understand that they need to make most if not all of their selections before this point. They can't still be deciding between bathrooms with mirrors or medicine cabinets because those things get built into the wall. Wainscoting or tile thickness can be important for how you set up those rooms. Some decisions can be left until after, but the builder should explain that making changes later can mean rework and be very expensive.</p>
+
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="framing-checklist.html">Start Framing Checklist</a></li>
+                <li><a href="complete-framing-checklist.html">Complete Framing Checklist</a></li>
+                <li><a href="window-order-form.html">Window Order Form</a></li>
+                <li><a href="window-and-door-install-checklist.html">Window and Door Install Checklist</a></li>
+            </ul>
+
+            <p>
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <p><small>Last revised: 01/22/2026</small></p>
+            </p>
+
+            <script>
+                // Share button
+                const shareBtn = document.getElementById('share-btn');
+                if (shareBtn && navigator.share) {
+                    shareBtn.addEventListener('click', () => {
+                        navigator.share({
+                            title: document.title || 'Framing',
+                            url: window.location.href
+                        }).catch(() => {
+                            // user cancelled or share failed; do nothing
+                        });
+                    });
+                } else if (shareBtn) {
+                    // Hide button if Web Share API isn't available
+                    shareBtn.style.display = 'none';
+                }
+                // Print button
+                const printBtn = document.getElementById('print-btn');
+                if (printBtn) {
+                    printBtn.addEventListener('click', () => {
+                        window.print();
+                    });
+                }
+            </script>
+        </article>
+    </main>
+</div>
 
 <script>
-  // Share button
-  const shareBtn = document.getElementById('share-btn');
-  if (shareBtn && navigator.share) {
-    shareBtn.addEventListener('click', () => {
-      navigator.share({
-        title: 'Framing',
-        url: window.location.href
-      }).catch(() => {
-        // user cancelled or share failed; do nothing
-      });
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
     });
-  } else if (shareBtn) {
-    // Hide button if Web Share API isn't available
-    shareBtn.style.display = 'none';
-  }
-  // Print button
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
 </script>
 
-            </article>
-        </main>
-    </div>
-
-    <script>
-        // Mobile navigation toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.mobile-nav-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            if (navToggle && sidebar) {
-                navToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                            sidebar.classList.remove('active');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
 </body>
 </html>

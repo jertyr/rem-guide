@@ -274,21 +274,25 @@ header {
 .mobile-nav-toggle {
   display: none;
   position: fixed;
-  top: 0.55rem;
+  top: 1rem;
   right: 1rem;
   background: var(--secondary-color);
   border: none;
   color: #fff;
   font-size: 1.5rem;
   cursor: pointer;
-  padding: 0.4rem 0.75rem;
-  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   z-index: 1001;
-  transition: background-color var(--transition-speed) ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-speed) ease;
 }
 
 .mobile-nav-toggle:hover {
   background: #D35400;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Layout */
@@ -520,27 +524,41 @@ footer a:hover {
     --font-size-base: 16px;
   }
 
+  header {
+    padding: 0 1rem;
+  }
+
   .sidebar {
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    width: 85%;
+    max-width: 320px;
   }
 
   .sidebar.active {
     transform: translateX(0);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
   }
 
   .mobile-nav-toggle {
     display: block;
   }
 
-  main,
+  /* Override inline styles on mobile */
+  main {
+    margin-left: 0 !important;
+    padding: 1.5rem 1rem !important;
+    width: 100% !important;
+  }
+
   footer {
-    margin-left: 0;
-    padding: 2rem 1rem;
+    margin-left: 0 !important;
+    padding: 1.5rem 1rem !important;
   }
 
   article {
-    padding: 1.5rem;
+    padding: 1.5rem !important;
+    margin: 0 !important;
   }
 
   h1 { font-size: 2rem; }
@@ -548,7 +566,17 @@ footer a:hover {
   h3 { font-size: 1.5rem; }
 
   table {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Make table cells more compact on mobile */
+  table th,
+  table td {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.85rem;
   }
 }
 

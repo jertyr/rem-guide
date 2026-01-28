@@ -3,190 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fireblocking (and Draftstopping) | Remodelers Guide - The Remodelers Guide">
-    <title>Fireblocking (and Draftstopping) | Remodelers Guide</title>
+    <meta name="description" content="Fireblocking and Draftstopping | Remodelers Guide">
+    <title>Fireblocking and Draftstopping | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
-        .nav-item.active-section .submenu {
-            display: block !important;
-            max-height: none !important;
-        }
-
-        /* Highlight active links */
-        .sidebar nav a.active {
-            background: #d4edda;
-            color: #155724;
-            font-weight: 700;
-            border-left-color: #2c5f2d;
-        }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
         }
     </style>
-
 </head>
 <body>
 <header>
-        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
-    </header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
 
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
 
-    <div class="main-wrapper">
-        <aside class="sidebar">
-<nav>
-                <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
-				<li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item active-section"><a href="fireblocking-and-draftstopping.html" class="active">Fireblocking</a></li>
-					<li class="nav-item"><a href="windows.html">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
-            </nav>
-        </aside>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
+                <li class="nav-item"><a href="decks.html">Decks</a></li>
+                <li class="nav-item active-section"><a href="fireblocking-and-draftstopping.html" class="active">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main style="margin-left: 280px; padding: 2rem;">
-            <article>
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <h1>Fireblocking and Draftstopping</h1>
 
-                <h1 class="wp-block-heading">Fireblocking (and Draftstopping)</h1> <h2 class="wp-block-heading">TLDR</h2> <ul class="wp-block-list">
-<li>Locate every concealed cavity > 10 ft tall or 1,000 ft².</li> <li>Block stud bays at tops, bottoms, and every 10 ft.</li> <li>Add draftstops to divide open-web floor systems ≤ 1,000 ft².</li> <li>Seal plate penetrations with orange <em>fireblock</em> foam or mineral wool.</li> <li>Use red intumescent <em>firestop</em> caulk/collars on rated walls & floors.</li> <li>Photograph all work before insulation for inspector & client records.</li>
-</ul> <h2 class="wp-block-heading">Overview</h2> <p>Fireblocking, draftstopping, and firestopping are three related—but not interchangeable—requirements aimed at slowing hidden flame spread inside wood-framed homes. <strong>Fireblocking</strong> cuts off vertical and concealed draft paths; <strong>draftstopping</strong> subdivides large horizontal cavities; and <strong>firestopping</strong> protects the integrity of assemblies that already carry a fire-resistance rating. All are mandated by the <a href="https://codes.iccsafe.org/content/MIRC2015" target="_blank" rel="noopener">2015 Michigan Residential Code</a> (2015 MRC) and the <a href="https://codes.iccsafe.org/content/IRC2021P2" target="_blank" rel="noopener">2021 International Residential Code</a> (2021 IRC).</p> <h2 class="wp-block-heading">Prerequisites</h2> <ul class="wp-block-list">
-<li>Framing complete; mechanical rough-ins drilled but not yet insulated.</li> <li>Blocking materials and sealants staged on site.</li>
-</ul> <h2 class="wp-block-heading">Materials / Tools Needed</h2> <ul class="wp-block-list">
-<li>2 × sawn lumber cut-offs <em>(2015 MRC R302.11.1 #1)</em></li> <li>Two 1 × boards with lap joint <em>(#2)</em></li> <li>¾-in plywood/OSB or ½-in gypsum board <em>(#3, #5)</em></li> <li>¼-in cement millboard or ⅜-in particleboard <em>(#6)</em></li> <li>Mineral-wool or unfaced fiberglass batts (packed tight) <em>(#7)</em></li> <li>Orange one- or two-component “fireblock” polyurethane foam <em>(R302.11 Item 4)</em></li> <li>Red intumescent firestop caulk / collars tested to ASTM E814 or UL 1479</li>
-</ul> <h2 class="wp-block-heading">Process</h2> <ol class="wp-block-list">
-<li><strong>Install Fireblocking</strong>
-<ul class="wp-block-list">
-<li>Cut lumber or drywall to fit snugly and flush with framing.</li> <li>Insert mineral-wool or fiberglass tightly where boards are impractical.</li>
-</ul>
-</li> <li><strong>Add Draftstops</strong> - install drywall or osb to cut ceilings or soffits into less than 1,000 sq ft sections (R302.12).</li> <li><strong>Seal Plate Penetrations - </strong>Seal pipes and cables at top and bottom plates with intumescent caulk, foam, or mineral wool (R203.11 item 4).</li> <li><strong>Firestop Rated Penetrations</strong> – In garage walls, townhouse separation walls, or floor assemblies carrying a required rating, apply red intumescent caulk or collars per listed UL system (<em>R302.4</em>).</li>
-</ol> <h2 class="wp-block-heading">Inspections</h2> <ul class="wp-block-list">
-<li>Rough framing inspection: confirms fireblocking & draftstopping before insulation.</li> <li>Fireblocking will be inspected during the rough framing inspection</li> <li>Some electrical and plumbing inspectors will look for fireblocking measures, but if your MEP contractors have missed these you can usually correct and ask them to inspect on the rough building inspection.</li> <li>If fireblocking is missing during the rough building inspection, you can often ask the inspector to check those spots on the insulation inspection which follows.</li> <li>Special focus areas: garage common wall <em>(R302.6)</em>, open-web floor trusses over finished basements, stair stringers <em>(R302.7)</em>, and soffit chases.</li> <li>Garages: Garage is required to be separated from the residence and its attic area with no less than 1/2” gypsum board applied to the garage side, 5/8" Type X on ceiling of garage with living space above. Doors between house and garage are required to be a minimum of 1 3/8” thick solid wood or honeycomb steel, or a 20-minute fire-rated door.</li>
-</ul> <h2 class="wp-block-heading">Client Interaction / Communication Notes</h2> <ul class="wp-block-list">
-<li>Fireblocking is an important part of the build that means safety for the occupants. Some homeowners are not interested, but it is critical to get this right.</li>
-</ul> <h2 class="wp-block-heading">Common Issues & How to Avoid Them</h2> <ul class="wp-block-list">
-<li><strong>Dropped soffits unblocked</strong> – Pre-rock with drywall strips or block with lumber.</li> <li><strong>Rated Walls </strong>- Make sure to install firestopping caulk in rated wall assemblies per the instructions, and not fireblocking foam which is not compliant.</li> <li><strong>Draftstopping forgotten in open-web floors</strong> – Add to framing punch list before calling for inspection.</li>
-</ul> <h2 class="wp-block-heading">Fireblocking Materials</h2> <figure class="wp-block-table"><table class="has-fixed-layout"><thead><tr><th>Blocking / Draftstop Material</th><th>Code Reference</th></tr></thead><tbody><tr><td>2 × sawn lumber</td><td>R302.11.1 #1</td></tr><tr><td>(2) 1 × boards with lap joint</td><td>#2</td></tr><tr><td>¾-in plywood or OSB</td><td>#3</td></tr><tr><td>½-in gypsum board</td><td>#5</td></tr><tr><td>¼-in cement millboard</td><td>#6</td></tr><tr><td>Mineral-wool / fiberglass batts (packed)</td><td>#7</td></tr><tr><td>Orange “fireblock” PU foam*</td><td>R302.11 Item 4</td></tr><tr><td>Red intumescent firestop caulk / collars*</td><td>R302.4</td></tr></tbody></table></figure> <p><em>*Foam and caulk must be <strong>specifically labeled</strong> for the intended use; orange foam is <strong>not</strong> a substitute for listed firestop caulk.</em></p> <h2 class="wp-block-heading">Resources</h2> <ul class="wp-block-list">
-<li>2015 Michigan Residential Code: R302.4, R302.11, R302.12 (ICC, 2015)</li> <li>2021 International Residential Code: same sections (ICC, 2021)</li> <li>ICC Residential Code Commentary Vol 1, pp. 139–147 (ICC, 2021)</li> <li>Hilti Firestop Systems Guide, System CFS-SL GA 0017 (Hilti, 2024)</li> <li>APA Technical Note “Blocking & Bridging” (APA – The Engineered Wood Assoc., 2023)</li>
-</ul>
-<p>
-    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-    <br>
-    <p><small>Last revised: 01/20/2026</small></p>
-</p>
+            <p>Fireblocking and draftstopping are building code requirements designed to slow the spread of fire and smoke through concealed spaces in wood-framed construction. Think of them as internal speed bumps that give occupants more time to escape and firefighters more time to respond. Fireblocking cuts off vertical draft paths in walls and other concealed spaces, while draftstopping divides large horizontal areas like attics and floor cavities into smaller compartments.</p>
+
+            <p>These measures are distinct from firestopping, which refers to protecting penetrations in fire-rated assemblies like garage walls or townhouse separation walls. All three are required by the <a href="https://codes.iccsafe.org/content/MIRC2015" target="_blank" rel="noopener">2015 Michigan Residential Code</a> and <a href="https://codes.iccsafe.org/content/IRC2021P2" target="_blank" rel="noopener">2021 International Residential Code</a>.</p>
+
+            <h2>Prerequisites</h2>
+            <p>Fireblocking is installed after framing is complete and mechanical rough-ins are drilled, but before insulation. You need clear access to stud bays, floor cavities, and other concealed spaces. The work should be photographed before insulation is installed for inspector and client records.</p>
+
+            <h2>Materials / Tools Needed</h2>
+            <ul>
+                <li>2× sawn lumber cut-offs</li>
+                <li>Two 1× boards with lap joint (alternative to 2× lumber)</li>
+                <li>¾" plywood or OSB</li>
+                <li>½" gypsum board (drywall)</li>
+                <li>¼" cement millboard or ⅜" particleboard</li>
+                <li>Mineral wool or unfaced fiberglass batts (must be packed tight)</li>
+                <li>Orange "fireblock" polyurethane foam (one or two component)</li>
+                <li>Red intumescent firestop caulk or collars (for rated assemblies only)</li>
+                <li>Framing nails, screws</li>
+                <li>Saw, hammer or drill</li>
+                <li>Camera for documentation</li>
+            </ul>
+
+            <h2>Process</h2>
+            <ol>
+                <li><strong>Identify locations requiring fireblocking</strong> - Walk the framing and mark every location where fireblocking is required (see "Where to Install Fireblocking" section below).</li>
+                <li><strong>Install solid fireblocking materials</strong> - Cut 2× lumber, plywood, or drywall to fit snugly between framing members. Material should be flush with framing faces and tightly fitted to prevent gaps.</li>
+                <li><strong>Use mineral wool or fiberglass where solid blocking is impractical</strong> - Pack the material tightly to completely fill the cavity. Loose or poorly packed insulation does not meet code.</li>
+                <li><strong>Seal top and bottom plate penetrations</strong> - Wherever pipes, cables, or ducts pass through top or bottom plates, seal around them with orange fireblock foam or mineral wool.</li>
+                <li><strong>Install draftstops in large horizontal cavities</strong> - Divide attics, soffits, and open-web floor systems into sections of 1,000 square feet or less using drywall or OSB.</li>
+                <li><strong>Apply firestop caulk or collars to rated penetrations</strong> - In garage walls, townhouse separation walls, or other fire-rated assemblies, use red intumescent firestop products per the listed UL system. Do not use orange fireblock foam for this purpose.</li>
+                <li><strong>Photograph all work</strong> - Take detailed photos of every fireblocking location before insulation covers the work. These photos serve as documentation for the inspector and as records for the homeowner.</li>
+            </ol>
+
+            <h2>Where to Install Fireblocking</h2>
+            <p>Code requires fireblocking in the following locations:</p>
+            <ul>
+                <li><strong>At ceiling and floor levels</strong> - Block stud bays at the top and bottom plates where walls meet floors or ceilings.</li>
+                <li><strong>Every 10 feet vertically</strong> - In walls taller than 10 feet, install horizontal blocking to divide the cavity into sections no more than 10 feet tall.</li>
+                <li><strong>At soffits and dropped ceilings</strong> - Block the cavity between the soffit framing and the wall studs to prevent vertical draft.</li>
+                <li><strong>At stair stringers</strong> - Block the triangular cavities between stair stringers and the wall.</li>
+                <li><strong>Between floors in multi-story construction</strong> - Block where floor joists meet exterior walls and at the rim joist.</li>
+                <li><strong>At connections between horizontal and vertical spaces</strong> - Any location where a concealed vertical space (like a stud bay) connects to a concealed horizontal space (like a floor joist cavity).</li>
+                <li><strong>Around chimneys and fireplaces</strong> - Block the space between framing and masonry chimneys.</li>
+                <li><strong>At wall and partition intersections</strong> - Where walls meet, block to prevent fire spread between cavities.</li>
+            </ul>
+
+            <h2>Approved Materials</h2>
+            <p>The following materials are approved for fireblocking and draftstopping per the building code:</p>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+                <thead>
+                    <tr style="background-color: #f2f2f2;">
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Material</th>
+                        <th style="border: 1px solid #ddd; padding: 12px; text-align: left;">Code Reference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">2× sawn lumber</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">R302.11.1 #1</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Two 1× boards with lap joint</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">#2</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">¾" plywood or OSB</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">#3</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">½" gypsum board</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">#5</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">¼" cement millboard</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">#6</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Mineral wool or fiberglass batts (tightly packed)</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">#7</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Orange "fireblock" polyurethane foam*</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">R302.11 Item 4</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Red intumescent firestop caulk/collars**</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">R302.4</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><em>*Foam must be specifically labeled as "fireblock" foam. Check the can before purchasing.</em></p>
+            <p><em>**Firestop products are only for rated assemblies and must be tested to ASTM E814 or UL 1479. Orange fireblock foam is NOT a substitute for red firestop caulk.</em></p>
+
+            <h2>Garage Separation Requirements</h2>
+            <p>Garages attached to the house have special fire separation requirements beyond standard fireblocking:</p>
+            <ul>
+                <li><strong>Garage walls:</strong> Minimum ½" gypsum board (drywall) on the garage side of all walls separating the garage from the house or its attic.</li>
+                <li><strong>Garage ceiling with habitable space above:</strong> Minimum ⅝" Type X gypsum board on the garage ceiling.</li>
+                <li><strong>Doors between garage and house:</strong> Minimum 1⅜" thick solid wood, solid core, or honeycomb steel door, or 20-minute fire-rated door. Door must be self-closing or automatic-closing.</li>
+                <li><strong>Penetrations:</strong> All penetrations through garage separation walls (pipes, ducts, wires) must be sealed with listed firestop materials per R302.4.</li>
+            </ul>
+
+            <h2>Best Practices</h2>
+            <ul>
+                <li><strong>Plan ahead:</strong> Add fireblocking to your framing checklist and walk the frame with your framer before rough-ins begin to identify all locations.</li>
+                <li><strong>Use scrap lumber:</strong> Fireblocking is a great use for framing cut-offs. Keep a pile of short 2× pieces on site for this purpose.</li>
+                <li><strong>Pre-rock soffits:</strong> Install drywall strips in dropped soffits during framing rather than trying to retrofit blocking later.</li>
+                <li><strong>Mark your foam:</strong> Only use orange foam labeled specifically as "fireblock" or "fire blocking." Regular expanding foam does not meet code.</li>
+                <li><strong>Don't confuse fireblock and firestop:</strong> Orange fireblock foam is for concealed cavities. Red firestop caulk is for rated assemblies. They are not interchangeable.</li>
+                <li><strong>Photograph everything:</strong> Take photos before insulation. Inspectors appreciate documentation, and it protects you if questions arise later.</li>
+                <li><strong>Coordinate with trades:</strong> Fireblocking is easier before plumbers and electricians drill holes everywhere. Install what you can early, then seal penetrations after rough-ins.</li>
+            </ul>
+
+            <h2>Common Issues & How to Avoid Them</h2>
+            <ul>
+                <li><strong>Dropped soffits left unblocked:</strong> This is one of the most commonly missed items. Install drywall strips or solid blocking where soffits meet walls during framing, not after drywall is hung.</li>
+                <li><strong>Using wrong foam in rated walls:</strong> Orange fireblock foam is not approved for fire-rated assemblies like garage walls. Use red intumescent firestop caulk or collars per the listed system.</li>
+                <li><strong>Forgetting draftstops in open-web floor trusses:</strong> Floor trusses over basements or crawl spaces create large horizontal cavities that must be divided into 1,000 square foot sections. Add this to your framing checklist.</li>
+                <li><strong>Loose-packed insulation:</strong> Fiberglass or mineral wool only works as fireblocking if it's tightly packed to completely fill the cavity. Inspectors will call this out if it's loose.</li>
+                <li><strong>Missing plate penetrations:</strong> Every pipe, wire, and duct that passes through a top or bottom plate needs to be sealed. Walk the job with orange foam in hand after rough-ins are complete.</li>
+                <li><strong>No documentation:</strong> If you don't photograph the work before insulation, you'll have no proof it was done correctly. Take the time to document.</li>
+            </ul>
+
+            <h2>Inspections</h2>
+            <p>Fireblocking and draftstopping are inspected during the rough framing inspection, which cannot occur until after all rough-ins (plumbing, electrical, HVAC) are complete. The rough framing inspection happens before insulation is installed.</p>
+
+            <p>Some electrical and plumbing inspectors will check fireblocking during their inspections, but the primary inspection occurs at rough framing. If fireblocking is missing during rough framing, you may be able to complete it and have the inspector verify on the insulation inspection that follows, but this varies by jurisdiction.</p>
+
+            <p><strong>Inspectors will pay special attention to:</strong></p>
+            <ul>
+                <li>Garage common walls and ceilings (R302.6)</li>
+                <li>Open-web floor trusses over finished basements</li>
+                <li>Stair stringers and the cavities around them (R302.7)</li>
+                <li>Soffit and dropped ceiling chases</li>
+                <li>Top and bottom plate penetrations</li>
+                <li>Walls over 10 feet tall (must have mid-height blocking)</li>
+                <li>Proper materials used (solid blocking, tight-packed insulation, labeled foam)</li>
+            </ul>
+
+            <h2>Client Communication</h2>
+            <p>Fireblocking is a safety requirement that protects the homeowner and their family by slowing fire spread and giving more time to escape. Most clients don't think about this aspect of construction, but it's worth explaining why the work is important and showing them the photos of completed fireblocking before insulation goes in.</p>
+
+            <p>Some clients may question why you're spending time and money on something they can't see in the finished product. Explain that building codes exist to protect life safety, and fireblocking is one of the most important invisible systems in their home. It's not optional, and cutting corners here puts everyone at risk.</p>
+
+            <h2>Resources</h2>
+            <ul>
+                <li>2015 Michigan Residential Code: R302.4, R302.11, R302.12 (ICC, 2015)</li>
+                <li>2021 International Residential Code: R302.4, R302.11, R302.12 (ICC, 2021)</li>
+                <li>ICC Residential Code Commentary Vol 1, pp. 139–147 (ICC, 2021)</li>
+                <li>Hilti Firestop Systems Guide (Hilti, 2024)</li>
+                <li>APA Technical Note "Blocking & Bridging" (APA – The Engineered Wood Association, 2023)</li>
+                <li><a href="framing.html">Framing</a></li>
+            </ul>
+
+            <p>
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <p><small>Last revised: 01/28/2026</small></p>
+            </p>
+
+            <script>
+                // Share button
+                const shareBtn = document.getElementById('share-btn');
+                if (shareBtn && navigator.share) {
+                    shareBtn.addEventListener('click', () => {
+                        navigator.share({
+                            title: 'Fireblocking and Draftstopping',
+                            url: window.location.href
+                        }).catch(() => {
+                            // user cancelled or share failed; do nothing
+                        });
+                    });
+                } else if (shareBtn) {
+                    // Hide button if Web Share API isn't available
+                    shareBtn.style.display = 'none';
+                }
+                // Print button
+                const printBtn = document.getElementById('print-btn');
+                if (printBtn) {
+                    printBtn.addEventListener('click', () => {
+                        window.print();
+                    });
+                }
+            </script>
+        </article>
+    </main>
+</div>
 
 <script>
-  // Share button
-  const shareBtn = document.getElementById('share-btn');
-  if (shareBtn && navigator.share) {
-    shareBtn.addEventListener('click', () => {
-      navigator.share({
-        title: 'Fireblocking and Draftstopping',
-        url: window.location.href
-      }).catch(() => {
-        // user cancelled or share failed; do nothing
-      });
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
     });
-  } else if (shareBtn) {
-    // Hide button if Web Share API isn't available
-    shareBtn.style.display = 'none';
-  }
-  // Print button
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
 </script>
 
-            </article>
-        </main>
-    </div>
-
-    <script>
-        // Mobile navigation toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.mobile-nav-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            if (navToggle && sidebar) {
-                navToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                            sidebar.classList.remove('active');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
 </body>
 </html>

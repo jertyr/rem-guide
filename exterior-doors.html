@@ -3,216 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exterior Doors | Remodelers Guide - The Remodelers Guide">
+    <meta name="description" content="Exterior Doors | Remodelers Guide">
     <title>Exterior Doors | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
-        .nav-item.active-section .submenu {
-            display: block !important;
-            max-height: none !important;
-        }
-
-        /* Highlight active links */
-        .sidebar nav a.active {
-            background: #d4edda;
-            color: #155724;
-            font-weight: 700;
-            border-left-color: #2c5f2d;
-        }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
         }
     </style>
-
 </head>
 <body>
 <header>
-        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
-    </header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
 
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
 
-    <div class="main-wrapper">
-        <aside class="sidebar">
-<nav>
-                <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
                 <li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item"><a href="windows.html">Windows</a></li>
-					<li class="nav-item active-section"><a href="exterior-doors.html" class="active">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
-            </nav>
-        </aside>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item active-section"><a href="exterior-doors.html" class="active">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main style="margin-left: 280px; padding: 2rem;">
-            <article>
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <h1>Exterior Doors</h1>
 
-                <h1 class="wp-block-heading">Exterior Doors</h1> <h2 class="wp-block-heading">TLDR</h2> <ul class="wp-block-list">
-<li>Prep
-<ul class="wp-block-list">
-<li>Pull some trim to measure the rough opening</li> <li>Remember to note swing and door jamb depth</li> <li>Fill out the Door Order Form</li> <li>Dont forget handles</li>
-</ul>
-</li> <li>Materials
-<ul class="wp-block-list">
-<li>Shims</li> <li>Foam</li> <li>Sealant</li> <li>Flashing tape</li>
-</ul>
-</li> <li>Installation
-<ul class="wp-block-list">
-<li>Site protection</li> <li>Pull trim</li> <li>Remove door</li> <li>Flash</li> <li>Install door</li>
-</ul>
-</li>
-</ul> <h3 class="wp-block-heading">Overview</h3> <p>Exterior doors come in all different sizes and types. Like windows their specifications are detailed and complicated. Single, double, transoms, sidelights, fire ratings, self closing, inswing, outswing etc there is a lot to consider.</p> <h3 class="wp-block-heading">Prerequisites</h3> <ul class="wp-block-list">
-<li>Before you order, determine the RO, size, and depth</li> <li>Check the Door Order Checklist</li>
-</ul> <h3 class="wp-block-heading">Materials / Tools Needed</h3> <ul class="wp-block-list">
-<li>Tape measure and level</li> <li>Pry bar, hammer, 3" screws, trim nails</li> <li>Sill-pan flashing tape or metal</li> <li>Silicone</li> <li>Shims</li> <li>Low-expansion foam OR backer-rod and sealant
-<ul class="wp-block-list">
-<li>There are good options to tape the interior as well</li>
-</ul>
-</li> <li>Drip cap (if not integral)</li> <li>Interior casing, exterior trim or coil stock, paint/caulk</li> <li>Door handle</li>
-</ul> <h3 class="wp-block-heading">Process</h3> <ol class="wp-block-list">
-<li>Ordering doors
-<ul class="wp-block-list">
-<li>Remove a trim board, record RO dimensions</li> <li>Confirm style with the client</li> <li>Pick a door handle</li> <li>Request a quote from a dealer</li> <li>Confirm pricing and style with client</li> <li>Place the order</li>
-</ul>
-</li> <li>Installation
-<ul class="wp-block-list">
-<li>Protect finishes</li> <li>Remove ext trim and interior trim if necessary</li> <li>Remove old door</li> <li>Install sill pan flashing</li> <li>Install door
-<ul class="wp-block-list">
-<li>Confirm sill is level</li> <li>Confirm bottom of door sill is flat and will form a seal with the sill pan</li> <li>Set door in a bed of silicone or similar sealant
-<ul class="wp-block-list">
-<li>Slope sill and backdam if possible or if sealant will not be practical</li>
-</ul>
-</li> <li>Fasten bottom corners</li> <li>Plumb sides and fasten top corners</li> <li>Tape exterior sides then top</li>
-</ul>
-</li> <li>Install door handle</li>
-</ul>
-</li> <li>Spray low expanding foam from the interior between the door and the rough opening
-<ul class="wp-block-list">
-<li>Or install backer rod and sealant</li> <li>Or tape the frame to the rough opening with insulation of your choice behind</li>
-</ul>
-</li> <li>Install interior casing; add exterior drip cap and trim or coil wrap, then paint/caulk</li>
-</ol> <h3 class="wp-block-heading">Inspections</h3> <p>Doors separating attached garages from living spaces will likely have a fire rating. The 2021 IRC requires these doors to be self closing and latching.</p> <h3 class="wp-block-heading">Best Practices / Pro Tips</h3> <p>Flash the opening and take photos during the installation process to verify that the door was sealed correctly. Doors often don't include a nailing flange like North American windows, so special attention needs to be paid to these steps.</p> <h3 class="wp-block-heading">Client Interaction / Communication Notes</h3> <ul class="wp-block-list">
-<li>Advise that interior trim will not survive demo and will be replaced.</li> <li>Animals must be secured because the house will be open for a few hours during replacement.</li> <li>Sometimes the new door requires shoe moulding or similar trim on the interior side because the threshold is thicker or doesn't align with the old flooring depending on how plumb and square the opening is in the home.</li> <li>The builder should determine the size and fit of the new door and guide the client on a style that meets their goals.</li>
-</ul> <h3 class="wp-block-heading">Door Specification Examples</h3> <p>This is an example of a double door quote with a fixed and active swing panel.</p> <figure class="wp-block-image size-large"><img src="images/windows-door-quote-example.jpg" alt="" class="wp-image-330" /></figure> <p>This is an example from another brand</p> <figure class="wp-block-image size-large"><img src="images/windows-example-quote-2.jpg" alt="" class="wp-image-331" /></figure> <figure class="wp-block-image size-large"><img src="images/doors-sill-flashing.jpg" alt="" class="wp-image-334" /></figure> <figure class="wp-block-image size-large"><img src="images/doors-sill-sealant.jpg" alt="" class="wp-image-335" /></figure> <figure class="wp-block-image size-large"><img src="images/doors-foamed.jpg" alt="" class="wp-image-336" /></figure> <p></p> <h2 class="wp-block-heading">Resources</h2> <p><a href="exterior-door-order-form.html">Exterior Door Order Form</a></p> <p><a href="window-and-door-install-checklist.html">Window and Door Install Checklist</a></p>
-<p>
-    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-    <br>
-    <p><small>Last revised: 01/20/2026</small></p>
-</p>
+            <p>Exterior doors come in many configurations: single, double, with transoms or sidelights, fire-rated, self-closing, inswing, and outswing. Unlike windows, most doors lack a nailing flange, so proper sill flashing and sealing require extra attention.</p>
+
+            <h2>Quick Reference</h2>
+
+            <ul>
+                <li>Pull trim to measure the rough opening; note swing direction and jamb depth</li>
+                <li>Use the <a href="exterior-door-order-form.html">Door Order Form</a> and don't forget the handle</li>
+                <li>Flash with a sill pan first, set door in a bed of sealant, tape sides then top</li>
+                <li>Air-seal from interior with low-expansion foam or backer-rod + sealant</li>
+                <li>Code hot-spots: garage-to-house doors require fire rating, self-closing, and self-latching (2021 IRC)</li>
+            </ul>
+
+            <h2>Materials and Tools</h2>
+
+            <ul>
+                <li>Tape measure and level</li>
+                <li>Pry bar, hammer, 3" screws, trim nails</li>
+                <li>Sill-pan flashing tape or metal</li>
+                <li>Silicone sealant</li>
+                <li>Shims</li>
+                <li>Low-expansion foam OR backer-rod and sealant</li>
+                <li>Drip cap (if not integral)</li>
+                <li>Interior casing, exterior trim or coil stock, paint/caulk</li>
+                <li>Door handle and lockset</li>
+            </ul>
+
+            <h2>Process</h2>
+
+            <ul>
+                <li>Ordering
+                    <ul>
+                        <li>Remove a trim board to record the rough opening dimensions</li>
+                        <li>Note the swing direction and jamb depth</li>
+                        <li>Confirm door style with the client</li>
+                        <li>Select a door handle</li>
+                        <li>Request a quote from a dealer</li>
+                        <li>Review pricing and specifications with the client</li>
+                        <li>Place the order once approved</li>
+                    </ul>
+                </li>
+                <li>Installation
+                    <ul>
+                        <li>Protect finished surfaces</li>
+                        <li>Remove exterior trim and interior trim if necessary</li>
+                        <li>Remove the old door</li>
+                        <li>Install sill pan flashing</li>
+                        <li>Set the door:
+                            <ul>
+                                <li>Confirm sill is level</li>
+                                <li>Verify door sill bottom is flat and will seal against the sill pan</li>
+                                <li>Set door in a bed of silicone (slope sill and add a back-dam if sealant is impractical)</li>
+                                <li>Fasten bottom corners</li>
+                                <li>Plumb the sides and fasten top corners</li>
+                                <li>Tape exterior sides then top</li>
+                            </ul>
+                        </li>
+                        <li>Install the door handle</li>
+                    </ul>
+                </li>
+                <li>Finishing
+                    <ul>
+                        <li>Air-seal from the interior:
+                            <ul>
+                                <li>Spray low-expansion foam between door frame and rough opening, OR</li>
+                                <li>Install backer rod with sealant, OR</li>
+                                <li>Tape the frame to the rough opening with insulation behind</li>
+                            </ul>
+                        </li>
+                        <li>Install interior casing</li>
+                        <li>Install exterior drip cap (if not integral)</li>
+                        <li>Install exterior trim or coil wrap</li>
+                        <li>Paint and caulk as needed</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Best Practices</h2>
+
+            <ul>
+                <li>Flash the opening and take photos during installation to verify proper sealing</li>
+                <li>Doors often lack a nailing flange, so pay extra attention to sill pan installation and sealant</li>
+                <li>Slope the rough sill to create drainage before flashing</li>
+                <li>Add a back-dam on the interior sill edge to stop inward leaks</li>
+            </ul>
+
+            <h2>Inspections</h2>
+
+            <p>Doors separating attached garages from living spaces have fire rating requirements. The 2021 IRC requires these doors to be self-closing and self-latching.</p>
+
+            <h2>Client Communication</h2>
+
+            <ul>
+                <li>Advise that interior trim may not survive demo; budget for replacement</li>
+                <li>Pets must be secured while the house is open during replacement</li>
+                <li>The new door may require shoe moulding or interior threshold trim if the threshold is thicker or doesn't align with existing flooring</li>
+                <li>The builder should determine the size and fit and guide the client on a style that meets their goals</li>
+            </ul>
+
+            <h2>Door Specification Examples</h2>
+
+            <h3>Example Double Door Quote</h3>
+
+            <p>This is an example of a double door quote with a fixed and active swing panel.</p>
+
+            <figure>
+                <img src="images/windows-door-quote-example.jpg" alt="Double door quote example" />
+            </figure>
+
+            <figure>
+                <img src="images/windows-example-quote-2.jpg" alt="Door quote example 2" />
+            </figure>
+
+            <h3>Sill Flashing and Installation</h3>
+
+            <figure>
+                <img src="images/doors-sill-flashing.jpg" alt="Door sill flashing example" />
+            </figure>
+
+            <figure>
+                <img src="images/doors-sill-sealant.jpg" alt="Door sill sealant example" />
+            </figure>
+
+            <figure>
+                <img src="images/doors-foamed.jpg" alt="Door foamed around frame" />
+            </figure>
+
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="exterior-door-order-form.html">Exterior Door Order Form</a></li>
+                <li><a href="window-and-door-install-checklist.html">Window and Door Install Checklist</a></li>
+            </ul>
+
+            <p>
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 01/29/2026</small>
+            </p>
+
+            <script>
+                // Share button
+                const shareBtn = document.getElementById('share-btn');
+                if (shareBtn && navigator.share) {
+                    shareBtn.addEventListener('click', () => {
+                        navigator.share({
+                            title: document.title || 'Exterior Doors',
+                            url: window.location.href
+                        }).catch(() => {
+                            // user cancelled or share failed; do nothing
+                        });
+                    });
+                } else if (shareBtn) {
+                    // Hide button if Web Share API isn't available
+                    shareBtn.style.display = 'none';
+                }
+                // Print button
+                const printBtn = document.getElementById('print-btn');
+                if (printBtn) {
+                    printBtn.addEventListener('click', () => {
+                        window.print();
+                    });
+                }
+            </script>
+        </article>
+    </main>
+</div>
 
 <script>
-  // Share button
-  const shareBtn = document.getElementById('share-btn');
-  if (shareBtn && navigator.share) {
-    shareBtn.addEventListener('click', () => {
-      navigator.share({
-        title: 'Exterior Doors',
-        url: window.location.href
-      }).catch(() => {
-        // user cancelled or share failed; do nothing
-      });
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
     });
-  } else if (shareBtn) {
-    // Hide button if Web Share API isn't available
-    shareBtn.style.display = 'none';
-  }
-  // Print button
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
 </script>
 
-            </article>
-        </main>
-    </div>
-
-    <script>
-        // Mobile navigation toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.mobile-nav-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            if (navToggle && sidebar) {
-                navToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                            sidebar.classList.remove('active');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
 </body>
 </html>

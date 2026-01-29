@@ -3,203 +3,314 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Windows | Remodelers Guide - The Remodelers Guide">
+    <meta name="description" content="Windows | Remodelers Guide">
     <title>Windows | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
-        .nav-item.active-section .submenu {
-            display: block !important;
-            max-height: none !important;
-        }
-
-        /* Highlight active links */
-        .sidebar nav a.active {
-            background: #d4edda;
-            color: #155724;
-            font-weight: 700;
-            border-left-color: #2c5f2d;
-        }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
         }
     </style>
-
 </head>
 <body>
 <header>
-        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
-    </header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
 
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
 
-    <div class="main-wrapper">
-        <aside class="sidebar">
-<nav>
-                <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
                 <li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item active-section"><a href="windows.html" class="active">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
-            </nav>
-        </aside>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item active-section"><a href="windows.html" class="active">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main style="margin-left: 280px; padding: 2rem;">
-            <article>
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <h1>Windows</h1>
 
-                <h2 class="wp-block-heading">Windows</h2> <h3 class="wp-block-heading">TLDR</h3> <ul class="wp-block-list">
-<li>Plan to remove trim on the exterior to replace a window, consider removing the interior trim as well</li> <li>Measure the rough opening, not the old sash; order the unit ¼ inch undersize for shimming. Best practice → pop one piece of trim to verify every dimension.</li> <li>Flash with a sill-pan first, then jambs. After insurance tape the sides then top</li> <li>Air-seal and insulate with low-expansion foam or backer-rod + sealant.</li> <li>Confirm smooth operation before and after foaming</li> <li>Code hot-spots: bedroom egress (R310), safety-glazing rules (R308.4.2 & R308.4.3), and ENERGY STAR v7 U-factor ≤ 0.22 in Michigan.</li>
-</ul> <h3 class="wp-block-heading">Overview</h3> <p>Windows touch structure, weather-tightness, finish carpentry, paint, and code compliance. Using new-construction units with flanges lets you tie into the weather-resistive barrier (WRB) properly but requires full access to the rough opening (RO).</p> <h3 class="wp-block-heading">Prerequisites</h3> <ul class="wp-block-list">
-<li>Before you order windows determine the RO size and depth.</li> <li>Check the Window Order Checklist</li>
-</ul> <h3 class="wp-block-heading">Materials / Tools Needed</h3> <ul class="wp-block-list">
-<li>Tape measure and level</li> <li>Pry bar, hammer, and 1.5" roofing nails</li> <li>Sill-pan flashing tape or metal</li> <li>Shims</li> <li>Low-expansion foam OR backer-rod and sealant <ul class="wp-block-list">
-<li>There are good options to take the interior as well a</li>
-</ul>
-</li> <li>Drip cap (if not integral)</li> <li>Interior casing, exterior trim or coil stock, paint/caulk</li>
-</ul> <h3 class="wp-block-heading">Process</h3> <ol class="wp-block-list">
-<li>Ordering windows
-<ul class="wp-block-list">
-<li>Remove a trim board, record RO dimensions</li> <li>Confirm style with the client</li> <li>Request a window quote from a dealer</li> <li>Confirm pricing and style with client</li> <li>Place the order</li>
-</ul>
-</li> <li>Installation
-<ul class="wp-block-list">
-<li>Protect finishes</li> <li>Remove ext trim and interior trim if necessary</li> <li>Install sill pan flashing</li> <li>Install window
-<ul class="wp-block-list">
-<li>Shim up 1/4”, center left to right, tack one bottom corner, level the sill with shims, tack the other bottom corner</li> <li>Check plumb sides, then finish nailing</li> <li>Confirm banks of windows are level with each other and spaced properly</li>
-</ul>
-</li> <li>Tape exterior sides then top</li>
-</ul>
-</li> <li>Spray low expanding foam from the interior between the window and the rough opening
-<ul class="wp-block-list">
-<li>Or install backer rod and sealant</li> <li>Or tape the frame to the rough opening with insulation of your choice behind</li>
-</ul>
-</li> <li>Install interior casing, stool, apron; add exterior drip cap and trim or coil wrap, then paint/caulk.</li>
-</ol> <h3 class="wp-block-heading">Inspections</h3> <p>Windows aren't usually inspected unless as part of a Rough Building or Final Building inspection. The inspector will be looking for the following</p> <ul class="wp-block-list">
-<li><strong>Egress Windows (emergency rescue openings - R310)</strong> – Sill ≤ 44 in. above finished floor; open area ≥ 5.7 ft² (above grade), width ≥ 20 in., height ≥ 24 in.</li> <li><strong>Safety glazing adjacent to doors (R308.4.2)</strong> – Tempered if bottom edge < 60 in tall and glass is within 24 in. of a door</li> <li><strong>Safety glazing in large low windows (R308.4.3)</strong> – Tempered when single lite > 9 ft², bottom < 18 in., top > 36 in., and walking surface within 36 in.</li> <li>Safety glazing in wet areas (R308.4.3) – Tempered when within 60 in. of a source of water (sink, tub, toilet, etc.).</li>
-</ul> <h3 class="wp-block-heading">Best Practices / Pro Tips</h3> <ul class="wp-block-list">
-<li>Run a sealant bead behind top & side flanges (leave bottom open to drain).</li> <li>Slope the rough sill ¼ in. to create downslope before flashing.</li> <li>Add a back-dam on the interior sill edge to stop inward leaks.</li>
-</ul> <h3 class="wp-block-heading">Client Interaction / Communication Notes</h3> <ul class="wp-block-list">
-<li>Advise that interior trim may not survive full-frame demo; budget for replacement.</li> <li>The builder should determine the size and fit of the new windows and guide the client on a style that meets their goals.</li>
-</ul> <h3 class="wp-block-heading">Window Specification Examples</h3> <h4 class="wp-block-heading">Example Proposal/Contract Call Out</h4> <p>This is an example of what may be written in a build contract. Sometimes "final" window decisions are made before the contract is signed, but not always.</p> <figure class="wp-block-image size-large"><img src="images/windows-proposal-text.jpg" alt="" class="wp-image-276" /></figure> <h4 class="wp-block-heading">Example Blueprint Window Schedule</h4> <p>The blueprint often doesn't contain enough information to correctly or fully order a window. Compare the information here to the Example Window Quote below</p> <figure class="wp-block-image size-large"><img src="images/windows-blueprint-schedule.jpg" alt="" class="wp-image-272" /></figure> <h4 class="wp-block-heading">Example Window Quote</h4> <p>Note the jamb thickness, colors, screen style and color, slide direction, material, hardware specifics, etc. </p> <figure class="wp-block-image size-large"><img src="images/windows-example-quote.jpg" alt="" class="wp-image-273" /></figure> <h4 class="wp-block-heading">Additional Example Window Quote</h4> <figure class="wp-block-image size-large"><img src="images/windows-example-quote-3.jpg" alt="" class="wp-image-275" /></figure> <h3 class="wp-block-heading">Resources</h3> <p><a href="window-order-form.html">Window Order Form</a></p> <p><a href="window-and-door-install-checklist.html">Window and Door Install Checklist</a></p> <p>ASTM E2112 - Standard Practice for Installation of Exterior Windows</p> <p>AAMA 2400 - Standard Practice for Installation of Windows with a Mounting Flange</p>
-<p>
-    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-    <br>
-    <p><small>Last revised: 01/20/2026</small></p>
-</p>
+            <p>Windows touch structure, weather-tightness, finish carpentry, paint, and code compliance. Using new-construction units with flanges lets you tie into the weather-resistive barrier (WRB) properly but requires full access to the rough opening (RO).</p>
+
+            <h2>Quick Reference</h2>
+
+            <ul>
+                <li>Plan to remove trim on the exterior to replace a window; consider removing the interior trim as well</li>
+                <li>Measure the rough opening, not the old sash; order the unit ¼" undersize for shimming. Best practice: pop one piece of trim to verify every dimension.</li>
+                <li>Flash with a sill-pan first, then jambs. After, tape the sides then top.</li>
+                <li>Air-seal and insulate with low-expansion foam or backer-rod + sealant</li>
+                <li>Confirm smooth operation before and after foaming</li>
+                <li>Code hot-spots: bedroom egress (R310), safety-glazing rules (R308.4.2 & R308.4.3), and ENERGY STAR v7 U-factor ≤ 0.22 in Michigan</li>
+            </ul>
+
+            <h2>Before You Start</h2>
+
+            <ul>
+                <li>Determine the rough opening (RO) size and depth</li>
+                <li>Review the <a href="window-order-form.html">Window Order Form</a></li>
+            </ul>
+
+            <h2>Materials and Tools</h2>
+
+            <ul>
+                <li>Tape measure and level</li>
+                <li>Pry bar, hammer, and 1.5" roofing nails</li>
+                <li>Sill-pan flashing tape or metal</li>
+                <li>Shims</li>
+                <li>Low-expansion foam OR backer-rod and sealant</li>
+                <li>Drip cap (if not integral)</li>
+                <li>Interior casing, exterior trim or coil stock, paint/caulk</li>
+            </ul>
+
+            <h2>Process</h2>
+
+            <h3>Ordering Windows</h3>
+
+            <ol>
+                <li>Remove a trim board and record rough opening dimensions</li>
+                <li>Confirm style with the client</li>
+                <li>Request a window quote from a dealer</li>
+                <li>Confirm pricing and style with client</li>
+                <li>Place the order</li>
+            </ol>
+
+            <h3>Installation</h3>
+
+            <ol>
+                <li>Protect finishes</li>
+                <li>Remove exterior trim and interior trim if necessary</li>
+                <li>Install sill pan flashing</li>
+                <li>Install window:
+                    <ul>
+                        <li>Shim up ¼", center left to right, tack one bottom corner</li>
+                        <li>Level the sill with shims, tack the other bottom corner</li>
+                        <li>Check plumb on both sides, then finish nailing</li>
+                        <li>Confirm banks of windows are level with each other and spaced properly</li>
+                    </ul>
+                </li>
+                <li>Tape exterior sides then top</li>
+            </ol>
+
+            <h3>Air Sealing</h3>
+
+            <p>Spray low-expanding foam from the interior between the window and the rough opening. Alternatives:</p>
+
+            <ul>
+                <li>Install backer rod and sealant</li>
+                <li>Tape the frame to the rough opening with insulation of your choice behind</li>
+            </ul>
+
+            <h3>Finish Work</h3>
+
+            <p>Install interior casing, stool, and apron. Add exterior drip cap and trim or coil wrap, then paint/caulk.</p>
+
+            <h2>Best Practices</h2>
+
+            <ul>
+                <li>Run a sealant bead behind top and side flanges (leave bottom open to drain)</li>
+                <li>Slope the rough sill ¼" to create a downslope before flashing</li>
+                <li>Add a back-dam on the interior sill edge to stop inward leaks</li>
+            </ul>
+
+            <h2>Inspections</h2>
+
+            <p>Windows aren't usually inspected individually but are reviewed as part of Rough Building or Final Building inspections. The inspector will check the following:</p>
+
+            <h3>Egress Windows (R310)</h3>
+
+            <p>Emergency rescue openings require:</p>
+
+            <ul>
+                <li>Sill height ≤ 44" above finished floor</li>
+                <li>Open area ≥ 5.7 ft² (above grade)</li>
+                <li>Width ≥ 20"</li>
+                <li>Height ≥ 24"</li>
+            </ul>
+
+            <h3>Safety Glazing Adjacent to Doors (R308.4.2)</h3>
+
+            <p>Tempered glass required when:</p>
+
+            <ul>
+                <li>Bottom edge is less than 60" above the floor</li>
+                <li>Glass is within 24" of a door</li>
+            </ul>
+
+            <h3>Safety Glazing in Large Low Windows (R308.4.3)</h3>
+
+            <p>Tempered glass required when all of the following apply:</p>
+
+            <ul>
+                <li>Single lite greater than 9 ft²</li>
+                <li>Bottom edge less than 18" above floor</li>
+                <li>Top edge more than 36" above floor</li>
+                <li>Walking surface within 36"</li>
+            </ul>
+
+            <h3>Safety Glazing in Wet Areas (R308.4.5)</h3>
+
+            <p>Tempered glass required when within 60" of a source of water (sink, tub, toilet, etc.).</p>
+
+            <h2>Client Communication</h2>
+
+            <ul>
+                <li>Advise that interior trim may not survive full-frame demo; budget for replacement</li>
+                <li>The builder should determine the size and fit of the new windows and guide the client on a style that meets their goals</li>
+            </ul>
+
+            <h2>Window Specification Examples</h2>
+
+            <h3>Example Proposal/Contract Call Out</h3>
+
+            <p>This is an example of what may be written in a build contract. Sometimes "final" window decisions are made before the contract is signed, but not always.</p>
+
+            <figure>
+                <img src="images/windows-proposal-text.jpg" alt="Example proposal text for window specifications" />
+            </figure>
+
+            <h3>Example Blueprint Window Schedule</h3>
+
+            <p>The blueprint often doesn't contain enough information to correctly or fully order a window. Compare the information here to the Example Window Quote below.</p>
+
+            <figure>
+                <img src="images/windows-blueprint-schedule.jpg" alt="Blueprint window schedule example" />
+            </figure>
+
+            <h3>Example Window Quotes</h3>
+
+            <p>Note the jamb thickness, colors, screen style and color, slide direction, material, hardware specifics, etc.</p>
+
+            <figure>
+                <img src="images/windows-example-quote.jpg" alt="Window quote example 1" />
+            </figure>
+
+            <figure>
+                <img src="images/windows-example-quote-3.jpg" alt="Window quote example 2" />
+            </figure>
+
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="window-order-form.html">Window Order Form</a></li>
+                <li><a href="window-and-door-install-checklist.html">Window and Door Install Checklist</a></li>
+                <li>ASTM E2112 - Standard Practice for Installation of Exterior Windows</li>
+                <li>AAMA 2400 - Standard Practice for Installation of Windows with a Mounting Flange</li>
+            </ul>
+
+            <p>
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 01/29/2026</small>
+            </p>
+
+            <script>
+                // Share button
+                const shareBtn = document.getElementById('share-btn');
+                if (shareBtn && navigator.share) {
+                    shareBtn.addEventListener('click', () => {
+                        navigator.share({
+                            title: document.title || 'Windows',
+                            url: window.location.href
+                        }).catch(() => {
+                            // user cancelled or share failed; do nothing
+                        });
+                    });
+                } else if (shareBtn) {
+                    // Hide button if Web Share API isn't available
+                    shareBtn.style.display = 'none';
+                }
+                // Print button
+                const printBtn = document.getElementById('print-btn');
+                if (printBtn) {
+                    printBtn.addEventListener('click', () => {
+                        window.print();
+                    });
+                }
+            </script>
+        </article>
+    </main>
+</div>
 
 <script>
-  // Share button
-  const shareBtn = document.getElementById('share-btn');
-  if (shareBtn && navigator.share) {
-    shareBtn.addEventListener('click', () => {
-      navigator.share({
-        title: 'Windows',
-        url: window.location.href
-      }).catch(() => {
-        // user cancelled or share failed; do nothing
-      });
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
     });
-  } else if (shareBtn) {
-    // Hide button if Web Share API isn't available
-    shareBtn.style.display = 'none';
-  }
-  // Print button
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
 </script>
 
-            </article>
-        </main>
-    </div>
-
-    <script>
-        // Mobile navigation toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.mobile-nav-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            if (navToggle && sidebar) {
-                navToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                            sidebar.classList.remove('active');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
 </body>
 </html>

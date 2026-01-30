@@ -3,186 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gutters | Remodelers Guide - The Remodelers Guide">
+    <meta name="description" content="Gutters | Remodelers Guide">
     <title>Gutters | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
-        .nav-item.active-section .submenu {
-            display: block !important;
-            max-height: none !important;
-        }
-
-        /* Highlight active links */
-        .sidebar nav a.active {
-            background: #d4edda;
-            color: #155724;
-            font-weight: 700;
-            border-left-color: #2c5f2d;
-        }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
         }
     </style>
-
 </head>
 <body>
 <header>
-        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
-    </header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
 
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
 
-    <div class="main-wrapper">
-        <aside class="sidebar">
-<nav>
-                <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
                 <li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item"><a href="windows.html">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item active-section"><a href="gutters.html" class="active">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
-            </nav>
-        </aside>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
+                <li class="nav-item active-section"><a href="gutters.html" class="active">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main style="margin-left: 280px; padding: 2rem;">
-            <article>
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <h1>Gutters</h1>
 
-                <h2 class="wp-block-heading">TLDR</h2> <ul class="wp-block-list">
-<li>Choose 5 or 6 in</li> <li>2 × 3 downspout per 600 ft² roof min</li> <li>3 × 4 downspout per 1,200 ft² roof min</li> <li>Downspout every 20 – 80 ft; upsize or add downspouts to suit</li> <li>Gutter guards</li>
-</ul> <h2 class="wp-block-heading">Overview</h2> <p>K-style style gutters are common in the US. The name comes from the shape of the gutter in cross-section and it's based on the Roman ogee shape, meant to replicate crown moulding profiles. Many installers can make 5" or 6" troughs and will install 2x3" downspouts or 3x4" downspouts. Often we treat the smaller sizes as more appropriate for residential use, and larger for commercial use but they can be mixed and matched.</p> <p>Half-round profiles appear on historic or high-design projects but follow the same layout rules. Subcontractors roll-form continuous troughs on site, leaving the general contractor responsible for sizing, location decisions, and quality checks.</p> <h2 class="wp-block-heading">Prerequisites</h2> <ul class="wp-block-list">
-<li>Fascia boards and drip edge <strong>installed and painted</strong> (if required) before gutter crew arrives.</li> <li>Measure roof-plan areas to confirm gutter/downspout sizing (see TLDR figures).</li> <li>Confirm discharge path—splash block, kick-out, or underground drain (verify daylight outlet).</li> <li>Decide with client on guard need and style (optional).</li> <li>Schedule gutter sub after roofing and any fascia paint touch-ups are complete.</li>
-</ul> <h2 class="wp-block-heading">Materials / Tools Needed</h2> <ul class="wp-block-list">
-<li>6 ft or longer level (quick pitch check)</li> <li>Hidden hangers (K-style) or wrap-around/bracket sets (half-round)</li> <li>Strip miters, end-caps, sealant rated for aluminum</li> <li>Stainless/self-piercing fasteners (interior—color not critical)</li> <li>Splash guards for inside corners; 10-ft splash blocks or elbows for discharge</li> <li>Optional guard panels & matching hardware</li>
-</ul> <h2 class="wp-block-heading">Process</h2> <ol class="wp-block-list">
-<li><strong>Layout & size.</strong> Using roof measurements, plan one 2 × 3 downspout per ≤ 600 ft² or one 3 × 4 per ≤ 1,200 ft² roof area.</li> <li><strong>Mark downspout locations.</strong> The general contractor should mark up elevation drawings or photos of the project with troughs and downspouts. Coordinate with grade, walks, and aesthetics; space 20 – 80 ft apart and add extra or larger spouts where runs or valleys concentrate water.</li> <li><strong>Color.</strong> Choose a color to coordinate with fascia, corner trim, or another detail on the home.</li> <li><strong>Set high end & pitch trough.</strong> The installer will hang the trough targeting 1/4" of drop for ever 10 ft with hangers 24" O.C.</li> <li><strong>Install downspouts.</strong> Strap every 6–8 ft and kick out away from the foundation or connect to drains.</li> <li><strong>Add optional guards.</strong> Gutter guards can be added.</li> <li><strong>Maintenance.</strong> Gutters should be cleaned regularly, at least once per year and up to 2 or 3 times depending on overhanging trees. Even homes with gutter guards need to have their gutters cleaned periodically.</li>
-</ol> <h2 class="wp-block-heading">Inspections</h2> <p>No separate inspection in many jurisdictions. In Michigan the GC must meet 2015 MRC R903.4 requirement for “controlled roof drainage.”</p> <h2 class="wp-block-heading">Client Interaction / Communication Notes</h2> <ul class="wp-block-list">
-<li>Obtain approval on gutter size (5 in vs 6 in), downspout placement, color, and guard option before ordering.</li> <li>Explain routine cleaning: twice-yearly scooping or flush if un-guarded; debris sweep on guard tops each fall.</li>
-</ul> <h2 class="wp-block-heading">Common Issues & How to Avoid Them</h2> <ul class="wp-block-list">
-<li><strong>Size mismatch.</strong> Often the roll forming machine is installed in the back of a box truck or trailer. The installer will push you to install all troughs the same size so they don't have to mobilize two separate install crews for one project, or they will charge more to install a mix. They also need to know what size downspout to send because those are usually pre-made and not made on site.</li> <li><strong>Overflow at inside corners.</strong> Install splash guard or add a downspout near the valley.</li> <li><strong>Sagging trough.</strong> Increase hanger frequency to 18 in o.c. under heavy snow load.</li> <li><strong>Ice-dam pull-off.</strong> Fasten hangers through fascia into rafter tails.</li> <li><strong>Debris clogging.</strong> Specify appropriate guard or schedule regular cleaning.</li>
-</ul> <h2 class="wp-block-heading">Half-Round Gutter Considerations</h2> <ul class="wp-block-list">
-<li>Commonly specified in galvanized steel, copper, or painted aluminum</li> <li>Half round are more expensive than K-style.</li> <li>Use fascia-mount or roof-strap brackets ≤ 24 in o.c.</li> <li>Same ¼ in per 10 ft pitch; 3 × 4 downspouts recommended for capacity.</li>
-</ul> <figure class="wp-block-image size-large"><img src="images/gutter-design-2.jpg" alt="" class="wp-image-386" /></figure> <figure class="wp-block-image size-large"><img src="images/gutter-design.jpg" alt="" class="wp-image-387" /></figure> <figure class="wp-block-image size-large"><img src="images/gutters-underground-drains-1.jpg" alt="" class="wp-image-389" /></figure> <h2 class="wp-block-heading">Resources</h2> <ul class="wp-block-list">
-<li><a href="gutter-example-price-sheet.html">Gutter Example Price Sheet</a></li>
-</ul> <hr class="wp-block-separator has-alpha-channel-opacity" />
-<p>
-    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-    <br>
-    <p><small>Last revised: 01/20/2026</small></p>
-</p>
+            <p>K-style gutters are the most common profile in the US. The name comes from the cross-section shape based on the Roman ogee, meant to replicate crown moulding profiles. Subcontractors roll-form continuous troughs on site from coil stock, leaving the general contractor responsible for sizing, location decisions, and quality checks.</p>
+
+            <h2>Quick Reference</h2>
+
+            <ul>
+                <li>Choose 5" or 6" K-style trough based on roof area</li>
+                <li>2x3 downspout per 600 sq ft of roof area (minimum)</li>
+                <li>3x4 downspout per 1,200 sq ft of roof area (minimum)</li>
+                <li>Downspout spacing: 20-80 ft; add or upsize for valleys</li>
+                <li>Pitch: 1/4" drop per 10 ft of run</li>
+                <li>Hidden hangers 24" O.C. (18" O.C. in snow load areas)</li>
+                <li>Downspout straps every 6-8 ft</li>
+            </ul>
+
+            <h2>Prerequisites</h2>
+
+            <ul>
+                <li>Fascia boards and drip edge installed and painted (if required) before gutter crew arrives</li>
+                <li>Measure roof-plan areas to confirm gutter/downspout sizing</li>
+                <li>Confirm discharge path: splash block, kick-out, or underground drain (verify daylight outlet)</li>
+                <li>Decide with client on guard need and style</li>
+                <li>Schedule gutter sub after roofing and any fascia paint touch-ups are complete</li>
+            </ul>
+
+            <h2>Gutter Types</h2>
+
+            <h3>K-Style (Ogee)</h3>
+
+            <p>The standard residential gutter profile. Available in 5" and 6" widths. The decorative front face resembles crown moulding and the flat back mounts flush to fascia.</p>
+
+            <ul>
+                <li>5" gutter with 2x3 downspout: up to 600 sq ft roof area per downspout</li>
+                <li>6" gutter with 3x4 downspout: up to 1,200 sq ft roof area per downspout</li>
+                <li>Most common material: 0.027" or 0.032" aluminum</li>
+                <li>Hidden hangers provide clean appearance</li>
+            </ul>
+
+            <p><strong>Tools:</strong> 6 ft level, hidden hangers, strip miters, end-caps, aluminum-rated sealant, self-piercing fasteners</p>
+
+            <h3>Half-Round</h3>
+
+            <p>Commonly specified on historic or high-design projects. More expensive than K-style but provides a traditional appearance.</p>
+
+            <ul>
+                <li>Available in galvanized steel, copper, or painted aluminum</li>
+                <li>Use fascia-mount or roof-strap brackets at 24" O.C. max</li>
+                <li>Same 1/4" per 10 ft pitch as K-style</li>
+                <li>3x4 downspouts recommended for adequate capacity</li>
+                <li>Round downspouts typically used for aesthetic match</li>
+            </ul>
+
+            <p><strong>Tools:</strong> Wrap-around or bracket sets, round downspout components, appropriate sealant for material type</p>
+
+            <h3 style="color: red;">Copper Gutters</h3>
+
+            <p style="color: red;"><strong>[NEEDS EXPANSION]</strong> Copper gutters are a premium option that develops a natural patina over time. They are significantly more expensive than aluminum but can last 50+ years with proper installation. Copper requires soldered joints rather than sealant for watertight connections. Must be installed by specialists experienced with copper work.</p>
+
+            <h2>Gutter Guards</h2>
+
+            <p style="color: red;"><strong>[NEEDS EXPANSION]</strong> Gutter guards reduce maintenance by preventing debris from entering the trough. Options include:</p>
+
+            <ul style="color: red;">
+                <li>Mesh/screen guards: Affordable, DIY-friendly, allow small debris through</li>
+                <li>Micro-mesh: Fine screen blocks most debris including shingle grit</li>
+                <li>Reverse curve (surface tension): Water follows curve into gutter, debris falls off</li>
+                <li>Brush inserts: Bristles fill trough, debris sits on top</li>
+                <li>Foam inserts: Porous foam allows water through, blocks debris</li>
+            </ul>
+
+            <p style="color: red;">Even with guards installed, gutters require periodic inspection and cleaning. Guards reduce but do not eliminate maintenance.</p>
+
+            <h2>Materials and Tools</h2>
+
+            <ul>
+                <li>6 ft or longer level for pitch check</li>
+                <li>Hidden hangers (K-style) or wrap-around/bracket sets (half-round)</li>
+                <li>Strip miters, end-caps, sealant rated for aluminum</li>
+                <li>Stainless or self-piercing fasteners</li>
+                <li>Splash guards for inside corners</li>
+                <li>10 ft splash blocks or elbows for discharge</li>
+                <li>Optional: guard panels and matching hardware</li>
+            </ul>
+
+            <h2>Process</h2>
+
+            <ul>
+                <li>Layout and Size
+                    <ul>
+                        <li>Calculate roof areas draining to each gutter run</li>
+                        <li>Plan one 2x3 downspout per 600 sq ft or one 3x4 per 1,200 sq ft</li>
+                        <li>Add extra capacity at valleys where water concentrates</li>
+                    </ul>
+                </li>
+                <li>Mark Downspout Locations
+                    <ul>
+                        <li>Mark elevation drawings or photos with trough and downspout positions</li>
+                        <li>Coordinate with grade, walks, and aesthetics</li>
+                        <li>Space 20-80 ft apart; add extra where runs or valleys concentrate water</li>
+                    </ul>
+                </li>
+                <li>Color Selection
+                    <ul>
+                        <li>Choose color to coordinate with fascia, corner trim, or another detail</li>
+                        <li>Confirm with client before ordering</li>
+                    </ul>
+                </li>
+                <li>Install Trough
+                    <ul>
+                        <li>Set high end first</li>
+                        <li>Pitch 1/4" drop per 10 ft toward downspout</li>
+                        <li>Install hangers 24" O.C. (18" O.C. in heavy snow areas)</li>
+                        <li>Fasten hangers through fascia into rafter tails where possible</li>
+                    </ul>
+                </li>
+                <li>Install Downspouts
+                    <ul>
+                        <li>Strap every 6-8 ft</li>
+                        <li>Kick out away from foundation minimum 4 ft</li>
+                        <li>Or connect to underground drains with verified daylight outlet</li>
+                    </ul>
+                </li>
+                <li>Add Guards (Optional)
+                    <ul>
+                        <li>Install per manufacturer instructions</li>
+                        <li>Ensure guards do not void gutter warranty</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Underground Drainage</h2>
+
+            <p style="color: red;"><strong>[NEEDS EXPANSION]</strong> Underground drainage systems connect downspouts to buried pipe that carries water away from the foundation. Key considerations:</p>
+
+            <ul style="color: red;">
+                <li>Use minimum 4" Schedule 40 PVC or corrugated drain pipe</li>
+                <li>Maintain 1% minimum slope (1/8" per foot) toward outlet</li>
+                <li>Daylight outlet must discharge to grade away from structure</li>
+                <li>Include cleanout access points at direction changes</li>
+                <li>Pop-up emitters can be used where surface discharge is acceptable</li>
+                <li>Do not connect to footing drains or sanitary sewer</li>
+            </ul>
+
+            <h2>Best Practices</h2>
+
+            <ul>
+                <li>Size mismatch: Installers prefer single sizes to avoid multiple mobilizations; confirm sizing requirements upfront and expect to pay more for mixed sizes</li>
+                <li>Overflow at inside corners: Install splash guard or add a downspout near the valley</li>
+                <li>Sagging trough: Increase hanger frequency to 18" O.C. under heavy snow load</li>
+                <li>Ice-dam pull-off: Fasten hangers through fascia into rafter tails</li>
+                <li>Debris clogging: Specify appropriate guard or schedule regular cleaning</li>
+                <li>Splash blocks: Position to direct water at least 4 ft from foundation</li>
+                <li>Verify underground drain outlets are clear before connecting downspouts</li>
+            </ul>
+
+            <h2>Inspections</h2>
+
+            <p>No separate gutter inspection in most jurisdictions. In Michigan, the GC must meet 2015 MRC R903.4 requirement for "controlled roof drainage." Verify local requirements for underground drainage connections.</p>
+
+            <h2>Client Communication</h2>
+
+            <ul>
+                <li>Obtain approval on gutter size (5" vs 6"), downspout placement, color, and guard option before ordering</li>
+                <li>Explain routine cleaning: twice yearly minimum if unguarded; debris sweep on guard tops each fall</li>
+                <li>Advise that even guarded gutters need periodic inspection and cleaning</li>
+                <li>Discuss underground drainage options if applicable</li>
+            </ul>
+
+            <h2>Photo Examples</h2>
+
+            <figure>
+                <img src="images/gutter-design-2.jpg" alt="Gutter design example" />
+            </figure>
+
+            <figure>
+                <img src="images/gutter-design.jpg" alt="Gutter layout diagram" />
+            </figure>
+
+            <figure>
+                <img src="images/gutters-underground-drains-1.jpg" alt="Underground gutter drainage system" />
+            </figure>
+
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="gutter-example-price-sheet.html">Gutter Example Price Sheet</a></li>
+            </ul>
+
+            <p>
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 01/30/2026</small>
+            </p>
+
+            <script>
+                // Share button
+                const shareBtn = document.getElementById('share-btn');
+                if (shareBtn && navigator.share) {
+                    shareBtn.addEventListener('click', () => {
+                        navigator.share({
+                            title: document.title || 'Gutters',
+                            url: window.location.href
+                        }).catch(() => {
+                            // user cancelled or share failed; do nothing
+                        });
+                    });
+                } else if (shareBtn) {
+                    // Hide button if Web Share API isn't available
+                    shareBtn.style.display = 'none';
+                }
+                // Print button
+                const printBtn = document.getElementById('print-btn');
+                if (printBtn) {
+                    printBtn.addEventListener('click', () => {
+                        window.print();
+                    });
+                }
+            </script>
+        </article>
+    </main>
+</div>
 
 <script>
-  // Share button
-  const shareBtn = document.getElementById('share-btn');
-  if (shareBtn && navigator.share) {
-    shareBtn.addEventListener('click', () => {
-      navigator.share({
-        title: 'Gutters',
-        url: window.location.href
-      }).catch(() => {
-        // user cancelled or share failed; do nothing
-      });
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
     });
-  } else if (shareBtn) {
-    // Hide button if Web Share API isn't available
-    shareBtn.style.display = 'none';
-  }
-  // Print button
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
 </script>
 
-            </article>
-        </main>
-    </div>
-
-    <script>
-        // Mobile navigation toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.mobile-nav-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            if (navToggle && sidebar) {
-                navToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                            sidebar.classList.remove('active');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
 </body>
 </html>

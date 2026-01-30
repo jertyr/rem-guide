@@ -3,214 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Siding and Trim | Remodelers Guide - The Remodelers Guide">
+    <meta name="description" content="Siding and Trim | Remodelers Guide">
     <title>Siding and Trim | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
-        .nav-item.active-section .submenu {
-            display: block !important;
-            max-height: none !important;
-        }
-
-        /* Highlight active links */
-        .sidebar nav a.active {
-            background: #d4edda;
-            color: #155724;
-            font-weight: 700;
-            border-left-color: #2c5f2d;
-        }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
         }
     </style>
-
 </head>
 <body>
 <header>
-        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
-    </header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
 
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
 
-    <div class="main-wrapper">
-        <aside class="sidebar">
-<nav>
-                <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
                 <li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item"><a href="windows.html">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item active-section"><a href="siding-and-trim.html" class="active">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
-            </nav>
-        </aside>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item active-section"><a href="siding-and-trim.html" class="active">Siding & Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main style="margin-left: 280px; padding: 2rem;">
-            <article>
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <h1>Exterior Siding & Trim</h1>
 
-                <h1 class="wp-block-heading">Exterior Siding & Trim</h1> <h2 class="wp-block-heading">TLDR</h2> <ul class="wp-block-list">
-<li>WRB & flashing inspected / approved</li> <li>Layout established</li> <li>Bottom course ≥ 8 in. above grade (IRC R703.7.1)</li> <li>Blind-nail on studs, correct fasteners / length</li> <li>Seal all field cuts & end-prime wood</li> <li>Don't forget cap flashing</li>
-</ul> <h2 class="wp-block-heading">Overview</h2> <p>Siding and trim are the first line of defense against the weather. They are meant to keep most of the elements off of the weather resistive barrier below but should allow for some drying if water does get behind. There are lots of regional varieties of siding and we will go over processes to cover most of the common options like vinyl, lap siding (which can be Hardie fiber cement, LP Smartside, or traditional wood like cedar), and shakes. We'll also cover common trim types including wood, PVC, composite, and metal.</p> <h2 class="wp-block-heading">Types of Siding</h2> <h3 class="wp-block-heading">Fiber Cement</h3> <p>Cement or fiber cement siding is made by a variety of manufacturers. The main product in our market is made by James Hardie. Fiber cement comes primed and must be painted. Some manufacturers sell pre-painted siding but it is difficult to install without damaging the finish.</p> <p>Fiber cement comes in many profiles, including wood grain and smooth options. The panels are popular once installed because they look great and are durable, but the products are brittle, messy to cut, and difficult to install relative to other siding options.</p> <h3 class="wp-block-heading">Wood Siding</h3> <p>Wood siding was historically the most popular option and its what we find on the older houses in most of North America. On older homes it is usually a softwood and sometimes cedar, and it can last many decades if kept painted. Cedar is generally the only species we install now, although we do install pine on the underside of porch and sunroom ceilings because they are not exposed to weather.</p> <p>WindsorOne has a 30 year exterior warranty if any cut edges are primed before install and the product is painted within the first year after installation, but the paint must be an exterior acrylic latex like Sherwin Williams Emerald.</p> <h3 class="wp-block-heading">Vinyl</h3> <p>Vinyl is one of the most common siding types on new homes. It comes in many colors and profiles from lap to shakes and some specialty options. It is inexpensive because it does not need to be painted, relatively easy to install, and can last 20 to 30 years.</p> <h2 class="wp-block-heading">Types of Trim</h2> <h3 class="wp-block-heading">Wood Trim</h3> <p>Cedar or WindsorOne can be installed as trim on the exterior of a home. Wood siding and trim can attract insect pests and woodpeckers but are easy to install and repair.</p> <h3 class="wp-block-heading">Boral TruExterior</h3> <p>Boral TruExterior is made of poly-ash, some combinations of fly-ash and glue. It cuts and installs like wood but it is more like fiber cement in that it is brittle while handling and installing. It profiles very nicely and leaves crisp edges. The main selling point is that it does not move much on the wall, can be painted any color including dark colors, and it is completely waterproof.</p> <h3 class="wp-block-heading">PVC Trim</h3> <p>Azek is the primary option in PVC trim. It comes white and does not need to be painted, but like other pre-finished materials we need to be very careful while installing. The best way to install is with coretex screws which come with plugs to fill the holes left after screwing. Drawbacks are that Azek expands and contracts a lot and can become gappy on the wall. It is difficult to keep clean during and after installation, and the smooth side scratches easily. It can be painted in dark colors using special paints with high reflectivity.</p> <h3 class="wp-block-heading">Aluminum</h3> <p>Bent aluminum is often paired with vinyl siding. It comes in rolls 2’ wide x 50’ long and can be cut and shaped on site with a tool called a break. It comes in a a variety of standard colors and does not need to be painted after installation. We can install it hollow or over wood backing. Aluminum will become wavy if the flats are too large even if installed correctly. Once dented it cannot be repaired, only replaced.</p> <h2 class="wp-block-heading">Prerequisites</h2> <ul class="wp-block-list">
-<li>Windows and doors must be installed and flashed</li> <li>Continuous WRB installed, taped, and <em>inspected if applicable</em> where local “WRB/Siding” inspection is required</li> <li>Ledger boards installed and porches marked out</li> <li>Lighting, outlet, spigot, mailbox, address locations marked or trim blocks pre-installed</li> <li>Material should be on site, see order sheet</li>
-</ul> <h2 class="wp-block-heading">Materials / Tools Needed</h2> <ul class="wp-block-list">
-<li><strong>Vinyl</strong>
-<ul class="wp-block-list">
-<li>1.5" roofing nails, snips grinder, or saw</li>
-</ul>
-</li> <li><strong>Fiber-Cement (Hardie)</strong>
-<ul class="wp-block-list">
-<li>Hardie saw blades, guillotine, siding nailer, spray primer, 15-ga trim gun</li>
-</ul>
-</li> <li><strong>LP SmartSide</strong>
-<ul class="wp-block-list">
-<li>Wood tools, siding nailer, spray primer, 15-ga trim gun</li>
-</ul>
-</li> <li><strong>PVC (Azek or Royal)</strong>
-<ul class="wp-block-list">
-<li>Cortex screws and plugs, PVC solvent weld, pocket hole jig and screws</li>
-</ul>
-</li> <li><strong>Composite Trim (Boral TruExterior)</strong>
-<ul class="wp-block-list">
-<li>Siding nailer, 15-ga trim gun</li>
-</ul>
-</li> <li><strong>Metal Trim</strong>
-<ul class="wp-block-list">
-<li>Metal blades, angle grinder, hand break, break, trim nails, pea shooter, narrow crown stapler</li>
-</ul>
-</li>
-</ul> <h2 class="wp-block-heading">Process</h2> <ol class="wp-block-list">
-<li><strong>Determine Details or Mock-Up</strong> - Show client what the trim sizes and styles will look like, full scale examples help, but example photos, sketches, or renderings can work as well. Confirm corners trim, friezes, base, windows, bands, soffit, etc.</li> <li><strong>Layout</strong> - Snap reference lines; bottom course and up. Possibly adjust reveals to hit windows, soffit/frieze cleanly.</li> <li><strong>Trim First.</strong> Install corners, skirt, frieze. Keep manufacturer specified gaps and back-prime cut ends as needed. Screw & plug PVC, consider pocket hole screwing window trim from behind before installation. Install J-channel and starter strip for vinyl. Install drip cap and tape.</li> <li><strong>Install Siding</strong>
-<ul class="wp-block-list">
-<li><em>Fiber-Cement Lap:</em> blind-nail 1 in. down from top, 16 in. O.C., flash seams, prime cut edges</li> <li><em>LP SmartSide Lap and Wood:</em> blind-nail similar to fiber cement, prime cut edges</li> <li>For cedar use stainless fasteners</li>
-</ul>
-</li> <li><strong>Caulk & Finish</strong> - Use a high quality sealant like Quad or similar. Typical to caulk body color against trim and not trim color. Painting PVC is not necessary, but it must be high reflective paint to avoid heating problems.</li>
-</ol> <h2 class="wp-block-heading">Inspections</h2> <ul class="wp-block-list">
-<li><strong>WRB Inspection</strong> - Required only in some jurisdictions. They will be looking to see if weather resistive barrier is installed per manufacturer. Read and install per Tyvek instructions with cap staples, or taped Zip most commonly.</li>
-</ul> <h2 class="wp-block-heading">Client Interaction / Communication Notes</h2> <ul class="wp-block-list">
-<li>Confirm color and style in writing</li> <li>Advise on maintenance schedule as part of your consultation</li> <li>Talk about pests like insects and birds. I've seen woodpecker damage in Azek before</li> <li>Plants will likely be damaged around the home</li> <li>During repairs, new colors and old may not match or blend properly</li>
-</ul> <h2 class="wp-block-heading">Common Issues & How to Avoid Them</h2> <ul class="wp-block-list">
-<li>Make sure to leave required expansion joints where needed</li> <li>Don't paint PVC trim dark colors</li>
-</ul> <h2 class="wp-block-heading">Resources</h2> <ul class="wp-block-list">
-<li><a href="siding-and-trim-order-sheat.html">Siding and Trim Order Sheet</a></li>
-</ul>
-<p>
-    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-    <br>
-    <p><small>Last revised: 01/20/2026</small></p>
-</p>
+            <p>Siding and trim are the first line of defense against the weather. They keep most elements off the weather resistive barrier (WRB) while allowing drying if moisture gets behind. This guide covers common siding types including vinyl, fiber cement, LP SmartSide, wood lap, and shakes, along with trim options in wood, PVC, composite, and aluminum.</p>
+
+            <h2>Quick Reference</h2>
+
+            <ul>
+                <li>WRB and flashing inspected/approved before starting</li>
+                <li>Layout established with reference lines snapped</li>
+                <li>Bottom course minimum 8" above grade (IRC R703.7.1)</li>
+                <li>Blind-nail on studs with correct fasteners and length</li>
+                <li>Seal all field cuts and end-prime wood products</li>
+                <li>Install cap flashing at all horizontal trim intersections</li>
+                <li>Leave manufacturer-specified expansion gaps</li>
+                <li>Use stainless fasteners for cedar</li>
+            </ul>
+
+            <h2>Prerequisites</h2>
+
+            <ul>
+                <li>Windows and doors installed and properly flashed</li>
+                <li>Continuous WRB installed, taped, and inspected if local "WRB/Siding" inspection required</li>
+                <li>Ledger boards installed and porches marked out</li>
+                <li>Lighting, outlet, spigot, mailbox, and address locations marked or trim blocks pre-installed</li>
+                <li>Material on site (see <a href="siding-and-trim-order-sheat.html">order sheet</a>)</li>
+            </ul>
+
+            <h2>Types of Siding</h2>
+
+            <h3>Fiber Cement (Hardie)</h3>
+
+            <p>Fiber cement is manufactured by several companies, with James Hardie being the primary product in most markets. It comes primed and must be painted. Pre-painted options exist but are difficult to install without damaging the finish.</p>
+
+            <ul>
+                <li>Available in wood grain and smooth profiles</li>
+                <li>Durable and looks great once installed</li>
+                <li>Brittle, messy to cut, and harder to install than other options</li>
+                <li>Requires silica dust protection when cutting (N95 respirator minimum, P100 recommended)</li>
+                <li>Use fiber cement-specific saw blades or a guillotine shear to reduce dust</li>
+            </ul>
+
+            <h3>LP SmartSide</h3>
+
+            <p style="color: red;"><strong>[NEEDS VERIFICATION]</strong> LP SmartSide is an engineered wood siding made from wood strands bonded with resins and treated with zinc borate for rot and termite resistance. It's lighter than fiber cement and cuts with standard wood tools without silica dust concerns.</p>
+
+            <ul style="color: red;">
+                <li>Comes pre-primed; must be painted within 180 days of installation</li>
+                <li>All cut edges must be field-primed before installation</li>
+                <li>Available in lap, panel, and shake profiles</li>
+                <li>50-year limited warranty when installed per manufacturer specs</li>
+                <li>Easier to install than fiber cement but still requires careful handling</li>
+            </ul>
+
+            <h3>Wood Siding</h3>
+
+            <p>Wood siding was historically the most common option and is found on older homes throughout North America. Older homes typically used softwood or cedar, which can last decades if kept painted. Cedar is now the primary species for exterior wood siding. Pine is acceptable for protected areas like porch ceilings that are not exposed to weather.</p>
+
+            <ul>
+                <li>WindsorOne offers a 30-year exterior warranty if cut edges are primed before install and painted within one year using exterior acrylic latex (e.g., Sherwin Williams Emerald)</li>
+                <li>Cedar and other wood can attract insects and woodpeckers</li>
+                <li>Easy to install and repair compared to other materials</li>
+            </ul>
+
+            <h3>Vinyl</h3>
+
+            <p>Vinyl is one of the most common siding types on new construction due to low cost and ease of installation. It does not require painting and comes in many colors and profiles including lap, shake, and specialty options.</p>
+
+            <ul>
+                <li>Expected lifespan: 20-30 years</li>
+                <li>Must be installed loosely to allow thermal expansion</li>
+                <li>Do not nail tight; leave 1/32" gap at nail heads</li>
+                <li>Lock each course fully into the one below</li>
+                <li>Colors fade over time; darker colors show fading more</li>
+            </ul>
+
+            <h3 style="color: red;">Shakes</h3>
+
+            <p style="color: red;"><strong>[NEEDS EXPANSION]</strong> Cedar shakes and shingles provide a traditional look. Shakes are split for a rough texture; shingles are sawn smooth. Both require proper spacing for expansion and adequate ventilation behind to prevent rot. Fiber cement and vinyl shake profiles are available as lower-maintenance alternatives.</p>
+
+            <h2>Types of Trim</h2>
+
+            <h3>Wood Trim</h3>
+
+            <p>Cedar or WindsorOne can be installed as exterior trim. Wood is easy to install and repair but can attract insect pests and woodpeckers.</p>
+
+            <h3>Boral TruExterior</h3>
+
+            <p>Boral TruExterior is made of poly-ash (fly-ash and binders). It cuts and installs like wood but is brittle during handling. It profiles nicely with crisp edges, does not move much on the wall, can be painted any color including dark colors, and is completely waterproof.</p>
+
+            <h3>PVC Trim (Azek)</h3>
+
+            <p>Azek is the primary PVC trim option. It comes white and does not require painting.</p>
+
+            <ul>
+                <li>Install with Cortex screws and matching plugs</li>
+                <li>PVC expands and contracts significantly; follow manufacturer gap requirements</li>
+                <li>Difficult to keep clean during and after installation</li>
+                <li>Smooth surfaces scratch easily</li>
+                <li>Can be painted dark colors only with high-reflectivity paints (e.g., Sherwin Williams VinylSafe)</li>
+            </ul>
+
+            <h3>Aluminum</h3>
+
+            <p>Bent aluminum is often paired with vinyl siding. It comes in 2' x 50' rolls and is formed on site with a brake. Available in standard colors and does not need painting.</p>
+
+            <ul>
+                <li>Can be installed hollow or over wood backing</li>
+                <li>Large flat areas will appear wavy even when installed correctly</li>
+                <li>Cannot be repaired once dented; must be replaced</li>
+            </ul>
+
+            <h2>Materials and Tools</h2>
+
+            <ul>
+                <li>Vinyl:
+                    <ul>
+                        <li>1.5" roofing nails</li>
+                        <li>Snips, grinder, or circular saw with fine-tooth blade</li>
+                        <li>J-channel, starter strip, utility trim</li>
+                        <li>Snap-lock punch for top courses</li>
+                    </ul>
+                </li>
+                <li>Fiber Cement (Hardie):
+                    <ul>
+                        <li>Fiber cement saw blades or guillotine shear</li>
+                        <li>Siding nailer (coil or strip)</li>
+                        <li>Spray primer for cut edges</li>
+                        <li>15-gauge trim gun</li>
+                        <li>N95/P100 respirator for cutting</li>
+                    </ul>
+                </li>
+                <li>LP SmartSide:
+                    <ul>
+                        <li>Standard wood cutting tools</li>
+                        <li>Siding nailer</li>
+                        <li>Spray primer for cut edges</li>
+                        <li>15-gauge trim gun</li>
+                    </ul>
+                </li>
+                <li>PVC (Azek or Royal):
+                    <ul>
+                        <li>Cortex screws and plugs</li>
+                        <li>PVC solvent weld (cement)</li>
+                        <li>Pocket hole jig and screws</li>
+                    </ul>
+                </li>
+                <li>Composite Trim (Boral TruExterior):
+                    <ul>
+                        <li>Siding nailer</li>
+                        <li>15-gauge trim gun</li>
+                    </ul>
+                </li>
+                <li>Metal Trim:
+                    <ul>
+                        <li>Metal blades and angle grinder</li>
+                        <li>Hand brake and bench brake</li>
+                        <li>Trim nails, pea shooter, narrow crown stapler</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Fastener Specifications</h2>
+
+            <p style="color: red;"><strong>[NEEDS VERIFICATION]</strong> Proper fastener selection is critical for siding longevity.</p>
+
+            <ul style="color: red;">
+                <li>Fiber Cement Lap:
+                    <ul>
+                        <li>Blind nail with siding nails 1" down from top edge</li>
+                        <li>Minimum 1.25" penetration into studs or sheathing</li>
+                        <li>16" O.C. into studs; some codes allow sheathing nailing with specific nail types</li>
+                        <li>Use hot-dipped galvanized or stainless steel</li>
+                    </ul>
+                </li>
+                <li>LP SmartSide:
+                    <ul>
+                        <li>Minimum 0.113" shank diameter, hot-dipped galvanized</li>
+                        <li>1.5" minimum penetration into framing</li>
+                    </ul>
+                </li>
+                <li>Vinyl:
+                    <ul>
+                        <li>1.5" roofing nails or equivalent</li>
+                        <li>Nail in center of slots, not tight</li>
+                    </ul>
+                </li>
+                <li>Cedar:
+                    <ul>
+                        <li>Stainless steel ring-shank nails required</li>
+                        <li>1.5" minimum penetration</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Process</h2>
+
+            <ul>
+                <li>Determine Details or Mock-Up
+                    <ul>
+                        <li>Show client full-scale examples of trim sizes and styles</li>
+                        <li>Photos, sketches, or renderings work if samples unavailable</li>
+                        <li>Confirm corners, trim, friezes, base, windows, bands, and soffit details</li>
+                    </ul>
+                </li>
+                <li>Layout
+                    <ul>
+                        <li>Snap reference lines for bottom course and work up</li>
+                        <li>Adjust reveals to hit windows and soffit/frieze lines cleanly</li>
+                        <li>Mark stud locations if blind nailing</li>
+                    </ul>
+                </li>
+                <li>Trim First
+                    <ul>
+                        <li>Install corners, skirt, and frieze</li>
+                        <li>Maintain manufacturer-specified gaps and back-prime cut ends</li>
+                        <li>Screw and plug PVC trim</li>
+                        <li>Consider pocket-hole screwing window trim from behind before installation</li>
+                        <li>For vinyl: install J-channel and starter strip</li>
+                        <li>Install drip cap and tape over horizontal trim</li>
+                    </ul>
+                </li>
+                <li>Install Siding
+                    <ul>
+                        <li>Fiber Cement Lap: Blind-nail 1" down from top, 16" O.C., flash seams, prime all cut edges</li>
+                        <li>LP SmartSide and Wood Lap: Blind-nail similar to fiber cement, prime cut edges</li>
+                        <li>Cedar: Use stainless steel fasteners exclusively</li>
+                        <li>Vinyl: Lock each course, nail loosely in slot centers, maintain 1/4" gaps at trim</li>
+                    </ul>
+                </li>
+                <li>Caulk and Finish
+                    <ul>
+                        <li>Use high-quality sealant (Quad or equivalent)</li>
+                        <li>Caulk body color against trim rather than trim color</li>
+                        <li>PVC does not require painting, but if painted use high-reflectivity paint only</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Rainscreen and Furring</h2>
+
+            <p style="color: red;"><strong>[NEEDS EXPANSION]</strong> Rainscreen systems provide a drainage plane and ventilation gap behind siding, significantly improving moisture management. Options include:</p>
+
+            <ul style="color: red;">
+                <li>1x3 or 1x4 vertical furring strips over WRB</li>
+                <li>Manufactured rainscreen products (e.g., Slicker, Home Slicker, Driwall)</li>
+                <li>Benjamin Obdyke HydroGap housewrap with built-in drainage</li>
+                <li>Required or recommended in high-moisture climates and over foam sheathing</li>
+                <li>Provides path for incidental water to drain and dry</li>
+            </ul>
+
+            <h2>Best Practices</h2>
+
+            <ul>
+                <li>Always back-prime cut edges on wood and fiber cement products before installation</li>
+                <li>Leave required expansion gaps per manufacturer specs; PVC and vinyl move significantly</li>
+                <li>Never paint PVC or vinyl dark colors unless using approved high-reflectivity paint</li>
+                <li>Install cap flashing above all horizontal trim pieces (window heads, band boards, friezes)</li>
+                <li>Maintain 8" minimum clearance from siding to grade (IRC R703.7.1)</li>
+                <li>Do not caulk the bottom edge of lap siding; it must drain</li>
+                <li>Wear appropriate PPE when cutting fiber cement (silica dust is hazardous)</li>
+                <li>Store siding flat and off the ground to prevent warping</li>
+                <li>Acclimate materials to site temperature before installation when possible</li>
+                <li>Flash all penetrations (lights, outlets, spigots) before installing siding around them</li>
+            </ul>
+
+            <h2>Inspections</h2>
+
+            <ul>
+                <li>WRB Inspection (required in some jurisdictions):
+                    <ul>
+                        <li>Inspector verifies WRB installed per manufacturer specifications</li>
+                        <li>Tyvek: cap staples, proper laps, tape at seams</li>
+                        <li>Zip System: taped seams with Zip tape, proper corner treatment</li>
+                        <li>Window and door flashing integration verified</li>
+                    </ul>
+                </li>
+                <li>Some jurisdictions require final siding inspection:
+                    <ul>
+                        <li>Fastener pattern and penetration</li>
+                        <li>Clearance to grade</li>
+                        <li>Flashing at penetrations</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Client Communication</h2>
+
+            <ul>
+                <li>Confirm color and style selections in writing before ordering</li>
+                <li>Discuss maintenance requirements: repainting schedules, cleaning methods, caulk inspection</li>
+                <li>Warn about potential pest issues (insects, woodpeckers) with wood and some composite products</li>
+                <li>Advise that landscaping around the home may be damaged during installation</li>
+                <li>Explain that repair patches with new material may not match weathered existing siding</li>
+                <li>Provide expected lifespan: vinyl 20-30 years, fiber cement 30-50 years, wood 30+ years with maintenance, LP SmartSide 30-50 years</li>
+            </ul>
+
+            <h2>Resources</h2>
+
+            <ul>
+                <li><a href="siding-and-trim-order-sheat.html">Siding and Trim Order Sheet</a></li>
+                <li>IRC R703 - Exterior Covering</li>
+                <li>James Hardie Installation Guide</li>
+                <li>LP SmartSide Installation Instructions</li>
+            </ul>
+
+            <p>
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 01/30/2026</small>
+            </p>
+
+            <script>
+                // Share button
+                const shareBtn = document.getElementById('share-btn');
+                if (shareBtn && navigator.share) {
+                    shareBtn.addEventListener('click', () => {
+                        navigator.share({
+                            title: document.title || 'Siding and Trim',
+                            url: window.location.href
+                        }).catch(() => {
+                            // user cancelled or share failed; do nothing
+                        });
+                    });
+                } else if (shareBtn) {
+                    // Hide button if Web Share API isn't available
+                    shareBtn.style.display = 'none';
+                }
+                // Print button
+                const printBtn = document.getElementById('print-btn');
+                if (printBtn) {
+                    printBtn.addEventListener('click', () => {
+                        window.print();
+                    });
+                }
+            </script>
+        </article>
+    </main>
+</div>
 
 <script>
-  // Share button
-  const shareBtn = document.getElementById('share-btn');
-  if (shareBtn && navigator.share) {
-    shareBtn.addEventListener('click', () => {
-      navigator.share({
-        title: 'Siding and Trim',
-        url: window.location.href
-      }).catch(() => {
-        // user cancelled or share failed; do nothing
-      });
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
     });
-  } else if (shareBtn) {
-    // Hide button if Web Share API isn't available
-    shareBtn.style.display = 'none';
-  }
-  // Print button
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
 </script>
 
-            </article>
-        </main>
-    </div>
-
-    <script>
-        // Mobile navigation toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.mobile-nav-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            if (navToggle && sidebar) {
-                navToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                            sidebar.classList.remove('active');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
 </body>
 </html>

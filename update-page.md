@@ -1,38 +1,58 @@
 # Update Page Skill
 
-This skill describes how to redesign a Remodelers Guide page from the early format to the polished, consistent format used across the site.
+Transform Remodelers Guide pages from the early format to a clean, professional format that serves contractors and experienced homeowners who need quick, reliable reference material.
 
-## Goals
+## Audience
 
-- Create a consistent, professional look across all pages
-- Make content scannable and easy to use on the jobsite
-- Remove redundant information while preserving all valuable technical content
-- Ensure pages print well for field use
-- Maintain all photos, resources, and links
+The target audience is contractors and homeowners undertaking construction projects. These are people who already operate at the 80th or 90th percentile—they know the work but want key reminders and guidance to achieve top-level performance. The content should instruct but be concise and to the point. This is not a teaching resource for beginners.
 
-## Identifying Pages That Need Updates
+## Core Principles
 
-Pages needing updates typically have these characteristics:
+### Preserve the Details
 
-- WordPress classes like `wp-block-heading`, `wp-block-list`
-- Custom CSS beyond print styles (submenu styles, sidebar navigation styles, article list styles)
-- Section names like "TLDR" instead of "Quick Reference"
-- Numbered lists (`<ol>`) for the Process section instead of nested `<ul>`
-- Content compressed into single long lines
-- Missing `<footer>` element
-- Meta description containing redundant text like "- The Remodelers Guide"
-- Inconsistent section ordering
+The information on each page has been accumulated through hard work and real-world experience. When reorganizing or rewriting:
 
-## Standard Page Structure
+- Do not lose fidelity or technical detail
+- Keep all code references, specifications, and measurements
+- Keep all photos and resource links
+- Rewriting for clarity and conciseness is encouraged
+- Reorganizing content within the page is fine if it makes sense
 
-Every polished page follows this structure:
+### Let Content Drive Structure
 
-### 1. Head Section
+Early versions of this site tried to force every page into identical sections. That approach was too limiting—some topics need different sections, and forcing content into a rigid template created redundancy.
+
+When updating a page:
+
+- Use sections that fit the content, not the other way around
+- Add sections when the material calls for it
+- Omit sections that would be empty or redundant
+- Combine or split sections as needed for clarity
+
+### Write for Quick Reference
+
+Contractors use these pages on the jobsite. The format should be scannable:
+
+- Bullet points over paragraphs where practical
+- Key information up front
+- Technical specs easy to find
+- No filler or redundant explanation
+
+## HTML Cleanup
+
+### Remove WordPress Artifacts
+
+Early pages were exported from WordPress and contain unnecessary classes and inline styles. Remove:
+
+- Classes like `wp-block-heading`, `wp-block-list`
+- Custom CSS beyond print styles (submenu styles, sidebar styles, article list indentation)
+- Redundant text in meta descriptions (e.g., "- The Remodelers Guide" suffix)
+
+### Standard Print Styles
+
+Replace any custom CSS with print-only styles:
 
 ```html
-<meta name="description" content="Page Title | Remodelers Guide">
-<title>Page Title | Remodelers Guide</title>
-<link rel="stylesheet" href="styles.css">
 <style>
     @media print {
         header,
@@ -73,53 +93,48 @@ Every polished page follows this structure:
 </style>
 ```
 
-The `<style>` block should ONLY contain print styles. Remove any custom CSS for submenus, sidebars, or article list formatting.
+### Clean Formatting
 
-### 2. Content Sections (in order)
+- Use proper HTML indentation (4 spaces per level)
+- Break long content lines into readable chunks
+- Use `<figure><img /></figure>` for photos
+- Include the footer element
 
-1. **Title** (`<h1>`) - Page name only
-2. **Intro Paragraph** - One or two sentences explaining the topic scope
-3. **Quick Reference** (`<h2>`) - Bullet list of key reminders and critical points
-4. **Materials and Tools** (`<h2>`) - Flat list with optional nested sub-items for categories
-5. **Process** (`<h2>`) - Nested `<ul>` structure with parent categories and child steps
-6. **Best Practices** (`<h2>`) - Short tips list (optional, when applicable)
-7. **Inspections** (`<h2>`) - Inspection requirements and what inspectors look for
-8. **Client Communication** (`<h2>`) - What to tell clients, expectations to set
-9. **Photo Examples** - `<figure>` elements with images (keep all existing photos)
-10. **Resources** (`<h2>`) - Links to checklists, order forms, and external references
+## Common Section Patterns
 
-Not every page needs every section. Use what's appropriate for the content.
+These sections appear frequently but are not required. Use what fits the content.
 
-### 3. Process Section Format
+**Quick Reference** - Key reminders at the top for people who know the work but want a checklist before starting.
 
-The Process section uses nested unordered lists, not numbered lists. Organize by workflow phase with sub-steps:
+**Materials and Tools** - What to have on hand. Can use nested lists for categories.
 
-```html
-<h2>Process</h2>
+**Process** - Workflow steps. Nested `<ul>` lists work well for grouping by phase. Numbered lists are fine when sequence matters.
 
-<ul>
-    <li>Phase Name
-        <ul>
-            <li>First step in this phase</li>
-            <li>Second step with sub-details:
-                <ul>
-                    <li>Sub-detail one</li>
-                    <li>Sub-detail two</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li>Next Phase Name
-        <ul>
-            <li>Steps for this phase</li>
-        </ul>
-    </li>
-</ul>
-```
+**Best Practices** - Tips that prevent common mistakes. Positive framing works better than "issues to avoid."
 
-### 4. Footer Elements
+**Inspections** - What inspectors look for, permit requirements, documentation needed.
 
-Every page ends with:
+**Client Communication** - What to discuss with clients, expectations to set, advice to give.
+
+**Resources** - Links to checklists, order forms, code references, external guides.
+
+## Section Naming
+
+When a page uses inconsistent or unclear section names, consider these alternatives:
+
+| Instead of | Consider |
+|------------|----------|
+| TLDR | Quick Reference |
+| Materials / Tools Needed | Materials and Tools |
+| Common Issues & How to Avoid Them | Best Practices |
+| Client Interaction / Communication Notes | Client Communication |
+| Inspections & Documentation | Inspections |
+
+But don't rename sections mechanically. Use whatever name is clearest for the content.
+
+## Page Footer
+
+Every page should end with share/print buttons and a revision date:
 
 ```html
 <p>
@@ -128,142 +143,11 @@ Every page ends with:
     <br>
     <small>Last revised: MM/DD/YYYY</small>
 </p>
-
-<script>
-    // Share button
-    const shareBtn = document.getElementById('share-btn');
-    if (shareBtn && navigator.share) {
-        shareBtn.addEventListener('click', () => {
-            navigator.share({
-                title: document.title || 'Page Title',
-                url: window.location.href
-            }).catch(() => {
-                // user cancelled or share failed; do nothing
-            });
-        });
-    } else if (shareBtn) {
-        shareBtn.style.display = 'none';
-    }
-    // Print button
-    const printBtn = document.getElementById('print-btn');
-    if (printBtn) {
-        printBtn.addEventListener('click', () => {
-            window.print();
-        });
-    }
-</script>
 ```
 
-And the page footer:
+And a site footer:
 
 ```html
 <footer>
     &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
 </footer>
-```
-
-## Transformation Steps
-
-### Step 1: Clean the HTML
-
-1. Remove all WordPress classes (`wp-block-heading`, `wp-block-list`, etc.)
-2. Replace custom CSS in `<style>` with print-only styles
-3. Fix the meta description (remove "- The Remodelers Guide" suffix)
-4. Ensure proper HTML indentation (4 spaces per level)
-5. Break long content lines into readable chunks
-
-### Step 2: Restructure Sections
-
-1. Rename "TLDR" to "Quick Reference"
-2. Rename "Materials / Tools Needed" to "Materials and Tools"
-3. Rename "Common Issues & How to Avoid Them" to "Best Practices" (reframe positively)
-4. Rename "Client Interaction / Communication Notes" to "Client Communication"
-5. Ensure sections appear in the standard order
-
-### Step 3: Convert Process Section
-
-Convert numbered `<ol>` lists to nested `<ul>` with phase groupings:
-
-**Before:**
-```html
-<ol>
-    <li><strong>Step One</strong> - Details about step one</li>
-    <li><strong>Step Two</strong> - Details about step two</li>
-</ol>
-```
-
-**After:**
-```html
-<ul>
-    <li>Phase Name
-        <ul>
-            <li>Step one details</li>
-            <li>Step two details</li>
-        </ul>
-    </li>
-</ul>
-```
-
-### Step 4: Add Missing Elements
-
-1. Add a brief intro paragraph after the `<h1>` if missing
-2. Add `<footer>` element if missing
-3. Update the "Last revised" date to today's date
-
-### Step 5: Preserve Content
-
-1. Keep all technical information, code references, and specifications
-2. Keep all photos (convert to simple `<figure><img>` format if needed)
-3. Keep all resource links
-4. Keep all code section numbers (R905.1.2, IRC Table R602.3(1), etc.)
-
-### Step 6: Verify Sidebar Navigation
-
-Ensure the sidebar marks the current page as active:
-
-```html
-<li class="nav-item active-section"><a href="current-page.html" class="active">Current Page</a></li>
-```
-
-## Quality Checklist
-
-Before committing changes, verify:
-
-- [ ] No WordPress classes remain in the HTML
-- [ ] Only print styles in the `<style>` block
-- [ ] Meta description is clean (no redundant suffix)
-- [ ] Brief intro paragraph exists
-- [ ] Sections are in standard order
-- [ ] Process section uses nested `<ul>` structure
-- [ ] All photos preserved with `<figure>` tags
-- [ ] All resource links preserved
-- [ ] Footer element exists
-- [ ] Last revised date updated
-- [ ] HTML is properly indented
-- [ ] Share/Print buttons and scripts present
-
-## Section Naming Reference
-
-| Old Name | New Name |
-|----------|----------|
-| TLDR | Quick Reference |
-| Materials / Tools Needed | Materials and Tools |
-| Materials or Tools Needed | Materials and Tools |
-| Materials / Tools Checklist | Materials and Tools |
-| Prerequisites | (merge into Process > Preparation) |
-| Common Issues & How to Avoid Them | Best Practices |
-| Client Interaction / Communication Notes | Client Communication |
-| Client Communication & Warranty | Client Communication |
-| Inspections & Documentation | Inspections |
-| Photo Examples | (no heading, just `<figure>` elements before Resources) |
-
-## Example Transformation
-
-See the following pages for reference implementations:
-
-- Windows (windows.html)
-- Exterior Doors (exterior-doors.html)
-- Roofing (roofing.html)
-- Framing (framing.html)
-- Foundations (foundations.html)
-- Demolition (demolition.html)

@@ -3,172 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pre-Trade Checklist | Remodelers Guide - The Remodelers Guide">
+    <meta name="description" content="Pre-Trade Checklist | Remodelers Guide">
     <title>Pre-Trade Checklist | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Keep submenu visible when parent is active */
-        .nav-item.active-section .submenu {
-            display: block !important;
-            max-height: none !important;
-        }
-
-        /* Highlight active links */
-        .sidebar nav a.active {
-            background: #d4edda;
-            color: #155724;
-            font-weight: 700;
-            border-left-color: #2c5f2d;
-        }
-
-        /* Tighten up navigation spacing */
-        .sidebar nav ul {
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .sidebar nav li {
-            margin: 0;
-            padding: 0;
-        }
-
-        .sidebar nav a {
-            padding: 0.4rem 1rem;
-            display: block;
-        }
-
-        .sidebar .submenu {
-            padding-left: 0;
-            margin: 0.2rem 0;
-        }
-
-        .sidebar .submenu li {
-            margin: 0;
-        }
-
-        .sidebar .submenu a {
-            padding: 0.3rem 1rem 0.3rem 2rem;
-        }
-
-        /* Ensure proper hierarchical list indentation in article content */
-        article ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article ul ul {
-            margin-left: 0;
-            padding-left: 2em;
-        }
-        article li {
-            margin-bottom: 0.5em;
-        }
-        article > ul {
-            padding-left: 1.5em;
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
         }
     </style>
-
 </head>
 <body>
 <header>
-        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
-    </header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
 
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
 
-    <div class="main-wrapper">
-        <aside class="sidebar">
-<nav>
-                <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
                 <li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item"><a href="windows.html">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item active-section"><a href="pre-trade-checklist.html" class="active">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
-            </nav>
-        </aside>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item active-section"><a href="pre-trade-checklist.html" class="active">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main style="margin-left: 280px; padding: 2rem;">
-            <article>
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <h1>Pre-Trade Checklist</h1>
 
-                <h1 class="wp-block-heading">Pre-Trade Checklist</h1> <p>What do the trades need so that they can do their best work</p> <ul class="wp-block-list">
-<li>Clean site</li> <li>Updated plan for subs</li> <li>Printed cabinet drawings - elevations on walls</li> <li>Printed appliance specs</li> <li>Printed plumbing specs</li> <li>Printed electrical specs</li> <li>Locations marked on walls or prints</li> <li>Door sizes and swings</li> <li>Cabinets laid out</li> <li>Appliances laid out with specs on site</li> <li>Bath fan locations</li> <li>Lighting and outlets laid out</li> <li>Mark floor finishes on site</li> <li>Lay out bathrooms</li> <li>Shower – Valve, elbow, head, handshower, rain fall, body sprays, etc</li> <li>Baseboard (toilet shut off location)</li> <li>Elevation for vanity – Floating, thickened top, splash height</li>
-</ul>
-<p>
-    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-    <br>
-    <p><small>Last revised: 01/20/2026</small></p>
-</p>
+            <p>What do the trades need so that they can do their best work?</p>
+
+            <h2>General Preparation</h2>
+
+            <ul style="list-style-type: none">
+                <li>☐ Clean site</li>
+                <li>☐ Updated plan for subs</li>
+                <li>☐ Locations marked on walls or prints</li>
+            </ul>
+
+            <h2>Kitchen</h2>
+
+            <ul style="list-style-type: none">
+                <li>☐ Printed cabinet drawings - elevations on walls</li>
+                <li>☐ Cabinets laid out</li>
+                <li>☐ Printed appliance specs</li>
+                <li>☐ Appliances laid out with specs on site</li>
+            </ul>
+
+            <h2>Plumbing</h2>
+
+            <ul style="list-style-type: none">
+                <li>☐ Printed plumbing specs</li>
+                <li>☐ Lay out bathrooms</li>
+                <li>☐ Shower – Valve, elbow, head, handshower, rainfall, body sprays, etc.</li>
+                <li>☐ Baseboard (toilet shut off location)</li>
+                <li>☐ Elevation for vanity – Floating, thickened top, splash height</li>
+            </ul>
+
+            <h2>Electrical</h2>
+
+            <ul style="list-style-type: none">
+                <li>☐ Printed electrical specs</li>
+                <li>☐ Lighting and outlets laid out</li>
+                <li>☐ Bath fan locations</li>
+            </ul>
+
+            <h2>Doors and Finishes</h2>
+
+            <ul style="list-style-type: none">
+                <li>☐ Door sizes and swings</li>
+                <li>☐ Mark floor finishes on site</li>
+            </ul>
+
+            <p>
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 01/30/2026</small>
+            </p>
+
+            <script>
+                // Share button
+                const shareBtn = document.getElementById('share-btn');
+                if (shareBtn && navigator.share) {
+                    shareBtn.addEventListener('click', () => {
+                        navigator.share({
+                            title: document.title || 'Pre-Trade Checklist',
+                            url: window.location.href
+                        }).catch(() => { });
+                    });
+                } else if (shareBtn) {
+                    shareBtn.style.display = 'none';
+                }
+                // Print button
+                const printBtn = document.getElementById('print-btn');
+                if (printBtn) {
+                    printBtn.addEventListener('click', () => {
+                        window.print();
+                    });
+                }
+            </script>
+        </article>
+    </main>
+</div>
 
 <script>
-  // Share button
-  const shareBtn = document.getElementById('share-btn');
-  if (shareBtn && navigator.share) {
-    shareBtn.addEventListener('click', () => {
-      navigator.share({
-        title: 'Pre-Trade Checklist',
-        url: window.location.href
-      }).catch(() => {
-        // user cancelled or share failed; do nothing
-      });
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
     });
-  } else if (shareBtn) {
-    // Hide button if Web Share API isn't available
-    shareBtn.style.display = 'none';
-  }
-  // Print button
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
 </script>
 
-            </article>
-        </main>
-    </div>
-
-    <script>
-        // Mobile navigation toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.mobile-nav-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            if (navToggle && sidebar) {
-                navToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                });
-
-                document.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                            sidebar.classList.remove('active');
-                        }
-                    }
-                });
-            }
-        });
-    </script>
-
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
 </body>
 </html>

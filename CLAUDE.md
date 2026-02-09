@@ -43,3 +43,11 @@
 - **Issue 2**: `::before` backdrop overlay rendered incorrectly due to `transform` on sidebar creating a containing block — caused dark gray overlay on top portion of nav items
 - **Fix**: Set `background: #FFFFFF` on mobile `.sidebar`; replaced `::before` backdrop with `box-shadow: 0 0 0 9999px rgba(0,0,0,0.5)` on `.sidebar.active`
 - **Branch**: `claude/fix-mobile-nav-styling-gR5zk`
+
+### Session: 2026-02-09 — Add Electrical Rough Install page
+- **New page**: `electrical-rough-install.html` — matches format of HVAC and Plumbing pages
+- **Content**: Quick reference, prerequisites, process (includes temp power/lighting step), room-by-room "What Needs Power?" checklist (concise item names only), inspections, best practices, client communication
+- **Standalone reference**: `electrical-device-checklist.html` — printable device list by room, linked from the electrical rough page (not in nav, same pattern as other checklist pages)
+- **Nav**: Added "Electrical" link to all 41 HTML files, positioned between Plumbing and Stairs
+- **Style note**: User prefers concise checklist items (just the device/item name), not verbose descriptions with specs
+- **Branch**: `claude/fix-mobile-nav-styling-gR5zk`

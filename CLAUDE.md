@@ -100,3 +100,11 @@ Not every page needs every section — content drives structure.
 - **Nav**: Added "Electrical" link to all 41 HTML files, positioned between Plumbing and Stairs
 - **Style note**: User prefers concise checklist items (just the device/item name), not verbose descriptions with specs
 - **Branch**: `claude/fix-mobile-nav-styling-gR5zk`
+
+### Session: 2026-02-09 — Clean up Electrical Rough Install page
+- **Removed**: Quick Reference section (redundant with Prerequisites)
+- **Prerequisites cleanup**: Removed framing inspection note (doesn't happen before electrical), removed HVAC/plumbing coordination note, removed USB/dimmer selection notes
+- **Process reorganization**: Moved temporary power/lighting to end of Process section (last step in typical workflow); removed spider box reference
+- **Dedicated circuits**: Separated into code-required (with NEC citations) vs recommended; fixed items that don't actually require dedicated circuits
+- **Inspections**: Removed "schedule early" reminder
+- **Branch**: `claude/cleanup-electrical-rough-l3eCO`

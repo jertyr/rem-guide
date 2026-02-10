@@ -7,7 +7,7 @@
 
 ## Project Overview
 - Static HTML site hosted on GitHub Pages at `jertyr.github.io/rem-guide`
-- Construction/remodeling reference guide with ~47 HTML pages
+- Construction/remodeling reference guide with ~48 HTML pages
 - Single shared `styles.css` for all styling
 - No build system or framework — plain HTML, CSS, and vanilla JS
 - Migrated from AWS to GitHub Pages in PRs #1–6
@@ -84,7 +84,7 @@ Not every page needs every section — content drives structure.
 - **PR #41**: HVAC page rewrite per update-page skill
 - **PRs #42–43**: HVAC combustion air section (IRC G2407), gas pipe sizing table corrections
 - **PR #44**: Plumbing Rough Install page update
-- **PR (pending)**: Drywall, Insulation, and Flooring pages — created from field guide notes, nav links added across all files
+- **PR (pending)**: Drywall, Insulation, Flooring, and Countertops pages — created from field guide notes, nav links added across all files
 
 ## Work Log
 
@@ -111,11 +111,12 @@ Not every page needs every section — content drives structure.
 - **Branch**: `claude/cleanup-electrical-rough-l3eCO`
 
 ### Session: 2026-02-10 — Add Drywall, Insulation, and Flooring pages
-- **New pages created from user's field guide notes**: `drywall.html`, `insulation.html`, `flooring.html`
+- **New pages created from user's field guide notes**: `drywall.html`, `insulation.html`, `flooring.html`, `countertops.html`
 - **Pattern**: User provides extracted notes; Claude creates page matching site format and flags researched/added content in `<span style="color:red">` for user review
 - **Drywall**: Coordination, stocking/delivery logistics, hanging (glue + screw per MRC 702.3.5), finishing (3-coat), screw inspection, finish levels 0–5, sequencing into paint
 - **Insulation**: Material options (fiberglass, mineral wool, cellulose, spray foam, foam board), Michigan code requirements zones 5 & 6, fire code clearances (R302.13), ASTM E84 exposure limits, spray foam certificate requirement
 - **Flooring**: Wood floor best practices (moisture, vapor retarder, joist direction), engineered + solid fastening specs by plank width, LVP (floating vs glue-down), tile process + shower coordination + flood test inspection
-- **Nav order**: ...Electrical → Insulation → Drywall → Stairs became ...Electrical → Insulation → Drywall → Flooring → Stairs
+- **Countertops**: Quartz-focused page — template/fabrication workflow, build-to-print option, other stone pieces (niches, thresholds, curbs, benches), Goo Gone vs Goof Off distinction, quartz vs quartzite, cleaning/care guide. Heavier research needed — user notes were thin; researched cleaning products, heat damage thresholds, templating process
+- **Nav order**: ...Electrical → Insulation → Drywall → Flooring → Countertops → Stairs
 - **Nav updates**: Used Python script to insert after known anchor line in all HTML files (same pattern as previous nav additions)
 - **Branch**: `claude/create-drywall-page-8VgCU`

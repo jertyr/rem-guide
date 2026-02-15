@@ -128,5 +128,6 @@ Not every page needs every section — content drives structure.
 - **Scope clarification**: Changed intro from Michigan-specific focus to broader applicability — notes content applies across US and IRC-based jurisdictions while maintaining Michigan zones 5 & 6 as primary examples
 - **Key clarification**: Wall/ceiling insulation must be inspected before drywall; attic insulation can go in after drywall lid is up as long as it remains accessible for inspection (loose fill installers use depth markers/measuring sticks for easy verification)
 - **Code Requirements table**: Added paragraph explaining Michigan climate zone 5/6 split (south vs north of I-96/Lansing area) with link to DOE Building America climate zone map; added code citations linking to 2015 MRC Chapter 11 and 2015 IECC Table R402.1.2
+- **Fiberglass Materials**: Removed R-15 and R-21 fiberglass options — not locally available; builders use R-13 for 2×4 walls and R-19 for 2×6 walls, and switch to Rockwool for higher R-values
 - **Reasoning**: More accurately reflects typical construction sequencing where insulation happens after rough building inspection rather than waiting for all individual trade inspections
 - **Branch**: `claude/update-insulation-timing-B1z2k`

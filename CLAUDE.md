@@ -123,8 +123,9 @@ Not every page needs every section — content drives structure.
 
 ### Session: 2026-02-15 — Update Insulation Timing
 - **Changed**: Insulation timing clarification — from "after all rough trade inspections pass" to "after the rough building inspection"
-- **Added**: Exception for loose fill attic insulation, which can be installed after drywall lid is up
-- **Updated sections**: Intro paragraph, Quick Reference (added new bullet for attic insulation exception), Process (Pre-Insulation Check), and Inspections
+- **Added**: Exception for attic insulation, which can be installed after drywall as long as it's accessible for inspection
+- **Updated sections**: Intro paragraph, Quick Reference (clarified wall/ceiling vs attic timing, added note about depth markers for loose fill), Process (Pre-Insulation Check), and Inspections
 - **Scope clarification**: Changed intro from Michigan-specific focus to broader applicability — notes content applies across US and IRC-based jurisdictions while maintaining Michigan zones 5 & 6 as primary examples
+- **Key clarification**: Wall/ceiling insulation must be inspected before drywall; attic insulation can go in after drywall lid is up as long as it remains accessible for inspection (loose fill installers use depth markers/measuring sticks for easy verification)
 - **Reasoning**: More accurately reflects typical construction sequencing where insulation happens after rough building inspection rather than waiting for all individual trade inspections
 - **Branch**: `claude/update-insulation-timing-B1z2k`

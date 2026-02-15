@@ -120,3 +120,10 @@ Not every page needs every section — content drives structure.
 - **Nav order**: ...Electrical → Insulation → Drywall → Flooring → Countertops → Stairs
 - **Nav updates**: Used Python script to insert after known anchor line in all HTML files (same pattern as previous nav additions)
 - **Branch**: `claude/create-drywall-page-8VgCU`
+
+### Session: 2026-02-15 — Update Insulation Timing
+- **Changed**: Insulation timing clarification — from "after all rough trade inspections pass" to "after the rough building inspection"
+- **Added**: Exception for loose fill attic insulation, which can be installed after drywall lid is up
+- **Updated sections**: Intro paragraph, Quick Reference (added new bullet for attic insulation exception), Process (Pre-Insulation Check), and Inspections
+- **Reasoning**: More accurately reflects typical construction sequencing where insulation happens after rough building inspection rather than waiting for all individual trade inspections
+- **Branch**: `claude/update-insulation-timing-B1z2k`

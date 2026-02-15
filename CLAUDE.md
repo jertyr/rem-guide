@@ -127,5 +127,6 @@ Not every page needs every section — content drives structure.
 - **Updated sections**: Intro paragraph, Quick Reference (clarified wall/ceiling vs attic timing, added note about depth markers for loose fill), Process (Pre-Insulation Check), and Inspections
 - **Scope clarification**: Changed intro from Michigan-specific focus to broader applicability — notes content applies across US and IRC-based jurisdictions while maintaining Michigan zones 5 & 6 as primary examples
 - **Key clarification**: Wall/ceiling insulation must be inspected before drywall; attic insulation can go in after drywall lid is up as long as it remains accessible for inspection (loose fill installers use depth markers/measuring sticks for easy verification)
+- **Code Requirements table**: Added paragraph explaining Michigan climate zone 5/6 split (south vs north of I-96/Lansing area) with link to DOE Building America climate zone map; added code citations linking to 2015 MRC Chapter 11 and 2015 IECC Table R402.1.2
 - **Reasoning**: More accurately reflects typical construction sequencing where insulation happens after rough building inspection rather than waiting for all individual trade inspections
 - **Branch**: `claude/update-insulation-timing-B1z2k`

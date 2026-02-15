@@ -125,5 +125,6 @@ Not every page needs every section — content drives structure.
 - **Changed**: Insulation timing clarification — from "after all rough trade inspections pass" to "after the rough building inspection"
 - **Added**: Exception for loose fill attic insulation, which can be installed after drywall lid is up
 - **Updated sections**: Intro paragraph, Quick Reference (added new bullet for attic insulation exception), Process (Pre-Insulation Check), and Inspections
+- **Scope clarification**: Changed intro from Michigan-specific focus to broader applicability — notes content applies across US and IRC-based jurisdictions while maintaining Michigan zones 5 & 6 as primary examples
 - **Reasoning**: More accurately reflects typical construction sequencing where insulation happens after rough building inspection rather than waiting for all individual trade inspections
 - **Branch**: `claude/update-insulation-timing-B1z2k`

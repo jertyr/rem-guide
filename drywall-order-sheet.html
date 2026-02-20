@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Drywall Order Sheet | Remodelers Guide">
+    <title>Drywall Order Sheet | Remodelers Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+        }
+        .order-table {
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        .order-table th,
+        .order-table td {
+            border: 1px solid #ccc;
+            padding: 0.45rem 0.9rem;
+            text-align: center;
+        }
+        .order-table th {
+            background: #f2f2f2;
+            font-weight: bold;
+        }
+        .order-table td:first-child {
+            text-align: left;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .order-table td:nth-child(2) {
+            min-width: 90px;
+        }
+        .order-table .checkbox-cell {
+            font-size: 1.1rem;
+            color: #333;
+        }
+        .qty-section {
+            margin: 1rem 0 1.5rem 0;
+        }
+        .qty-section p {
+            margin: 0.35rem 0;
+            font-size: 0.95rem;
+        }
+        .qty-line {
+            display: inline-block;
+            width: 70px;
+            border-bottom: 1px solid #333;
+            margin-right: 0.6rem;
+            vertical-align: bottom;
+        }
+        .note-box {
+            background: #f8f6f3;
+            border-left: 3px solid #e67e22;
+            padding: 0.6rem 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .job-block p {
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+        .job-block .fill-line {
+            display: inline-block;
+            width: 260px;
+            border-bottom: 1px solid #333;
+            vertical-align: bottom;
+            margin-left: 0.4rem;
+        }
+        h3.order-sub {
+            margin: 1.2rem 0 0.4rem 0;
+            font-size: 1rem;
+            color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
+                <li class="nav-item"><a href="decks.html">Decks</a></li>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+                <li class="nav-item active-section"><a href="drywall.html" class="active">Drywall</a></li>
+                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <p class="breadcrumb"><a href="drywall.html">Drywall</a> &gt; Drywall Order Sheet</p>
+            <h1>Drywall Order Sheet</h1>
+
+            <div class="job-block">
+                <p>Job: <span class="fill-line"></span></p>
+                <p>Address: <span class="fill-line"></span></p>
+                <p>Date: <span class="fill-line"></span></p>
+                <p>Drywaller: <span class="fill-line"></span></p>
+            </div>
+
+            <h2>Drywall Sheets</h2>
+
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Qty</th>
+                        <th>&frac12;"</th>
+                        <th>&#8541;"</th>
+                        <th>Moisture-Resistant</th>
+                        <th>Type X</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4&times;8</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                    <tr>
+                        <td>4&times;10</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                    <tr>
+                        <td>4&times;12</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                    <tr>
+                        <td>4&times;14</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                    <tr>
+                        <td>4&times;16</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Accessories</h2>
+
+            <h3 class="order-sub">Corner Bead</h3>
+            <div class="qty-section">
+                <p><span class="qty-line"></span> Metal corner bead</p>
+                <p><span class="qty-line"></span> Plastic corner bead</p>
+                <p><span class="qty-line"></span> No-coat corner bead</p>
+            </div>
+
+            <h3 class="order-sub">Tape &amp; Mud</h3>
+            <div class="qty-section">
+                <p><span class="qty-line"></span> Paper tape (1 roll per 15 sheets)</p>
+                <p><span class="qty-line"></span> 5 min mud &mdash; bucket (1 per 15 sheets)</p>
+                <p><span class="qty-line"></span> 45 min mud &mdash; bucket (1 per 15 sheets)</p>
+                <p><span class="qty-line"></span> 120 min mud &mdash; bucket (1 per 15 sheets)</p>
+                <p><span class="qty-line"></span> Green top mud &mdash; bucket (1 per 15 sheets)</p>
+                <p><span class="qty-line"></span> Blue top mud &mdash; bucket (1 per 15 sheets)</p>
+            </div>
+
+            <h3 class="order-sub">Clips &amp; Hardware</h3>
+            <div class="qty-section">
+                <p><span class="qty-line"></span> Drywall clips</p>
+                <p><span class="qty-line"></span> Corner clips</p>
+            </div>
+
+            <h3 class="order-sub">Adhesive</h3>
+            <div class="qty-section">
+                <p><span class="qty-line"></span> Drywall adhesive, 32 oz tube (1 tube per sheet of 4&times;10)</p>
+                <p><span class="qty-line"></span> Spray adhesive</p>
+            </div>
+
+            <div class="note-box">
+                <strong>Adhesive note &mdash; 32 oz tube on 16" OC framing:</strong> A 4&times;10 sheet spans 9 framing members across its 10-foot length (studs at 0, 16, 32, 48, 64, 80, 96, 112, and 120"). That's 9 beads &times; 4 ft each = 36 linear feet of adhesive per sheet. A 32 oz tube delivers approximately 43&ndash;44 linear feet at the recommended &#8540;" bead. After accounting for nozzle waste and starts/stops, plan <strong>1 tube per sheet</strong>. Verify with the bead size and coverage listed on your specific product label.
+            </div>
+
+            <p>
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 02/20/2026</small>
+            </p>
+
+            <p class="breadcrumb"><a href="drywall.html">Drywall</a> &gt; Drywall Order Sheet</p>
+        </article>
+    </main>
+</div>
+
+<script>
+    // Share button
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+        shareBtn.addEventListener('click', () => {
+            navigator.share({
+                title: document.title || 'Drywall Order Sheet',
+                url: window.location.href
+            }).catch(() => { });
+        });
+    } else if (shareBtn) {
+        shareBtn.style.display = 'none';
+    }
+    // Print button
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) {
+        printBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<footer>
+    &copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
+</body>
+</html>

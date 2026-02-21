@@ -36,21 +36,14 @@
                 margin: 0;
                 padding: 0;
             }
-            h1 { font-size: 1.2rem; margin: 0 0 0.5rem 0; }
-            h2 { font-size: 1rem; margin: 0.4rem 0 0.3rem 0; }
-            .order-cols { gap: 1.5rem; }
+            h1 { font-size: 1.1rem; margin: 0 0 0.4rem 0; }
+            h2 { font-size: 0.95rem; margin: 0.5rem 0 0.2rem 0; }
             .order-table { font-size: 0.8rem; }
-            .order-table th, .order-table td { padding: 0.25rem 0.5rem; }
-            .qty-section p { font-size: 0.8rem; margin: 0.15rem 0; }
-            h3.order-sub { font-size: 0.85rem; margin: 0.5rem 0 0.2rem 0; }
+            .order-table th, .order-table td { padding: 0.2rem 0.5rem; }
+            .qty-section { margin: 0.2rem 0 0.5rem 0; }
+            .qty-section p { font-size: 0.8rem; margin: 0.1rem 0; }
+            h3.order-sub { font-size: 0.85rem; margin: 0.4rem 0 0.15rem 0; }
         }
-        .order-cols {
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-        }
-        .order-col-left { flex: 0 0 auto; }
-        .order-col-right { flex: 1; }
         .order-table {
             border-collapse: collapse;
             margin: 0.5rem 0 1rem 0;
@@ -156,97 +149,91 @@
             <p class="breadcrumb"><a href="drywall.html">Drywall</a> &gt; Drywall Order Sheet</p>
             <h1>Drywall Order Sheet</h1>
 
-            <div class="order-cols">
-                <div class="order-col-left">
-                    <h2>Drywall Sheets</h2>
-                    <table class="order-table">
-                        <thead>
-                            <tr>
-                                <th>Size</th>
-                                <th>Qty</th>
-                                <th>&frac12;"</th>
-                                <th>&#8541;"</th>
-                                <th>MR</th>
-                                <th>Type X</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>4&times;8</td>
-                                <td></td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                            </tr>
-                            <tr>
-                                <td>4&times;10</td>
-                                <td></td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                            </tr>
-                            <tr>
-                                <td>4&times;12</td>
-                                <td></td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                            </tr>
-                            <tr>
-                                <td>4&times;14</td>
-                                <td></td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                            </tr>
-                            <tr>
-                                <td>4&times;16</td>
-                                <td></td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                                <td class="checkbox-cell">&#9744;</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <h2>Drywall Sheets</h2>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Qty</th>
+                        <th>&frac12;"</th>
+                        <th>&#8541;"</th>
+                        <th>MR</th>
+                        <th>Type X</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4&times;8</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                    <tr>
+                        <td>4&times;10</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                    <tr>
+                        <td>4&times;12</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                    <tr>
+                        <td>4&times;14</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                    <tr>
+                        <td>4&times;16</td>
+                        <td></td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                        <td class="checkbox-cell">&#9744;</td>
+                    </tr>
+                </tbody>
+            </table>
 
-                <div class="order-col-right">
-                    <h2>Accessories</h2>
+            <h2>Accessories</h2>
 
-                    <h3 class="order-sub">Corner Bead</h3>
-                    <div class="qty-section">
-                        <p><span class="qty-line"></span> Metal corner bead</p>
-                        <p><span class="qty-line"></span> Plastic corner bead</p>
-                        <p><span class="qty-line"></span> No-coat corner bead</p>
-                    </div>
+            <h3 class="order-sub">Corner Bead</h3>
+            <div class="qty-section">
+                <p><span class="qty-line"></span> Metal corner bead</p>
+                <p><span class="qty-line"></span> Plastic corner bead</p>
+                <p><span class="qty-line"></span> No-coat corner bead</p>
+            </div>
 
-                    <h3 class="order-sub">Tape &amp; Mud</h3>
-                    <div class="qty-section">
-                        <p><span class="qty-line"></span> Paper tape (1 roll per 15 sheets)</p>
-                        <p><span class="qty-line"></span> 5 min mud (1 per 15 sheets)</p>
-                        <p><span class="qty-line"></span> 45 min mud (1 per 15 sheets)</p>
-                        <p><span class="qty-line"></span> 120 min mud (1 per 15 sheets)</p>
-                        <p><span class="qty-line"></span> Green top mud (1 per 15 sheets)</p>
-                        <p><span class="qty-line"></span> Blue top mud (1 per 15 sheets)</p>
-                    </div>
+            <h3 class="order-sub">Tape &amp; Mud</h3>
+            <div class="qty-section">
+                <p><span class="qty-line"></span> Paper tape (1 roll per 15 sheets)</p>
+                <p><span class="qty-line"></span> 5 min mud (1 per 15 sheets)</p>
+                <p><span class="qty-line"></span> 45 min mud (1 per 15 sheets)</p>
+                <p><span class="qty-line"></span> 120 min mud (1 per 15 sheets)</p>
+                <p><span class="qty-line"></span> Green top mud (1 per 15 sheets)</p>
+                <p><span class="qty-line"></span> Blue top mud (1 per 15 sheets)</p>
+            </div>
 
-                    <h3 class="order-sub">Clips &amp; Hardware</h3>
-                    <div class="qty-section">
-                        <p><span class="qty-line"></span> Drywall clips</p>
-                        <p><span class="qty-line"></span> Corner clips</p>
-                    </div>
+            <h3 class="order-sub">Clips &amp; Hardware</h3>
+            <div class="qty-section">
+                <p><span class="qty-line"></span> Drywall clips</p>
+                <p><span class="qty-line"></span> Corner clips</p>
+            </div>
 
-                    <h3 class="order-sub">Adhesive</h3>
-                    <div class="qty-section">
-                        <p><span class="qty-line"></span> Drywall adhesive, 32 oz (1 tube per 4 sheets)</p>
-                        <p><span class="qty-line"></span> Spray adhesive</p>
-                    </div>
-                </div>
+            <h3 class="order-sub">Adhesive</h3>
+            <div class="qty-section">
+                <p><span class="qty-line"></span> Drywall adhesive, 32 oz (1 tube per 4 sheets)</p>
+                <p><span class="qty-line"></span> Spray adhesive</p>
             </div>
 
             <p>

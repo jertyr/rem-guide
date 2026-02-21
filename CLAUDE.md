@@ -56,7 +56,7 @@ Pages follow a flexible but consistent format (see `update-page.md` for full ski
 6. **Best Practices** — positive framing, preventing common mistakes
 7. **Inspections** — code citations, what inspectors check
 8. **Client Communication** — expectations, warranties, timing
-9. **Resources** — links to checklists, order forms, external guides
+9. **Resources** — links to checklists, order forms, external guides. Always the last section before the footer
 10. **Footer** — Share/Print buttons + `Last revised: MM/DD/YYYY`
 
 Not every page needs every section — content drives structure.

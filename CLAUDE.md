@@ -5,6 +5,16 @@
 - **Pushes**: Same — just push and give the link, don't spend tokens retrying or automating merges
 - **Memory**: Update this file each session with what was done so future sessions have context
 
+## Working Style and Relationship
+- **Iterative review**: User reviews output and gives feedback; Claude applies it in follow-up PRs. Expect multiple rounds per page — this is normal, not a failure
+- **Red-flag pattern**: When Claude adds content that wasn't in the user's notes (researched specs, code citations, product details), wrap it in `<span style="color:red">` so the user can spot and approve it before it goes live. Remove flags once approved
+- **Field guide workflow**: User provides raw notes or bullet points; Claude builds the full page to match site format. Claude fills gaps with research but flags everything added
+- **No em-dashes**: User dislikes em-dashes. Use periods, semicolons, or conjunctions instead. This is a standing rule for all content
+- **Small PRs preferred**: One logical change per PR. Don't bundle unrelated fixes
+- **No unsolicited cleanup**: Don't refactor, reorganize, or "improve" things the user didn't ask about. Stay in scope
+- **Trust the user's field knowledge**: User is a working contractor. Don't hedge or over-explain trade basics. Flag code/spec details for review, not common practice
+- **Concise responses**: Short answers. Don't recap what you just did at length — the PR diff speaks for itself
+
 ## Project Overview
 - Static HTML site hosted on GitHub Pages at `jertyr.github.io/rem-guide`
 - Construction/remodeling reference guide with ~48 HTML pages
@@ -46,7 +56,7 @@ Pages follow a flexible but consistent format (see `update-page.md` for full ski
 6. **Best Practices** — positive framing, preventing common mistakes
 7. **Inspections** — code citations, what inspectors check
 8. **Client Communication** — expectations, warranties, timing
-9. **Resources** — links to checklists, order forms, external guides
+9. **Resources** — links to checklists, order forms, external guides. Always the last section before the footer
 10. **Footer** — Share/Print buttons + `Last revised: MM/DD/YYYY`
 
 Not every page needs every section — content drives structure.

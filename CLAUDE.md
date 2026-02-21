@@ -84,7 +84,12 @@ Not every page needs every section — content drives structure.
 - **PR #41**: HVAC page rewrite per update-page skill
 - **PRs #42–43**: HVAC combustion air section (IRC G2407), gas pipe sizing table corrections
 - **PR #44**: Plumbing Rough Install page update
-- **PR (pending)**: Drywall, Insulation, Flooring, and Countertops pages — created from field guide notes, nav links added across all files
+- **PRs #45–50**: Electrical Rough Install page + device checklist; mobile nav fix (white sidebar, box-shadow backdrop); nav update across all files
+- **PRs #51–54**: Drywall, Insulation, Flooring, and Countertops pages created from field guide notes; nav links added across all files
+- **PRs #55–63**: Insulation page — iterative approval of red-flagged researched content; timing clarification (rough building inspection, not all trade inspections); attic exception; zone 5/6 table updates; fiberglass R-value corrections; em-dashes removed
+- **PRs #64–66**: Drywall page refinements — intro/quick reference/materials/prerequisites streamlined; coordination and stocking merged into process; em-dashes removed; flooring page tightened; countertops feedback applied
+- **PR #67**: Insulation timing final pass
+- **PRs #68–69**: Deck maintenance section added (composite + IPE/tropical hardwood); drywall process reordered (cleanup before prime); drywall order sheet added and linked from drywall page
 
 ## Work Log
 
@@ -132,3 +137,12 @@ Not every page needs every section — content drives structure.
 - **Em-dashes removed**: Replaced all em-dashes throughout page with periods, semicolons, or conjunctions as appropriate for clearer readability
 - **Reasoning**: More accurately reflects typical construction sequencing where insulation happens after rough building inspection rather than waiting for all individual trade inspections
 - **Branch**: `claude/update-insulation-timing-B1z2k`
+
+### Sessions: 2026-02-15 to 2026-02-21 — Insulation + Drywall iterations, Deck maintenance
+- **Insulation (PRs #55–63, #67)**: Multiple passes approving red-flagged researched content; attic exception added; zone split paragraph added; R-15/R-21 removed; em-dashes replaced; final timing pass
+- **Drywall (PRs #64–66)**: Streamlined intro, quick reference, materials, prerequisites; merged coordination/stocking into process; em-dashes removed; process reordered (cleanup before prime in PRs #68–69)
+- **Flooring (PR #65)**: Tightened copy, removed em-dashes, restructured
+- **Countertops (PR #66)**: Applied user feedback
+- **Drywall order sheet (PR #69)**: Created standalone order sheet, linked from drywall page
+- **Deck maintenance (PRs #68–69)**: Added maintenance section to decks page covering composite (Trex) and IPE/tropical hardwood care
+- **Branch**: `claude/add-deck-maintenance-OVKWe`

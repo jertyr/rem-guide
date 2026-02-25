@@ -156,3 +156,13 @@ Not every page needs every section — content drives structure.
 - **Drywall order sheet (PR #69)**: Created standalone order sheet, linked from drywall page
 - **Deck maintenance (PRs #68–69)**: Added maintenance section to decks page covering composite (Trex) and IPE/tropical hardwood care
 - **Branch**: `claude/add-deck-maintenance-OVKWe`
+
+### Session: 2026-02-25 — Insulation page: attic ventilation section
+- **Added**: New "Attic Ventilation (R806)" section covering the 1:150 standard rule with a worked example, the 1:300 exception conditions, and installation requirements (baffles, 1" clear channel, pest screening)
+- **Added**: NFA reference table for the most common products contractors use: OC VentSure strip ridge vent (20 sq. in./LF), fully lanced aluminum soffit vent 8×16 (50–65 sq. in./vent), James Hardie vented soffit (5 sq. in./LF), vented vinyl soffit (6–9 sq. in./LF). Table is red-flagged pending user approval
+- **Added**: Ventilation baffle bullet to Best Practices — install baffles in every rafter/truss bay before blowing
+- **Condensed**: Two fire code clearance bullets (combustible insulation + kraft facing) merged into one
+- **Removed**: Remodeling Watch Points section, Unvented (Hot Roof) Assemblies section, Quick Ventilation Math section (user wanted to keep only the practical field reference content)
+- **Site philosophy note**: Goal is practical cheat-sheet for builders directing crews — give them the numbers and code basis to be the expert on site, not background theory
+- **Branch**: `claude/add-ventilation-section-O0wc0`
+- **PR**: #75 (pending merge)

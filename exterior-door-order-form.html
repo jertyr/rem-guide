@@ -47,6 +47,15 @@
             .form-row { margin: 0.15rem 0; font-size: 0.82rem; }
             .option-row { margin: 0.15rem 0; font-size: 0.82rem; }
             .draw-box { height: 2.4in; }
+            .print-credit {
+                display: block !important;
+                font-size: 0.65rem;
+                color: #888;
+                text-align: center;
+                margin-top: 1.5rem;
+                border-top: 1px solid #ddd;
+                padding-top: 0.3rem;
+            }
         }
 
         /* Screen styles */
@@ -147,6 +156,7 @@
             border-top: 1px solid #e0e0e0;
             margin: 0.6rem 0;
         }
+        .print-credit { display: none; }
     </style>
 </head>
 <body>
@@ -225,10 +235,11 @@
                     <h3 class="form-section">Wall &amp; Installation</h3>
                     <p class="option-row"><strong>Wall:</strong> <span class="opts">3&nbsp;11/16" &nbsp;/&nbsp; 4&nbsp;9/16" &nbsp;/&nbsp; 6&nbsp;9/16"</span></p>
                     <p class="option-row"><strong>Install:</strong> <span class="opts">Vinyl &nbsp;/&nbsp; Brick &nbsp;/&nbsp; Hardie/Wood &nbsp;/&nbsp; T1-11</span></p>
+                    <p class="form-row">Casing:<span class="fill-sm"></span> &nbsp; Extension:<span class="fill-sm"></span> &nbsp; Shoe:<span class="fill-sm"></span></p>
                 </div>
             </div>
 
-            <!-- Row 2: Glass+Hardware (left) / Screens+Storm (right) -->
+            <!-- Row 2: Glass (left) / Screens (right) | Hardware (left) / Storm Door (right) -->
             <div class="form-grid-bottom">
                 <div>
                     <h3 class="form-section">Glass &amp; Lites</h3>
@@ -236,7 +247,16 @@
                     <p class="option-row"><strong>Grids:</strong> <span class="opts">None &nbsp;/&nbsp; SDL &nbsp;/&nbsp; ADL</span></p>
                     <p class="form-row">Glass: Clear &nbsp;/&nbsp; Privacy:<span class="fill-sm"></span></p>
                     <p class="form-row">Safety: <span class="opts">Self&nbsp;Closing</span> &nbsp;/&nbsp; Fire&nbsp;Rated:<span class="fill-xs"></span></p>
+                </div>
 
+                <div>
+                    <h3 class="form-section">Screens</h3>
+                    <p class="form-row">Screen:<span class="fill-sm"></span></p>
+                    <p class="form-row">Frame Color:<span class="fill-sm"></span></p>
+                    <p class="form-row">Material:<span class="fill-sm"></span></p>
+                </div>
+
+                <div>
                     <h3 class="form-section">Hardware &amp; Color</h3>
                     <p class="option-row"><strong>Handle:</strong> <span class="opts">Single&nbsp;Bore &nbsp;/&nbsp; Double&nbsp;Bore</span></p>
                     <p class="form-row">Hardware Color:<span class="fill-md"></span></p>
@@ -245,11 +265,6 @@
                 </div>
 
                 <div>
-                    <h3 class="form-section">Screens</h3>
-                    <p class="form-row">Screen:<span class="fill-sm"></span></p>
-                    <p class="form-row">Frame Color:<span class="fill-sm"></span></p>
-                    <p class="form-row">Material:<span class="fill-sm"></span></p>
-
                     <h3 class="form-section">Storm Door</h3>
                     <p class="form-row">Storm Door:<span class="fill-sm"></span></p>
                     <p class="form-row">Color:<span class="fill-sm"></span></p>
@@ -260,6 +275,8 @@
             <!-- Notes -->
             <h3 class="form-section">Notes / Special Instructions</h3>
             <div class="notes-box"></div>
+
+            <div class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</div>
 
             <p class="form-actions">
                 <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>

@@ -42,11 +42,13 @@
             .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
             .job-header p { font-size: 0.82rem; margin: 0.1rem 0; }
             .form-grid { gap: 1.2rem; margin-bottom: 0.5rem; }
-            .form-grid-3 { gap: 1rem; margin-bottom: 0; }
+            .form-grid-bottom { gap: 1.2rem; margin-bottom: 0.5rem; }
             .form-row { margin: 0.15rem 0; font-size: 0.82rem; }
             .option-row { margin: 0.15rem 0; font-size: 0.82rem; }
-            .draw-box { height: 1.6in; }
+            .draw-box { height: 2.4in; }
             .draw-caption { font-size: 0.7rem; }
+            .notes-box { height: 2.2in; }
+            .notes-caption { font-size: 0.7rem; }
         }
 
         /* Screen styles */
@@ -107,11 +109,25 @@
             gap: 2rem;
             margin-bottom: 1rem;
         }
-        .form-grid-3 {
+        .form-grid-bottom {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.5rem;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 2rem;
             margin-bottom: 1rem;
+        }
+        .notes-box {
+            border: 1px solid #aaa;
+            height: 1.5in;
+            margin-top: 0.4rem;
+            position: relative;
+            background: #fff;
+        }
+        .notes-caption {
+            position: absolute;
+            bottom: 0.3rem;
+            left: 0.4rem;
+            font-size: 0.78rem;
+            color: #888;
         }
         .form-row {
             margin: 0.3rem 0;
@@ -207,7 +223,7 @@
                 <div>
                     <h3 class="form-section">Configuration</h3>
                     <p class="option-row"><strong>Type:</strong> <span class="opts">Slider &nbsp;/&nbsp; Double &nbsp;/&nbsp; Triple &nbsp;/&nbsp; Quad</span></p>
-                    <p class="option-row"><strong>Hand:</strong> <span class="opts">Right Hand &nbsp;/&nbsp; Left Hand</span></p>
+                    <p class="option-row"><strong>Hand:</strong> <span class="opts">Right&nbsp;Hand &nbsp;/&nbsp; Left&nbsp;Hand</span></p>
                     <p class="option-row"><strong>Swing:</strong> <span class="opts">Inswing &nbsp;/&nbsp; Outswing</span></p>
 
                     <h3 class="form-section">Draw <span style="font-weight:normal; font-size:0.82rem; color:#666;">(swing / lites / grid)</span></h3>
@@ -230,19 +246,17 @@
 
             <hr class="divider">
 
-            <!-- Row 2: Glass / Hardware / Screens + Storm -->
-            <div class="form-grid-3">
+            <!-- Row 2: Glass+Hardware (left) / Screens+Storm (right) -->
+            <div class="form-grid-bottom">
                 <div>
                     <h3 class="form-section">Glass &amp; Lites</h3>
                     <p class="option-row"><strong>Lites:</strong> <span class="opts">None &nbsp;/&nbsp; Half &nbsp;/&nbsp; Full</span></p>
                     <p class="option-row"><strong>Grids:</strong> <span class="opts">None &nbsp;/&nbsp; SDL &nbsp;/&nbsp; ADL</span></p>
                     <p class="form-row">Glass: Clear &nbsp;/&nbsp; Privacy:<span class="fill-sm"></span></p>
-                    <p class="option-row"><strong>Safety:</strong> <span class="opts">Self Closing &nbsp;/&nbsp; Fire Rating:<span class="fill-xs"></span></span></p>
-                </div>
+                    <p class="form-row">Safety: <span class="opts">Self&nbsp;Closing</span> &nbsp;/&nbsp; Fire&nbsp;Rated:<span class="fill-xs"></span></p>
 
-                <div>
                     <h3 class="form-section">Hardware &amp; Color</h3>
-                    <p class="option-row"><strong>Handle:</strong> <span class="opts">Single Bore &nbsp;/&nbsp; Double Bore</span></p>
+                    <p class="option-row"><strong>Handle:</strong> <span class="opts">Single&nbsp;Bore &nbsp;/&nbsp; Double&nbsp;Bore</span></p>
                     <p class="form-row">Hardware Color:<span class="fill-md"></span></p>
                     <p class="form-row">Interior Color:<span class="fill-md"></span></p>
                     <p class="form-row">Exterior Color:<span class="fill-md"></span></p>
@@ -259,6 +273,14 @@
                     <p class="form-row">Color:<span class="fill-sm"></span></p>
                     <p class="form-row">Handle:<span class="fill-sm"></span></p>
                 </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Notes -->
+            <h3 class="form-section">Notes / Special Instructions</h3>
+            <div class="notes-box">
+                <span class="notes-caption">vendor quotes, non-standard sizes, special orders, field notes</span>
             </div>
 
             <p>

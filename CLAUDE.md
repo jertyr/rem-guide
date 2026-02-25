@@ -100,6 +100,7 @@ Not every page needs every section — content drives structure.
 - **PRs #64–66**: Drywall page refinements — intro/quick reference/materials/prerequisites streamlined; coordination and stocking merged into process; em-dashes removed; flooring page tightened; countertops feedback applied
 - **PR #67**: Insulation timing final pass
 - **PRs #68–69**: Deck maintenance section added (composite + IPE/tropical hardwood); drywall process reordered (cleanup before prime); drywall order sheet added and linked from drywall page
+- **PRs #70–75**: Exterior Door Order Form created (`exterior-door-order-form.html`); iterated on layout (2×2 bottom grid for Storm Door alignment), print whitespace fixes (notes-box, button paragraph, hr dividers), copyright credit line, casing/extension/shoe fields, label bold removed. Insulation attic ventilation section (R806) added.
 
 ## Work Log
 
@@ -156,6 +157,16 @@ Not every page needs every section — content drives structure.
 - **Drywall order sheet (PR #69)**: Created standalone order sheet, linked from drywall page
 - **Deck maintenance (PRs #68–69)**: Added maintenance section to decks page covering composite (Trex) and IPE/tropical hardwood care
 - **Branch**: `claude/add-deck-maintenance-OVKWe`
+
+### Session: 2026-02-25 — Exterior Door Order Form created and iterated
+- **New file**: `exterior-door-order-form.html` — printable one-page order form linked from exterior-doors.html (not in sidebar nav)
+- **Layout**: Two-column top grid (Configuration + Draw box left / Sizing + Wall & Installation right); 2×2 bottom grid (Glass & Lites / Screens top row, Hardware & Color / Storm Door bottom row — forced into same grid row so headings align vertically)
+- **Fields**: Job header (Location, Brand, Line); Configuration (Type, Hand, Swing); Draw box; Sizing (RO, Frame, Brickmold); Wall & Installation (Wall depth, Install type, Casing, Extension, Shoe — each on own line); Glass & Lites; Hardware & Color; Screens; Storm Door; Notes / Special Instructions
+- **Print behavior**: Single-page letter portrait; sidebar/header/footer/buttons all hidden; draw-box forced to 2.4in; notes-box hidden in print (heading acts as end-of-form, blank page space is writing area); copyright credit line visible only in print
+- **Copyright**: `© 2026 Remodelers Guide — jertyr.github.io/rem-guide` — print-only, centered, below notes heading
+- **Styling**: h3 headings bold, all label/row text not bold (removed `<strong>` from option-row labels); no hr dividers between sections
+- **Print bugs fixed**: Three hr dividers removed; notes-box screen CSS `height: 1.5in` explicitly hidden in print (was bleeding through); button `<p>` wrapped in `.form-actions` and hidden in print; print-credit margin-top trimmed from 1.5rem to 0.5rem
+- **Branch**: `claude/add-ventilation-section-O0wc0`
 
 ### Session: 2026-02-25 — Insulation page: attic ventilation section
 - **Added**: New "Attic Ventilation (R806)" section covering the 1:150 standard rule with a worked example, the 1:300 exception conditions, and installation requirements (baffles, 1" clear channel, pest screening)

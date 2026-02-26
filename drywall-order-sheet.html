@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         @media print {
-            @page { margin: 0.5in; }
+            @page { margin: 0.5in; size: letter portrait; }
             header,
             .sidebar,
             footer,
             .mobile-nav-toggle,
             .breadcrumb,
+            .form-actions,
             button,
             #share-btn,
             #print-btn,
@@ -35,14 +36,77 @@
             body {
                 margin: 0;
                 padding: 0;
+                font-size: 0.82rem;
             }
-            h1 { font-size: 1.1rem; margin: 0 0 0.4rem 0; }
-            h2 { font-size: 0.95rem; margin: 0.5rem 0 0.2rem 0; }
+            h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
+            h3.form-section { font-size: 0.8rem; margin: 0.4rem 0 0.2rem 0; padding-bottom: 0.1rem; }
+            .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
+            .job-header p { font-size: 0.82rem; margin: 0.1rem 0; }
+            .form-grid { gap: 1.2rem; margin-bottom: 0.5rem; }
+            .form-row { margin: 0.15rem 0; font-size: 0.82rem; }
             .order-table { font-size: 0.8rem; }
             .order-table th, .order-table td { padding: 0.2rem 0.5rem; }
-            .qty-section { margin: 0.2rem 0 0.5rem 0; }
-            .qty-section p { font-size: 0.8rem; margin: 0.1rem 0; }
-            h3.order-sub { font-size: 0.85rem; margin: 0.4rem 0 0.15rem 0; }
+            .notes-box { display: none; }
+        }
+
+        /* Screen styles */
+        h1.form-title {
+            font-size: 1.4rem;
+            margin: 0 0 0.6rem 0;
+            color: #2C3E50;
+        }
+        h3.form-section {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+            margin: 0.9rem 0 0.35rem 0;
+            font-weight: 600;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .job-header p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .fill-lg {
+            display: inline-block;
+            width: 160px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-md {
+            display: inline-block;
+            width: 110px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-sm {
+            display: inline-block;
+            width: 70px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        .notes-box {
+            height: 1.5in;
+            margin-top: 0.4rem;
+        }
+        .form-row {
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
         }
         .order-table {
             border-collapse: collapse;
@@ -70,34 +134,6 @@
         .order-table .checkbox-cell {
             font-size: 1.1rem;
             color: #333;
-        }
-        .qty-section {
-            margin: 0.4rem 0 0.8rem 0;
-        }
-        .qty-section p {
-            margin: 0.25rem 0;
-            font-size: 0.95rem;
-        }
-        .qty-line {
-            display: inline-block;
-            width: 70px;
-            border-bottom: 1px solid #333;
-            margin-right: 0.6rem;
-            vertical-align: bottom;
-        }
-        .note-box {
-            background: #f8f6f3;
-            border-left: 3px solid #e67e22;
-            padding: 0.6rem 1rem;
-            margin: 0.5rem 0 1.5rem 0;
-            font-size: 0.9rem;
-        }
-        h3.order-sub {
-            margin: 0.8rem 0 0.3rem 0;
-            font-size: 1rem;
-            color: #2C3E50;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 0.2rem;
         }
     </style>
 </head>
@@ -147,8 +183,16 @@
     <main style="margin-left: 280px; padding: 2rem;">
         <article>
             <p class="breadcrumb"><a href="drywall.html">Drywall</a> &gt; Drywall Order Sheet</p>
-            <h1>Drywall Order Sheet</h1>
+            <h1 class="form-title">Remodelers Guide: Drywall Order Sheet</h1>
 
+            <!-- Job identification -->
+            <div class="job-header">
+                <p>Location:<span class="fill-lg"></span></p>
+                <p>Date:<span class="fill-md"></span></p>
+            </div>
+
+            <!-- Sheets table -->
+            <h3 class="form-section">Sheets</h3>
             <table class="order-table">
                 <thead>
                     <tr>
@@ -204,40 +248,43 @@
                 </tbody>
             </table>
 
-            <h3 class="order-sub">Corner Bead</h3>
-            <div class="qty-section">
-                <p><span class="qty-line"></span> Metal corner bead</p>
-                <p><span class="qty-line"></span> Plastic corner bead</p>
-                <p><span class="qty-line"></span> No-coat corner bead</p>
+            <!-- Supplies grid -->
+            <div class="form-grid">
+                <div>
+                    <h3 class="form-section">Corner Bead</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Metal corner bead</p>
+                    <p class="form-row"><span class="fill-sm"></span> Plastic corner bead</p>
+                    <p class="form-row"><span class="fill-sm"></span> No-coat corner bead</p>
+
+                    <h3 class="form-section">Clips &amp; Hardware</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Drywall clips</p>
+                    <p class="form-row"><span class="fill-sm"></span> Corner clips</p>
+                </div>
+
+                <div>
+                    <h3 class="form-section">Tape &amp; Mud</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Paper tape (1 per 15 sheets)</p>
+                    <p class="form-row"><span class="fill-sm"></span> 5 min mud (1 per 15 sheets)</p>
+                    <p class="form-row"><span class="fill-sm"></span> 45 min mud (1 per 15 sheets)</p>
+                    <p class="form-row"><span class="fill-sm"></span> 120 min mud (1 per 15 sheets)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Green top mud (1 per 15 sheets)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Blue top mud (1 per 15 sheets)</p>
+
+                    <h3 class="form-section">Adhesive</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Drywall adhesive, 32 oz (1 per 4 sheets)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Spray adhesive</p>
+                </div>
             </div>
 
-            <h3 class="order-sub">Tape &amp; Mud</h3>
-            <div class="qty-section">
-                <p><span class="qty-line"></span> Paper tape (1 roll per 15 sheets)</p>
-                <p><span class="qty-line"></span> 5 min mud (1 per 15 sheets)</p>
-                <p><span class="qty-line"></span> 45 min mud (1 per 15 sheets)</p>
-                <p><span class="qty-line"></span> 120 min mud (1 per 15 sheets)</p>
-                <p><span class="qty-line"></span> Green top mud (1 per 15 sheets)</p>
-                <p><span class="qty-line"></span> Blue top mud (1 per 15 sheets)</p>
-            </div>
+            <!-- Notes -->
+            <h3 class="form-section">Notes / Special Instructions</h3>
+            <div class="notes-box"></div>
 
-            <h3 class="order-sub">Clips &amp; Hardware</h3>
-            <div class="qty-section">
-                <p><span class="qty-line"></span> Drywall clips</p>
-                <p><span class="qty-line"></span> Corner clips</p>
-            </div>
-
-            <h3 class="order-sub">Adhesive</h3>
-            <div class="qty-section">
-                <p><span class="qty-line"></span> Drywall adhesive, 32 oz (1 tube per 4 sheets)</p>
-                <p><span class="qty-line"></span> Spray adhesive</p>
-            </div>
-
-            <p>
+            <p class="form-actions">
                 <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
                 <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
                 <br>
-                <small>Last revised: 02/20/2026</small>
+                <small>Last revised: 02/26/2026</small>
             </p>
 
             <p class="breadcrumb"><a href="drywall.html">Drywall</a> &gt; Drywall Order Sheet</p>

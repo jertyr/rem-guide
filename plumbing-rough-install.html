@@ -196,6 +196,30 @@
                     });
                 }
             </script>
+        
+            <!-- page-feedback:start -->
+            <section class="page-feedback" aria-labelledby="page-feedback-heading">
+                <h2 id="page-feedback-heading">Feedback on this page</h2>
+                <p class="feedback-intro">Spot an error or have a suggestion? Send a quick note. Name and email are optional.</p>
+                <form class="feedback-form" onsubmit="return sendPageFeedback(this);">
+                    <div class="feedback-field">
+                        <label for="feedback-message">Your feedback</label>
+                        <textarea id="feedback-message" name="message" required placeholder="What could be clearer, more accurate, or more useful?"></textarea>
+                    </div>
+                    <div class="feedback-row">
+                        <div class="feedback-field">
+                            <label for="feedback-name">Name <span class="optional">(optional)</span></label>
+                            <input type="text" id="feedback-name" name="name" autocomplete="name">
+                        </div>
+                        <div class="feedback-field">
+                            <label for="feedback-email">Email <span class="optional">(optional)</span></label>
+                            <input type="email" id="feedback-email" name="email" autocomplete="email">
+                        </div>
+                    </div>
+                    <button type="submit" class="feedback-submit">Send feedback</button>
+                </form>
+            </section>
+            <!-- page-feedback:end -->
         </article>
     </main>
 </div>
@@ -223,5 +247,35 @@
 <footer>
     &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
 </footer>
+<!-- page-feedback-script:start -->
+<script>
+    // Page feedback form: build a mailto: link and open the user's mail client.
+    function sendPageFeedback(form) {
+        var pageTitle = (document.title || '').split('|')[0].trim() || 'Remodelers Guide page';
+        var pageUrl = window.location.href;
+        var pageFile = (window.location.pathname.split('/').pop() || '').trim();
+        var msg = (form.message.value || '').trim();
+        var name = (form.name.value || '').trim();
+        var email = (form.email.value || '').trim();
+        if (!msg) { return false; }
+        var subject = 'Remodelers Guide feedback: ' + pageTitle;
+        var bodyLines = [
+            'Page: ' + pageTitle + (pageFile ? ' (' + pageFile + ')' : ''),
+            'URL: ' + pageUrl,
+            ''
+        ];
+        if (name)  { bodyLines.push('From: ' + name); }
+        if (email) { bodyLines.push('Email: ' + email); }
+        if (name || email) { bodyLines.push(''); }
+        bodyLines.push('Feedback:');
+        bodyLines.push(msg);
+        var href = 'mailto:jefferson.claw.11@gmail.com'
+            + '?subject=' + encodeURIComponent(subject)
+            + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+        window.location.href = href;
+        return false;
+    }
+</script>
+<!-- page-feedback-script:end -->
 </body>
 </html>

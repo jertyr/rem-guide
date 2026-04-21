@@ -22,12 +22,14 @@
                 display: none !important;
             }
             .main-wrapper {
+                display: block !important;
                 margin: 0 !important;
                 padding: 0 !important;
             }
             main {
                 margin: 0 !important;
                 padding: 0 !important;
+                margin-left: 0 !important;
             }
             article {
                 margin: 0 !important;
@@ -39,17 +41,27 @@
                 font-size: 0.82rem;
             }
             h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
-            h3.form-section { font-size: 0.8rem; margin: 0.4rem 0 0.2rem 0; padding-bottom: 0.1rem; }
+            h3.form-section { font-size: 0.8rem; margin: 0.35rem 0 0.15rem 0; padding-bottom: 0.1rem; }
             .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
             .job-header p { font-size: 0.82rem; margin: 0.1rem 0; }
-            .form-grid { gap: 1.2rem; margin-bottom: 0.3rem; }
-            .form-grid-bottom { gap: 1.2rem; margin-bottom: 0.3rem; }
+            .form-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.2rem;
+                margin-bottom: 0.3rem;
+            }
+            .form-grid-bottom {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.2rem;
+                margin-bottom: 0.3rem;
+            }
             .form-row { margin: 0.15rem 0; font-size: 0.82rem; }
             .option-row { margin: 0.15rem 0; font-size: 0.82rem; }
-            .order-table { font-size: 0.8rem; }
-            .order-table th, .order-table td { padding: 0.2rem 0.4rem; }
-            .draw-box { height: 2.4in; }
-            .notes-box { display: none; }
+            .order-table { font-size: 0.8rem; width: 100%; }
+            .order-table th, .order-table td { padding: 0.18rem 0.35rem; }
+            .compact-rail th, .compact-rail td { width: auto; }
+            .ada-table th.qty-col, .ada-table td:last-child { width: 2.5rem; }
             .print-credit { display: block; text-align: center; font-size: 0.7rem; color: #999; margin-top: 0.5rem; }
         }
 
@@ -285,7 +297,7 @@
                 </div>
             </div>
 
-            <!-- Posts -->
+            <!-- Posts / ADA side by side -->
             <div class="form-grid">
                 <div>
                     <h3 class="form-section">Posts w/ Plates</h3>
@@ -296,6 +308,26 @@
                         <tbody>
                             <tr><td style="text-align:left; font-weight:600;">37"</td><td></td><td></td><td></td></tr>
                             <tr><td style="text-align:left; font-weight:600;">47"</td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="form-section" style="margin-top:0.7rem;">Drink Rail Adapter</h3>
+                    <table class="order-table compact-rail">
+                        <thead>
+                            <tr><th>74"</th><th>98"</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="form-section" style="margin-top:0.7rem;">Gate</h3>
+                    <table class="order-table compact-rail">
+                        <thead>
+                            <tr><th>36"</th><th>48"</th><th>60"</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -322,33 +354,6 @@
                             <tr><td>Adjustable Elbow</td><td></td></tr>
                             <tr><td>Internal Connector</td><td></td></tr>
                             <tr><td>Collar Rings</td><td></td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Drink Rail & Gate -->
-            <div class="form-grid">
-                <div>
-                    <h3 class="form-section">Drink Rail Adapter</h3>
-                    <table class="order-table compact-rail">
-                        <thead>
-                            <tr><th>74"</th><th>98"</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td></td><td></td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div>
-                    <h3 class="form-section">Gate</h3>
-                    <table class="order-table compact-rail">
-                        <thead>
-                            <tr><th>36"</th><th>48"</th><th>60"</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>

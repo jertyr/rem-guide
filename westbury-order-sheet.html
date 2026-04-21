@@ -61,9 +61,9 @@
             .order-table { font-size: 0.8rem; width: 100%; table-layout: fixed; }
             .order-table th, .order-table td { padding: 0.18rem 0.35rem; }
             .compact-rail th, .compact-rail td { min-width: 0.6in; text-align: center; }
-            .ada-table { table-layout: auto; }
-            .ada-table th.qty-col, .ada-table td:last-child { width: 0.6in; min-width: 0.6in; }
-            .ada-table td:first-child { width: auto; }
+            .ada-table { table-layout: fixed; width: 100%; }
+            .ada-table th.qty-col, .ada-table td:last-child { width: 0.45in; }
+            .ada-table td:first-child, .ada-table th:first-child { width: auto; }
             .print-credit { display: block; text-align: center; font-size: 0.7rem; color: #999; margin-top: 0.5rem; }
         }
 
@@ -192,14 +192,19 @@
         .compact-rail td {
             height: 1.6rem;
         }
-        /* ADA table: narrow qty column */
+        /* ADA table: narrow qty, item fills remaining width */
+        .ada-table {
+            table-layout: fixed;
+            width: 100%;
+        }
         .ada-table th.qty-col,
         .ada-table td:last-child {
-            width: 3rem;
+            width: 2.5rem;
             text-align: center;
         }
-        .ada-table td:first-child {
-            white-space: nowrap;
+        .ada-table td:first-child,
+        .ada-table th:first-child {
+            width: auto;
         }
     </style>
 </head>

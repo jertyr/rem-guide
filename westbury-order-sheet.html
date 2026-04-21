@@ -169,6 +169,24 @@
         .print-credit {
             display: none;
         }
+        /* Compact rail table: equal-width columns, qty boxes */
+        .compact-rail th,
+        .compact-rail td {
+            width: 20%;
+            text-align: center;
+        }
+        .compact-rail td {
+            height: 1.6rem;
+        }
+        /* ADA table: narrow qty column */
+        .ada-table th.qty-col,
+        .ada-table td:last-child {
+            width: 3rem;
+            text-align: center;
+        }
+        .ada-table td:first-child {
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
@@ -244,32 +262,24 @@
             <div class="form-grid">
                 <div>
                     <h3 class="form-section">Straight Rails</h3>
-                    <table class="order-table">
+                    <table class="order-table compact-rail">
                         <thead>
-                            <tr><th>Length</th><th>Qty</th></tr>
+                            <tr><th>4'</th><th>5'</th><th>6'</th><th>7'</th><th>8'</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>4'</td><td></td></tr>
-                            <tr><td>5'</td><td></td></tr>
-                            <tr><td>6'</td><td></td></tr>
-                            <tr><td>7'</td><td></td></tr>
-                            <tr><td>8'</td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div>
                     <h3 class="form-section">Stair Rails</h3>
-                    <table class="order-table">
+                    <table class="order-table compact-rail">
                         <thead>
-                            <tr><th>Length</th><th>Qty</th></tr>
+                            <tr><th>4'</th><th>5'</th><th>6'</th><th>7'</th><th>8'</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>4'</td><td></td></tr>
-                            <tr><td>5'</td><td></td></tr>
-                            <tr><td>6'</td><td></td></tr>
-                            <tr><td>7'</td><td></td></tr>
-                            <tr><td>8'</td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -281,15 +291,12 @@
                     <h3 class="form-section">Posts</h3>
                     <table class="order-table">
                         <thead>
-                            <tr><th>Post</th><th>Qty</th></tr>
+                            <tr><th>Post w/ Plate</th><th>37"</th><th>47"</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>2&quot; HD Post w/ plate &mdash; 37"</td><td></td></tr>
-                            <tr><td>2&quot; HD Post w/ plate &mdash; 47"</td><td></td></tr>
-                            <tr><td>3&quot; HD Post w/ plate &mdash; 37"</td><td></td></tr>
-                            <tr><td>3&quot; HD Post w/ plate &mdash; 47"</td><td></td></tr>
-                            <tr><td>4&quot; HD Post w/ plate &mdash; 37"</td><td></td></tr>
-                            <tr><td>4&quot; HD Post w/ plate &mdash; 47"</td><td></td></tr>
+                            <tr><td>2&quot; HD</td><td></td><td></td></tr>
+                            <tr><td>3&quot; HD</td><td></td><td></td></tr>
+                            <tr><td>4&quot; HD</td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -305,9 +312,9 @@
             <div class="form-grid-bottom">
                 <div>
                     <h3 class="form-section">ADA Handrail</h3>
-                    <table class="order-table">
+                    <table class="order-table ada-table">
                         <thead>
-                            <tr><th>Item</th><th>Qty</th></tr>
+                            <tr><th>Item</th><th class="qty-col">Qty</th></tr>
                         </thead>
                         <tbody>
                             <tr><td>8'</td><td></td></tr>

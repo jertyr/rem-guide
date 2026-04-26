@@ -199,6 +199,32 @@
       padding: 24px;
     }
 
+    .product-list {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .product-list > li {
+      margin-bottom: 12px;
+    }
+    .product-list > li > a {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+      text-decoration: none;
+    }
+    .product-list > li > a:hover { text-decoration: underline; }
+    .product-list > li > ul {
+      margin: 4px 0 0 18px;
+      padding: 0;
+      list-style: disc;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .product-list > li > ul > li { margin-bottom: 2px; }
+
     .spacer { height: 70px; }
 
     @media (max-width: 860px) {
@@ -273,6 +299,35 @@
             <div class="tag">In-wall temperature sensor</div>
             <h3>Records temperature inside assemblies over time.</h3>
             <p>Useful when a single reading is not enough and you need proof of repeated cold exposure in a wall or pipe cavity.</p>
+            <ul class="product-list">
+              <li>
+                <a href="https://www.onsetcomp.com/products/data-loggers/mx2301a" target="_blank">HOBO MX2301A</a>
+                <ul>
+                  <li><span style="color:red">~$215</span></li>
+                  <li>Temperature and humidity</li>
+                  <li>Bluetooth</li>
+                  <li>Replaceable battery</li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://www.onsetcomp.com/products/data-loggers/mx100" target="_blank">HOBO MX100</a>
+                <ul>
+                  <li><span style="color:red">~$69</span></li>
+                  <li>Temperature only</li>
+                  <li>Bluetooth</li>
+                  <li>Non-replaceable battery</li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://www.onsetcomp.com/products/data-loggers/mx2305" target="_blank">HOBO MX2305</a>
+                <ul>
+                  <li><span style="color:red">~$125</span></li>
+                  <li>Temperature only</li>
+                  <li>Bluetooth</li>
+                  <li>Replaceable battery</li>
+                </ul>
+              </li>
+            </ul>
           </div>
           <div class="media">
             <img src="./images/diagnostics/hobo-sensor-installed.jpg" alt="In-wall temperature logger installed near plumbing in an insulated wall cavity" width="1200" height="1600" loading="lazy" />

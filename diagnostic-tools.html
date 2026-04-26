@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diagnostic Tools for Builders — presentation handout">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Diagnostic Tools for Builders</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ---- Standalone presentation page ---- */
+        html, body {
+            background: var(--background-light);
+        }
+        body {
+            display: block !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Layout: fixed left nav + scrolling article */
+        .page {
+            display: block;
+            min-height: 100vh;
+        }
+
+        .quicknav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 240px;
+            height: 100vh;
+            overflow-y: auto;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            padding: 1.75rem 1.25rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .quicknav .nav-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        .quicknav .nav-section {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin: 1.25rem 0 0.35rem;
+        }
+        .quicknav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .quicknav li a {
+            display: block;
+            padding: 0.4rem 0.6rem;
+            font-size: 0.92rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all var(--transition-speed);
+            line-height: 1.35;
+        }
+        .quicknav li a:hover {
+            background: var(--sidebar-hover);
+            color: var(--primary-color);
+        }
+        .quicknav li a.active {
+            background: var(--active-bg);
+            color: var(--active-color);
+            font-weight: 600;
+        }
+
+        /* Article body */
+        .article {
+            margin-left: 240px;
+            flex: 1;
+            padding: 3rem 2rem 5rem;
+        }
+        .article-inner {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .article-header {
+            border-bottom: 3px solid var(--secondary-color);
+            padding-top: 0.5rem;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .article-header h1 {
+            font-size: 2.75rem;
+            margin: 0 0 0.5rem !important;
+            padding-top: 0;
+            line-height: 1.15;
+        }
+        .article-header .subtitle {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin: 0 0 0.75rem;
+        }
+        .article-header .byline {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+            margin: 0;
+        }
+
+        /* Section blocks — blog rhythm */
+        .article section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 1rem;
+        }
+        .article h2 {
+            font-size: 2rem;
+            margin: 0 0 0.5rem;
+        }
+        .article h3 {
+            font-size: 1.4rem;
+            margin: 1.75rem 0 0.75rem;
+        }
+        .section-eyebrow {
+            display: inline-block;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        .section-eyebrow.tool { color: var(--primary-color); }
+        .article p {
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Inline figures — full-width, blog style */
+        figure.inline-photo {
+            margin: 2rem 0;
+        }
+        figure.inline-photo img {
+            max-width: 100%;
+            max-height: 75vh;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        figure.inline-photo figcaption {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: 0.65rem;
+            font-style: italic;
+        }
+
+        /* Photo placeholder while waiting on uploads */
+        .photo-needed {
+            margin: 2rem 0;
+            border: 2px dashed var(--secondary-color);
+            background: rgba(230, 126, 34, 0.05);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 6px;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .photo-needed .tag {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .photo-needed p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        /* Spec strip */
+        .specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.85rem 1.5rem;
+            background: var(--background-white);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem 1.25rem;
+            border-radius: 4px;
+            margin: 1.25rem 0 1.5rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+        }
+        .specs .label {
+            display: block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-secondary);
+            font-weight: 700;
+            margin-bottom: 0.1rem;
+        }
+
+        /* Pull quote / takeaway */
+        .takeaway {
+            background: #E8F4F8;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.1rem 1.4rem;
+            margin: 1.75rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .takeaway strong {
+            font-family: 'Roboto Slab', serif;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+        .takeaway p { margin: 0; }
+
+        /* Case study marker */
+        .case-marker {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .case-marker .badge {
+            background: var(--secondary-color);
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.3rem 0.7rem;
+            border-radius: 3px;
+        }
+
+        /* Mobile */
+        @media (max-width: 800px) {
+            .quicknav {
+                position: static;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .article { margin-left: 0; padding: 2rem 1.25rem 4rem; }
+            .article-header h1 { font-size: 2rem; }
+        }
+
+        @media print {
+            .quicknav { display: none; }
+            .article { margin-left: 0; }
+            figure.inline-photo, section { page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ============ QUICK NAV ============ -->
+    <nav class="quicknav" aria-label="Quick navigation">
+        <div class="nav-title">Diagnostic Tools</div>
+
+        <div class="nav-section">Intro</div>
+        <ul>
+            <li><a href="#why">Why diagnostic tools</a></li>
+        </ul>
+
+        <div class="nav-section">The Tools</div>
+        <ul>
+            <li><a href="#thermal">Thermal camera</a></li>
+            <li><a href="#sensors">In-wall temp sensors</a></li>
+            <li><a href="#moisture-pin">Pin moisture meter</a></li>
+            <li><a href="#moisture-contactless">Contact-free moisture meter</a></li>
+            <li><a href="#co2">CO<sub>2</sub> meter</a></li>
+            <li><a href="#radon">Radon detector</a></li>
+        </ul>
+
+        <div class="nav-section">Case Studies</div>
+        <ul>
+            <li><a href="#maynard">Maynard &mdash; frozen pipe</a></li>
+            <li><a href="#gustafson">Gustafson &mdash; rim joist</a></li>
+            <li><a href="#mcgrath">McGrath &mdash; long-term monitoring</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============ ARTICLE ============ -->
+    <main class="article">
+        <div class="article-inner">
+
+            <div class="article-header">
+                <h1>Diagnostic Tools for Builders</h1>
+                <p class="subtitle">Using thermal imaging, moisture metering, in-wall sensors, and air-quality meters to find problems &mdash; and prove the fix worked.</p>
+                <p class="byline">Jerry Tyrrell &middot; Dexter Builders</p>
+            </div>
+
+            <!-- ============ INTRO ============ -->
+            <section id="why">
+                <span class="section-eyebrow">Introduction</span>
+                <h2>Why diagnostic tools belong on a remodeler's truck</h2>
+                <p>Most callbacks and warranty issues live behind a finished surface. The right meter or imager turns a guess into a measurement &mdash; we stop opening drywall to "go look," and we can prove a repair worked instead of hoping it did. Each of the tools shown here paid for itself on a single job.</p>
+                <p>I've brought every one of these tools with me today, so we'll handle them and run a few of them live. Then we'll walk through three jobs &mdash; <em>Maynard</em>, <em>Gustafson</em>, and <em>McGrath</em> &mdash; that show the same toolkit applied to three different problems: a quick diagnosis, a stubborn one the first fix didn't solve, and a year-long verification before we closed up a wall.</p>
+            </section>
+
+            <!-- ============ TOOL: THERMAL ============ -->
+            <section id="thermal">
+                <span class="section-eyebrow tool">Tool 1</span>
+                <h2>Thermal imaging camera</h2>
+
+                <p>A handheld infrared camera reads surface temperature across a whole wall at once. It does not see <em>through</em> drywall, but it shows the thermal footprint of what is behind it &mdash; cold pipes, missing insulation, air leaks, wet drywall as it evaporates. Inside a heated building in winter, a frozen water line shows up as a clear cold streak.</p>
+
+                <figure class="inline-photo">
+                    <img src="images/diagnostics/thermal-camera-flir.jpg" alt="FLIR thermal camera held in hand showing a thermal scan of a bathroom wall behind a toilet, with a clear cold zone visible on the screen." />
+                    <figcaption>FLIR thermal camera scanning the wall behind a toilet at the Maynard job. The cold purple zone on the screen is the frozen supply line.</figcaption>
+                </figure>
+
+                <div class="specs">
+                    <div><span class="label">Make / Model</span> FLIR [TBD &mdash; specific model]</div>
+                    <div><span class="label">Best use</span> Whole-wall scan, leak hunting, missing insulation</div>
+                    <div><span class="label">Limits</span> Surface only; needs a temperature delta</div>
+                </div>
+
+                <p>The image above is the actual scan from the Maynard call &mdash; you can see the cold streak running up the wall behind the toilet. That single screen told us where to drill before we cut a single piece of drywall.</p>
+            </section>
+
+            <!-- ============ TOOL: SENSORS ============ -->
+            <section id="sensors">
+                <span class="section-eyebrow tool">Tool 2</span>
+                <h2>In-wall temperature sensors</h2>
+
+                <p>Where the thermal camera gives a snapshot, these give a graph. Small data loggers drop into a drilled hole and record temperature continuously &mdash; how cold did it actually get overnight, and did adding insulation or rerouting the line bring the cavity back into a safe range. We leave them in place for hours, days, or in some cases a full season.</p>
+
+                <figure class="inline-photo">
+                    <img src="images/diagnostics/hobo-sensor-installed.jpg" alt="HOBO temp data logger mounted in a wall cavity next to a shower valve, surrounded by mineral wool insulation." />
+                    <figcaption>HOBO temp logger installed in a wall cavity beside a shower valve, packed in mineral wool. Small enough to live in the wall through the cold months.</figcaption>
+                </figure>
+
+                <div class="specs">
+                    <div><span class="label">Make / Model</span> Onset HOBO Temp logger</div>
+                    <div><span class="label">Logging</span> Continuous; configurable interval</div>
+                    <div><span class="label">Best use</span> Verifying a fix, capturing overnight lows, long-duration monitoring</div>
+                    <div><span class="label">Limits</span> Point measurement; needs a small drilled hole</div>
+                </div>
+
+                <p>This is the highest-leverage tool on the truck. A thermal camera can find a cold spot, but only a logger can tell you whether the fix you just made will hold up at 2 a.m. on the coldest night of the year.</p>
+            </section>
+
+            <!-- ============ TOOL: PIN MOISTURE ============ -->
+            <section id="moisture-pin">
+                <span class="section-eyebrow tool">Tool 3</span>
+                <h2>Pin-style moisture meter</h2>
+
+                <p>Two metal pins press into the substrate and read electrical resistance. Cheap, accurate, and unambiguous &mdash; you get a real moisture-content number. The tradeoff: the pins leave two small holes, so it's a tool for unfinished surfaces, framing inspections, or hidden locations.</p>
+
+                <figure class="inline-photo">
+                    <img src="images/diagnostics/moisture-meter-pin-kobalt.jpg" alt="Kobalt blue pin-style moisture meter pressed against a wood baseboard, with the screen showing a moisture reading. Staining is visible on the wall above." />
+                    <figcaption>Pin meter on a baseboard, checking trim adjacent to a stained wall. The two small punctures show why we keep this one for hidden or pre-finish work.</figcaption>
+                </figure>
+
+                <div class="specs">
+                    <div><span class="label">Make / Model</span> Kobalt pin moisture meter</div>
+                    <div><span class="label">Reading</span> % moisture content</div>
+                    <div><span class="label">Best use</span> Framing, sheathing, subfloor, baseboards &mdash; anywhere the marks won't matter</div>
+                    <div><span class="label">Limits</span> Leaves pin marks; not for finished, visible surfaces</div>
+                </div>
+            </section>
+
+            <!-- ============ TOOL: CONTACT-FREE MOISTURE ============ -->
+            <section id="moisture-contactless">
+                <span class="section-eyebrow tool">Tool 4</span>
+                <h2>Contact-free moisture meter</h2>
+
+                <p>A non-invasive scanner reads moisture through a finished surface using radio-frequency or capacitance &mdash; no pin holes, no marks. It's the right tool for diagnosing trouble in a finished home where we cannot leave evidence behind. It reads <em>relative</em> moisture, so we use it to find the wettest spot first, then confirm with the pin meter wherever a hidden location lets us.</p>
+
+                <div class="photo-needed">
+                    <span class="tag">Photo needed</span>
+                    <p>Still need a photo of the contact-free moisture meter &mdash; will be demoed live at the presentation.</p>
+                </div>
+
+                <div class="specs">
+                    <div><span class="label">Make / Model</span> [TBD]</div>
+                    <div><span class="label">Reading</span> Relative moisture index</div>
+                    <div><span class="label">Best use</span> Finished walls, ceilings, flooring &mdash; no marks</div>
+                    <div><span class="label">Limits</span> Relative, not absolute; metal/wiring behind the surface affects readings</div>
+                </div>
+            </section>
+
+            <!-- ============ TOOL: CO2 ============ -->
+            <section id="co2">
+                <span class="section-eyebrow tool">Tool 5</span>
+                <h2>CO<sub>2</sub> meter</h2>
+
+                <p>Carbon-dioxide concentration is the cleanest, simplest proxy for ventilation performance in a home. Outdoor air sits around 420 ppm. Inside a tight, occupied house with poor ventilation we can see numbers north of 1,500 ppm &mdash; the kind of levels that show up as headaches and bad sleep before anyone calls a builder. As we build tighter envelopes, this is the meter that proves the mechanical ventilation is doing what the design says it should.</p>
+
+                <div class="photo-needed">
+                    <span class="tag">Photo needed</span>
+                    <p>Still need a photo of the CO<sub>2</sub> meter.</p>
+                </div>
+
+                <div class="specs">
+                    <div><span class="label">Make / Model</span> [TBD]</div>
+                    <div><span class="label">Reading</span> ppm CO<sub>2</sub></div>
+                    <div><span class="label">Best use</span> Verifying ERV/HRV performance, diagnosing "stale air" complaints, balancing ventilation</div>
+                    <div><span class="label">Limits</span> Indicates ventilation, not specific pollutants</div>
+                </div>
+            </section>
+
+            <!-- ============ TOOL: RADON ============ -->
+            <section id="radon">
+                <span class="section-eyebrow tool">Tool 6</span>
+                <h2>Radon detector</h2>
+
+                <p>Radon is invisible, odorless, and the second-leading cause of lung cancer in the U.S. The EPA action level is 4.0 pCi/L. A continuous radon monitor gives both a long-term running average and a short-term reading, so we can tell the difference between a normal daily swing and a real problem &mdash; and verify a mitigation system after install.</p>
+
+                <figure class="inline-photo">
+                    <img src="images/diagnostics/radon-detector-corentec.jpg" alt="CRADTEC continuous radon monitor on a wood surface showing a long-period average of 2.44 pCi/L and a short-period (1 day) average of 2.37 pCi/L." />
+                    <figcaption>CRADTEC continuous radon monitor &mdash; long-term average 2.44 pCi/L, short-term 2.37. Both well below the EPA action level of 4.0.</figcaption>
+                </figure>
+
+                <div class="specs">
+                    <div><span class="label">Make / Model</span> CRADTEC continuous radon monitor</div>
+                    <div><span class="label">Reading</span> pCi/L (short and long-term averages)</div>
+                    <div><span class="label">Action level</span> EPA: 4.0 pCi/L</div>
+                    <div><span class="label">Best use</span> Pre/post mitigation, basement/crawl monitoring, peace of mind on a finished basement</div>
+                </div>
+            </section>
+
+            <!-- ============ CASE: MAYNARD ============ -->
+            <section id="maynard">
+                <div class="case-marker">
+                    <span class="badge">Case Study 1</span>
+                </div>
+                <h2>Maynard &mdash; frozen pipe</h2>
+
+                <p><strong>The call:</strong> a toilet wouldn't fill.</p>
+                <p>What started as a routine "toilet won't refill" service call turned into a textbook diagnostic. The supply line was running through an exterior wall and had frozen. The thermal camera identified the cold zone in seconds. An in-wall sensor confirmed the cavity temperature directly &mdash; and after the fix, verified the line stayed in a safe range overnight.</p>
+
+                <h3>1. Initial investigation</h3>
+                <p>Ruled out the fixture itself; traced the supply back into the wall. Cold-to-touch on the wall surface was the first clue.</p>
+
+                <h3>2. Thermal scan</h3>
+                <p>The cold streak on the interior face of the exterior wall identified the run and the freeze location.</p>
+
+                <figure class="inline-photo">
+                    <img src="images/diagnostics/thermal-camera-flir.jpg" alt="Thermal camera screen showing a clear cold zone behind a bathroom toilet at the Maynard job." />
+                    <figcaption>Thermal scan from Maynard. The purple/blue band on the screen is the frozen supply line behind the wall.</figcaption>
+                </figure>
+
+                <h3>3. Sensor placement &amp; repair</h3>
+                <p>[TBD &mdash; describe the fix: the cavity reading we measured, what we did, where the new run went.]</p>
+
+                <div class="photo-needed">
+                    <span class="tag">Photo needed (optional)</span>
+                    <p>If you have a photo of the repair in progress or the post-fix sensor data, drop it in here.</p>
+                </div>
+
+                <h3>4. Verification</h3>
+                <p>Re-ran sensor logging through a cold night. Cavity temperature stayed well above freezing &mdash; the fix held.</p>
+
+                <div class="takeaway">
+                    <strong>Why it mattered</strong>
+                    <p>Without the camera, this is a guess-and-cut job. Without the sensors, we hand the homeowner a bill and say "should be good." The tools turned a callback risk into a documented, verified repair.</p>
+                </div>
+            </section>
+
+            <!-- ============ CASE: GUSTAFSON ============ -->
+            <section id="gustafson">
+                <div class="case-marker">
+                    <span class="badge">Case Study 2</span>
+                </div>
+                <h2>Gustafson &mdash; rim joist freeze</h2>
+
+                <p><strong>The call:</strong> a frozen water line in a rim joist space.</p>
+                <p>Same tools, harder problem. A water line ran through the rim joist cavity and froze. Our first repair got the cavity warmer, but follow-up sensor data showed it was still dipping into the danger zone &mdash; we caught it before the homeowner did. We came back, opened the assembly further, and added more.</p>
+
+                <h3>1. Diagnosis</h3>
+                <p>Thermal scan plus sensor placement in the rim joist cavity confirmed the freeze location.</p>
+
+                <div class="photo-needed">
+                    <span class="tag">Photo needed</span>
+                    <p>Photos from the Gustafson job &mdash; rim joist condition, thermal scan, repair stages.</p>
+                </div>
+
+                <h3>2. First fix</h3>
+                <p>[TBD &mdash; describe what was done first.]</p>
+
+                <h3>3. Verification &mdash; failed</h3>
+                <p>Sensors showed cavity temps were still dropping below the safe threshold during cold snaps. Without that data, we would have called the job done.</p>
+
+                <h3>4. Second fix &amp; final verification</h3>
+                <p>[TBD &mdash; describe the additional measures.] Logged a full cold cycle with cavity temperatures holding &mdash; documented and handed off to the homeowner.</p>
+
+                <div class="takeaway">
+                    <strong>Why it mattered</strong>
+                    <p>The sensors caught a fix that <em>looked</em> good but wasn't. That is the highest-value use of these tools &mdash; not finding the original problem, but proving the repair before the next freeze does.</p>
+                </div>
+            </section>
+
+            <!-- ============ CASE: MCGRATH ============ -->
+            <section id="mcgrath">
+                <div class="case-marker">
+                    <span class="badge">Case Study 3</span>
+                </div>
+                <h2>McGrath &mdash; long-term monitoring</h2>
+
+                <p><strong>The situation:</strong> a water line in an exterior wall that we weren't sure would survive winter.</p>
+                <p>Sometimes the right answer is to wait and watch. Rather than tear open a finished wall on a hunch, we instrumented a questionable water line and let it run through a full heating season. About a year of data gave us a defensible answer &mdash; either the assembly performs, or it doesn't, and we have the graph to prove which.</p>
+
+                <h3>1. Setup</h3>
+                <p>Sensor installed in the wall cavity adjacent to the water line. Logging interval set for long-duration capture.</p>
+
+                <div class="photo-needed">
+                    <span class="tag">Photo needed</span>
+                    <p>Photos from McGrath &mdash; sensor install, the water-line location, screenshot of the year-long data graph.</p>
+                </div>
+
+                <h3>2. Monitoring</h3>
+                <p>Roughly twelve months of cavity temperature data captured through the cold season. [TBD &mdash; what was the lowest reading?]</p>
+
+                <h3>3. Decision</h3>
+                <p>[TBD &mdash; outcome: kept as-is, opened up, improved, etc.]</p>
+
+                <div class="takeaway">
+                    <strong>Why it mattered</strong>
+                    <p>A year of measurements is worth more than a thousand opinions. This is the same toolkit, used not to react to a failure but to prevent one &mdash; and to give the homeowner a real answer instead of "should be fine."</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</div>
+
+<script>
+    // Highlight active section in left nav as you scroll
+    document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('.quicknav a');
+        const sections = Array.from(links)
+            .map(a => document.querySelector(a.getAttribute('href')))
+            .filter(Boolean);
+
+        function setActive() {
+            const scrollPos = window.scrollY + 120;
+            let current = sections[0];
+            for (const sec of sections) {
+                if (sec.offsetTop <= scrollPos) current = sec;
+            }
+            links.forEach(l => l.classList.remove('active'));
+            const active = document.querySelector('.quicknav a[href="#' + current.id + '"]');
+            if (active) active.classList.add('active');
+        }
+        window.addEventListener('scroll', setActive, { passive: true });
+        setActive();
+    });
+</script>
+
+</body>
+</html>

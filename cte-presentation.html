@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Dexter Builders — Careers in the Trades</title>
+  <style>
+    :root {
+      --bg: #f4f1eb;
+      --surface: #fbf9f5;
+      --surface-2: #efe9df;
+      --text: #221f1a;
+      --muted: #6b655c;
+      --line: #d8d1c5;
+      --accent: #8d5321;
+      --accent-soft: #e9dbc9;
+      --shadow: 0 14px 36px rgba(33, 28, 21, 0.08);
+      --radius: 20px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, #f7f4ef 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.58;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: calc(var(--radius) - 6px);
+    }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 84px 0 56px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font: 700 0.76rem/1.1 Arial, Helvetica, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 14px;
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5.4rem);
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      font-size: clamp(1.9rem, 3vw, 3.1rem);
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+      margin-bottom: 6px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      max-width: 67ch;
+      font-size: clamp(1.04rem, 1.2vw, 1.16rem);
+    }
+
+    .lede {
+      color: var(--muted);
+      max-width: 64ch;
+      font-size: clamp(1.08rem, 1.5vw, 1.28rem);
+    }
+
+    .section {
+      padding: 38px 0 52px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      margin-bottom: 28px;
+    }
+
+    .section-head > p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    /* Company cards */
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .company-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .company-card h3 {
+      color: var(--accent);
+    }
+
+    .company-card p {
+      color: var(--muted);
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* Role tags */
+    .role-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .role-tag {
+      padding: 8px 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.94rem;
+      color: var(--text);
+      box-shadow: 0 2px 6px rgba(33, 28, 21, 0.05);
+    }
+
+    /* Project photo sections */
+    .project-section {
+      padding: 38px 0 52px;
+      border-top: 1px solid var(--line);
+    }
+
+    .project-head {
+      margin-bottom: 24px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .photo-grid .frame {
+      background: var(--surface);
+      border: 1px solid rgba(34, 31, 26, 0.08);
+      border-radius: var(--radius);
+      padding: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .spacer { height: 70px; }
+
+    @media (max-width: 700px) {
+      .company-grid,
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .project-section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">CTE Presentation</div>
+      <h1>Dexter Builders</h1>
+      <p class="lede">
+        We are a full-service design-build remodeling company based in southeast Michigan. Our work covers everything from additions and full renovations to roofing, masonry, excavation, and kitchen and bath supply. Every project is built by a team of skilled people across a wide range of trades and roles.
+      </p>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Our Companies</div>
+          <h2>Four companies, one team</h2>
+          <p>Dexter Builders operates as a family of four related companies that together cover the full range of construction and remodeling work.</p>
+        </div>
+        <div class="company-grid">
+          <div class="company-card">
+            <h3>Dexter Builders</h3>
+            <p>Full service design-build remodelers</p>
+          </div>
+          <div class="company-card">
+            <h3>Dexter Block</h3>
+            <p>Full service excavation and masonry</p>
+          </div>
+          <div class="company-card">
+            <h3>Dexter Roof</h3>
+            <p>Roofing and siding</p>
+          </div>
+          <div class="company-card">
+            <h3>Mill Creek</h3>
+            <p>Kitchen and bath suppliers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Careers</div>
+          <h2>The people who make it happen</h2>
+          <p>Our team includes people across design, field work, and operations — there is a career path here for many different interests and skills.</p>
+        </div>
+        <div class="role-list">
+          <span class="role-tag">Designers</span>
+          <span class="role-tag">Drafters</span>
+          <span class="role-tag">Machine Operators</span>
+          <span class="role-tag">Masons</span>
+          <span class="role-tag">Flatwork Crew</span>
+          <span class="role-tag">Laborers</span>
+          <span class="role-tag">Carpenters</span>
+          <span class="role-tag">Estimators</span>
+          <span class="role-tag">Project Managers</span>
+          <span class="role-tag">Office Staff</span>
+          <span class="role-tag">Salespeople</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kasper -->
+    <section class="project-section">
+      <div class="wrap">
+        <div class="project-head">
+          <div class="eyebrow">Project</div>
+          <h2>Kasper</h2>
+        </div>
+        <div class="photo-grid">
+          <div class="frame"><img src="./images/cte-presentation/kasper/02.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240118_145659.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240119_135050.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240205_131939.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240205_131951.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240319_160610.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240325_120700.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240325_134940.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240422_124541.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240618_113413.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240618_113449.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240620_144313.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20240826_141059.jpg" alt="Kasper project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/kasper/20251107_093222.jpg" alt="Kasper project" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shayman -->
+    <section class="project-section">
+      <div class="wrap">
+        <div class="project-head">
+          <div class="eyebrow">Project</div>
+          <h2>Shayman</h2>
+        </div>
+        <div class="photo-grid">
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240410_160555.jpg" alt="Shayman project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240430_124125.jpg" alt="Shayman project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240507_115215.jpg" alt="Shayman project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240507_115236.jpg" alt="Shayman project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240523_105528.jpg" alt="Shayman project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240523_105604.jpg" alt="Shayman project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240607_153745.jpg" alt="Shayman project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240614_092100.jpg" alt="Shayman project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240614_092124.jpg" alt="Shayman project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/shayman/20240923_144901.jpg" alt="Shayman project" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sharon Church -->
+    <section class="project-section">
+      <div class="wrap">
+        <div class="project-head">
+          <div class="eyebrow">Project</div>
+          <h2>Sharon Church</h2>
+        </div>
+        <div class="photo-grid">
+          <div class="frame"><img src="./images/cte-presentation/sharon-church/1.jpg" alt="Sharon Church project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/sharon-church/2.jpg" alt="Sharon Church project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/sharon-church/3.jpg" alt="Sharon Church project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/sharon-church/4.jpg" alt="Sharon Church project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/sharon-church/5.jpg" alt="Sharon Church project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/sharon-church/6.jpg" alt="Sharon Church project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/sharon-church/7.jpg" alt="Sharon Church project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/sharon-church/8.jpg" alt="Sharon Church project" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Davis -->
+    <section class="project-section">
+      <div class="wrap">
+        <div class="project-head">
+          <div class="eyebrow">Project</div>
+          <h2>Davis</h2>
+        </div>
+        <div class="photo-grid">
+          <div class="frame"><img src="./images/cte-presentation/davis/20241011_090623.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20241015_135804.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20241015_140104.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20241017_152059.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20241017_152118.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20241113_110627.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20241204_151033.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20241206_130736.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20241209_133338.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20241209_133400.jpg" alt="Davis project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/davis/20250115_123759.jpg" alt="Davis project" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fradette -->
+    <section class="project-section">
+      <div class="wrap">
+        <div class="project-head">
+          <div class="eyebrow">Project</div>
+          <h2>Fradette</h2>
+        </div>
+        <div class="photo-grid">
+          <div class="frame"><img src="./images/cte-presentation/fradette/20200812_155423.jpg" alt="Fradette project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/fradette/20200930_140749.jpg" alt="Fradette project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/fradette/20200930_143706.jpg" alt="Fradette project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/fradette/20201005_123119.jpg" alt="Fradette project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/fradette/20201008_132255.jpg" alt="Fradette project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/fradette/20201008_132300.jpg" alt="Fradette project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/fradette/20201008_132858.jpg" alt="Fradette project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/fradette/20201008_132936.jpg" alt="Fradette project" loading="lazy" /></div>
+          <div class="frame"><img src="./images/cte-presentation/fradette/20201023_151030.jpg" alt="Fradette project" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="spacer"></div>
+
+</body>
+</html>

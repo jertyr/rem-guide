@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         @media print {
-            /* Hide navigation, header, footer, buttons, and breadcrumbs when printing */
             header,
             .sidebar,
             footer,
@@ -17,11 +16,12 @@
             button,
             #share-btn,
             #print-btn,
-            small {
+            small,
+            p:has(button),
+            p:has(small) {
                 display: none !important;
             }
 
-            /* Remove margins and padding from main content */
             .main-wrapper {
                 margin: 0 !important;
                 padding: 0 !important;
@@ -32,25 +32,40 @@
                 padding: 0 !important;
             }
 
-            /* Add padding to article for print */
             article {
                 margin: 0 !important;
-                padding: 2rem !important;
+                padding: 0.5in 0.6in !important;
             }
 
-            /* Ensure content fills the page */
             body {
                 margin: 0;
                 padding: 0;
+                font-size: 11pt;
             }
 
-            /* Make list items print-friendly */
-            li {
-                page-break-inside: avoid;
+            h2 {
+                font-size: 14pt;
                 margin-bottom: 0.5em;
             }
 
-            /* Ensure checkboxes stay visible */
+            /* Two-column layout for the checklist */
+            article > ul {
+                column-count: 2;
+                column-gap: 2em;
+                padding-left: 0 !important;
+            }
+
+            /* Keep each category group together */
+            article > ul > li {
+                break-inside: avoid;
+                margin-bottom: 0.8em;
+            }
+
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.2em;
+            }
+
             ul {
                 list-style-type: none !important;
             }

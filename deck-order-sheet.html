@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deck Order Sheet | Remodelers Guide">
+    <title>Deck Order Sheet | Remodelers Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media print {
+            @page { margin: 0.45in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                display: block !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+                margin-left: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 0.78rem;
+            }
+            h1.form-title { font-size: 0.95rem; margin: 0 0 0.3rem 0; }
+            h3.form-section { font-size: 0.75rem; margin: 0.3rem 0 0.1rem 0; padding-bottom: 0.1rem; }
+            .job-header { margin-bottom: 0.3rem; gap: 1.2rem; }
+            .job-header p { font-size: 0.78rem; margin: 0.08rem 0; }
+            .order-table { font-size: 0.74rem; width: 100%; }
+            .order-table th, .order-table td { padding: 0.12rem 0.3rem; }
+            .form-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.8rem;
+                margin-bottom: 0.2rem;
+            }
+            .notes-box { height: 0.8in; margin-top: 0.2rem; }
+            .print-credit { display: block; text-align: center; font-size: 0.65rem; color: #999; margin-top: 0.4rem; }
+            .cat-row td { padding: 0.1rem 0.3rem !important; }
+        }
+
+        /* Screen styles */
+        h1.form-title {
+            font-size: 1.4rem;
+            margin: 0 0 0.6rem 0;
+            color: #2C3E50;
+        }
+        h3.form-section {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+            margin: 0.9rem 0 0.35rem 0;
+            font-weight: 600;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .job-header p { margin: 0; font-size: 0.95rem; }
+        .fill-lg {
+            display: inline-block;
+            width: 160px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-md {
+            display: inline-block;
+            width: 110px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-sm {
+            display: inline-block;
+            width: 60px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .notes-box {
+            border: 1px solid #aaa;
+            height: 1.2in;
+            margin-top: 0.3rem;
+            background: #fff;
+        }
+        .order-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0.4rem 0 0.8rem 0;
+            font-size: 0.92rem;
+        }
+        .order-table th,
+        .order-table td {
+            border: 1px solid #ccc;
+            padding: 0.28rem 0.55rem;
+        }
+        .order-table th {
+            background: #f2f2f2;
+            font-weight: 600;
+            text-align: center;
+        }
+        .order-table th.left { text-align: left; }
+        .order-table td.right { text-align: center; }
+        /* Qty and Length cells — blank writing space */
+        .order-table td.qty,
+        .order-table td.len {
+            text-align: center;
+            min-width: 1.8rem;
+        }
+        /* Category divider row */
+        .cat-row td {
+            background: #eef2f5;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #2C3E50;
+            padding: 0.22rem 0.55rem;
+        }
+        /* Notes column in fastener table */
+        .order-table td.note {
+            color: #555;
+            font-size: 0.85rem;
+        }
+        .print-credit { display: none; }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
+                <li class="nav-item active-section"><a href="decks.html" class="active">Decks</a></li>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
+                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="resources.html">Resources</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <p class="breadcrumb"><a href="decks.html">Decks</a> &gt; Deck Order Sheet</p>
+            <h1 class="form-title">Remodelers Guide: Deck Order Sheet</h1>
+
+            <!-- Job header -->
+            <div class="job-header">
+                <p>Job:<span class="fill-lg"></span></p>
+                <p>Date:<span class="fill-md"></span></p>
+                <p>Address:<span class="fill-lg"></span></p>
+            </div>
+
+            <!-- ── FRAMING MEMBERS ──────────────────────────── -->
+            <h3 class="form-section">Framing Members</h3>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th class="left">Item</th>
+                        <th class="left">Size / Grade</th>
+                        <th>Length</th>
+                        <th>Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Posts</td><td>4×4 UC4B PT</td><td class="len"></td><td class="qty"></td></tr>
+                    <tr><td>Posts</td><td>6×6 UC4B PT</td><td class="len"></td><td class="qty"></td></tr>
+                    <tr><td>Beam — 2-ply</td><td>2×___ UC4B PT</td><td class="len"></td><td class="qty"></td></tr>
+                    <tr><td>Beam — 3-ply</td><td>2×___ UC4B PT</td><td class="len"></td><td class="qty"></td></tr>
+                    <tr><td>Ledger</td><td>2×___ PT</td><td class="len"></td><td class="qty"></td></tr>
+                    <tr><td>Rim / Band Joist</td><td>2×___ PT</td><td class="len"></td><td class="qty"></td></tr>
+                    <tr><td>Joists</td><td>2×___ PT</td><td class="len"></td><td class="qty"></td></tr>
+                    <tr><td>Blocking</td><td>2×___ PT</td><td class="len"></td><td class="qty"></td></tr>
+                    <tr><td>Stringers</td><td>2×12 PT</td><td class="len"></td><td class="qty"></td></tr>
+                </tbody>
+            </table>
+
+            <!-- ── DECK FLASHING ───────────────────────────── -->
+            <h3 class="form-section">Deck Flashing</h3>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th class="left">Item</th>
+                        <th>Width</th>
+                        <th>Qty (rolls)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Ledger peel-and-stick flashing tape</td><td class="right">6" &nbsp;/&nbsp; 9" &nbsp;/&nbsp; 12"</td><td class="qty"></td></tr>
+                    <tr><td>Z-flashing — aluminum</td><td class="right">___"</td><td class="qty"></td></tr>
+                </tbody>
+            </table>
+
+            <!-- ── SIMPSON HARDWARE ────────────────────────── -->
+            <h3 class="form-section">Simpson Hardware</h3>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th class="left">Item</th>
+                        <th class="left">Size</th>
+                        <th class="left">Code</th>
+                        <th>Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cat-row"><td colspan="4">Joist Hangers</td></tr>
+                    <tr><td>Joist Hanger — 2×6</td><td>standard</td><td><span style="color:red">LUS26Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Joist Hanger — 2×8</td><td>standard</td><td><span style="color:red">LUS28Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Joist Hanger — 2×10</td><td>standard</td><td><span style="color:red">LUS210Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Joist Hanger — 2×12</td><td>standard</td><td><span style="color:red">LUS212Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Skewable Hanger — 2×8</td><td>adjustable angle</td><td><span style="color:red">LSCA28</span></td><td class="qty"></td></tr>
+
+                    <tr class="cat-row"><td colspan="4">Post Bases</td></tr>
+                    <tr><td>Adjustable Post Base — 4×4</td><td></td><td><span style="color:red">ABA44Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Adjustable Post Base — 6×6</td><td></td><td><span style="color:red">ABA66Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Standoff Post Base — 4×4</td><td></td><td><span style="color:red">CBE44</span></td><td class="qty"></td></tr>
+                    <tr><td>Standoff Post Base — 6×6</td><td></td><td><span style="color:red">CBE66</span></td><td class="qty"></td></tr>
+
+                    <tr class="cat-row"><td colspan="4">Post Caps / Beam Connectors</td></tr>
+                    <tr><td>Post Cap — 4×4</td><td></td><td><span style="color:red">BC4Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Post Cap — 6×6</td><td></td><td><span style="color:red">BC6Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Adjustable Post Cap — 4×4</td><td></td><td><span style="color:red">AC4Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Post-to-Beam Connector — 4×4</td><td></td><td><span style="color:red">LPC4Z</span></td><td class="qty"></td></tr>
+
+                    <tr class="cat-row"><td colspan="4">Right-Angle Brackets</td></tr>
+                    <tr><td>Angle Bracket — 3"</td><td></td><td><span style="color:red">A23Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Angle Bracket — 4"</td><td></td><td><span style="color:red">A34Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Angle Bracket — 5"</td><td></td><td><span style="color:red">A35Z</span></td><td class="qty"></td></tr>
+
+                    <tr class="cat-row"><td colspan="4">Hold-Downs &amp; Deck Ties</td></tr>
+                    <tr><td>Deck Tension Tie</td><td>ledger-to-framing</td><td><span style="color:red">DTT2Z</span></td><td class="qty"></td></tr>
+                    <tr><td>Hold-Down</td><td></td><td><span style="color:red">HDU5-SDS2.5</span></td><td class="qty"></td></tr>
+
+                    <tr class="cat-row"><td colspan="4">Stringer Connectors</td></tr>
+                    <tr><td>Stringer-to-Header — 2×12</td><td></td><td><span style="color:red">LSCA212</span></td><td class="qty"></td></tr>
+                    <tr><td>Adjustable Stringer — 2×12</td><td></td><td><span style="color:red">HHUSS212</span></td><td class="qty"></td></tr>
+                </tbody>
+            </table>
+
+            <!-- ── FASTENERS ───────────────────────────────── -->
+            <h3 class="form-section">Fasteners</h3>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th class="left">Item</th>
+                        <th class="left">Pack Size</th>
+                        <th class="left">Coverage / Notes</th>
+                        <th>Qty (boxes)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cat-row"><td colspan="4">Structural Screws</td></tr>
+                    <tr>
+                        <td>GRK RSS 3"</td>
+                        <td class="note"><span style="color:red">1 lb / ~350 pcs</span></td>
+                        <td class="note">Blocking, hardware details, rim connections</td>
+                        <td class="qty"></td>
+                    </tr>
+                    <tr>
+                        <td>HeadLok 2&#8541;"</td>
+                        <td class="note"><span style="color:red">1 lb / ~60 pcs</span></td>
+                        <td class="note">Post bases, post cap connections</td>
+                        <td class="qty"></td>
+                    </tr>
+                    <tr>
+                        <td>HeadLok 3&#189;"</td>
+                        <td class="note"><span style="color:red">1 lb / ~45 pcs</span></td>
+                        <td class="note">Beam lamination, post-to-beam</td>
+                        <td class="qty"></td>
+                    </tr>
+                    <tr>
+                        <td>HeadLok 4&#189;"</td>
+                        <td class="note"><span style="color:red">1 lb / ~35 pcs</span></td>
+                        <td class="note">Heavy beam-to-post, ledger</td>
+                        <td class="qty"></td>
+                    </tr>
+                    <tr>
+                        <td>HeadLok 6"</td>
+                        <td class="note"><span style="color:red">1 lb / ~20 pcs</span></td>
+                        <td class="note">Ledger, large structural connections</td>
+                        <td class="qty"></td>
+                    </tr>
+
+                    <tr class="cat-row"><td colspan="4">Nails</td></tr>
+                    <tr>
+                        <td>Joist hanger nails — 1&#189;" (10d) HDG</td>
+                        <td class="note"><span style="color:red">5 lb box</span></td>
+                        <td class="note">Fill all hanger nail holes</td>
+                        <td class="qty"></td>
+                    </tr>
+                    <tr>
+                        <td>Framing nails — 16d HDG</td>
+                        <td class="note"><span style="color:red">5 lb box</span></td>
+                        <td class="note">Beam lamination, toe-nailing, blocking</td>
+                        <td class="qty"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ── DECKING ─────────────────────────────────── -->
+            <h3 class="form-section">Composite Decking</h3>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th class="left">Item</th>
+                        <th>Length</th>
+                        <th>LF / Qty</th>
+                        <th class="left">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Perimeter boards — solid (no groove)</td>
+                        <td class="len"></td>
+                        <td class="qty"></td>
+                        <td class="note">Border and starter row</td>
+                    </tr>
+                    <tr>
+                        <td>Field decking — grooved both sides</td>
+                        <td class="len"></td>
+                        <td class="qty"></td>
+                        <td class="note">Main field</td>
+                    </tr>
+                    <tr>
+                        <td>Fascia</td>
+                        <td class="len"></td>
+                        <td class="qty"></td>
+                        <td class="note">Rim joist cover</td>
+                    </tr>
+                    <tr>
+                        <td>Hidden fasteners — grooved field</td>
+                        <td>—</td>
+                        <td class="qty"></td>
+                        <td class="note"><span style="color:red">~175 pcs/bag; 16' board needs ~12 clips (16" OC)</span></td>
+                    </tr>
+                    <tr>
+                        <td>CoreTek face screws — composite</td>
+                        <td>—</td>
+                        <td class="qty"></td>
+                        <td class="note"><span style="color:red">~350 pcs/box; 16' board needs ~24 screws (16" OC)</span></td>
+                    </tr>
+                    <tr>
+                        <td>Fascia trim top screws — color-matched</td>
+                        <td>—</td>
+                        <td class="qty"></td>
+                        <td class="note"></td>
+                    </tr>
+                    <tr>
+                        <td>PL3X construction adhesive</td>
+                        <td>—</td>
+                        <td class="qty"></td>
+                        <td class="note">Fascia glue</td>
+                    </tr>
+                    <tr>
+                        <td>Joist tape</td>
+                        <td>—</td>
+                        <td class="qty"></td>
+                        <td class="note"><span style="color:red">~3&#189;" wide; 1 roll = 50 LF</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ── NOTES ──────────────────────────────────── -->
+            <h3 class="form-section">Notes / Special Instructions</h3>
+            <div class="notes-box"></div>
+
+            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+
+            <p class="form-actions">
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 04/29/2026</small>
+            </p>
+
+            <p class="breadcrumb"><a href="decks.html">Decks</a> &gt; Deck Order Sheet</p>
+        </article>
+    </main>
+</div>
+
+<script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+        shareBtn.addEventListener('click', () => {
+            navigator.share({ title: document.title, url: window.location.href }).catch(() => {});
+        });
+    } else if (shareBtn) {
+        shareBtn.style.display = 'none';
+    }
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) { printBtn.addEventListener('click', () => { window.print(); }); }
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<footer>
+    &copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
+<!-- goatcounter-analytics:start -->
+<script data-goatcounter="https://rem-guide.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- goatcounter-analytics:end -->
+</body>
+</html>

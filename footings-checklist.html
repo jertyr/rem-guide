@@ -3,111 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Footings Checklist - The Remodelers Guide" />
-  <title>Footings Checklist - Remodelers Guide</title>
+  <meta name="description" content="Footings Checklist | Remodelers Guide" />
+  <title>Footings Checklist | Remodelers Guide</title>
   <link rel="stylesheet" href="styles.css" />
-
   <style>
     @media print {
-      header, .sidebar, footer, .mobile-nav-toggle, .breadcrumb, button, #share-btn, #print-btn, small {
+      @page { margin: 0.5in; size: letter portrait; }
+      header,
+      .sidebar,
+      footer,
+      .mobile-nav-toggle,
+      .breadcrumb,
+      .form-actions,
+      button,
+      #share-btn,
+      #print-btn,
+      small {
         display: none !important;
       }
-      .main-wrapper { margin: 0 !important; padding: 0 !important; }
-      main { margin: 0 !important; padding: 0 !important; }
-      article { margin: 0 !important; padding: 2rem !important; }
-      body { margin: 0; padding: 0; }
-      li { page-break-inside: avoid; margin-bottom: 0.5em; }
-      ul { list-style-type: none !important; }
+      .main-wrapper { display: block !important; margin: 0 !important; padding: 0 !important; }
+      main { margin: 0 !important; padding: 0 !important; margin-left: 0 !important; }
+      article { margin: 0 !important; padding: 0 !important; }
+      body { margin: 0; padding: 0; font-size: 0.82rem; }
+      h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
+      h3.form-section { font-size: 0.8rem; margin: 0.35rem 0 0.15rem 0; padding-bottom: 0.1rem; }
+      .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
+      .job-header p { font-size: 0.82rem; margin: 0.1rem 0; }
+      .checklist-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.5rem; }
+      .checklist-ul li { margin-bottom: 0.15rem; font-size: 0.82rem; }
+      .print-credit { display: block; text-align: center; font-size: 0.7rem; color: #999; margin-top: 0.5rem; }
     }
+
+    h1.form-title {
+      font-size: 1.4rem;
+      margin: 0 0 0.6rem 0;
+      color: #2C3E50;
+    }
+    h3.form-section {
+      font-size: 0.95rem;
+      color: #2C3E50;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.2rem;
+      margin: 0.9rem 0 0.35rem 0;
+      font-weight: 600;
+    }
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .job-header p { margin: 0; font-size: 0.95rem; }
+    .fill-lg {
+      display: inline-block;
+      width: 160px;
+      border-bottom: 1px solid #333;
+      margin-left: 0.3rem;
+      vertical-align: bottom;
+    }
+    .fill-md {
+      display: inline-block;
+      width: 110px;
+      border-bottom: 1px solid #333;
+      margin-left: 0.3rem;
+      vertical-align: bottom;
+    }
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+    .checklist-ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    .checklist-ul li {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+    }
+    .print-credit { display: none; }
+    .form-actions { margin-top: 1rem; }
   </style>
 </head>
-
 <body>
   <header>
     <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
   </header>
+  <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
 
   <div class="main-wrapper">
     <aside class="sidebar">
       <nav>
-                <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item active-section"><a href="footings.html" class="active">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="remediation.html">Remediation</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
-                <li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item"><a href="windows.html">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
-                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
-                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
-                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
-                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
-                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="resources.html">Resources</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
-            </nav>
+        <ul>
+          <li class="nav-item"><a href="about.html">Home</a></li>
+          <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+          <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+          <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+          <li class="nav-item active-section"><a href="footings.html" class="active">Footings</a></li>
+          <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+          <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+          <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+          <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+          <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+          <li class="nav-item"><a href="framing.html">Framing</a></li>
+          <li class="nav-item"><a href="decks.html">Decks</a></li>
+          <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+          <li class="nav-item"><a href="windows.html">Windows</a></li>
+          <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+          <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+          <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+          <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+          <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+          <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+          <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+          <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+          <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+          <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+          <li class="nav-item"><a href="drywall.html">Drywall</a></li>
+          <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+          <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+          <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+          <li class="nav-item"><a href="resources.html">Resources</a></li>
+          <li class="nav-item"><a href="products.html">Products</a></li>
+          <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+        </ul>
+      </nav>
     </aside>
 
     <main style="margin-left: 280px; padding: 2rem;">
       <article>
         <p class="breadcrumb"><a href="footings.html">Footings</a> &gt; Footings Checklist</p>
+        <h1 class="form-title">Remodelers Guide: Footings Checklist</h1>
 
-        <h2>Footings Checklist</h2>
+        <div class="job-header">
+          <p>Job Name:<span class="fill-lg"></span></p>
+          <p>Date:<span class="fill-md"></span></p>
+        </div>
 
-        <h3>Materials / tools needed</h3>
-        <ul style="list-style-type: none;">
-          <li>☐ Shovels</li>
-          <li>☐ Post hole diggers</li>
-          <li>☐ Rakes</li>
-          <li>☐ Compactors</li>
-          <li>☐ Lumber, forms, or sonotubes</li>
-          <li>☐ Stakes</li>
-          <li>☐ String</li>
-          <li>☐ Levels or lasers</li>
-          <li>☐ Tape measure</li>
-          <li>☐ Rebar or wire mesh</li>
-          <li>☐ Tie wire</li>
-          <li>☐ Bolt cutters, rebar cutters, or angle grinder</li>
-        </ul>
+        <div class="checklist-grid">
+          <div>
+            <h3 class="form-section">Materials / Tools Needed</h3>
+            <ul class="checklist-ul">
+              <li>☐ Shovels</li>
+              <li>☐ Post hole diggers</li>
+              <li>☐ Rakes</li>
+              <li>☐ Compactors</li>
+              <li>☐ Lumber, forms, or sonotubes</li>
+              <li>☐ Stakes</li>
+              <li>☐ String</li>
+              <li>☐ Levels or lasers</li>
+              <li>☐ Tape measure</li>
+              <li>☐ Rebar or wire mesh</li>
+              <li>☐ Tie wire</li>
+              <li>☐ Bolt cutters, rebar cutters, or angle grinder</li>
+            </ul>
+          </div>
 
-        <h3>Process</h3>
-        <ul style="list-style-type: none;">
-          <li>☐ Call MISS DIG / utility locator (or confirm it’s already complete)</li>
-          <li>☐ Establish elevation</li>
-          <li>☐ Establish outside dimension of footing (string lines / lasers / stakes)</li>
-          <li>☐ Confirm footing location relative to foundation wall (foundation centered on footing)</li>
-          <li>☐ Install drains or weeps (and set sump crock if needed)</li>
-          <li>☐ Install reinforcement (rebar) per plan</li>
-          <li>☐ Schedule and pass footing inspection (forms, reinforcement, drains in place)</li>
-          <li>☐ Pour concrete after passing inspection</li>
-          <li>☐ Trowel top of footing flat and level (or as specified)</li>
-          <li>☐ Remove formwork when possible after pour (do not bury wood forms)</li>
-        </ul>
+          <div>
+            <h3 class="form-section">Process</h3>
+            <ul class="checklist-ul">
+              <li>☐ Call MISS DIG / utility locator (or confirm it's already complete)</li>
+              <li>☐ Establish elevation</li>
+              <li>☐ Establish outside dimension of footing (string lines / lasers / stakes)</li>
+              <li>☐ Confirm footing location relative to foundation wall (foundation centered on footing)</li>
+              <li>☐ Install drains or weeps (and set sump crock if needed)</li>
+              <li>☐ Install reinforcement (rebar) per plan</li>
+              <li>☐ Schedule and pass footing inspection (forms, reinforcement, drains in place)</li>
+              <li>☐ Pour concrete after passing inspection</li>
+              <li>☐ Trowel top of footing flat and level (or as specified)</li>
+              <li>☐ Remove formwork when possible after pour (do not bury wood forms)</li>
+            </ul>
+          </div>
+        </div>
 
-        <p>
+        <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+
+        <p class="form-actions">
           <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
           <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
           <br>
-          <p><small>Last revised: 01/01/2026</small></p>
+          <small>Last revised: 01/01/2026</small>
         </p>
 
         <p class="breadcrumb"><a href="footings.html">Footings</a> &gt; Footings Checklist</p>
@@ -116,40 +193,22 @@
   </div>
 
   <script>
-    // Share button
     const shareBtn = document.getElementById('share-btn');
     if (shareBtn && navigator.share) {
       shareBtn.addEventListener('click', () => {
-        navigator.share({
-          title: document.title || 'Footings Checklist',
-          url: window.location.href
-        }).catch(() => {});
+        navigator.share({ title: document.title || 'Footings Checklist', url: window.location.href }).catch(() => {});
       });
-    } else if (shareBtn) {
-      shareBtn.style.display = 'none';
-    }
-
-    // Print button
+    } else if (shareBtn) { shareBtn.style.display = 'none'; }
     const printBtn = document.getElementById('print-btn');
-    if (printBtn) {
-      printBtn.addEventListener('click', () => window.print());
-    }
-
-    // Mobile navigation toggle
-    document.addEventListener('DOMContentLoaded', function () {
+    if (printBtn) { printBtn.addEventListener('click', () => window.print()); }
+    document.addEventListener('DOMContentLoaded', function() {
       const navToggle = document.querySelector('.mobile-nav-toggle');
       const sidebar = document.querySelector('.sidebar');
-
       if (navToggle && sidebar) {
-        navToggle.addEventListener('click', function () {
-          sidebar.classList.toggle('active');
-        });
-
-        document.addEventListener('click', function (e) {
+        navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
+        document.addEventListener('click', function(e) {
           if (window.innerWidth <= 768) {
-            if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-              sidebar.classList.remove('active');
-            }
+            if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
           }
         });
       }

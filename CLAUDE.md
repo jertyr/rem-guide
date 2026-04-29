@@ -177,3 +177,11 @@ Not every page needs every section — content drives structure.
 - **Site philosophy note**: Goal is practical cheat-sheet for builders directing crews — give them the numbers and code basis to be the expert on site, not background theory
 - **Branch**: `claude/add-ventilation-section-O0wc0`
 - **PR**: #75 (pending merge)
+
+### Session: 2026-04-29 — Checklist reformats (job-start and jobsite-protection)
+- **Checklist style standard established**: Reformatted `job-start-materials-checklist.html` and `jobsite-protection-checklist.html` to match Westbury order sheet style
+- **Changes**: `h1.form-title` with "Remodelers Guide: [Title]" prefix; job-header with Job Name / Date fill lines; `h3.form-section` section headings with border-bottom; 2-column grid layout on screen and in print; print-credit line; `.form-actions` wrapper; `@page` print rule
+- **Job Start layout**: General + Misc in left column, Lead Demolition in right
+- **Jobsite Protection layout**: Process in left column, Materials / Tools in right
+- **Jobsite Protection item splits**: "Blue and white painters tape" → two lines; painters plastic split by mil weight into four lines; "Floor protection (Albert Floorotex, reinforced builders paper)" → two lines
+- **Branch**: `claude/print-friendly-checklist-qZF1L`

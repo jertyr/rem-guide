@@ -35,6 +35,8 @@
             .lumber-table th, .lumber-table td { padding: 0.1rem 0.3rem; }
             .lumber-table td { height: 1.1rem; }
             .form-note { font-size: 0.68rem; margin: -0.2rem 0 0.25rem; }
+            .form-row { margin: 0.05rem 0 0.15rem; font-size: 0.76rem; }
+            .lumber-table .fastener-divider td { font-size: 0.68rem; padding: 0.06rem 0.3rem; }
             .print-credit { display: block; text-align: center; font-size: 0.68rem; color: #999; margin-top: 0.3rem; }
         }
 
@@ -118,6 +120,14 @@
         }
         .print-credit { display: none; }
         .form-actions { margin-top: 1rem; }
+        .form-row { margin: 0.3rem 0 0.4rem; font-size: 0.92rem; }
+        .lumber-table .fastener-divider td {
+            background: #f0f0f0;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #555;
+            padding: 0.12rem 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -176,8 +186,6 @@
                 <p>Supplier:<span class="fill-md"></span></p>
             </div>
 
-            <p class="option-row">Species / Grade: <span class="opts">Doug Fir #2 &nbsp;/&nbsp; SPF #2 &nbsp;/&nbsp; SYP #2 &nbsp;/&nbsp; Other:<span class="fill-sm"></span></span></p>
-
             <div class="form-grid">
 
                 <!-- LEFT COLUMN -->
@@ -190,7 +198,6 @@
                         <tbody>
                             <tr><td>Mudsill / sill plate</td><td></td><td></td><td></td></tr>
                             <tr><td>Bottom plate — slab</td><td></td><td></td><td></td></tr>
-                            <tr><td>Treated rim board</td><td></td><td></td><td></td></tr>
                             <tr><td>Sill gasket / seal</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
@@ -207,11 +214,17 @@
                             <tr><td>Flush beam (LVL / PSL)</td><td></td><td></td><td></td></tr>
                             <tr><td>Blocking</td><td></td><td></td><td></td></tr>
                             <tr><td>T&amp;G sheathing</td><td></td><td>— sq ft:</td><td></td></tr>
+                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
+                            <tr><td>Anchor bolts</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>3" galvanized nails</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>2½" ring shanked nails</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>2½" GRK screws</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Subfloor adhesive</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
 
                     <h3 class="form-section">Wall Framing</h3>
-                    <p class="option-row">Stud height: <span class="opts">92⅝" (8 ft) &nbsp;/&nbsp; 104⅝" (9 ft) &nbsp;/&nbsp; 116⅝" (10 ft) &nbsp;/&nbsp; Other:<span class="fill-sm"></span></span></p>
+                    <p class="form-row">Wall height:<span class="fill-md"></span></p>
                     <table class="lumber-table">
                         <thead>
                             <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
@@ -220,24 +233,35 @@
                             <tr><td>Precut studs</td><td></td><td>precut</td><td></td></tr>
                             <tr><td>Bottom plates</td><td></td><td></td><td></td></tr>
                             <tr><td>Top plates (×2)</td><td></td><td></td><td></td></tr>
-                            <tr><td>LVL headers</td><td></td><td></td><td></td></tr>
-                            <tr><td>King / jack / cripples</td><td></td><td></td><td></td></tr>
-                            <tr><td>Corner / backer blocking</td><td></td><td></td><td></td></tr>
+                            <tr><td>Headers</td><td></td><td></td><td></td></tr>
                             <tr><td>Wall sheathing (OSB)</td><td></td><td>— sq ft:</td><td></td></tr>
+                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
+                            <tr><td>3" galvanized nails</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>2⅞" Headlok screws</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>4⅜" Headlok screws</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>½" crown staples</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>2½" ring shanked nails</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
 
                     <h3 class="form-section">Second Floor Wall Framing</h3>
-                    <p class="option-row">Stud height: <span class="opts">92⅝" &nbsp;/&nbsp; 104⅝" &nbsp;/&nbsp; Other:<span class="fill-sm"></span></span></p>
+                    <p class="form-row">Wall height:<span class="fill-md"></span></p>
                     <table class="lumber-table">
                         <thead>
                             <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
                         </thead>
                         <tbody>
                             <tr><td>Precut studs</td><td></td><td>precut</td><td></td></tr>
-                            <tr><td>Plates</td><td></td><td></td><td></td></tr>
-                            <tr><td>LVL headers</td><td></td><td></td><td></td></tr>
+                            <tr><td>Bottom plates</td><td></td><td></td><td></td></tr>
+                            <tr><td>Top plates (×2)</td><td></td><td></td><td></td></tr>
+                            <tr><td>Headers</td><td></td><td></td><td></td></tr>
                             <tr><td>Wall sheathing (OSB)</td><td></td><td>— sq ft:</td><td></td></tr>
+                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
+                            <tr><td>3" galvanized nails</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>2⅞" Headlok screws</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>4⅜" Headlok screws</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>½" crown staples</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>2½" ring shanked nails</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -245,7 +269,6 @@
                 <!-- RIGHT COLUMN -->
                 <div>
                     <h3 class="form-section">Ceiling Joists</h3>
-                    <p class="option-row">Framing type: <span class="opts">Stick (fill below) &nbsp;/&nbsp; Trusses — qty:<span class="fill-sm"></span></span></p>
                     <table class="lumber-table">
                         <thead>
                             <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
@@ -253,17 +276,18 @@
                         <tbody>
                             <tr><td>Ceiling joists</td><td></td><td></td><td></td></tr>
                             <tr><td>Strongback</td><td></td><td></td><td></td></tr>
+                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
+                            <tr><td>3" framing nails</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
 
                     <h3 class="form-section">Roof Framing</h3>
-                    <p class="option-row">Roof type: <span class="opts">Stick &nbsp;/&nbsp; Trusses — qty:<span class="fill-sm"></span> &nbsp;/&nbsp; Hybrid</span></p>
                     <table class="lumber-table">
                         <thead>
                             <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Ridge board / ridge beam</td><td></td><td></td><td></td></tr>
+                            <tr><td>Ridge board/beam</td><td></td><td></td><td></td></tr>
                             <tr><td>Common rafters</td><td></td><td></td><td></td></tr>
                             <tr><td>Hip rafters</td><td></td><td></td><td></td></tr>
                             <tr><td>Valley rafters</td><td></td><td></td><td></td></tr>
@@ -271,7 +295,14 @@
                             <tr><td>Collar ties</td><td></td><td></td><td></td></tr>
                             <tr><td>Sub-fascia</td><td></td><td></td><td></td></tr>
                             <tr><td>Fascia board</td><td></td><td></td><td></td></tr>
+                            <tr><td>Soffit lineal</td><td></td><td></td><td></td></tr>
                             <tr><td>Roof sheathing (OSB)</td><td></td><td>— sq ft:</td><td></td></tr>
+                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
+                            <tr><td>3" framing nails</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>3" GRK screws</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>2½" ring shanked nails</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>½" crown staples</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Positive placement nails</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
 
@@ -298,10 +329,12 @@
                             <tr><td>Anchor bolts</td><td></td><td></td></tr>
                             <tr><td>Joist hangers</td><td></td><td></td></tr>
                             <tr><td>LVL / beam hangers</td><td></td><td></td></tr>
-                            <tr><td>Hurricane / rafter ties</td><td></td><td></td></tr>
+                            <tr><td>Rafter hangers (H1A)</td><td></td><td></td></tr>
+                            <tr><td>Hurricane ties</td><td></td><td></td></tr>
                             <tr><td>H-clips (roof sheathing)</td><td></td><td></td></tr>
+                            <tr><td>Stringer hangers (LSC)</td><td></td><td></td></tr>
                             <tr><td>Post caps</td><td></td><td></td></tr>
-                            <tr><td>Post bases</td><td></td><td></td></tr>
+                            <tr><td>Post bases (ABA / CBS)</td><td></td><td></td></tr>
                             <tr><td>Ridge straps</td><td></td><td></td></tr>
                         </tbody>
                     </table>

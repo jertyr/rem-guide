@@ -26,7 +26,7 @@
             article { margin: 0 !important; padding: 0 !important; }
             body { margin: 0; padding: 0; font-size: 0.76rem; }
             h1.form-title { font-size: 0.95rem; margin: 0 0 0.3rem 0; }
-            h3.form-section { font-size: 0.75rem; margin: 0.3rem 0 0.1rem 0; padding-bottom: 0.08rem; }
+            h3.form-section { font-size: 0.75rem; margin: 0.3rem 0 0.1rem 0; padding-bottom: 0.08rem; break-after: avoid; }
             .job-header { margin-bottom: 0.3rem; gap: 1rem; }
             .job-header p { font-size: 0.76rem; margin: 0.05rem 0; }
             .option-row { margin: 0.1rem 0; font-size: 0.74rem; }
@@ -190,38 +190,30 @@
 
                 <!-- LEFT COLUMN -->
                 <div>
-                    <h3 class="form-section">Treated — Foundation Contact</h3>
-                    <table class="lumber-table">
-                        <thead>
-                            <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Mudsill / sill plate</td><td></td><td></td><td></td></tr>
-                            <tr><td>Bottom plate — slab</td><td></td><td></td><td></td></tr>
-                            <tr><td>Sill gasket / seal</td><td colspan="2"></td><td></td></tr>
-                        </tbody>
-                    </table>
-                    <p class="form-note">PT required where wood contacts concrete or masonry (IRC R317.1)</p>
-
                     <h3 class="form-section">Floor Framing</h3>
                     <table class="lumber-table">
                         <thead>
                             <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Floor joists</td><td></td><td></td><td></td></tr>
-                            <tr><td>Rim board / band joist</td><td></td><td></td><td></td></tr>
-                            <tr><td>Flush beam (LVL / PSL)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Blocking</td><td></td><td></td><td></td></tr>
-                            <tr><td>T&amp;G sheathing</td><td></td><td>— sq ft:</td><td></td></tr>
-                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
+                            <tr><td>Sill gasket / seal</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Mudsill / sill plate (PT)</td><td></td><td></td><td></td></tr>
+                            <tr><td>Bottom plate — slab (PT)</td><td></td><td></td><td></td></tr>
                             <tr><td>Anchor bolts</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Floor joists</td><td></td><td></td><td></td></tr>
+                            <tr><td>Joist hangers</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Rim board / band joist</td><td></td><td></td><td></td></tr>
+                            <tr><td>Blocking</td><td></td><td></td><td></td></tr>
                             <tr><td>3" galvanized nails</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Flush beam (LVL / PSL)</td><td></td><td></td><td></td></tr>
+                            <tr><td>Headlok screws</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>T&amp;G sheathing</td><td></td><td>— sq ft:</td><td></td></tr>
                             <tr><td>2½" ring shanked nails</td><td colspan="2"></td><td></td></tr>
                             <tr><td>2½" GRK screws</td><td colspan="2"></td><td></td></tr>
                             <tr><td>Subfloor adhesive</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
+                    <p class="form-note">PT required where wood contacts concrete or masonry (IRC R317.1)</p>
 
                     <h3 class="form-section">Wall Framing</h3>
                     <p class="form-row">Wall height:<span class="fill-md"></span></p>
@@ -230,15 +222,14 @@
                             <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Precut studs</td><td></td><td>precut</td><td></td></tr>
                             <tr><td>Bottom plates</td><td></td><td></td><td></td></tr>
-                            <tr><td>Top plates (×2)</td><td></td><td></td><td></td></tr>
+                            <tr><td>Precut studs</td><td></td><td>precut</td><td></td></tr>
                             <tr><td>Headers</td><td></td><td></td><td></td></tr>
-                            <tr><td>Wall sheathing (OSB)</td><td></td><td>— sq ft:</td><td></td></tr>
-                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
+                            <tr><td>Top plates (×2)</td><td></td><td></td><td></td></tr>
                             <tr><td>3" galvanized nails</td><td colspan="2"></td><td></td></tr>
                             <tr><td>2⅞" Headlok screws</td><td colspan="2"></td><td></td></tr>
                             <tr><td>4⅜" Headlok screws</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Wall sheathing (OSB)</td><td></td><td>— sq ft:</td><td></td></tr>
                             <tr><td>½" crown staples</td><td colspan="2"></td><td></td></tr>
                             <tr><td>2½" ring shanked nails</td><td colspan="2"></td><td></td></tr>
                         </tbody>
@@ -251,15 +242,14 @@
                             <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>Precut studs</td><td></td><td>precut</td><td></td></tr>
                             <tr><td>Bottom plates</td><td></td><td></td><td></td></tr>
-                            <tr><td>Top plates (×2)</td><td></td><td></td><td></td></tr>
+                            <tr><td>Precut studs</td><td></td><td>precut</td><td></td></tr>
                             <tr><td>Headers</td><td></td><td></td><td></td></tr>
-                            <tr><td>Wall sheathing (OSB)</td><td></td><td>— sq ft:</td><td></td></tr>
-                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
+                            <tr><td>Top plates (×2)</td><td></td><td></td><td></td></tr>
                             <tr><td>3" galvanized nails</td><td colspan="2"></td><td></td></tr>
                             <tr><td>2⅞" Headlok screws</td><td colspan="2"></td><td></td></tr>
                             <tr><td>4⅜" Headlok screws</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Wall sheathing (OSB)</td><td></td><td>— sq ft:</td><td></td></tr>
                             <tr><td>½" crown staples</td><td colspan="2"></td><td></td></tr>
                             <tr><td>2½" ring shanked nails</td><td colspan="2"></td><td></td></tr>
                         </tbody>
@@ -276,7 +266,6 @@
                         <tbody>
                             <tr><td>Ceiling joists</td><td></td><td></td><td></td></tr>
                             <tr><td>Strongback</td><td></td><td></td><td></td></tr>
-                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
                             <tr><td>3" framing nails</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
@@ -289,6 +278,11 @@
                         <tbody>
                             <tr><td>Ridge board/beam</td><td></td><td></td><td></td></tr>
                             <tr><td>Common rafters</td><td></td><td></td><td></td></tr>
+                            <tr><td>Rafter hangers (H1A)</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Hurricane ties</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Ridge straps</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>3" framing nails</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Positive placement nails</td><td colspan="2"></td><td></td></tr>
                             <tr><td>Hip rafters</td><td></td><td></td><td></td></tr>
                             <tr><td>Valley rafters</td><td></td><td></td><td></td></tr>
                             <tr><td>Jack rafters</td><td></td><td></td><td></td></tr>
@@ -297,12 +291,10 @@
                             <tr><td>Fascia board</td><td></td><td></td><td></td></tr>
                             <tr><td>Soffit lineal</td><td></td><td></td><td></td></tr>
                             <tr><td>Roof sheathing (OSB)</td><td></td><td>— sq ft:</td><td></td></tr>
-                            <tr class="fastener-divider"><td colspan="4">Fasteners</td></tr>
-                            <tr><td>3" framing nails</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>H-clips (roof sheathing)</td><td colspan="2"></td><td></td></tr>
                             <tr><td>3" GRK screws</td><td colspan="2"></td><td></td></tr>
                             <tr><td>2½" ring shanked nails</td><td colspan="2"></td><td></td></tr>
                             <tr><td>½" crown staples</td><td colspan="2"></td><td></td></tr>
-                            <tr><td>Positive placement nails</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
 
@@ -312,30 +304,15 @@
                             <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
                         </thead>
                         <tbody>
+                            <tr><td>Lally columns</td><td></td><td></td><td></td></tr>
+                            <tr><td>Post bases (ABA / CBS)</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Interior bearing posts</td><td></td><td></td><td></td></tr>
+                            <tr><td>Exterior posts (PT)</td><td></td><td></td><td></td></tr>
+                            <tr><td>Post caps</td><td colspan="2"></td><td></td></tr>
                             <tr><td>LVL / PSL beam</td><td></td><td></td><td></td></tr>
                             <tr><td>Glulam beam</td><td></td><td></td><td></td></tr>
-                            <tr><td>Exterior posts (PT)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Interior bearing posts</td><td></td><td></td><td></td></tr>
-                            <tr><td>Lally columns</td><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
-
-                    <h3 class="form-section">Hardware &amp; Connectors</h3>
-                    <table class="lumber-table">
-                        <thead>
-                            <tr><th>Item</th><th>Size / Notes</th><th>Qty</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Anchor bolts</td><td></td><td></td></tr>
-                            <tr><td>Joist hangers</td><td></td><td></td></tr>
-                            <tr><td>LVL / beam hangers</td><td></td><td></td></tr>
-                            <tr><td>Rafter hangers (H1A)</td><td></td><td></td></tr>
-                            <tr><td>Hurricane ties</td><td></td><td></td></tr>
-                            <tr><td>H-clips (roof sheathing)</td><td></td><td></td></tr>
-                            <tr><td>Stringer hangers (LSC)</td><td></td><td></td></tr>
-                            <tr><td>Post caps</td><td></td><td></td></tr>
-                            <tr><td>Post bases (ABA / CBS)</td><td></td><td></td></tr>
-                            <tr><td>Ridge straps</td><td></td><td></td></tr>
+                            <tr><td>LVL / beam hangers</td><td colspan="2"></td><td></td></tr>
+                            <tr><td>Stringer hangers (LSC)</td><td colspan="2"></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>

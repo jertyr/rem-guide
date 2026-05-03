@@ -9,54 +9,24 @@
     <style>
         @media print {
             @page { margin: 0.5in; size: letter portrait; }
-            header,
-            .sidebar,
-            footer,
-            .mobile-nav-toggle,
-            .breadcrumb,
-            .form-actions,
-            button,
-            #share-btn,
-            #print-btn,
-            small {
+            header, .sidebar, footer, .mobile-nav-toggle,
+            .breadcrumb, .form-actions, button,
+            #share-btn, #print-btn, small {
                 display: none !important;
             }
-            .main-wrapper {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            main {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            article {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            body {
-                margin: 0;
-                padding: 0;
-                font-size: 0.82rem;
-            }
-            h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
-            h3.form-section { font-size: 0.8rem; margin: 0.4rem 0 0.2rem 0; padding-bottom: 0.1rem; }
-            .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
-            .job-header p { font-size: 0.82rem; margin: 0.1rem 0; }
-            .form-grid { gap: 1.2rem; margin-bottom: 0.5rem; }
-            .form-row { margin: 0.15rem 0; font-size: 0.82rem; }
-            .option-row { margin: 0.15rem 0; font-size: 0.82rem; }
-            .draw-box { height: 2.4in; }
+            .main-wrapper, main { margin: 0 !important; padding: 0 !important; }
+            article { margin: 0 !important; padding: 0 !important; }
+            body { margin: 0; padding: 0; font-size: 0.78rem; }
+            h1.form-title { font-size: 1rem; margin: 0 0 0.3rem 0; }
+            h3.form-section { font-size: 0.78rem; margin: 0.3rem 0 0.15rem 0; padding-bottom: 0.1rem; }
+            .job-header { margin-bottom: 0.3rem; gap: 1.2rem; }
+            .form-grid { gap: 1.2rem; margin-bottom: 0.4rem; }
+            .form-row { margin: 0.1rem 0; font-size: 0.78rem; }
+            .draw-box { height: 3.3in; margin-top: 0.3rem; margin-bottom: 0; }
             .notes-box { display: none; }
-            .print-credit {
-                display: block;
-                text-align: center;
-                font-size: 0.72rem;
-                color: #888;
-                margin-top: 0.5rem;
-            }
+            .print-credit { display: block; text-align: center; font-size: 0.72rem; color: #888; margin-top: 0.4rem; }
         }
 
-        /* Screen styles */
         h1.form-title {
             font-size: 1.4rem;
             margin: 0 0 0.6rem 0;
@@ -70,69 +40,47 @@
             margin: 0.9rem 0 0.35rem 0;
             font-weight: 600;
         }
+
+        /* Job header: date / client / address on one row */
         .job-header {
             display: flex;
-            flex-wrap: wrap;
             gap: 1.5rem;
+            align-items: baseline;
             margin-bottom: 0.8rem;
         }
-        .job-header p {
-            margin: 0;
+        .job-header .form-row:first-child  { flex: 1; }
+        .job-header .form-row:nth-child(2) { flex: 1.5; }
+        .job-header .form-row:nth-child(3) { flex: 2.5; }
+
+        /* All field rows use flex so the fill line takes remaining width */
+        .form-row {
+            display: flex;
+            align-items: baseline;
+            margin: 0.3rem 0;
             font-size: 0.95rem;
         }
-        .fill-lg {
-            display: inline-block;
-            width: 160px;
+        .lbl { white-space: nowrap; padding-right: 0.3rem; }
+        .lbl.gap { margin-left: 0.7rem; }
+        .fill {
+            flex: 1;
             border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
+            min-width: 1.5rem;
         }
-        .fill-md {
-            display: inline-block;
-            width: 110px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
-        }
-        .fill-sm {
-            display: inline-block;
-            width: 70px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
-        }
-        .fill-xs {
-            display: inline-block;
-            width: 45px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
-        }
+        /* opts spans are circle-the-answer text; no fill */
+        .opts { color: #444; white-space: nowrap; }
+
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
-        .notes-box {
-            height: 1.5in;
-            margin-top: 0.4rem;
-        }
-        .form-row {
-            margin: 0.3rem 0;
-            font-size: 0.95rem;
-        }
-        .option-row {
-            margin: 0.3rem 0;
-            font-size: 0.95rem;
-        }
-        .option-row .opts {
-            color: #444;
-        }
+
         .draw-box {
             border: 1px solid #aaa;
-            height: 2.2in;
-            margin-top: 0.4rem;
+            height: 3.5in;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
             position: relative;
             background: #fff;
         }
@@ -143,6 +91,7 @@
             font-size: 0.78rem;
             color: #888;
         }
+        .notes-box { height: 1.5in; margin-top: 0.4rem; }
         .print-credit { display: none; }
     </style>
 </head>
@@ -199,68 +148,81 @@
 
             <!-- Job header -->
             <div class="job-header">
-                <p>Date:<span class="fill-md"></span></p>
-                <p>Client:<span class="fill-lg"></span></p>
-                <p>Address:<span class="fill-lg"></span></p>
+                <div class="form-row"><span class="lbl">Date:</span><span class="fill"></span></div>
+                <div class="form-row"><span class="lbl">Client:</span><span class="fill"></span></div>
+                <div class="form-row"><span class="lbl">Address:</span><span class="fill"></span></div>
             </div>
 
-            <!-- Main grid: fixtures left, specs right -->
+            <!-- 2-column field grid -->
             <div class="form-grid">
 
-                <!-- LEFT: fixtures + draw box -->
+                <!-- LEFT: Fixtures -->
                 <div>
                     <h3 class="form-section">Sink</h3>
-                    <p class="form-row">Name:<span class="fill-md"></span> &nbsp; Model:<span class="fill-md"></span></p>
-                    <p class="option-row">Overlay: <span class="opts">Undermount &nbsp;/&nbsp; Top-mount &nbsp;/&nbsp; Flush</span></p>
+                    <div class="form-row">
+                        <span class="lbl">Style:</span>
+                        <span class="opts">Drop in &nbsp;/&nbsp; Undermount &nbsp;/&nbsp; Farm Style &nbsp;/&nbsp; Vessel</span>
+                    </div>
+                    <div class="form-row"><span class="lbl">Overlay:</span><span class="fill"></span></div>
+                    <div class="form-row"><span class="lbl">Name:</span><span class="fill"></span><span class="lbl gap">Model:</span><span class="fill"></span></div>
 
                     <h3 class="form-section">Faucet</h3>
-                    <p class="form-row">Name:<span class="fill-md"></span> &nbsp; Model:<span class="fill-md"></span></p>
-                    <p class="option-row">Holes: <span class="opts">1 &nbsp;/&nbsp; 2 &nbsp;/&nbsp; 3 &nbsp;/&nbsp; 4</span> &nbsp;&nbsp; Diameter:<span class="fill-xs"></span></p>
+                    <div class="form-row"><span class="lbl">Name:</span><span class="fill"></span><span class="lbl gap">Model:</span><span class="fill"></span></div>
+                    <div class="form-row">
+                        <span class="lbl">Holes:</span>
+                        <span class="opts" style="padding: 0 0.4rem;">1 &nbsp;/&nbsp; 2 &nbsp;/&nbsp; 3 &nbsp;/&nbsp; 4</span>
+                        <span class="lbl gap">Dia:</span><span class="fill"></span>
+                    </div>
 
                     <h3 class="form-section">RO Faucet</h3>
-                    <p class="form-row">Name:<span class="fill-md"></span> &nbsp; Model:<span class="fill-md"></span></p>
-                    <p class="form-row">Diameter:<span class="fill-xs"></span></p>
+                    <div class="form-row"><span class="lbl">Name:</span><span class="fill"></span><span class="lbl gap">Model:</span><span class="fill"></span></div>
+                    <div class="form-row"><span class="lbl">Diameter:</span><span class="fill"></span></div>
 
                     <h3 class="form-section">Cooktop</h3>
-                    <p class="form-row">Name:<span class="fill-md"></span> &nbsp; Model:<span class="fill-md"></span></p>
+                    <div class="form-row"><span class="lbl">Name:</span><span class="fill"></span><span class="lbl gap">Model:</span><span class="fill"></span></div>
 
                     <h3 class="form-section">Soap Dispenser</h3>
-                    <p class="option-row"><span class="opts">Yes &nbsp;/&nbsp; No</span> &nbsp;&nbsp; Hole dia:<span class="fill-xs"></span></p>
-
-                    <h3 class="form-section">Draw <span style="font-weight:normal; font-size:0.82rem; color:#666;">(layout, seam locations, overhangs)</span></h3>
-                    <div class="draw-box">
-                        <span class="draw-caption">N</span>
+                    <div class="form-row">
+                        <span class="opts">Yes &nbsp;/&nbsp; No</span>
+                        <span class="lbl gap">Hole dia:</span><span class="fill"></span>
                     </div>
                 </div>
 
-                <!-- RIGHT: specs, overhangs, checklist -->
+                <!-- RIGHT: Specs + Checklist -->
                 <div>
                     <h3 class="form-section">Material &amp; Finish</h3>
-                    <p class="form-row">Material:<span class="fill-md"></span> &nbsp; Thickness:<span class="fill-xs"></span></p>
-                    <p class="form-row">Color:<span class="fill-md"></span> &nbsp; Sheen:<span class="fill-sm"></span></p>
+                    <div class="form-row"><span class="lbl">Material:</span><span class="fill"></span><span class="lbl gap">Thickness:</span><span class="fill"></span></div>
+                    <div class="form-row"><span class="lbl">Color:</span><span class="fill"></span></div>
+                    <div class="form-row"><span class="lbl">Sheen:</span><span class="fill"></span></div>
 
                     <h3 class="form-section">Edge</h3>
-                    <p class="form-row">Profile:<span class="fill-lg"></span></p>
-                    <p class="form-row">Outside corner radius:<span class="fill-sm"></span></p>
+                    <div class="form-row"><span class="lbl">Profile:</span><span class="fill"></span></div>
+                    <div class="form-row"><span class="lbl">Outside corner radius:</span><span class="fill"></span></div>
 
                     <h3 class="form-section">Overhangs &amp; Dimensions</h3>
-                    <p class="form-row">Front overhang past cab box:<span class="fill-xs"></span></p>
-                    <p class="form-row">Side overhang past cab box:<span class="fill-xs"></span></p>
-                    <p class="form-row">Splash height:<span class="fill-xs"></span></p>
-                    <p class="form-row">Max piece length:<span class="fill-sm"></span></p>
+                    <div class="form-row"><span class="lbl">Front overhang past cab box:</span><span class="fill"></span></div>
+                    <div class="form-row"><span class="lbl">Side overhang past cab box:</span><span class="fill"></span></div>
+                    <div class="form-row"><span class="lbl">Splash height:</span><span class="fill"></span></div>
+                    <div class="form-row"><span class="lbl">Max piece length:</span><span class="fill"></span></div>
 
                     <h3 class="form-section">Checklist</h3>
-                    <p class="option-row">Waterfall: <span class="opts">Yes &nbsp;/&nbsp; No</span></p>
-                    <p class="option-row">Built-up look: <span class="opts">Yes &nbsp;/&nbsp; No</span></p>
-                    <p class="option-row">Brackets needed: <span class="opts">Yes &nbsp;/&nbsp; No</span></p>
-                    <p class="option-row">Client approves slab: <span class="opts">Yes &nbsp;/&nbsp; No</span></p>
-                    <p class="option-row">Second floor install: <span class="opts">Yes &nbsp;/&nbsp; No</span></p>
-                    <p class="option-row">Staircase: <span class="opts">Yes &nbsp;/&nbsp; No</span></p>
+                    <div class="form-row"><span class="lbl">Waterfall:</span><span class="opts">Yes &nbsp;/&nbsp; No</span></div>
+                    <div class="form-row"><span class="lbl">Built-up look:</span><span class="opts">Yes &nbsp;/&nbsp; No</span></div>
+                    <div class="form-row"><span class="lbl">Brackets needed:</span><span class="opts">Yes &nbsp;/&nbsp; No</span></div>
+                    <div class="form-row"><span class="lbl">Client approves slab:</span><span class="opts">Yes &nbsp;/&nbsp; No</span></div>
+                    <div class="form-row"><span class="lbl">Second floor install:</span><span class="opts">Yes &nbsp;/&nbsp; No</span></div>
+                    <div class="form-row"><span class="lbl">Staircase:</span><span class="opts">Yes &nbsp;/&nbsp; No</span></div>
                 </div>
 
             </div>
 
-            <!-- Notes -->
+            <!-- Full-width draw box -->
+            <h3 class="form-section">Draw <span style="font-weight:normal; font-size:0.82rem; color:#666;">(layout, seam locations, overhangs)</span></h3>
+            <div class="draw-box">
+                <span class="draw-caption">N</span>
+            </div>
+
+            <!-- Notes (hidden in print; heading acts as end-of-form) -->
             <h3 class="form-section">Notes / Special Instructions</h3>
             <div class="notes-box"></div>
 
@@ -282,30 +244,21 @@
     const shareBtn = document.getElementById('share-btn');
     if (shareBtn && navigator.share) {
         shareBtn.addEventListener('click', () => {
-            navigator.share({
-                title: document.title || 'Countertop Order Form',
-                url: window.location.href
-            }).catch(() => { });
+            navigator.share({ title: document.title || 'Countertop Order Form', url: window.location.href }).catch(() => { });
         });
     } else if (shareBtn) {
         shareBtn.style.display = 'none';
     }
     const printBtn = document.getElementById('print-btn');
-    if (printBtn) {
-        printBtn.addEventListener('click', () => { window.print(); });
-    }
+    if (printBtn) { printBtn.addEventListener('click', () => { window.print(); }); }
     document.addEventListener('DOMContentLoaded', function() {
         const navToggle = document.querySelector('.mobile-nav-toggle');
         const sidebar = document.querySelector('.sidebar');
         if (navToggle && sidebar) {
-            navToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
+            navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
             document.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                        sidebar.classList.remove('active');
-                    }
+                if (window.innerWidth <= 768 && !sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
                 }
             });
         }

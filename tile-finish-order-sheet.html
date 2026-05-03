@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tile Finish Order Sheet | Remodelers Guide">
+    <title>Tile Finish Order Sheet | Remodelers Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media print {
+            @page { margin: 0.5in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper { margin: 0 !important; padding: 0 !important; }
+            main { margin: 0 !important; padding: 0 !important; }
+            article { margin: 0 !important; padding: 0 !important; }
+            body { margin: 0; padding: 0; font-size: 0.88rem; }
+            h1.form-title { font-size: 1.05rem; margin: 0 0 0.5rem 0; }
+            h3.form-section { font-size: 0.88rem; margin: 0.6rem 0 0.25rem 0; padding-bottom: 0.15rem; }
+            .job-header { margin-bottom: 0.5rem; }
+            .form-row { margin: 0.25rem 0; font-size: 0.88rem; }
+            .calc-row { margin: 0.5rem 0; font-size: 0.88rem; }
+            .notes-box { display: none; }
+            .print-credit {
+                display: block;
+                font-size: 0.7rem;
+                color: #666;
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+        }
+
+        h1.form-title {
+            font-size: 1.4rem;
+            margin: 0 0 0.6rem 0;
+            color: #2C3E50;
+        }
+        h3.form-section {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+            margin: 1.1rem 0 0.4rem 0;
+            font-weight: 600;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .job-header p { margin: 0; font-size: 0.95rem; }
+        .fill-xl {
+            display: inline-block;
+            width: 240px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-lg {
+            display: inline-block;
+            width: 160px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-md {
+            display: inline-block;
+            width: 110px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-sm {
+            display: inline-block;
+            width: 70px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-xs {
+            display: inline-block;
+            width: 45px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .form-row { margin: 0.4rem 0; font-size: 0.95rem; }
+        .calc-row {
+            margin: 0.6rem 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .calc-row .fill-sm { margin-left: 0; }
+        .calc-op {
+            font-size: 0.85rem;
+            color: #555;
+            padding: 0 0.1rem;
+        }
+        .notes-box { height: 1.8in; margin-top: 0.4rem; }
+        .print-credit { display: none; }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
+                <li class="nav-item"><a href="decks.html">Decks</a></li>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
+                <li class="nav-item active-section"><a href="flooring.html" class="active">Flooring</a></li>
+                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="resources.html">Resources</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <p class="breadcrumb"><a href="flooring.html">Flooring</a> &gt; Tile Finish Order Sheet</p>
+            <h1 class="form-title">Remodelers Guide: Tile Finish Order — <span class="fill-lg" style="font-weight:normal;"></span></h1>
+
+            <div class="job-header">
+                <p><strong>Job:</strong> <span class="fill-lg"></span></p>
+                <p><strong>Date:</strong> <span class="fill-md"></span></p>
+            </div>
+
+            <h3 class="form-section">Tile</h3>
+            <p class="form-row"><strong>Brand / Line:</strong> <span class="fill-lg"></span> &nbsp; <strong>Style / Color:</strong> <span class="fill-lg"></span> &nbsp; <strong>Size:</strong> <span class="fill-sm"></span></p>
+            <div class="calc-row">
+                <span><strong>Sq Ft:</strong></span>
+                <span class="fill-sm"></span>
+                <span class="calc-op">× 1.10 =</span>
+                <span class="fill-sm"></span>
+                <span class="calc-op">÷</span>
+                <span class="fill-sm"></span>
+                <span class="calc-op">sf/box =</span>
+                <span class="fill-sm"></span>
+                <span class="calc-op">boxes</span>
+            </div>
+
+            <h3 class="form-section">Grout</h3>
+            <p class="form-row">
+                &#9744; Sanded &nbsp; &#9744; Unsanded &nbsp; &#9744; Epoxy &nbsp;&nbsp;
+                <strong>Color:</strong> <span class="fill-lg"></span> &nbsp;
+                <strong>Bags:</strong> <span class="fill-xs"></span>
+            </p>
+
+            <h3 class="form-section">Grout Caulk</h3>
+            <p class="form-row"><strong>Color:</strong> <span class="fill-lg"></span> &nbsp; <strong>Tubes:</strong> <span class="fill-xs"></span></p>
+
+            <h3 class="form-section">Sealer</h3>
+            <p class="form-row">&#9744; Not needed &nbsp; &#9744; Grout sealer, qty <span class="fill-xs"></span> &nbsp; &#9744; Stone / natural tile sealer (pre-grout), qty <span class="fill-xs"></span></p>
+
+            <h3 class="form-section">Notes</h3>
+            <div class="notes-box"></div>
+
+            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+
+            <p class="form-actions">
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 05/03/2026</small>
+            </p>
+
+            <p class="breadcrumb"><a href="flooring.html">Flooring</a> &gt; Tile Finish Order Sheet</p>
+        </article>
+    </main>
+</div>
+
+<script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+        shareBtn.addEventListener('click', () => {
+            navigator.share({ title: document.title || 'Tile Finish Order Sheet', url: window.location.href }).catch(() => { });
+        });
+    } else if (shareBtn) { shareBtn.style.display = 'none'; }
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) { printBtn.addEventListener('click', () => { window.print(); }); }
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
+                }
+            });
+        }
+    });
+</script>
+
+<footer>
+    &copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
+<!-- goatcounter-analytics:start -->
+<script data-goatcounter="https://rem-guide.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- goatcounter-analytics:end -->
+</body>
+</html>

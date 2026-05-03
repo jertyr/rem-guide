@@ -9,103 +9,79 @@
     <style>
         @media print {
             @page { margin: 0.45in; size: letter portrait; }
-            header,
-            .sidebar,
-            footer,
-            .mobile-nav-toggle,
-            .breadcrumb,
-            .form-actions,
-            button,
-            #share-btn,
-            #print-btn,
-            small {
+            header, .sidebar, footer, .mobile-nav-toggle, .breadcrumb,
+            .form-actions, button, #share-btn, #print-btn, small {
                 display: none !important;
             }
             .main-wrapper { margin: 0 !important; padding: 0 !important; }
             main { margin: 0 !important; padding: 0 !important; }
             article { margin: 0 !important; padding: 0 !important; }
-            body { margin: 0; padding: 0; font-size: 0.78rem; }
-            h1.form-title { font-size: 0.95rem; margin: 0 0 0.35rem 0; }
+            body { margin: 0; padding: 0; font-size: 0.76rem; }
+            h1.form-title { font-size: 0.92rem; margin: 0 0 0.3rem 0; }
+            h3.form-section { font-size: 0.74rem; margin: 0.25rem 0 0.1rem 0; padding-bottom: 0.05rem; }
             .job-header { margin-bottom: 0.3rem; gap: 1rem; }
-            .job-header p { font-size: 0.78rem; margin: 0; }
-            .area-block { margin-bottom: 0.3rem; }
-            .area-header { font-size: 0.82rem; font-weight: 600; margin: 0.3rem 0 0.2rem 0; }
-            .form-row { margin: 0.18rem 0; font-size: 0.78rem; line-height: 1.35; }
-            .area-divider { margin: 0.3rem 0; border: none; border-top: 1px solid #999; }
-            .fill-xl { width: 180px; }
-            .fill-lg { width: 130px; }
-            .fill-md { width: 90px; }
-            .fill-sm { width: 60px; }
-            .fill-xs { width: 38px; }
-            .print-credit {
-                display: block;
-                font-size: 0.65rem;
-                color: #666;
-                text-align: center;
-                margin-top: 0.4rem;
-            }
+            .job-header p { font-size: 0.76rem; margin: 0; }
+            .area-block { margin-bottom: 0.2rem; }
+            .area-header { font-size: 0.82rem; margin: 0.3rem 0 0.15rem 0; padding-bottom: 0.1rem; }
+            .area-grid { display: grid !important; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.1rem 0; }
+            .form-row { margin: 0.1rem 0; font-size: 0.76rem; line-height: 1.35; }
+            .option-row { margin: 0.1rem 0; font-size: 0.76rem; line-height: 1.35; }
+            .area-divider { margin: 0.28rem 0; border: none; border-top: 1px solid #aaa; }
+            .fill-xl { width: 170px; }
+            .fill-lg { width: 120px; }
+            .fill-md { width: 85px; }
+            .fill-sm { width: 55px; }
+            .fill-xs { width: 35px; }
+            .footnote { font-size: 0.66rem; color: #555; margin-top: 0.3rem; }
+            .print-credit { display: block; font-size: 0.65rem; color: #666; text-align: center; margin-top: 0.3rem; }
         }
 
-        h1.form-title {
-            font-size: 1.4rem;
-            margin: 0 0 0.6rem 0;
+        /* Screen styles */
+        h1.form-title { font-size: 1.4rem; margin: 0 0 0.6rem 0; color: #2C3E50; }
+        h3.form-section {
+            font-size: 0.95rem;
             color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+            margin: 0.7rem 0 0.3rem 0;
+            font-weight: 600;
         }
-        .job-header {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
+        .job-header { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 0.8rem; }
         .job-header p { margin: 0; font-size: 0.95rem; }
         .fill-xl {
-            display: inline-block;
-            width: 220px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
+            display: inline-block; width: 220px;
+            border-bottom: 1px solid #333; margin-left: 0.3rem; vertical-align: bottom;
         }
         .fill-lg {
-            display: inline-block;
-            width: 160px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
+            display: inline-block; width: 160px;
+            border-bottom: 1px solid #333; margin-left: 0.3rem; vertical-align: bottom;
         }
         .fill-md {
-            display: inline-block;
-            width: 110px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
+            display: inline-block; width: 110px;
+            border-bottom: 1px solid #333; margin-left: 0.3rem; vertical-align: bottom;
         }
         .fill-sm {
-            display: inline-block;
-            width: 70px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
+            display: inline-block; width: 70px;
+            border-bottom: 1px solid #333; margin-left: 0.3rem; vertical-align: bottom;
         }
         .fill-xs {
-            display: inline-block;
-            width: 45px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
+            display: inline-block; width: 45px;
+            border-bottom: 1px solid #333; margin-left: 0.3rem; vertical-align: bottom;
         }
-        .area-block { margin-bottom: 1.2rem; }
+        .area-block { margin-bottom: 1.4rem; }
         .area-header {
             font-size: 1rem;
             font-weight: 600;
             color: #2C3E50;
+            border-bottom: 2px solid #2C3E50;
+            padding-bottom: 0.2rem;
             margin: 0.8rem 0 0.4rem 0;
         }
-        .form-row { margin: 0.4rem 0; font-size: 0.95rem; }
-        .area-divider {
-            border: none;
-            border-top: 1.5px solid #999;
-            margin: 1.2rem 0 0.2rem 0;
-        }
+        .area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; margin: 0.2rem 0; }
+        .form-row { margin: 0.35rem 0; font-size: 0.95rem; }
+        .option-row { margin: 0.35rem 0; font-size: 0.95rem; color: #333; }
+        .area-divider { border: none; border-top: 1.5px solid #aaa; margin: 1.2rem 0 0.2rem 0; }
+        .footnote { font-size: 0.82rem; color: #666; margin-top: 0.6rem; }
         .print-credit { display: none; }
     </style>
 </head>
@@ -161,59 +137,149 @@
             <h1 class="form-title">Remodelers Guide: Tile Finish Order Sheet</h1>
 
             <div class="job-header">
-                <p><strong>Job:</strong> <span class="fill-lg"></span></p>
-                <p><strong>Date:</strong> <span class="fill-md"></span></p>
+                <p>Job <span class="fill-lg"></span></p>
+                <p>Date <span class="fill-md"></span></p>
             </div>
 
-            <!-- Area 1 -->
+            <!-- ── Area 1 ── -->
             <div class="area-block">
-                <p class="area-header">Room / Location: <span class="fill-xl"></span></p>
-                <p class="form-row"><strong>Brand:</strong> <span class="fill-md"></span> &nbsp; <strong>Name:</strong> <span class="fill-md"></span> &nbsp; <strong>Color:</strong> <span class="fill-md"></span> &nbsp; <strong>Sheen:</strong> <span class="fill-sm"></span></p>
-                <p class="form-row"><strong>Size:</strong> <span class="fill-md"></span> &nbsp; <strong>Thickness:</strong> <span class="fill-sm"></span> &nbsp; Rectified: &#9744; Yes &nbsp; &#9744; No &nbsp;&nbsp; Edge: &#9744; LE Bullnose &nbsp; &#9744; SE Bullnose &nbsp; &#9744; Pencil &nbsp; &#9744; Schluter</p>
-                <p class="form-row">Layout: &#9744; Stacked &nbsp; &#9744; &frac12; Bond &nbsp; &#9744; &frac13; Bond &nbsp; &#9744; Herringbone &nbsp; &#9744; Basket Weave &nbsp; &#9744; Diagonal</p>
-                <p class="form-row"><strong>Sq Ft:</strong> <span class="fill-sm"></span> &times; 1.10 = <span class="fill-sm"></span> &divide; <span class="fill-sm"></span> sf/box = <span class="fill-sm"></span> boxes</p>
-                <p class="form-row">Grout: &#9744; Sanded &nbsp; &#9744; Unsanded &nbsp; &#9744; Epoxy &nbsp;&nbsp; <strong>Color:</strong> <span class="fill-lg"></span> &nbsp; <strong>Bags:</strong> <span class="fill-xs"></span> &nbsp; <strong>Caulk tubes:</strong> <span class="fill-xs"></span></p>
-                <p class="form-row">Sealer: &#9744; None &nbsp; &#9744; Grout sealer &nbsp; &#9744; Stone / natural tile (pre-grout)</p>
+                <div class="area-header">Room / Location <span class="fill-xl" style="font-weight:normal;"></span></div>
+                <div class="area-grid">
+                    <div>
+                        <h3 class="form-section">Tile</h3>
+                        <p class="form-row">Brand <span class="fill-md"></span></p>
+                        <p class="form-row">Name <span class="fill-md"></span></p>
+                        <p class="form-row">Color <span class="fill-sm"></span> &nbsp; Sheen <span class="fill-sm"></span></p>
+                        <p class="form-row">Size <span class="fill-sm"></span> &nbsp; Thickness <span class="fill-xs"></span></p>
+                        <p class="option-row">Rectified &nbsp; &#9744; Yes &nbsp; &#9744; No</p>
+                    </div>
+                    <div>
+                        <h3 class="form-section">Layout &amp; Edge</h3>
+                        <p class="option-row">Standard: &nbsp; &#9744; Stacked &nbsp; &#9744; &frac12; Bond &nbsp; &#9744; &frac13; Bond</p>
+                        <p class="option-row">Complex*: &nbsp; &#9744; Herringbone &nbsp; &#9744; Basket Weave &nbsp; &#9744; Diagonal</p>
+                        <p class="option-row">Edge: &nbsp; &#9744; LE Bullnose &nbsp; &#9744; SE Bullnose &nbsp; &#9744; Pencil &nbsp; &#9744; Schluter</p>
+                    </div>
+                </div>
+                <p class="form-row">Sq Ft <span class="fill-sm"></span> &times; 1.10 = <span class="fill-sm"></span> &divide; <span class="fill-sm"></span> sf/box = <span class="fill-sm"></span> boxes</p>
+                <div class="area-grid">
+                    <div>
+                        <h3 class="form-section">Grout &amp; Caulk</h3>
+                        <p class="option-row">&#9744; Sanded &nbsp; &#9744; Unsanded &nbsp;&nbsp; Color <span class="fill-md"></span></p>
+                        <p class="form-row">Bags <span class="fill-xs"></span> &nbsp; Caulk tubes <span class="fill-xs"></span></p>
+                    </div>
+                    <div>
+                        <h3 class="form-section">Sealer</h3>
+                        <p class="option-row">&#9744; None &nbsp; &#9744; Grout sealer &nbsp; &#9744; Stone (pre-grout)</p>
+                    </div>
+                </div>
             </div>
 
             <hr class="area-divider">
 
-            <!-- Area 2 -->
+            <!-- ── Area 2 ── -->
             <div class="area-block">
-                <p class="area-header">Room / Location: <span class="fill-xl"></span></p>
-                <p class="form-row"><strong>Brand:</strong> <span class="fill-md"></span> &nbsp; <strong>Name:</strong> <span class="fill-md"></span> &nbsp; <strong>Color:</strong> <span class="fill-md"></span> &nbsp; <strong>Sheen:</strong> <span class="fill-sm"></span></p>
-                <p class="form-row"><strong>Size:</strong> <span class="fill-md"></span> &nbsp; <strong>Thickness:</strong> <span class="fill-sm"></span> &nbsp; Rectified: &#9744; Yes &nbsp; &#9744; No &nbsp;&nbsp; Edge: &#9744; LE Bullnose &nbsp; &#9744; SE Bullnose &nbsp; &#9744; Pencil &nbsp; &#9744; Schluter</p>
-                <p class="form-row">Layout: &#9744; Stacked &nbsp; &#9744; &frac12; Bond &nbsp; &#9744; &frac13; Bond &nbsp; &#9744; Herringbone &nbsp; &#9744; Basket Weave &nbsp; &#9744; Diagonal</p>
-                <p class="form-row"><strong>Sq Ft:</strong> <span class="fill-sm"></span> &times; 1.10 = <span class="fill-sm"></span> &divide; <span class="fill-sm"></span> sf/box = <span class="fill-sm"></span> boxes</p>
-                <p class="form-row">Grout: &#9744; Sanded &nbsp; &#9744; Unsanded &nbsp; &#9744; Epoxy &nbsp;&nbsp; <strong>Color:</strong> <span class="fill-lg"></span> &nbsp; <strong>Bags:</strong> <span class="fill-xs"></span> &nbsp; <strong>Caulk tubes:</strong> <span class="fill-xs"></span></p>
-                <p class="form-row">Sealer: &#9744; None &nbsp; &#9744; Grout sealer &nbsp; &#9744; Stone / natural tile (pre-grout)</p>
+                <div class="area-header">Room / Location <span class="fill-xl" style="font-weight:normal;"></span></div>
+                <div class="area-grid">
+                    <div>
+                        <h3 class="form-section">Tile</h3>
+                        <p class="form-row">Brand <span class="fill-md"></span></p>
+                        <p class="form-row">Name <span class="fill-md"></span></p>
+                        <p class="form-row">Color <span class="fill-sm"></span> &nbsp; Sheen <span class="fill-sm"></span></p>
+                        <p class="form-row">Size <span class="fill-sm"></span> &nbsp; Thickness <span class="fill-xs"></span></p>
+                        <p class="option-row">Rectified &nbsp; &#9744; Yes &nbsp; &#9744; No</p>
+                    </div>
+                    <div>
+                        <h3 class="form-section">Layout &amp; Edge</h3>
+                        <p class="option-row">Standard: &nbsp; &#9744; Stacked &nbsp; &#9744; &frac12; Bond &nbsp; &#9744; &frac13; Bond</p>
+                        <p class="option-row">Complex*: &nbsp; &#9744; Herringbone &nbsp; &#9744; Basket Weave &nbsp; &#9744; Diagonal</p>
+                        <p class="option-row">Edge: &nbsp; &#9744; LE Bullnose &nbsp; &#9744; SE Bullnose &nbsp; &#9744; Pencil &nbsp; &#9744; Schluter</p>
+                    </div>
+                </div>
+                <p class="form-row">Sq Ft <span class="fill-sm"></span> &times; 1.10 = <span class="fill-sm"></span> &divide; <span class="fill-sm"></span> sf/box = <span class="fill-sm"></span> boxes</p>
+                <div class="area-grid">
+                    <div>
+                        <h3 class="form-section">Grout &amp; Caulk</h3>
+                        <p class="option-row">&#9744; Sanded &nbsp; &#9744; Unsanded &nbsp;&nbsp; Color <span class="fill-md"></span></p>
+                        <p class="form-row">Bags <span class="fill-xs"></span> &nbsp; Caulk tubes <span class="fill-xs"></span></p>
+                    </div>
+                    <div>
+                        <h3 class="form-section">Sealer</h3>
+                        <p class="option-row">&#9744; None &nbsp; &#9744; Grout sealer &nbsp; &#9744; Stone (pre-grout)</p>
+                    </div>
+                </div>
             </div>
 
             <hr class="area-divider">
 
-            <!-- Area 3 -->
+            <!-- ── Area 3 ── -->
             <div class="area-block">
-                <p class="area-header">Room / Location: <span class="fill-xl"></span></p>
-                <p class="form-row"><strong>Brand:</strong> <span class="fill-md"></span> &nbsp; <strong>Name:</strong> <span class="fill-md"></span> &nbsp; <strong>Color:</strong> <span class="fill-md"></span> &nbsp; <strong>Sheen:</strong> <span class="fill-sm"></span></p>
-                <p class="form-row"><strong>Size:</strong> <span class="fill-md"></span> &nbsp; <strong>Thickness:</strong> <span class="fill-sm"></span> &nbsp; Rectified: &#9744; Yes &nbsp; &#9744; No &nbsp;&nbsp; Edge: &#9744; LE Bullnose &nbsp; &#9744; SE Bullnose &nbsp; &#9744; Pencil &nbsp; &#9744; Schluter</p>
-                <p class="form-row">Layout: &#9744; Stacked &nbsp; &#9744; &frac12; Bond &nbsp; &#9744; &frac13; Bond &nbsp; &#9744; Herringbone &nbsp; &#9744; Basket Weave &nbsp; &#9744; Diagonal</p>
-                <p class="form-row"><strong>Sq Ft:</strong> <span class="fill-sm"></span> &times; 1.10 = <span class="fill-sm"></span> &divide; <span class="fill-sm"></span> sf/box = <span class="fill-sm"></span> boxes</p>
-                <p class="form-row">Grout: &#9744; Sanded &nbsp; &#9744; Unsanded &nbsp; &#9744; Epoxy &nbsp;&nbsp; <strong>Color:</strong> <span class="fill-lg"></span> &nbsp; <strong>Bags:</strong> <span class="fill-xs"></span> &nbsp; <strong>Caulk tubes:</strong> <span class="fill-xs"></span></p>
-                <p class="form-row">Sealer: &#9744; None &nbsp; &#9744; Grout sealer &nbsp; &#9744; Stone / natural tile (pre-grout)</p>
+                <div class="area-header">Room / Location <span class="fill-xl" style="font-weight:normal;"></span></div>
+                <div class="area-grid">
+                    <div>
+                        <h3 class="form-section">Tile</h3>
+                        <p class="form-row">Brand <span class="fill-md"></span></p>
+                        <p class="form-row">Name <span class="fill-md"></span></p>
+                        <p class="form-row">Color <span class="fill-sm"></span> &nbsp; Sheen <span class="fill-sm"></span></p>
+                        <p class="form-row">Size <span class="fill-sm"></span> &nbsp; Thickness <span class="fill-xs"></span></p>
+                        <p class="option-row">Rectified &nbsp; &#9744; Yes &nbsp; &#9744; No</p>
+                    </div>
+                    <div>
+                        <h3 class="form-section">Layout &amp; Edge</h3>
+                        <p class="option-row">Standard: &nbsp; &#9744; Stacked &nbsp; &#9744; &frac12; Bond &nbsp; &#9744; &frac13; Bond</p>
+                        <p class="option-row">Complex*: &nbsp; &#9744; Herringbone &nbsp; &#9744; Basket Weave &nbsp; &#9744; Diagonal</p>
+                        <p class="option-row">Edge: &nbsp; &#9744; LE Bullnose &nbsp; &#9744; SE Bullnose &nbsp; &#9744; Pencil &nbsp; &#9744; Schluter</p>
+                    </div>
+                </div>
+                <p class="form-row">Sq Ft <span class="fill-sm"></span> &times; 1.10 = <span class="fill-sm"></span> &divide; <span class="fill-sm"></span> sf/box = <span class="fill-sm"></span> boxes</p>
+                <div class="area-grid">
+                    <div>
+                        <h3 class="form-section">Grout &amp; Caulk</h3>
+                        <p class="option-row">&#9744; Sanded &nbsp; &#9744; Unsanded &nbsp;&nbsp; Color <span class="fill-md"></span></p>
+                        <p class="form-row">Bags <span class="fill-xs"></span> &nbsp; Caulk tubes <span class="fill-xs"></span></p>
+                    </div>
+                    <div>
+                        <h3 class="form-section">Sealer</h3>
+                        <p class="option-row">&#9744; None &nbsp; &#9744; Grout sealer &nbsp; &#9744; Stone (pre-grout)</p>
+                    </div>
+                </div>
             </div>
 
             <hr class="area-divider">
 
-            <!-- Area 4 -->
+            <!-- ── Area 4 ── -->
             <div class="area-block">
-                <p class="area-header">Room / Location: <span class="fill-xl"></span></p>
-                <p class="form-row"><strong>Brand:</strong> <span class="fill-md"></span> &nbsp; <strong>Name:</strong> <span class="fill-md"></span> &nbsp; <strong>Color:</strong> <span class="fill-md"></span> &nbsp; <strong>Sheen:</strong> <span class="fill-sm"></span></p>
-                <p class="form-row"><strong>Size:</strong> <span class="fill-md"></span> &nbsp; <strong>Thickness:</strong> <span class="fill-sm"></span> &nbsp; Rectified: &#9744; Yes &nbsp; &#9744; No &nbsp;&nbsp; Edge: &#9744; LE Bullnose &nbsp; &#9744; SE Bullnose &nbsp; &#9744; Pencil &nbsp; &#9744; Schluter</p>
-                <p class="form-row">Layout: &#9744; Stacked &nbsp; &#9744; &frac12; Bond &nbsp; &#9744; &frac13; Bond &nbsp; &#9744; Herringbone &nbsp; &#9744; Basket Weave &nbsp; &#9744; Diagonal</p>
-                <p class="form-row"><strong>Sq Ft:</strong> <span class="fill-sm"></span> &times; 1.10 = <span class="fill-sm"></span> &divide; <span class="fill-sm"></span> sf/box = <span class="fill-sm"></span> boxes</p>
-                <p class="form-row">Grout: &#9744; Sanded &nbsp; &#9744; Unsanded &nbsp; &#9744; Epoxy &nbsp;&nbsp; <strong>Color:</strong> <span class="fill-lg"></span> &nbsp; <strong>Bags:</strong> <span class="fill-xs"></span> &nbsp; <strong>Caulk tubes:</strong> <span class="fill-xs"></span></p>
-                <p class="form-row">Sealer: &#9744; None &nbsp; &#9744; Grout sealer &nbsp; &#9744; Stone / natural tile (pre-grout)</p>
+                <div class="area-header">Room / Location <span class="fill-xl" style="font-weight:normal;"></span></div>
+                <div class="area-grid">
+                    <div>
+                        <h3 class="form-section">Tile</h3>
+                        <p class="form-row">Brand <span class="fill-md"></span></p>
+                        <p class="form-row">Name <span class="fill-md"></span></p>
+                        <p class="form-row">Color <span class="fill-sm"></span> &nbsp; Sheen <span class="fill-sm"></span></p>
+                        <p class="form-row">Size <span class="fill-sm"></span> &nbsp; Thickness <span class="fill-xs"></span></p>
+                        <p class="option-row">Rectified &nbsp; &#9744; Yes &nbsp; &#9744; No</p>
+                    </div>
+                    <div>
+                        <h3 class="form-section">Layout &amp; Edge</h3>
+                        <p class="option-row">Standard: &nbsp; &#9744; Stacked &nbsp; &#9744; &frac12; Bond &nbsp; &#9744; &frac13; Bond</p>
+                        <p class="option-row">Complex*: &nbsp; &#9744; Herringbone &nbsp; &#9744; Basket Weave &nbsp; &#9744; Diagonal</p>
+                        <p class="option-row">Edge: &nbsp; &#9744; LE Bullnose &nbsp; &#9744; SE Bullnose &nbsp; &#9744; Pencil &nbsp; &#9744; Schluter</p>
+                    </div>
+                </div>
+                <p class="form-row">Sq Ft <span class="fill-sm"></span> &times; 1.10 = <span class="fill-sm"></span> &divide; <span class="fill-sm"></span> sf/box = <span class="fill-sm"></span> boxes</p>
+                <div class="area-grid">
+                    <div>
+                        <h3 class="form-section">Grout &amp; Caulk</h3>
+                        <p class="option-row">&#9744; Sanded &nbsp; &#9744; Unsanded &nbsp;&nbsp; Color <span class="fill-md"></span></p>
+                        <p class="form-row">Bags <span class="fill-xs"></span> &nbsp; Caulk tubes <span class="fill-xs"></span></p>
+                    </div>
+                    <div>
+                        <h3 class="form-section">Sealer</h3>
+                        <p class="option-row">&#9744; None &nbsp; &#9744; Grout sealer &nbsp; &#9744; Stone (pre-grout)</p>
+                    </div>
+                </div>
             </div>
+
+            <p class="footnote">* Complex layouts (herringbone, basket weave, diagonal) are non-standard and billed at a premium. Confirm pricing before ordering tile.</p>
 
             <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
 

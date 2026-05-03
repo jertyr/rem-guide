@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wood / LVP Order Sheet | Remodelers Guide">
+    <title>Wood / LVP Order Sheet | Remodelers Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media print {
+            @page { margin: 0.5in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper { margin: 0 !important; padding: 0 !important; }
+            main { margin: 0 !important; padding: 0 !important; }
+            article { margin: 0 !important; padding: 0 !important; }
+            body { margin: 0; padding: 0; font-size: 0.78rem; }
+            h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
+            h3.form-section { font-size: 0.8rem; margin: 0.4rem 0 0.2rem 0; padding-bottom: 0.1rem; }
+            .order-table { font-size: 0.78rem; }
+            .order-table th, .order-table td { padding: 0.18rem 0.4rem; }
+            .form-grid { gap: 1rem; margin-bottom: 0.3rem; }
+            .form-row { margin: 0.1rem 0; font-size: 0.78rem; }
+            .notes-box { display: none; }
+        }
+
+        h1.form-title {
+            font-size: 1.4rem;
+            margin: 0 0 0.6rem 0;
+            color: #2C3E50;
+        }
+        h3.form-section {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+            margin: 0.9rem 0 0.35rem 0;
+            font-weight: 600;
+        }
+        .fill-sm {
+            display: inline-block;
+            width: 70px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        .job-header {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+        .job-header p { margin: 0.2rem 0; }
+        .fill-line {
+            display: inline-block;
+            min-width: 180px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .notes-box { height: 1.5in; margin-top: 0.4rem; }
+        .form-row { margin: 0.3rem 0; font-size: 0.95rem; }
+        .order-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 0.5rem 0 1rem 0;
+            font-size: 0.95rem;
+        }
+        .order-table th,
+        .order-table td {
+            border: 1px solid #ccc;
+            padding: 0.4rem 0.6rem;
+            text-align: center;
+        }
+        .order-table th {
+            background: #f2f2f2;
+            font-weight: 600;
+        }
+        .order-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+        .calc-formula {
+            font-size: 0.85rem;
+            color: #555;
+            margin: 0 0 0.4rem 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
+                <li class="nav-item"><a href="decks.html">Decks</a></li>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
+                <li class="nav-item active-section"><a href="flooring.html" class="active">Flooring</a></li>
+                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="resources.html">Resources</a></li>
+					<li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <p class="breadcrumb"><a href="flooring.html">Flooring</a> &gt; Wood / LVP Order Sheet</p>
+            <h1 class="form-title">Remodelers Guide: Wood / LVP Order Sheet</h1>
+
+            <div class="job-header">
+                <p><strong>Job Name:</strong> <span class="fill-line"></span></p>
+                <p><strong>Date:</strong> <span class="fill-line"></span></p>
+            </div>
+
+            <p class="form-row"><strong>Flooring Type:</strong>
+                &#9744; Engineered Wood &nbsp;
+                &#9744; Solid Wood &nbsp;
+                &#9744; LVP (Floating) &nbsp;
+                &#9744; LVP (Glue-down)
+            </p>
+            <p class="form-row"><strong>Brand / Line:</strong> <span class="fill-line"></span> &nbsp; <strong>Color:</strong> <span class="fill-line"></span></p>
+            <p class="form-row"><strong>Plank Width:</strong> <span class="fill-sm"></span> &nbsp; <strong>Length:</strong> <span class="fill-sm"></span></p>
+
+            <h3 class="form-section">Flooring Quantities</h3>
+            <p class="calc-formula">Room sq ft &times; 1.05 (5% waste) &divide; sq ft per box, rounded up.</p>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Room / Area</th>
+                        <th>Sq Ft</th>
+                        <th>+5% Waste</th>
+                        <th>Sq Ft / Box</th>
+                        <th>Boxes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td><strong>Total</strong></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+
+            <div class="form-grid">
+                <div>
+                    <h3 class="form-section">Subfloor Prep</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Self-leveling compound (bags)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Floor patch</p>
+                    <p class="form-row"><span class="fill-sm"></span> Leveler primer</p>
+                    <p class="form-row"><span class="fill-sm"></span> Wire mesh (for leveler pours)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Subfloor screws (squeak repair)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Construction adhesive</p>
+
+                    <h3 class="form-section">Underlayment / Vapor Retarder</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Asphalt-saturated felt / tar paper (rolls)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Aquabar B / kraft paper (rolls)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Silicone vapor retarder (rolls)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Roll-on moisture barrier (gal)</p>
+                    <p class="form-row"><span class="fill-sm"></span> LVP foam / cork underlayment (rolls)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Seam tape</p>
+
+                    <h3 class="form-section">Fasteners (Wood)</h3>
+                    <p class="form-row"><span class="fill-sm"></span> 1.25" cleats (boxes)</p>
+                    <p class="form-row"><span class="fill-sm"></span> 1.5" cleats (boxes)</p>
+                    <p class="form-row"><span class="fill-sm"></span> 1.5" narrow crown staples, &#8540;" (boxes)</p>
+                    <p class="form-row"><span class="fill-sm"></span> 2" narrow crown staples, &#8540;" (boxes)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Trim / finish nails (face-nailing)</p>
+                </div>
+
+                <div>
+                    <h3 class="form-section">Adhesive (Glue-down)</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Wood flooring adhesive (buckets)</p>
+                    <p class="form-row"><span class="fill-sm"></span> LVP adhesive (buckets)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Notched trowel size: <span class="fill-sm"></span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Adhesive remover / cleaner</p>
+
+                    <h3 class="form-section">Sand-in-Place Finish</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Stain (color: <span class="fill-sm"></span>) gallons</p>
+                    <p class="form-row"><span class="fill-sm"></span> Sealer / sanding sealer</p>
+                    <p class="form-row"><span class="fill-sm"></span> Polyurethane (oil / water)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Sheen: gloss / semi / satin / matte</p>
+                    <p class="form-row"><span class="fill-sm"></span> Sandpaper (grits: <span class="fill-sm"></span>)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Tack cloths / mineral spirits</p>
+
+                    <h3 class="form-section">Trim &amp; Transitions</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Stair nosing (LF)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Reducers (LF)</p>
+                    <p class="form-row"><span class="fill-sm"></span> T-molding (LF)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Threshold / end cap</p>
+                    <p class="form-row"><span class="fill-sm"></span> Quarter-round / shoe mold (LF)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Color-matched filler / putty sticks</p>
+                    <p class="form-row"><span class="fill-sm"></span> Touch-up marker / pen</p>
+
+                    <h3 class="form-section">Floor Protection</h3>
+                    <p class="form-row"><span class="fill-sm"></span> Ram board (rolls)</p>
+                    <p class="form-row"><span class="fill-sm"></span> Painter's tape</p>
+                </div>
+            </div>
+
+            <h3 class="form-section">Notes / Special Instructions</h3>
+            <div class="notes-box"></div>
+
+            <p class="form-actions">
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 05/03/2026</small>
+            </p>
+
+            <p class="breadcrumb"><a href="flooring.html">Flooring</a> &gt; Wood / LVP Order Sheet</p>
+        </article>
+    </main>
+</div>
+
+<script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+        shareBtn.addEventListener('click', () => {
+            navigator.share({
+                title: document.title || 'Wood / LVP Order Sheet',
+                url: window.location.href
+            }).catch(() => { });
+        });
+    } else if (shareBtn) {
+        shareBtn.style.display = 'none';
+    }
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) {
+        printBtn.addEventListener('click', () => { window.print(); });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<footer>
+    &copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
+<!-- goatcounter-analytics:start -->
+<script data-goatcounter="https://rem-guide.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- goatcounter-analytics:end -->
+</body>
+</html>

@@ -36,19 +36,21 @@
             body {
                 margin: 0;
                 padding: 0;
-                font-size: 0.78rem;
+                font-size: 0.75rem;
             }
-            h1.form-title { font-size: 1rem; margin: 0 0 0.3rem 0; }
-            h3.form-section { font-size: 0.78rem; margin: 0.3rem 0 0.15rem 0; padding-bottom: 0.1rem; }
-            .job-header { margin-bottom: 0.3rem; gap: 1.5rem; }
-            .job-header p { font-size: 0.78rem; margin: 0.1rem 0; }
-            .form-grid { gap: 1.2rem; margin-bottom: 0.3rem; }
-            .form-grid-bottom { gap: 1.2rem; margin-bottom: 0.3rem; }
-            .form-row { margin: 0.1rem 0; font-size: 0.78rem; }
-            .option-row { margin: 0.1rem 0; font-size: 0.78rem; }
-            .trim-table { font-size: 0.78rem; }
-            .trim-table th, .trim-table td { padding: 0.15rem 0.5rem; }
+            h1.form-title { font-size: 0.95rem; margin: 0 0 0.25rem 0; }
+            h3.form-section { font-size: 0.75rem; margin: 0.25rem 0 0.1rem 0; padding-bottom: 0.08rem; }
+            .trim-sub { font-size: 0.72rem; margin: 0.1rem 0 0.05rem 0; }
+            .job-header { margin-bottom: 0.25rem; gap: 1.2rem; }
+            .job-header p { font-size: 0.75rem; margin: 0.08rem 0; }
+            .form-grid { gap: 0.8rem; margin-bottom: 0.2rem; }
+            .form-grid-bottom { gap: 0.8rem; margin-bottom: 0.2rem; }
+            .form-row { margin: 0.08rem 0; font-size: 0.75rem; }
+            .option-row { margin: 0.08rem 0; font-size: 0.75rem; }
+            .trim-table { font-size: 0.75rem; margin: 0 0 0.2rem 0; }
+            .trim-table th, .trim-table td { padding: 0.1rem 0.4rem; }
             .notes-box { display: none; }
+            .print-credit { display: block; margin-top: 0.4rem; }
         }
 
         /* Screen styles */
@@ -64,6 +66,12 @@
             padding-bottom: 0.2rem;
             margin: 0.9rem 0 0.35rem 0;
             font-weight: 600;
+        }
+        .trim-sub {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #555;
+            margin: 0.5rem 0 0.2rem 0;
         }
         .job-header {
             display: flex;
@@ -133,7 +141,7 @@
         .trim-table {
             border-collapse: collapse;
             width: 100%;
-            margin: 0.4rem 0 0.8rem 0;
+            margin: 0.2rem 0 0.8rem 0;
             font-size: 0.95rem;
         }
         .trim-table th,
@@ -149,6 +157,13 @@
         }
         .trim-table td:first-child {
             white-space: nowrap;
+        }
+        .print-credit {
+            display: none;
+            text-align: center;
+            font-size: 0.72rem;
+            color: #666;
+            margin-top: 0.4rem;
         }
     </style>
 </head>
@@ -192,7 +207,7 @@
                 <li class="nav-item"><a href="countertops.html">Countertops</a></li>
                 <li class="nav-item"><a href="stairs.html">Stairs</a></li>
                 <li class="nav-item"><a href="resources.html">Resources</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
+				<li class="nav-item"><a href="products.html">Products</a></li>
                 <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
             </ul>
         </nav>
@@ -223,22 +238,57 @@
                 </div>
             </div>
 
-            <!-- Trim table -->
+            <!-- Trim -->
             <h3 class="form-section">Trim</h3>
+
+            <!-- Aluminum + Vinyl side by side -->
+            <div class="form-grid">
+                <div>
+                    <p class="trim-sub">Aluminum</p>
+                    <table class="trim-table">
+                        <colgroup><col style="width:38%"><col style="width:31%"><col style="width:31%"></colgroup>
+                        <thead>
+                            <tr><th>Item</th><th>Size</th><th>Color</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Fascia</td><td></td><td></td></tr>
+                            <tr><td>Vented Soffit</td><td></td><td></td></tr>
+                            <tr><td>Solid Soffit</td><td></td><td></td></tr>
+                            <tr><td>F</td><td></td><td></td></tr>
+                            <tr><td>J</td><td></td><td></td></tr>
+                            <tr><td>Z Flashing</td><td></td><td></td></tr>
+                            <tr><td>Coil</td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <p class="trim-sub">Vinyl</p>
+                    <table class="trim-table">
+                        <colgroup><col style="width:38%"><col style="width:31%"><col style="width:31%"></colgroup>
+                        <thead>
+                            <tr><th>Item</th><th>Size</th><th>Color</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Outside Corners</td><td></td><td></td></tr>
+                            <tr><td>Inside Corners</td><td></td><td></td></tr>
+                            <tr><td>Starter</td><td></td><td></td></tr>
+                            <tr><td>J</td><td></td><td></td></tr>
+                            <tr><td>UT</td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Other trim - full width -->
+            <p class="trim-sub">Other</p>
             <table class="trim-table">
+                <colgroup><col style="width:25%"><col style="width:37.5%"><col style="width:37.5%"></colgroup>
                 <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Size</th>
-                        <th>Color</th>
-                    </tr>
+                    <tr><th>Item</th><th>Size</th><th>Color</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Fascia</td><td></td><td></td></tr>
-                    <tr><td>Soffit</td><td></td><td></td></tr>
-                    <tr><td>Outside Corners</td><td></td><td></td></tr>
-                    <tr><td>Inside Corners</td><td></td><td></td></tr>
-                    <tr><td>Belly Bands</td><td></td><td></td></tr>
+                    <tr><td>Band Trim</td><td></td><td></td></tr>
                     <tr><td>Base</td><td></td><td></td></tr>
                     <tr><td>Frieze</td><td></td><td></td></tr>
                     <tr><td>Roof Lines</td><td></td><td></td></tr>
@@ -246,20 +296,16 @@
                     <tr><td>Windows</td><td></td><td></td></tr>
                     <tr><td>Posts</td><td></td><td></td></tr>
                     <tr><td>Beams</td><td></td><td></td></tr>
+                    <tr><td>Window Picture Frame</td><td></td><td></td></tr>
                 </tbody>
             </table>
-            <p class="form-row">Window Picture Frame:<span class="fill-md"></span></p>
-            <p class="form-row">Vinyl F:<span class="fill-xs"></span> &nbsp; J:<span class="fill-xs"></span> &nbsp; UT:<span class="fill-xs"></span></p>
-            <p class="form-row">Coil Metal:<span class="fill-sm"></span></p>
 
-            <!-- Row 2: Accessories + Soffits -->
+            <!-- Row 2: Accessories + Fasteners -->
             <div class="form-grid-bottom">
                 <div>
                     <h3 class="form-section">Accessories</h3>
-                    <p class="form-row">Starter Strip:<span class="fill-sm"></span></p>
                     <p class="form-row">Butt Joint Flashing Cards:<span class="fill-sm"></span></p>
                     <p class="form-row">Spray Primer:<span class="fill-sm"></span></p>
-                    <p class="form-row">Head Flashing:<span class="fill-sm"></span></p>
                     <p class="form-row">Deck Flashing:<span class="fill-sm"></span></p>
                     <p class="form-row">Kickouts:<span class="fill-sm"></span></p>
                     <p class="form-row">Wall Flashing:<span class="fill-sm"></span></p>
@@ -278,14 +324,6 @@
                     <p class="form-row">Shims:<span class="fill-sm"></span></p>
                     <p class="form-row">Caulking:<span class="fill-sm"></span></p>
                     <p class="form-row">Tarp:<span class="fill-sm"></span></p>
-
-                    <h3 class="form-section">Soffits</h3>
-                    <p class="form-row">F Channel:<span class="fill-sm"></span></p>
-                    <p class="form-row">J Channel:<span class="fill-sm"></span></p>
-                    <p class="option-row">Panels: <span class="opts">Vent &nbsp;/&nbsp; Solid</span></p>
-                    <p class="form-row">&nbsp;&nbsp;Eaves:<span class="fill-sm"></span></p>
-                    <p class="form-row">&nbsp;&nbsp;Rakes:<span class="fill-sm"></span></p>
-                    <p class="form-row">&nbsp;&nbsp;Ceilings:<span class="fill-sm"></span></p>
                 </div>
             </div>
 
@@ -293,11 +331,13 @@
             <h3 class="form-section">Notes / Special Instructions</h3>
             <div class="notes-box"></div>
 
+            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+
             <p class="form-actions">
                 <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
                 <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
                 <br>
-                <small>Last revised: 03/09/2026</small>
+                <small>Last revised: 05/04/2026</small>
             </p>
 
             <p class="breadcrumb"><a href="siding-and-trim.html">Siding &amp; Trim</a> &gt; Siding &amp; Trim Order Sheet</p>

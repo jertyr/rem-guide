@@ -11,6 +11,7 @@
 - **Field guide workflow**: User provides raw notes or bullet points; Claude builds the full page to match site format. Claude fills gaps with research but flags everything added
 - **No em-dashes**: User dislikes em-dashes. Use periods, semicolons, or conjunctions instead. This is a standing rule for all content
 - **Small PRs preferred**: One logical change per PR. Don't bundle unrelated fixes
+- **Always a new PR**: Every round of changes gets a fresh branch and PR, even when responding to feedback on a just-merged PR. Never push to an existing open PR after the user has reviewed it
 - **No unsolicited cleanup**: Don't refactor, reorganize, or "improve" things the user didn't ask about. Stay in scope
 - **Trust the user's field knowledge**: User is a working contractor. Don't hedge or over-explain trade basics. Flag code/spec details for review, not common practice
 - **Concise responses**: Short answers. Don't recap what you just did at length — the PR diff speaks for itself

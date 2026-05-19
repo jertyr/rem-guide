@@ -140,6 +140,16 @@
       gap: 26px;
     }
 
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .screenshot-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     .case-step {
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
@@ -454,6 +464,25 @@
         </div>
       </div>
     </section>
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Data Loggers</div>
+          <h2>More on data loggers</h2>
+          <p>Screenshots from the HOBO app showing how to connect to a logger, download data, and configure a new deployment.</p>
+        </div>
+        <div class="screenshot-grid">
+          <div class="media"><img src="./images/diagnostics/hobo-app/Screenshot_20260518_222244.jpg" alt="HOBO app launch screen" loading="lazy" /></div>
+          <div class="media"><img src="./images/diagnostics/hobo-app/Screenshot_20260518_222246.jpg" alt="Scanning for HOBO gateways and loggers" loading="lazy" /></div>
+          <div class="media"><img src="./images/diagnostics/hobo-app/Screenshot_20260518_222508.jpg" alt="Logger found — showing live temp and RH readings" loading="lazy" /></div>
+          <div class="media"><img src="./images/diagnostics/hobo-app/Screenshot_20260518_222513.jpg" alt="Connecting to logger" loading="lazy" /></div>
+          <div class="media"><img src="./images/diagnostics/hobo-app/Screenshot_20260518_222521.jpg" alt="Logger options menu" loading="lazy" /></div>
+          <div class="media"><img src="./images/diagnostics/hobo-app/Screenshot_20260518_222531.jpg" alt="Preparing to download data" loading="lazy" /></div>
+          <div class="media"><img src="./images/diagnostics/hobo-app/Screenshot_20260518_222556.jpg" alt="Customize configuration and start screen" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="wrap">
         <div class="section-head">

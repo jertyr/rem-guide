@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Construction Market Dashboard</title>
+  <style>
+    :root {
+      --bg: #f4f1eb;
+      --surface: #fbf9f5;
+      --text: #221f1a;
+      --muted: #6b655c;
+      --line: #d8d1c5;
+      --accent: #8d5321;
+      --accent-soft: #e9dbc9;
+      --shadow: 0 14px 36px rgba(33, 28, 21, 0.08);
+      --radius: 16px;
+      --max: 1200px;
+      --up: #2e7d32;
+      --down: #c62828;
+      --flat: #6b655c;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, #f7f4ef 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 64px 0 40px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font: 700 0.74rem/1.1 Arial, Helvetica, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      letter-spacing: -0.03em;
+      line-height: 1.06;
+    }
+
+    h2 {
+      margin: 0 0 6px;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      letter-spacing: -0.01em;
+    }
+
+    .hero-meta {
+      margin-top: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .hero-meta strong { color: var(--text); }
+
+    .section {
+      padding: 40px 0 48px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      margin-bottom: 20px;
+    }
+
+    .section-head p {
+      margin: 6px 0 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+
+    /* Tables */
+    .dash-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .dash-table th {
+      background: #ece6dc;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+
+    .dash-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    .dash-table tr:last-child td { border-bottom: none; }
+
+    .dash-table tr:hover td { background: #f5f1ea; }
+
+    .item-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .item-spec {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .val-current {
+      font-weight: 700;
+      font-size: 0.96rem;
+      color: var(--text);
+    }
+
+    .val-prev {
+      color: var(--muted);
+    }
+
+    .trend {
+      font-size: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .trend.up   { color: var(--up); }
+    .trend.down { color: var(--down); }
+    .trend.flat { color: var(--flat); }
+    .trend.none { color: var(--muted); font-size: 0.8rem; }
+
+    .src {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .src a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .src a:hover { text-decoration: underline; }
+
+    /* Category label rows */
+    .cat-row td {
+      background: #ede8e0;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 7px 14px;
+    }
+
+    /* Note callout */
+    .note {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: var(--accent-soft);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .note strong { color: var(--accent); }
+
+    /* Footer */
+    .site-footer {
+      padding: 36px 0 52px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .footer-sources h3 {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+
+    .footer-sources ul {
+      margin: 0;
+      padding: 0 0 0 18px;
+      line-height: 1.9;
+    }
+
+    .footer-sources a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer-sources a:hover { text-decoration: underline; }
+
+    @media (max-width: 700px) {
+      .dash-table th.hide-mobile,
+      .dash-table td.hide-mobile { display: none; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .dash-table { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Market Snapshot</div>
+      <h1>Construction Dashboard</h1>
+      <p class="hero-meta">
+        <strong>Ann Arbor, MI area</strong> &nbsp;·&nbsp;
+        Updated <strong>May 30, 2026</strong> &nbsp;·&nbsp;
+        Retail prices from Lowe's / Home Depot unless noted &nbsp;·&nbsp;
+        Update monthly
+      </p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── Materials & Supplies ── -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Materials</div>
+          <h2>Prices at retail</h2>
+          <p>Representative commodity and material prices. Check Lowe's or Home Depot Ann Arbor for exact current shelf price before updating.</p>
+        </div>
+
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Current</th>
+              <th class="hide-mobile">Apr '26</th>
+              <th class="hide-mobile">Mar '26</th>
+              <th class="hide-mobile">Feb '26</th>
+              <th>↕</th>
+              <th class="hide-mobile">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr class="cat-row"><td colspan="7">Framing Lumber</td></tr>
+
+            <tr>
+              <td>
+                <span class="item-name">2×4×8 stud</span>
+                <span class="item-spec">SPF/Whitewood, KD, #2</span>
+              </td>
+              <td class="val-current"><span style="color:red">~$5.50</span></td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend none">—</td>
+              <td class="src hide-mobile"><a href="https://www.lowes.com/pd/2-in-x-4-in-x-8-ft-Southern-Yellow-Pine-Stud-Common-1-5-in-x-3-5-in-Actual/1000028839" target="_blank">Lowe's</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Lumber futures</span>
+                <span class="item-spec">CME Random Length, per MBF</span>
+              </td>
+              <td class="val-current">$587</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend none">—</td>
+              <td class="src hide-mobile"><a href="https://tradingeconomics.com/commodity/lumber" target="_blank">TradingEconomics</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Red oak board</span>
+                <span class="item-spec">S4S 1×4, per linear foot (representative hardwood)</span>
+              </td>
+              <td class="val-current"><span style="color:red">~$4.00/LF</span></td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend none">—</td>
+              <td class="src hide-mobile"><span style="color:red">Lowe's / lumber yard</span></td>
+            </tr>
+
+            <tr class="cat-row"><td colspan="7">Sheet Goods</td></tr>
+
+            <tr>
+              <td>
+                <span class="item-name">OSB sheathing</span>
+                <span class="item-spec">7/16″ × 4′ × 8′, CAT PS2-10</span>
+              </td>
+              <td class="val-current">$16.48</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend none">—</td>
+              <td class="src hide-mobile"><a href="https://www.lowes.com/pd/7-16-CAT-PS2-10-OSB-Sheathing-Application-as-4-x-8/50382768" target="_blank">Lowe's</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Foam board insulation</span>
+                <span class="item-spec">2″ XPS R-10, 4′ × 8′ sheet</span>
+              </td>
+              <td class="val-current"><span style="color:red">~$40</span></td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend none">—</td>
+              <td class="src hide-mobile"><span style="color:red">Lowe's / Home Depot</span></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Drywall</span>
+                <span class="item-spec">½″ × 4′ × 8′ standard panel</span>
+              </td>
+              <td class="val-current"><span style="color:red">~$14</span></td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend none">—</td>
+              <td class="src hide-mobile"><span style="color:red">Lowe's / Home Depot</span></td>
+            </tr>
+
+            <tr class="cat-row"><td colspan="7">Metals</td></tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Copper tubing Type L</span>
+                <span class="item-spec">½″ × 10 ft stick</span>
+              </td>
+              <td class="val-current"><span style="color:red">~$33</span></td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend none">—</td>
+              <td class="src hide-mobile"><a href="https://www.lowes.com/pd/Cambridge-Lee-1-2-in-x-10-ft-Copper-Type-L-Pipe/1000044581" target="_blank">Lowe's</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Romex 12/2 NM-B</span>
+                <span class="item-spec">250 ft coil, copper, w/ground</span>
+              </td>
+              <td class="val-current">$154</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend none">—</td>
+              <td class="src hide-mobile"><a href="https://www.homedepot.com/p/Southwire-250-ft-12-2-Solid-Romex-SIMpull-CU-NM-B-W-G-Wire-28828269/202019375" target="_blank">Home Depot</a></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <div class="note">
+          <strong>Red items</strong> are estimated from research and should be verified at your local store before publishing. Remove the red once confirmed.
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Economic Indicators ── -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Economic Indicators</div>
+          <h2>Rates, housing &amp; consumer health</h2>
+          <p>Key macro signals that shape construction demand and financing conditions. Data from government and financial sources.</p>
+        </div>
+
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Indicator</th>
+              <th>Current</th>
+              <th class="hide-mobile">Prior</th>
+              <th class="hide-mobile">Prior –2</th>
+              <th class="hide-mobile">Prior –3</th>
+              <th>↕</th>
+              <th class="hide-mobile">Source</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr class="cat-row"><td colspan="7">Financing</td></tr>
+
+            <tr>
+              <td>
+                <span class="item-name">30-yr fixed mortgage</span>
+                <span class="item-spec">National average, week of May 28, 2026</span>
+              </td>
+              <td class="val-current">6.53%</td>
+              <td class="val-prev hide-mobile">6.51%</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">6.89% (yr ago)</td>
+              <td class="trend up">↓</td>
+              <td class="src hide-mobile"><a href="https://www.freddiemac.com/pmms" target="_blank">Freddie Mac PMMS</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Fed funds rate</span>
+                <span class="item-spec">Target range, upper bound</span>
+              </td>
+              <td class="val-current">4.50%</td>
+              <td class="val-prev hide-mobile">4.50%</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend flat">→</td>
+              <td class="src hide-mobile"><a href="https://fred.stlouisfed.org/series/FEDFUNDS" target="_blank">FRED / Fed</a></td>
+            </tr>
+
+            <tr class="cat-row"><td colspan="7">Housing Activity</td></tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Housing starts</span>
+                <span class="item-spec">SAAR, April 2026</span>
+              </td>
+              <td class="val-current">1,465K</td>
+              <td class="val-prev hide-mobile">1,507K (Mar)</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">1,400K (Apr '25)</td>
+              <td class="trend down">↓</td>
+              <td class="src hide-mobile"><a href="https://www.census.gov/construction/nrc/current/index.html" target="_blank">US Census Bureau</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Building permits</span>
+                <span class="item-spec">SAAR, April 2026</span>
+              </td>
+              <td class="val-current">1,442K</td>
+              <td class="val-prev hide-mobile">1,363K (Mar)</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">1,445K (Apr '25)</td>
+              <td class="trend up">↑</td>
+              <td class="src hide-mobile"><a href="https://www.census.gov/construction/nrc/current/index.html" target="_blank">US Census Bureau</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Housing completions</span>
+                <span class="item-spec">SAAR, April 2026</span>
+              </td>
+              <td class="val-current">1,449K</td>
+              <td class="val-prev hide-mobile">1,382K (Mar)</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">1,479K (Apr '25)</td>
+              <td class="trend up">↑</td>
+              <td class="src hide-mobile"><a href="https://www.census.gov/construction/nrc/current/index.html" target="_blank">US Census Bureau</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Case-Shiller 20-City HPI</span>
+                <span class="item-spec">March 2026, index level / YoY change</span>
+              </td>
+              <td class="val-current">341.74 / +0.8%</td>
+              <td class="val-prev hide-mobile">338.23 (Feb)</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend up">↑</td>
+              <td class="src hide-mobile"><a href="https://www.spglobal.com/spdji/en/index-family/indicators/sp-cotality-case-shiller/sp-cotality-case-shiller-composite/" target="_blank">S&amp;P / Cotality</a></td>
+            </tr>
+
+            <tr class="cat-row"><td colspan="7">Consumer Health</td></tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Consumer Confidence Index</span>
+                <span class="item-spec">Conference Board, May 2026 (1985=100)</span>
+              </td>
+              <td class="val-current">93.1</td>
+              <td class="val-prev hide-mobile">93.8 (Apr)</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend down">↓</td>
+              <td class="src hide-mobile"><a href="https://www.conference-board.org/topics/consumer-confidence/" target="_blank">Conference Board</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Credit card delinquency rate</span>
+                <span class="item-spec">All commercial banks, Q1 2026, seasonally adj.</span>
+              </td>
+              <td class="val-current">2.92%</td>
+              <td class="val-prev hide-mobile">~3.1% (Q4 '25)</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">3.2% (2024 peak)</td>
+              <td class="trend up">↓</td>
+              <td class="src hide-mobile"><a href="https://fred.stlouisfed.org/series/DRCCLACBS" target="_blank">FRED / Fed</a></td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="item-name">Credit card utilization</span>
+                <span class="item-spec">Average US household, Q1 2026</span>
+              </td>
+              <td class="val-current"><span style="color:red">~29%</span></td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="val-prev hide-mobile">—</td>
+              <td class="trend none">—</td>
+              <td class="src hide-mobile"><a href="https://www.newyorkfed.org/newsevents/news/research/2026/20260512" target="_blank">NY Fed</a></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <div class="note">
+          <strong>Reading the trend arrows:</strong> For mortgage rates and construction costs, ↓ is favorable for buyers and builders. For housing activity and consumer confidence, ↑ is favorable. For delinquency rates, ↓ is favorable.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-sources">
+        <h3>Sources</h3>
+        <ul>
+          <li><a href="https://www.freddiemac.com/pmms" target="_blank">Freddie Mac Primary Mortgage Market Survey (PMMS)</a></li>
+          <li><a href="https://fred.stlouisfed.org" target="_blank">Federal Reserve Economic Data (FRED) — St. Louis Fed</a></li>
+          <li><a href="https://www.census.gov/construction/nrc/current/index.html" target="_blank">US Census Bureau — New Residential Construction</a></li>
+          <li><a href="https://press.spglobal.com/2026-05-26-S-P-Cotality-Case-Shiller-Index-Reports-Annual-Gain-in-March-2026" target="_blank">S&amp;P Cotality Case-Shiller Home Price Index</a></li>
+          <li><a href="https://www.conference-board.org/topics/consumer-confidence/" target="_blank">Conference Board Consumer Confidence Index</a></li>
+          <li><a href="https://www.newyorkfed.org/newsevents/news/research/2026/20260512" target="_blank">Federal Reserve Bank of New York — Household Debt &amp; Credit</a></li>
+          <li><a href="https://tradingeconomics.com/commodity/lumber" target="_blank">TradingEconomics — Lumber Futures</a></li>
+          <li>Retail material prices: Lowe's and Home Depot (Ann Arbor, MI area)</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

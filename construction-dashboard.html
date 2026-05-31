@@ -309,6 +309,142 @@
       body { background: #fff; }
       .dash-table { box-shadow: none; border: 1px solid #ccc; }
     }
+
+    /* ── Gauge Dashboard ── */
+    .gauges-section {
+      padding: 40px 0 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gauges-intro {
+      margin: 6px 0 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .gauge-group { margin-bottom: 30px; }
+    .gauge-group:last-child { margin-bottom: 0; }
+
+    .gauge-group-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gauges-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .gauge-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 13px 15px 12px;
+      box-shadow: 0 2px 8px rgba(33, 28, 21, 0.05);
+    }
+
+    .gauge-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .gauge-label-block { flex: 1; min-width: 0; }
+
+    .gauge-name {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .gauge-sub {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.64rem;
+      color: var(--muted);
+      margin-top: 1px;
+      line-height: 1.3;
+    }
+
+    .gauge-val {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .gauge-track {
+      position: relative;
+      height: 8px;
+      background: #e0dbd3;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+
+    .gauge-fill {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+      opacity: 0.5;
+    }
+
+    .gauge-thumb {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 13px;
+      height: 13px;
+      background: var(--accent);
+      border: 2.5px solid var(--surface);
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+      z-index: 1;
+    }
+
+    .gauge-axis {
+      display: flex;
+      justify-content: space-between;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.61rem;
+      color: var(--muted);
+      line-height: 1.3;
+    }
+
+    .gauge-axis span:last-child { text-align: right; }
+
+    .gauge-context {
+      margin-top: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.64rem;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 1000px) {
+      .gauges-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .gauges-grid { grid-template-columns: repeat(2, 1fr); }
+      .gauge-val { font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
@@ -432,6 +568,331 @@ END UPDATE GUIDE
       </p>
     </div>
   </header>
+
+  <!-- ── Gauge Dashboard ── -->
+  <section class="gauges-section">
+    <div class="wrap">
+      <div class="eyebrow">Market Gauges</div>
+      <p class="gauges-intro">Each bar spans the historical range — left edge is the lowest recorded value, right edge the highest. The marker shows where today's number sits. Source periods: 2009–present for economic indicators; 2015–present for materials.</p>
+
+      <!-- Materials gauges -->
+      <div class="gauge-group">
+        <div class="gauge-group-label">Materials</div>
+        <div class="gauges-grid">
+
+          <!-- 2×4 stud: low $2.89 Feb 2020 / high $9.00 Spring 2021. pos=(3.79-2.89)/(9.00-2.89)=14.7% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">2×4×8 Stud</div>
+                <div class="gauge-sub">SPF #2 KD · Chelsea Lumber AA</div>
+              </div>
+              <div class="gauge-val">$3.79</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:14.7%"></div>
+              <div class="gauge-thumb" style="left:14.7%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>$2.89<br>Feb 2020</span>
+              <span>$9.00<br>Spring 2021</span>
+            </div>
+            <div class="gauge-context">58% below COVID peak — back near pre-pandemic floor</div>
+          </div>
+
+          <!-- Lumber futures: low $244 Jan 2016 / high $1,733 May 2021. pos=(587-244)/(1733-244)=23.0% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Lumber Futures</div>
+                <div class="gauge-sub">CME nearby contract · $/MBF</div>
+              </div>
+              <div class="gauge-val">$587</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:23.0%"></div>
+              <div class="gauge-thumb" style="left:23.0%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>$244<br>Jan 2016</span>
+              <span>$1,733<br>May 2021</span>
+            </div>
+            <div class="gauge-context">66% below May 2021 peak · above pre-COVID norm (~$400/MBF)</div>
+          </div>
+
+          <!-- OSB: low $8 2019 / high $75 Spring 2021. pos=(9.21-8)/(75-8)=1.8% → shown as 2% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">OSB 7/16″ Sheet</div>
+                <div class="gauge-sub">4×8 · HD / Lowe's</div>
+              </div>
+              <div class="gauge-val">$9.21</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:2%"></div>
+              <div class="gauge-thumb" style="left:2%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>$8<br>2019</span>
+              <span>$75<br>Spring 2021</span>
+            </div>
+            <div class="gauge-context">88% below COVID peak — near multi-year low</div>
+          </div>
+
+          <!-- Drywall: low $9 2016-18 / high $22 2022-23. pos=(16.25-9)/(22-9)=55.8% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Drywall ½″ 4×8</div>
+                <div class="gauge-sub">Standard panel · HD USG</div>
+              </div>
+              <div class="gauge-val">$16.25</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:55.8%"></div>
+              <div class="gauge-thumb" style="left:55.8%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>$9<br>2016–18</span>
+              <span>$22<br>2022–23</span>
+            </div>
+            <div class="gauge-context">26% below recent high · rose with inflation, no COVID lumber spike</div>
+          </div>
+
+          <!-- Romex: low $80 2018-19 / high $175 mid-2022. pos=(150-80)/(175-80)=73.7% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Romex 12/2 NM-B</div>
+                <div class="gauge-sub">250 ft coil · per roll</div>
+              </div>
+              <div class="gauge-val">$150</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:73.7%"></div>
+              <div class="gauge-thumb" style="left:73.7%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>$80<br>2018–19</span>
+              <span>$175<br>mid-2022</span>
+            </div>
+            <div class="gauge-context">14% below copper-spike peak · still elevated vs. pre-2020</div>
+          </div>
+
+          <!-- Ipe: low $4.46 2018 / high $8.70 2026 (current IS the high). pos=97% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Ipe Decking 5/4×6</div>
+                <div class="gauge-sub">Per LF · Advantage Lumber</div>
+              </div>
+              <div class="gauge-val">$8.70/LF</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:97%"></div>
+              <div class="gauge-thumb" style="left:97%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>$4.46<br>2018</span>
+              <span>$8.70<br>2026 ▲</span>
+            </div>
+            <div class="gauge-context">At 10-year high — nearly doubled since 2018</div>
+          </div>
+
+          <!-- Trex Transcend: low ~$4 2015-18 / high $10.99 2026 (current IS the high). pos=97% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Trex Transcend 1×6</div>
+                <div class="gauge-sub">Per LF · 16-ft board ÷ 16</div>
+              </div>
+              <div class="gauge-val">$10.99/LF</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:97%"></div>
+              <div class="gauge-thumb" style="left:97%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>~$4<br>2015–18</span>
+              <span>$10.99<br>2026 ▲</span>
+            </div>
+            <div class="gauge-context">At recent high — verify current HD board price each month</div>
+          </div>
+
+        </div><!-- /gauges-grid materials -->
+      </div><!-- /gauge-group materials -->
+
+      <!-- Economic indicator gauges -->
+      <div class="gauge-group">
+        <div class="gauge-group-label">Economic Indicators</div>
+        <div class="gauges-grid">
+
+          <!-- 30-yr mortgage: low 2.65% Jan 2021 / high 7.79% Oct 2023. pos=(6.53-2.65)/(7.79-2.65)=75.5% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">30-Yr Mortgage</div>
+                <div class="gauge-sub">Freddie Mac PMMS · national avg</div>
+              </div>
+              <div class="gauge-val">6.53%</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:75.5%"></div>
+              <div class="gauge-thumb" style="left:75.5%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>2.65%<br>Jan 2021</span>
+              <span>7.79%<br>Oct 2023</span>
+            </div>
+            <div class="gauge-context">Near cycle high — lower is better for buyers and remodel demand</div>
+          </div>
+
+          <!-- Fed funds: low 0.25% Mar 2020 / high 5.50% Jul 2023. pos=(3.75-0.25)/(5.50-0.25)=66.7% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Fed Funds Rate</div>
+                <div class="gauge-sub">FOMC upper bound</div>
+              </div>
+              <div class="gauge-val">3.75%</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:66.7%"></div>
+              <div class="gauge-thumb" style="left:66.7%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>0.25%<br>2020–22</span>
+              <span>5.50%<br>Jul 2023</span>
+            </div>
+            <div class="gauge-context">Held flat all 2026 after 2025 cuts — no moves expected this year</div>
+          </div>
+
+          <!-- Housing starts: low 478K Apr 2009 / high 1,828K 2022. pos=(1465-478)/(1828-478)=73.1% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Housing Starts</div>
+                <div class="gauge-sub">SAAR · Apr 2026 data</div>
+              </div>
+              <div class="gauge-val">1,465K</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:73.1%"></div>
+              <div class="gauge-thumb" style="left:73.1%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>478K<br>Apr 2009</span>
+              <span>1,828K<br>2022</span>
+            </div>
+            <div class="gauge-context">Solid mid-range — well off GFC floor, easing from 2022 peak</div>
+          </div>
+
+          <!-- Building permits: low 513K Mar 2009 / high 1,880K Dec 2021. pos=(1442-513)/(1880-513)=68.0% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Building Permits</div>
+                <div class="gauge-sub">SAAR · Apr 2026 data</div>
+              </div>
+              <div class="gauge-val">1,442K</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:68.0%"></div>
+              <div class="gauge-thumb" style="left:68.0%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>513K<br>Mar 2009</span>
+              <span>~1,880K<br>Dec 2021</span>
+            </div>
+            <div class="gauge-context">Healthy mid-range — permits lead starts by 1–3 months</div>
+          </div>
+
+          <!-- Completions: low 578K Q4 2011 / high 1,710K Jun 2024. pos=(1449-578)/(1710-578)=76.9% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Housing Completions</div>
+                <div class="gauge-sub">SAAR · Apr 2026 data</div>
+              </div>
+              <div class="gauge-val">1,449K</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:76.9%"></div>
+              <div class="gauge-thumb" style="left:76.9%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>578K<br>Q4 2011</span>
+              <span>1,710K<br>Jun 2024</span>
+            </div>
+            <div class="gauge-context">Near 15-year high as 2021–22 starts backlog delivers</div>
+          </div>
+
+          <!-- Case-Shiller: low ~136 Q1 2012 / high 343.03 May 2025. pos=(341.74-136)/(343.03-136)=99.4% → 97% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Case-Shiller HPI</div>
+                <div class="gauge-sub">20-City SA · Mar 2026 data</div>
+              </div>
+              <div class="gauge-val">341.74</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:97%"></div>
+              <div class="gauge-thumb" style="left:97%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>~136<br>Q1 2012</span>
+              <span>343.03<br>May 2025 ▲</span>
+            </div>
+            <div class="gauge-context">Near all-time high — index up 2.5× since 2012 post-GFC trough</div>
+          </div>
+
+          <!-- CCI: low 25.3 Feb 2009 / high 138.4 Sep 2018. pos=(93.1-25.3)/(138.4-25.3)=60.0% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Consumer Confidence</div>
+                <div class="gauge-sub">Conference Board · May 2026</div>
+              </div>
+              <div class="gauge-val">93.1</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:60.0%"></div>
+              <div class="gauge-thumb" style="left:60.0%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>25.3<br>Feb 2009</span>
+              <span>138.4<br>Sep 2018</span>
+            </div>
+            <div class="gauge-context">Mid-range — below pre-COVID high (132.6), above Apr 2020 low (85.7)</div>
+          </div>
+
+          <!-- CC Delinquency: low 1.53% Q3 2021 / high 6.77% Q2 2009. pos=(2.9-1.53)/(6.77-1.53)=26.1% -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">CC Delinquency</div>
+                <div class="gauge-sub">All comm. banks · Q1 2026</div>
+              </div>
+              <div class="gauge-val">2.9%</div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:26.1%"></div>
+              <div class="gauge-thumb" style="left:26.1%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>1.53%<br>Q3 2021</span>
+              <span>6.77%<br>Q2 2009</span>
+            </div>
+            <div class="gauge-context">Easing from 2024 peak (3.2%) · right = worse (higher delinquency)</div>
+          </div>
+
+        </div><!-- /gauges-grid economic -->
+      </div><!-- /gauge-group economic -->
+
+    </div><!-- /wrap -->
+  </section>
 
   <main>
 

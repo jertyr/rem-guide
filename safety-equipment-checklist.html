@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Window Order Form | Remodelers Guide">
-    <title>Window Order Form | Remodelers Guide</title>
+    <meta name="description" content="PPE and Safety Equipment Checklist | Remodelers Guide">
+    <title>PPE and Safety Equipment Checklist | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         @media print {
@@ -22,12 +22,14 @@
                 display: none !important;
             }
             .main-wrapper {
+                display: block !important;
                 margin: 0 !important;
                 padding: 0 !important;
             }
             main {
                 margin: 0 !important;
                 padding: 0 !important;
+                margin-left: 0 !important;
             }
             article {
                 margin: 0 !important;
@@ -39,18 +41,20 @@
                 font-size: 0.82rem;
             }
             h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
-            h3.form-section { font-size: 0.8rem; margin: 0.4rem 0 0.2rem 0; padding-bottom: 0.1rem; }
+            h3.form-section { font-size: 0.8rem; margin: 0.35rem 0 0.15rem 0; padding-bottom: 0.1rem; }
             .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
             .job-header p { font-size: 0.82rem; margin: 0.1rem 0; }
-            .form-grid { gap: 1.2rem; margin-bottom: 0.5rem; }
-            .form-grid-bottom { gap: 1.2rem; margin-bottom: 0.5rem; }
-            .form-row { margin: 0.15rem 0; font-size: 0.82rem; }
-            .option-row { margin: 0.15rem 0; font-size: 0.82rem; }
-            .draw-box { height: 2.4in; }
-            .notes-box { display: none; }
+            .checklist-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.5rem;
+            }
+            .checklist-ul li { margin-bottom: 0.15rem; font-size: 0.82rem; }
+            .checklist-ul ul li { margin-bottom: 0.1rem; }
+            .cite { font-size: 0.72rem; color: #666; }
+            .print-credit { display: block; text-align: center; font-size: 0.7rem; color: #999; margin-top: 0.5rem; }
         }
 
-        /* Screen styles */
         h1.form-title {
             font-size: 1.4rem;
             margin: 0 0 0.6rem 0;
@@ -70,10 +74,7 @@
             gap: 1.5rem;
             margin-bottom: 0.8rem;
         }
-        .job-header p {
-            margin: 0;
-            font-size: 0.95rem;
-        }
+        .job-header p { margin: 0; font-size: 0.95rem; }
         .fill-lg {
             display: inline-block;
             width: 160px;
@@ -88,70 +89,36 @@
             margin-left: 0.3rem;
             vertical-align: bottom;
         }
-        .fill-sm {
-            display: inline-block;
-            width: 70px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
-        }
-        .fill-xs {
-            display: inline-block;
-            width: 45px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
-        }
-        .form-grid {
+        .checklist-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
             margin-bottom: 1rem;
         }
-        .form-grid-bottom {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 2rem;
-            margin-bottom: 1rem;
+        .checklist-ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
         }
-        .notes-box {
-            height: 1.5in;
-            margin-top: 0.4rem;
-        }
-        .form-row {
-            margin: 0.3rem 0;
+        .checklist-ul li {
+            margin-bottom: 0.4rem;
             font-size: 0.95rem;
         }
-        .option-row {
-            margin: 0.3rem 0;
-            font-size: 0.95rem;
+        .checklist-ul ul {
+            list-style-type: none;
+            padding-left: 1.2em;
+            margin: 0.2rem 0;
         }
-        .option-row .opts {
-            color: #444;
-        }
-        .draw-box {
-            border: 1px solid #aaa;
-            height: 2.2in;
-            margin-top: 0.4rem;
-            position: relative;
-            background: #fff;
-        }
-        .draw-caption {
-            position: absolute;
-            bottom: 0.3rem;
-            left: 0.4rem;
-            font-size: 0.78rem;
-            color: #888;
-        }
+        .cite { color: #888; font-size: 0.8rem; }
+        .print-credit { display: none; }
+        .form-actions { margin-top: 1rem; }
     </style>
 </head>
 <body>
 <header>
     <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
 </header>
-
 <button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-
 <div class="main-wrapper">
     <aside class="sidebar">
         <nav>
@@ -159,7 +126,7 @@
                 <li class="nav-item"><a href="about.html">Home</a></li>
                 <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
                 <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-                <li class="nav-item"><a href="safety.html">Safety</a></li>
+                <li class="nav-item active-section"><a href="safety.html" class="active">Safety</a></li>
                 <li class="nav-item"><a href="excavation.html">Excavation</a></li>
                 <li class="nav-item"><a href="footings.html">Footings</a></li>
                 <li class="nav-item"><a href="foundations.html">Foundations</a></li>
@@ -170,7 +137,7 @@
                 <li class="nav-item"><a href="framing.html">Framing</a></li>
                 <li class="nav-item"><a href="decks.html">Decks</a></li>
                 <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-                <li class="nav-item active-section"><a href="windows.html" class="active">Windows</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
                 <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
                 <li class="nav-item"><a href="roofing.html">Roofing</a></li>
                 <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
@@ -186,7 +153,7 @@
                 <li class="nav-item"><a href="countertops.html">Countertops</a></li>
                 <li class="nav-item"><a href="stairs.html">Stairs</a></li>
                 <li class="nav-item"><a href="resources.html">Resources</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
                 <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
             </ul>
         </nav>
@@ -194,122 +161,101 @@
 
     <main style="margin-left: 280px; padding: 2rem;">
         <article>
-            <p class="breadcrumb"><a href="windows.html">Windows</a> &gt; Window Order Form</p>
-            <h1 class="form-title">Remodelers Guide: Window Order Form</h1>
+            <p class="breadcrumb"><a href="safety.html">Safety</a> &gt; PPE and Safety Equipment Checklist</p>
+            <h1 class="form-title">Remodelers Guide: PPE and Safety Equipment Checklist</h1>
 
-            <!-- Job identification -->
             <div class="job-header">
-                <p>Location:<span class="fill-lg"></span></p>
-                <p>Brand:<span class="fill-md"></span></p>
-                <p>Line:<span class="fill-md"></span></p>
+                <p>Van / Crew:<span class="fill-lg"></span></p>
+                <p>Checked By:<span class="fill-md"></span></p>
+                <p>Date:<span class="fill-md"></span></p>
             </div>
 
-            <!-- Row 1: Configuration + Sizing -->
-            <div class="form-grid">
+            <div class="checklist-grid">
                 <div>
-                    <h3 class="form-section">Configuration</h3>
-                    <p class="option-row">Style: <span class="opts">Single &nbsp;/&nbsp; Double &nbsp;/&nbsp; Casement &nbsp;/&nbsp; Awning &nbsp;/&nbsp; Fixed</span></p>
+                    <h3 class="form-section">Personal Protective Equipment</h3>
+                    <ul class="checklist-ul">
+                        <li>☐ Z87 safety glasses (clear + tinted) <span class="cite">1926.102</span></li>
+                        <li>☐ Hard hat, ANSI Z89.1 <span class="cite">1926.100</span></li>
+                        <li>☐ Hearing protection (plugs / muffs) <span class="cite">1926.101</span></li>
+                        <li>☐ N95 dust masks <span class="cite">1910.134</span></li>
+                        <li>☐ P100 half-mask respirator + cartridges <span class="cite">1910.134</span></li>
+                        <li>☐ Work gloves (cut + chemical) <span class="cite">1926.95</span></li>
+                        <li>☐ Protective footwear, ASTM F2413 <span class="cite">1926.96</span></li>
+                        <li>☐ High-visibility vest <span class="cite">1926.201</span></li>
+                    </ul>
 
-                    <h3 class="form-section">Draw <span style="font-weight:normal; font-size:0.82rem; color:#666;">(swing / grid / mulled)</span></h3>
-                    <div class="draw-box"></div>
+                    <h3 class="form-section">Training / Certifications Current</h3>
+                    <ul class="checklist-ul">
+                        <li>☐ First aid / CPR certificate <span class="cite">1926.50(c)</span></li>
+                        <li>☐ Respirator medical eval + fit test <span class="cite">1910.134</span></li>
+                        <li>☐ Silica awareness training <span class="cite">1926.1153(i)</span></li>
+                        <li>☐ Ladder safety training <span class="cite">1926.1060</span></li>
+                        <li>☐ Competent person / safety coordinator named <span class="cite">1926.20(b)</span></li>
+                    </ul>
                 </div>
 
                 <div>
-                    <h3 class="form-section">Sizing</h3>
-                    <p class="form-row">Rough Opening:<span class="fill-xs"></span> W &times;<span class="fill-xs"></span> H</p>
-                    <p class="form-row">Frame Size:<span class="fill-xs"></span> W &times;<span class="fill-xs"></span> H</p>
+                    <h3 class="form-section">Site Equipment</h3>
+                    <ul class="checklist-ul">
+                        <li>☐ First aid kit (stocked, weatherproof) <span class="cite">1926.50</span></li>
+                        <li>☐ Fire extinguisher, 2A min within 100 ft <span class="cite">1926.150(c)</span></li>
+                        <li>☐ Fire extinguisher, 10B within 50 ft of flammables <span class="cite">1926.150(c)</span></li>
+                        <li>☐ GFCI cords / GFCI temp panel <span class="cite">1926.404(b)(1)</span></li>
+                        <li>☐ Emergency contacts posted on site <span class="cite">1926.50(f)</span></li>
+                        <li>☐ Electrical pen (non-contact voltage tester) <span class="cite">1926.416</span></li>
+                    </ul>
 
-                    <h3 class="form-section">Wall &amp; Installation</h3>
-                    <p class="option-row">Wall: <span class="opts">3&nbsp;11/16" &nbsp;/&nbsp; 4&nbsp;9/16" &nbsp;/&nbsp; 6&nbsp;9/16"</span></p>
-                    <p class="option-row">Install: <span class="opts">Vinyl &nbsp;/&nbsp; Brick &nbsp;/&nbsp; Hardie/Wood &nbsp;/&nbsp; T1-11</span></p>
-                    <p class="option-row">Extensions: <span class="opts">None &nbsp;/&nbsp; 3-sided &nbsp;/&nbsp; 4-sided</span></p>
-                    <p class="form-row">Casing:<span class="fill-sm"></span></p>
+                    <h3 class="form-section">Documentation Available (electronic copies)</h3>
+                    <ul class="checklist-ul">
+                        <li>☐ SDS sheets for all chemicals on site <span class="cite">1910.1200</span></li>
+                        <li>☐ Written safety plan / accident prevention program <span class="cite">1926.20(b)</span></li>
+                        <li>☐ Emergency action plan <span class="cite">1926.35</span></li>
+                        <li>☐ Silica exposure control plan <span class="cite">1926.1153(g)</span></li>
+                        <li>☐ Site safety inspection forms (blank + completed) <span class="cite">1926.20(b)(2)</span></li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Row 2: Glass & Grids / Colors | Screens -->
-            <div class="form-grid-bottom">
-                <div>
-                    <h3 class="form-section">Glass &amp; Grids</h3>
-                    <p class="form-row">Glass: Clear &nbsp;/&nbsp; Privacy:<span class="fill-sm"></span></p>
-                    <p class="option-row">Safety: <span class="opts">WOCD &nbsp;/&nbsp; Tempered &nbsp;/&nbsp; Egress</span></p>
-                    <p class="option-row">Grids: <span class="opts">None &nbsp;/&nbsp; SDL &nbsp;/&nbsp; ADL</span></p>
-                </div>
-
-                <div>
-                    <h3 class="form-section">Colors</h3>
-                    <p class="form-row">Interior Color:<span class="fill-md"></span></p>
-                    <p class="form-row">Exterior Color:<span class="fill-md"></span></p>
-                    <p class="form-row">Hardware Color:<span class="fill-md"></span></p>
-                </div>
-
-                <div>
-                    <h3 class="form-section">Screens</h3>
-                    <p class="option-row">Screen: <span class="opts">Full &nbsp;/&nbsp; Half</span></p>
-                    <p class="form-row">Frame Color:<span class="fill-sm"></span></p>
-                    <p class="form-row">Material:<span class="fill-sm"></span></p>
-                </div>
-
-                <div></div>
-            </div>
-
-            <!-- Notes -->
-            <h3 class="form-section">Notes / Special Instructions</h3>
-            <div class="notes-box"></div>
+            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
 
             <p class="form-actions">
                 <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
                 <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
                 <br>
-                <small>Last revised: 03/09/2026</small>
+                <small>Last revised: 06/04/2026</small>
             </p>
 
-            <p class="breadcrumb"><a href="windows.html">Windows</a> &gt; Window Order Form</p>
+            <p class="breadcrumb"><a href="safety.html">Safety</a> &gt; PPE and Safety Equipment Checklist</p>
         </article>
     </main>
 </div>
 
 <script>
-    // Share button
     const shareBtn = document.getElementById('share-btn');
     if (shareBtn && navigator.share) {
         shareBtn.addEventListener('click', () => {
-            navigator.share({
-                title: document.title || 'Window Order Form',
-                url: window.location.href
-            }).catch(() => { });
+            navigator.share({ title: document.title || 'PPE and Safety Equipment Checklist', url: window.location.href }).catch(() => {});
         });
     } else if (shareBtn) {
         shareBtn.style.display = 'none';
     }
-    // Print button
     const printBtn = document.getElementById('print-btn');
-    if (printBtn) {
-        printBtn.addEventListener('click', () => {
-            window.print();
-        });
-    }
-    // Mobile navigation toggle
+    if (printBtn) { printBtn.addEventListener('click', () => { window.print(); }); }
     document.addEventListener('DOMContentLoaded', function() {
         const navToggle = document.querySelector('.mobile-nav-toggle');
         const sidebar = document.querySelector('.sidebar');
         if (navToggle && sidebar) {
-            navToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
+            navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
             document.addEventListener('click', function(e) {
                 if (window.innerWidth <= 768) {
-                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                        sidebar.classList.remove('active');
-                    }
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
                 }
             });
         }
     });
 </script>
-
 <footer>
-    &copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
 </footer>
 <!-- goatcounter-analytics:start -->
 <script data-goatcounter="https://rem-guide.goatcounter.com/count"

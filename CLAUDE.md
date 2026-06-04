@@ -195,3 +195,8 @@ Not every page needs every section — content drives structure.
 - **Red flags**: Per workflow, all researched OSHA citations + items added beyond user's notes (gloves, foot protection, hi-vis) wrapped in `<span style="color:red">` for approval
 - **Future requests noted**: common safety-reminders resource (ladder setup 4:1 / 3ft above roofline, etc.); signage resource (pull/create site signage)
 - **Branch**: `claude/remodelers-guide-safety-2aKIG` (PR #187)
+- **Follow-up (same branch/PR #187)**: Added two more resources requested next:
+  - `safety-reminders.html`: ONE-page at-a-glance card (dead-simple memorable phrases, defensible to an OSHA official), van copy. Ladder phrased "4 in 1 and 3 ft above the roofline" (ladder line was just user's example, not the only item). Includes stepladder top-step rule (1926.1053(b)(13): top/top step not used), fall protection at 6 ft (1926.501(b)(1)), cover/mark holes (501(b)(4)), 3 points of contact, belt buckle between rails. Citations kept small/muted (red-flagged) since carpenters don't need them but they make lines defensible
+  - `safety-signage.html`: which signs to post + ANSI Z535 signal-word/color system (1926.200), and a fillable Emergency Information posting template (1926.50(f) required posting). Links to OSHA + suppliers (pull or create signs)
+  - Both linked from safety.html Resources and resources.html Safety section
+  - User's intent for reminders card: pithy, easy-to-remember, fits one page, carried with safety gear

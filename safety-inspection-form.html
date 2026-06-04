@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jobsite Protection Checklist | Remodelers Guide">
-    <title>Jobsite Protection Checklist | Remodelers Guide</title>
+    <meta name="description" content="Site Safety Inspection Form | Remodelers Guide">
+    <title>Site Safety Inspection Form | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         @media print {
@@ -38,27 +38,30 @@
             body {
                 margin: 0;
                 padding: 0;
-                font-size: 0.82rem;
+                font-size: 0.8rem;
             }
             h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
             h3.form-section { font-size: 0.8rem; margin: 0.35rem 0 0.15rem 0; padding-bottom: 0.1rem; }
-            .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
-            .job-header p { font-size: 0.82rem; margin: 0.1rem 0; }
+            .job-header { margin-bottom: 0.4rem; gap: 1.2rem; }
+            .job-header p { font-size: 0.8rem; margin: 0.1rem 0; }
             .checklist-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
                 gap: 1.5rem;
             }
-            .checklist-ul li { margin-bottom: 0.15rem; font-size: 0.82rem; }
-            .checklist-ul ul li { margin-bottom: 0.1rem; }
-            .print-credit { display: block; text-align: center; font-size: 0.7rem; color: #999; margin-top: 0.5rem; }
+            .insp-ul li { margin-bottom: 0.18rem; font-size: 0.8rem; }
+            .cite { font-size: 0.7rem; color: #666; }
+            .action-box { height: 1.6in; }
+            .sign-row { margin-top: 0.4rem; }
+            .print-credit { display: block; text-align: center; font-size: 0.7rem; color: #999; margin-top: 0.4rem; }
         }
 
         h1.form-title {
             font-size: 1.4rem;
-            margin: 0 0 0.6rem 0;
+            margin: 0 0 0.3rem 0;
             color: #2C3E50;
         }
+        .form-sub { font-size: 0.85rem; color: #555; margin: 0 0 0.8rem 0; }
         h3.form-section {
             font-size: 0.95rem;
             color: #2C3E50;
@@ -88,25 +91,42 @@
             margin-left: 0.3rem;
             vertical-align: bottom;
         }
+        .legend { font-size: 0.85rem; color: #555; margin: 0 0 0.6rem 0; }
         .checklist-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
-        .checklist-ul {
+        .insp-ul {
             list-style-type: none;
             padding-left: 0;
             margin: 0;
         }
-        .checklist-ul li {
+        .insp-ul li {
             margin-bottom: 0.4rem;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
-        .checklist-ul ul {
-            list-style-type: none;
-            padding-left: 1.2em;
-            margin: 0.2rem 0;
+        .cite { color: #888; font-size: 0.78rem; }
+        .action-box {
+            border: 1px solid #333;
+            height: 1.8in;
+            width: 100%;
+            margin: 0.3rem 0 0.6rem 0;
+        }
+        .sign-row {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 0.6rem;
+        }
+        .sign-row p { margin: 0; font-size: 0.95rem; }
+        .fill-sign {
+            display: inline-block;
+            width: 220px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
         }
         .print-credit { display: none; }
         .form-actions { margin-top: 1rem; }
@@ -116,15 +136,15 @@
 <header>
     <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
 </header>
-<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
 <div class="main-wrapper">
     <aside class="sidebar">
         <nav>
             <ul>
                 <li class="nav-item"><a href="about.html">Home</a></li>
                 <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-                <li class="nav-item active-section"><a href="jobsite-protection.html" class="active">Jobsite Protection</a></li>
-                <li class="nav-item"><a href="safety.html">Safety</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item active-section"><a href="safety.html" class="active">Safety</a></li>
                 <li class="nav-item"><a href="excavation.html">Excavation</a></li>
                 <li class="nav-item"><a href="footings.html">Footings</a></li>
                 <li class="nav-item"><a href="foundations.html">Foundations</a></li>
@@ -159,66 +179,79 @@
 
     <main style="margin-left: 280px; padding: 2rem;">
         <article>
-            <p class="breadcrumb"><a href="jobsite-protection.html">Jobsite Protection</a> &gt; Jobsite Protection Checklist</p>
-            <h1 class="form-title">Remodelers Guide: Jobsite Protection Checklist</h1>
+            <p class="breadcrumb"><a href="safety.html">Safety</a> &gt; Site Safety Inspection Form</p>
+            <h1 class="form-title">Remodelers Guide: Site Safety Inspection Form</h1>
+            <p class="form-sub">Routine competent-person jobsite inspection &mdash; OSHA 29 CFR 1926.20(b)(2)</p>
 
             <div class="job-header">
                 <p>Job Name:<span class="fill-lg"></span></p>
+                <p>Inspector:<span class="fill-md"></span></p>
                 <p>Date:<span class="fill-md"></span></p>
             </div>
 
+            <p class="legend">Mark each item: <strong>OK</strong> &middot; <strong>NA</strong> (not applicable) &middot; <strong>X</strong> (action needed, log below)</p>
+
             <div class="checklist-grid">
                 <div>
-                    <h3 class="form-section">Process</h3>
-                    <ul class="checklist-ul">
-                        <li>☐ Remove pictures from walls</li>
-                        <li>☐ Empty cabinets, fridges, and dishwashers</li>
-                        <li>☐ Move furniture out</li>
-                        <li>☐ Remove rugs and floor coverings</li>
-                        <li>☐ Mark any items you want saved</li>
-                        <li>☐ Cover door thresholds with tacky tape</li>
-                        <li>☐ Cover high traffic floors
-                            <ul>
-                                <li>☐ Tape field seams with white tape</li>
-                                <li>☐ Tape edges with blue frog tape</li>
-                                <li>☐ Top with Masonite if needed</li>
-                            </ul>
-                        </li>
-                        <li>☐ Cover hard surfaces</li>
-                        <li>☐ Drape furnishings with plastic</li>
-                        <li>☐ Install dust walls</li>
-                        <li>☐ Install magnet doors</li>
-                        <li>☐ Set up negative air if needed</li>
-                        <li>☐ Cover drains</li>
-                        <li>☐ Seal nearby doors and ducts</li>
-                        <li>☐ Cover new material</li>
+                    <h3 class="form-section">PPE in Use</h3>
+                    <ul class="insp-ul">
+                        <li>☐ Eye protection (Z87) worn where required <span class="cite">1926.102</span></li>
+                        <li>☐ Hard hats worn where overhead/impact hazard <span class="cite">1926.100</span></li>
+                        <li>☐ Hearing protection in high-noise tasks <span class="cite">1926.101</span></li>
+                        <li>☐ Respirators / dust masks used for dust &amp; silica <span class="cite">1910.134</span></li>
+                        <li>☐ Foot &amp; hand protection appropriate to task <span class="cite">1926.95</span></li>
+                    </ul>
+
+                    <h3 class="form-section">Housekeeping &amp; Access</h3>
+                    <ul class="insp-ul">
+                        <li>☐ Walkways clear, debris and trip hazards removed <span class="cite">1926.25</span></li>
+                        <li>☐ Protruding nails bent or removed <span class="cite">1926.25(a)</span></li>
+                        <li>☐ Materials stacked and secured <span class="cite">1926.250</span></li>
+                        <li>☐ Adequate lighting in work areas <span class="cite">1926.56</span></li>
+                    </ul>
+
+                    <h3 class="form-section">Ladders &amp; Fall Protection</h3>
+                    <ul class="insp-ul">
+                        <li>☐ Ladders set at 4:1, extend 3 ft above landing <span class="cite">1926.1053</span></li>
+                        <li>☐ Ladders sound, no damage, right type <span class="cite">1926.1053(b)</span></li>
+                        <li>☐ Fall protection at 6 ft or more <span class="cite">1926.501</span></li>
+                        <li>☐ Floor / roof openings guarded or covered <span class="cite">1926.501(b)(4)</span></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h3 class="form-section">Materials / Tools Needed</h3>
-                    <ul class="checklist-ul">
-                        <li>☐ Blue painters tape</li>
-                        <li>☐ White painters tape</li>
-                        <li>☐ Tacky tape</li>
-                        <li>☐ Painters plastic (light duty)</li>
-                        <li>☐ Painters plastic 1 mil (standard)</li>
-                        <li>☐ Painters plastic 3 mil (lead demo walls)</li>
-                        <li>☐ Painters plastic 6 mil (lead demo floors)</li>
-                        <li>☐ Zip poles</li>
-                        <li>☐ Poly hanging tape</li>
-                        <li>☐ Magnet or zipper doors</li>
-                        <li>☐ Stapler</li>
-                        <li>☐ Albert Floorotex</li>
-                        <li>☐ Reinforced builders paper</li>
-                        <li>☐ Carpet shield (never apply this to wood floors or trim)</li>
-                        <li>☐ Masonite</li>
-                        <li>☐ Drop cloths</li>
-                        <li>☐ More permanent fixtures, like temp walls and doors</li>
-                        <li>☐ Fans for exhaust or air scrubbers for lead demo jobs</li>
-                        <li>☐ Lay flat duct</li>
+                    <h3 class="form-section">Electrical</h3>
+                    <ul class="insp-ul">
+                        <li>☐ GFCI protection on all temp cords / outlets <span class="cite">1926.404(b)(1)</span></li>
+                        <li>☐ Cords intact, no damaged insulation, grounded <span class="cite">1926.405</span></li>
+                        <li>☐ Panels closed, no exposed energized parts <span class="cite">1926.403</span></li>
+                        <li>☐ Circuits verified de-energized before work <span class="cite">1926.416</span></li>
+                    </ul>
+
+                    <h3 class="form-section">Fire &amp; Emergency</h3>
+                    <ul class="insp-ul">
+                        <li>☐ Fire extinguisher present, charged, within 100 ft <span class="cite">1926.150(c)</span></li>
+                        <li>☐ Flammables stored properly, 10B unit within 50 ft <span class="cite">1926.152</span></li>
+                        <li>☐ First aid kit stocked and accessible <span class="cite">1926.50</span></li>
+                        <li>☐ Emergency contacts posted on site <span class="cite">1926.50(f)</span></li>
+                    </ul>
+
+                    <h3 class="form-section">Hazard Communication &amp; Dust</h3>
+                    <ul class="insp-ul">
+                        <li>☐ SDS accessible for chemicals on site <span class="cite">1910.1200</span></li>
+                        <li>☐ Containers labeled <span class="cite">1910.1200(f)</span></li>
+                        <li>☐ Silica dust controls in use (water / vacuum) <span class="cite">1926.1153</span></li>
+                        <li>☐ Exposure control plan on site <span class="cite">1926.1153(g)</span></li>
                     </ul>
                 </div>
+            </div>
+
+            <h3 class="form-section">Corrective Actions (hazard / location / action / date closed)</h3>
+            <div class="action-box"></div>
+
+            <div class="sign-row">
+                <p>Inspector signature:<span class="fill-sign"></span></p>
+                <p>Date:<span class="fill-md"></span></p>
             </div>
 
             <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
@@ -227,10 +260,10 @@
                 <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
                 <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
                 <br>
-                <small>Last revised: 11/17/2025</small>
+                <small>Last revised: 06/04/2026</small>
             </p>
 
-            <p class="breadcrumb"><a href="jobsite-protection.html">Jobsite Protection</a> &gt; Jobsite Protection Checklist</p>
+            <p class="breadcrumb"><a href="safety.html">Safety</a> &gt; Site Safety Inspection Form</p>
         </article>
     </main>
 </div>
@@ -239,7 +272,7 @@
     const shareBtn = document.getElementById('share-btn');
     if (shareBtn && navigator.share) {
         shareBtn.addEventListener('click', () => {
-            navigator.share({ title: document.title || 'Jobsite Protection Checklist', url: window.location.href }).catch(() => {});
+            navigator.share({ title: document.title || 'Site Safety Inspection Form', url: window.location.href }).catch(() => {});
         });
     } else if (shareBtn) {
         shareBtn.style.display = 'none';

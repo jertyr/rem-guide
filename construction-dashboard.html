@@ -437,6 +437,17 @@
       line-height: 1.35;
     }
 
+    .gauge-dir {
+      margin-top: 6px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .gauge-dir.up   { color: var(--up); }
+    .gauge-dir.down { color: var(--down); }
+    .gauge-dir.flat { color: var(--flat); }
+
     @media (max-width: 1000px) {
       .gauges-grid { grid-template-columns: repeat(3, 1fr); }
     }
@@ -551,6 +562,19 @@ CREDIT CARD DELINQUENCY RATE
   Record: Most recent quarterly value, seasonally adjusted (%)
   Carry last quarterly value forward in all months until new quarter drops
 
+HOME IMPROVEMENT SPENDING (LIRA)
+  Harvard JCHS: https://www.jchs.harvard.edu/leading-indicator-remodeling-activity-lira
+  Released: Quarterly (Jan, Apr, Jul, Oct) — ~6 weeks after quarter-end
+  Record: "Annual Rate of Homeowner Improvement Expenditures" — headline $B figure
+  Note: LIRA is a forward projection (leading indicator), not a survey of actual spend.
+        Update item-spec to reflect the projected quarter.
+  Carry last quarterly value forward in all months until next release drops.
+  Historical context (for gauge range):
+    - Post-GFC low: ~$247B (2012)
+    - Pre-COVID:    ~$400B (2019)
+    - Peak:         ~$481B (Q1 2023)
+    - ~Q2 2025:     ~$452B (declining — verify with latest release)
+
 ====================================================================
 END UPDATE GUIDE
 ====================================================================
@@ -598,6 +622,7 @@ END UPDATE GUIDE
               <span>$9.00<br>Spring 2021</span>
             </div>
             <div class="gauge-context">58% below COVID peak — back near pre-pandemic floor</div>
+            <div class="gauge-dir flat">→ Flat month over month</div>
           </div>
 
           <!-- Lumber futures: low $244 Jan 2016 / high $1,733 May 2021. pos=(587-244)/(1733-244)=23.0% -->
@@ -618,6 +643,7 @@ END UPDATE GUIDE
               <span>$1,733<br>May 2021</span>
             </div>
             <div class="gauge-context">66% below May 2021 peak · above pre-COVID norm (~$400/MBF)</div>
+            <div class="gauge-dir down">↑ Up from last month</div>
           </div>
 
           <!-- OSB: low $8 2019 / high $75 Spring 2021. pos=(9.21-8)/(75-8)=1.8% → shown as 2% -->
@@ -638,6 +664,7 @@ END UPDATE GUIDE
               <span>$75<br>Spring 2021</span>
             </div>
             <div class="gauge-context">88% below COVID peak — near multi-year low</div>
+            <div class="gauge-dir down">↑ Up from last check</div>
           </div>
 
           <!-- Drywall: low $9 2016-18 / high $22 2022-23. pos=(16.25-9)/(22-9)=55.8% -->
@@ -658,6 +685,7 @@ END UPDATE GUIDE
               <span>$22<br>2022–23</span>
             </div>
             <div class="gauge-context">26% below recent high · rose with inflation, no COVID lumber spike</div>
+            <div class="gauge-dir flat">→ No prior history yet</div>
           </div>
 
           <!-- Romex: low $80 2018-19 / high $175 mid-2022. pos=(150-80)/(175-80)=73.7% -->
@@ -678,6 +706,7 @@ END UPDATE GUIDE
               <span>$175<br>mid-2022</span>
             </div>
             <div class="gauge-context">14% below copper-spike peak · still elevated vs. pre-2020</div>
+            <div class="gauge-dir flat">→ No prior history yet</div>
           </div>
 
           <!-- Ipe: low $4.46 2018 / high $8.70 2026 (current IS the high). pos=97% -->
@@ -698,6 +727,7 @@ END UPDATE GUIDE
               <span>$8.70<br>2026 ▲</span>
             </div>
             <div class="gauge-context">At 10-year high — nearly doubled since 2018</div>
+            <div class="gauge-dir flat">→ Holding steady</div>
           </div>
 
           <!-- Trex Transcend: low ~$4 2015-18 / high $10.99 2026 (current IS the high). pos=97% -->
@@ -718,6 +748,7 @@ END UPDATE GUIDE
               <span>$10.99<br>2026 ▲</span>
             </div>
             <div class="gauge-context">At recent high — verify current HD board price each month</div>
+            <div class="gauge-dir flat">→ Holding steady</div>
           </div>
 
         </div><!-- /gauges-grid materials -->
@@ -746,6 +777,7 @@ END UPDATE GUIDE
               <span>7.79%<br>Oct 2023</span>
             </div>
             <div class="gauge-context">Near cycle high — lower is better for buyers and remodel demand</div>
+            <div class="gauge-dir down">↑ Up 0.6 pts from Feb cycle low</div>
           </div>
 
           <!-- Fed funds: low 0.25% Mar 2020 / high 5.50% Jul 2023. pos=(3.75-0.25)/(5.50-0.25)=66.7% -->
@@ -766,6 +798,7 @@ END UPDATE GUIDE
               <span>5.50%<br>Jul 2023</span>
             </div>
             <div class="gauge-context">Held flat all 2026 after 2025 cuts — no moves expected this year</div>
+            <div class="gauge-dir flat">→ Paused all year</div>
           </div>
 
           <!-- Housing starts: low 478K Apr 2009 / high 1,828K 2022. pos=(1465-478)/(1828-478)=73.1% -->
@@ -786,6 +819,7 @@ END UPDATE GUIDE
               <span>1,828K<br>2022</span>
             </div>
             <div class="gauge-context">Solid mid-range — well off GFC floor, easing from 2022 peak</div>
+            <div class="gauge-dir down">↓ Down from last month</div>
           </div>
 
           <!-- Building permits: low 513K Mar 2009 / high 1,880K Dec 2021. pos=(1442-513)/(1880-513)=68.0% -->
@@ -806,6 +840,7 @@ END UPDATE GUIDE
               <span>~1,880K<br>Dec 2021</span>
             </div>
             <div class="gauge-context">Healthy mid-range — permits lead starts by 1–3 months</div>
+            <div class="gauge-dir up">↑ Up from last month</div>
           </div>
 
           <!-- Completions: low 578K Q4 2011 / high 1,710K Jun 2024. pos=(1449-578)/(1710-578)=76.9% -->
@@ -826,6 +861,7 @@ END UPDATE GUIDE
               <span>1,710K<br>Jun 2024</span>
             </div>
             <div class="gauge-context">Near 15-year high as 2021–22 starts backlog delivers</div>
+            <div class="gauge-dir up">↑ Up from last month</div>
           </div>
 
           <!-- Case-Shiller: low ~136 Q1 2012 / high 343.03 May 2025. pos=(341.74-136)/(343.03-136)=99.4% → 97% -->
@@ -846,6 +882,7 @@ END UPDATE GUIDE
               <span>343.03<br>May 2025 ▲</span>
             </div>
             <div class="gauge-context">Near all-time high — index up 2.5× since 2012 post-GFC trough</div>
+            <div class="gauge-dir down">↓ YoY growth easing</div>
           </div>
 
           <!-- CCI: low 25.3 Feb 2009 / high 138.4 Sep 2018. pos=(93.1-25.3)/(138.4-25.3)=60.0% -->
@@ -866,6 +903,7 @@ END UPDATE GUIDE
               <span>138.4<br>Sep 2018</span>
             </div>
             <div class="gauge-context">Mid-range — below pre-COVID high (132.6), above Apr 2020 low (85.7)</div>
+            <div class="gauge-dir down">↓ Slight pullback this month</div>
           </div>
 
           <!-- CC Delinquency: low 1.53% Q3 2021 / high 6.77% Q2 2009. pos=(2.9-1.53)/(6.77-1.53)=26.1% -->
@@ -886,6 +924,29 @@ END UPDATE GUIDE
               <span>6.77%<br>Q2 2009</span>
             </div>
             <div class="gauge-context">Easing from 2024 peak (3.2%) · right = worse (higher delinquency)</div>
+            <div class="gauge-dir up">↓ Improving from 2024 peak</div>
+          </div>
+
+          <!-- Home Impr. Spending (LIRA): low ~$247B 2012 / high ~$481B Q1 2023. pos=(452-247)/(481-247)=87.6%≈88% -->
+          <!-- RED-FLAGGED: value is ~Q2 2025 estimate — update with latest LIRA release from jchs.harvard.edu -->
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <div class="gauge-label-block">
+                <div class="gauge-name">Home Impr. Spending</div>
+                <div class="gauge-sub">Harvard JCHS LIRA · annual rate · $B</div>
+              </div>
+              <div class="gauge-val"><span style="color:red">~$452B</span></div>
+            </div>
+            <div class="gauge-track">
+              <div class="gauge-fill" style="width:88%"></div>
+              <div class="gauge-thumb" style="left:88%"></div>
+            </div>
+            <div class="gauge-axis">
+              <span>~$247B<br>2012</span>
+              <span>~$481B<br>2023 ▲</span>
+            </div>
+            <div class="gauge-context"><span style="color:red">6% below 2023 peak · lock-in effect and high rates suppressing remodel demand · verify with latest LIRA</span></div>
+            <div class="gauge-dir down">↓ Declining since 2023 peak</div>
           </div>
 
         </div><!-- /gauges-grid economic -->
@@ -1222,11 +1283,28 @@ END UPDATE GUIDE
               </td>
             </tr>
 
+            <tr>
+              <td>
+                <span class="item-name">Home impr. spending</span>
+                <span class="item-spec"><span style="color:red">Harvard JCHS LIRA — quarterly projection of annual homeowner improvement spending · update with latest release</span></span>
+              </td>
+              <td class="val-current"><span style="color:red">~$452B</span></td>
+              <td class="val-prev hide-mobile"><span style="color:red">~$452B</span></td>
+              <td class="val-prev hide-mobile"><span style="color:red">~$452B</span></td>
+              <td class="val-prev hide-mobile"><span style="color:red">~$459B</span></td>
+              <td class="val-prev hide-mobile"><span style="color:red">~$459B</span></td>
+              <td class="trend down">↓</td>
+              <td class="src hide-mobile">
+                <a href="https://www.jchs.harvard.edu/leading-indicator-remodeling-activity-lira" target="_blank">Harvard JCHS LIRA</a>
+                <span class="src-detail"><span style="color:red">jchs.harvard.edu · released quarterly (Jan, Apr, Jul, Oct) · record the "Annual Rate of Homeowner Improvement Expenditures" ($B) · carry last value forward until next release · values above are ~Q2 2025 estimates — verify and update</span></span>
+              </td>
+            </tr>
+
           </tbody>
         </table>
 
         <div class="note">
-          <strong>Reading trend arrows:</strong> For mortgage and material costs, ↓ is favorable. For housing activity and consumer confidence, ↑ is favorable. For delinquency, ↓ is favorable.
+          <strong>Reading trend arrows:</strong> For mortgage and material costs, ↓ is favorable. For housing activity, consumer confidence, and home improvement spending, ↑ is favorable. For delinquency, ↓ is favorable.
         </div>
       </div>
     </section>
@@ -1271,6 +1349,8 @@ END UPDATE GUIDE
             <ul>
               <li>Credit card delinquency <span class="cadence">quarterly, ~6-wk lag</span><br>
                 <a href="https://fred.stlouisfed.org/series/DRCCLACBS" target="_blank">FRED: DRCCLACBS</a> · carry last value forward</li>
+              <li>Home impr. spending (LIRA) <span class="cadence">quarterly, ~6-wk lag</span><br>
+                <a href="https://www.jchs.harvard.edu/leading-indicator-remodeling-activity-lira" target="_blank">Harvard JCHS LIRA</a> · annual rate in $B · carry last value forward</li>
             </ul>
             <h3 style="margin-top:16px">Material prices</h3>
             <ul>
@@ -1308,6 +1388,7 @@ END UPDATE GUIDE
           <li><a href="https://buyriteelectric.com/products/southwire-250-ft-12-2-solid-romex-simpull-cu-nm-b-w-g-wire" target="_blank">BuyRite Electric — Southwire Romex 12/2 250 ft</a></li>
           <li><a href="https://buy.advantagelumber.com/products/5-4-x-6-ipe-wood-decking" target="_blank">Advantage Lumber — 5/4×6 Ipe decking (per LF)</a></li>
           <li><a href="https://www.homedepot.com/b/Lumber-Composites-Decking-Composite-Decking/Trex/N-5yc1vZarxtZar6q" target="_blank">Home Depot — Trex Transcend composite decking</a></li>
+          <li><a href="https://www.jchs.harvard.edu/leading-indicator-remodeling-activity-lira" target="_blank">Harvard Joint Center for Housing Studies — Leading Indicator of Remodeling Activity (LIRA)</a></li>
         </ul>
       </div>
     </div>

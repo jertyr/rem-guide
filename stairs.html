@@ -3,9 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Stairs - The Remodelers Guide">
+    <meta name="description" content="Stairs">
     <title>Stairs | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @media print {
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 2rem !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                page-break-inside: avoid;
+                margin-bottom: 0.5em;
+            }
+            ul {
+                list-style-type: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,153 +54,220 @@
 
     <div class="main-wrapper">
         <aside class="sidebar">
-<nav>
+            <nav>
                 <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="safety.html">Safety</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="remediation.html">Remediation</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
-                <li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item"><a href="windows.html">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
-                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
-                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
-                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
-                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
-                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
-					<li class="nav-item active-section"><a href="stairs.html" class="active">Stairs</a></li>
-					<li class="nav-item"><a href="resources.html">Resources</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
+                    <li class="nav-item"><a href="about.html">Home</a></li>
+                    <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                    <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                    <li class="nav-item"><a href="safety.html">Safety</a></li>
+                    <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                    <li class="nav-item"><a href="footings.html">Footings</a></li>
+                    <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                    <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                    <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                    <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                    <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+                    <li class="nav-item"><a href="framing.html">Framing</a></li>
+                    <li class="nav-item"><a href="decks.html">Decks</a></li>
+                    <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                    <li class="nav-item"><a href="windows.html">Windows</a></li>
+                    <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                    <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                    <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                    <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                    <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                    <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                    <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                    <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                    <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+                    <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+                    <li class="nav-item"><a href="drywall.html">Drywall</a></li>
+                    <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+                    <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+                    <li class="nav-item active-section"><a href="stairs.html" class="active">Stairs</a></li>
+                    <li class="nav-item"><a href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a href="products.html">Products</a></li>
+                    <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+                </ul>
             </nav>
         </aside>
 
         <main>
             <article>
-                <h2 class="wp-block-heading">Staircases</h2> <p>Staircases are one area in a residential building governed heavily by code. Many of the common staircase components we use today have been developed to comply with these rules, although some manufacturers, especially of Luxury Vinyl Plank, make and sell non-compliant parts like nosings. Some stair builders prefer to handle the process start to finish so that they can control everything from framing to finish. Others specialize in one or the other.</p> <ul class="wp-block-list">
-<li><strong>Stringers</strong> – These are the structural part of the stairs that the treads and risers sit on. These are traditionally cut from dimensional lumber, but some builders use engineered lumber like LVL because it is available in longer or deeper pieces and it is straight and stable.</li> <li><strong>Treads</strong> – The flat part of the staircase that you step on. These can be boxed in on both sides, return on one side, or returned on two sides. Some more modern stairs call for thick treads up to 3” or 4” so that the gap between them is compliant which allows the builder to omit the riser. These are often paired with a single steel “stringer” to give the staircase a floating appearance.</li> <li><strong>Risers</strong> – The vertical part behind the tread. These are not strictly required by code but are often installed to comply with the requirement that there may not be any spaces larger than 4”.</li> <li><strong>Cove</strong> – This is a trim element installed in the corner where the nosing from one tread projects past the riser below, and is both decorative and conceals the gap between the two boards.</li> <li><strong>Skirts</strong> – These cover the exposed edges of the risers and typically mirror the shape of the stringer in trim on an open set of stairs, or fill the space to the wall on closed stairs.</li> <li><strong>Newel Posts</strong> – These are decorative and structural and hold the handrail and balustrade or guardrail together.</li> <li><strong>Balusters</strong> – Individual spindles that make up a guardrail.</li> <li><strong>Handrail</strong> – The graspable part of the handrail that must be continuous between landings.</li>
-</ul> <h3 class="wp-block-heading">Code Requirements (IRC 2021/2024)</h3> <ul class="wp-block-list">
-<li>Dimensional Standards
-<ul class="wp-block-list">
-<li><strong>Minimum Width:</strong> 36” clear width at all points above handrail (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7" target="_blank">IRC R311.7.1</a>)</li> <li><strong>Maximum Riser Height:</strong> 7¾” (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.1" target="_blank">IRC R311.7.5.1</a>)</li> <li><strong>Minimum Tread Depth:</strong> 10” with nosing, or 11” without nosing (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.2" target="_blank">IRC R311.7.5.2</a>)</li> <li><strong>Nosing Projection:</strong> ¾” - 1¼” inch when required (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.3" target="_blank">IRC R311.7.5.3</a>)</li> <li><strong>Maximum Variation:</strong> ⅜” between largest and smallest riser or tread in same stairway (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.1" target="_blank">IRC R311.7.5.1</a>, <a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.2" target="_blank">R311.7.5.2</a>)</li> <li><strong>Minimum Headroom:</strong> 6’8” (80”) measured vertically from sloped line connecting tread nosings (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.2" target="_blank">IRC R311.7.2</a>)</li> <li><strong>Maximum Total Rise:</strong> 12’ 7” between floor levels or landings (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.3" target="_blank">IRC R311.7.3</a>)</li>
-</ul>
-</li> <li>Handrail Requirements
-<ul class="wp-block-list">
-<li><strong>Required:</strong> On at least one side when four or more risers are present (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8" target="_blank">IRC R311.7.8</a>)</li> <li><strong>Height:</strong> 34”-38” above tread nosing to top of handrail (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8.1" target="_blank">IRC R311.7.8.1</a>)</li> <li><strong>Continuous:</strong> Must run between landings without interruption (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8.2" target="_blank">IRC R311.7.8.2</a>)</li> <li><strong>Graspable:</strong> 1¼” – 2” diameter for circular rails (lots of other options as well, <a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8.5" target="_blank">IRC R311.7.8.5</a>)</li> <li><strong>Wall Clearance:</strong> Minimum 1½” from wall surface (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8.3" target="_blank">IRC R311.7.8.3</a>)</li>
-</ul>
-</li> <li>Landing Requirements
-<ul class="wp-block-list">
-<li><strong>Required:</strong> At top and bottom of each stairway (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.6" target="_blank">IRC R311.7.6</a>)</li> <li><strong>Minimum Depth:</strong> 36 inches in direction of travel for straight runs (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.6" target="_blank">IRC R311.7.6</a>)</li> <li><strong>Maximum Slope:</strong> 1:48 (2% slope, <a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.6" target="_blank">IRC R311.7.6</a>)</li>
-</ul>
-</li>
-</ul> <h3 class="wp-block-heading">Installation Considerations</h3> <ul class="wp-block-list">
-<li><strong>Handrails Encroaching on Width:</strong> When building stairs always consider the width of a staircase. For instance, if you design a 3’ wide staircase for a deck, and then need to install handrails on both sides, those handrails may encroach and take up considerable space if they are deck mounted.</li> <li><strong>Steep Stairs and Masonry:</strong> Stairs with treads shorter than 11” require a nosing, consider this when building masonry steps. It is difficult to form a compliant nosing, so plan to make the treads 11” or more.</li> <li><strong>Stringer Problems:</strong> In remodeling we often encounter existing stairs with 1 1/16” thick treads but the floor at the top or bottom may be thinner and this is often overlooked. Stringers must account for floor thickness at the top and bottom of the run to comply with the rule that nothing can be more than 3/8 out of tolerance. You may have to trim the bottom of the bottom step or install the stringer lower to account for thinner floor at the top of a run.</li> <li><strong>Egress Doors and Landings</strong>: At required egress doors a single step down from the threshold to an exterior landing is allowed as long as the door does not swing out over the exterior landing. (<a href="https://codes.iccsafe.org/s/IRC2021P3/chapter-3-building-planning/IRC2021P3-Pt03-Ch03-SecR311.3" target="_blank">IRC R311.3</a>)</li> <li><strong>Additional Exterior Doors</strong>: At other exterior doors a single step (2 rises and 1 tread) is allowed instead of a full landing as long as the door does not swing out over the step. (<a href="https://codes.iccsafe.org/s/IRC2021P3/chapter-3-building-planning/IRC2021P3-Pt03-Ch03-SecR311.3" target="_blank">IRC R311.3</a>)</li>
-</ul> <h3 class="wp-block-heading">Common Challenges and Solutions</h3> <ul class="wp-block-list">
-<li><strong>Challenge</strong>: Squeaky stairs from loose connections<br><strong>Solution</strong>: Attach treads with construction adhesive and fasteners, consider pocket hole screws from below if possible, trim screws through the top, or 15 gauge nails.</li> <li><strong>Challenge</strong>: Stringer is sagging or bouncy<br><strong>Solution</strong>: Reinforce stringers with 2x4 glued and fastened along the spine or build with LVL</li> <li><strong>Challenge</strong>: Uneven riser heights creating trip hazards, especially in a remodel<br><strong>Solution</strong>: Adjust each step on the stringers by shimming incrementally. An example would be to add 1/16 to the first step, 1/8 to the second, 3/16 to the third, ¼ to the fourth, etc.</li> <li><strong>Challenge</strong>: Old staircase is way out of compliance, cannot be made to satisfy all requirements<br><strong>Solution</strong>: Check with local building authority. There are sometimes provisions for rebuilding existing stairs using the exact specs they presented originally or only improving characteristics if they don’t impact other rules. Appendix J (if adopted in your jurisdiction) can allow you to work on non-compliant staircases without bringing them all the way up to modern specifications. (<a href="https://codes.iccsafe.org/content/IRC2018/appendix-j-existing-buildings-and-structures" target="_blank">IRC Appendix J</a>)</li>
-</ul> <h3 class="wp-block-heading">Sample Material List</h3> <ul class="wp-block-list">
-<li>Steps
-<ul class="wp-block-list">
-<li>Standard treads (square on both ends)</li> <li>Single return treads (treads with one returned side)</li> <li>Double return treads (treads with returns on both sides, order exact to size)</li> <li>Risers (typically 1x8)</li> <li>Skirts (typically 1x12)</li> <li>Cove</li>
-</ul>
-</li> <li>Handrail
-<ul class="wp-block-list">
-<li>Newel post with mounting kit</li> <li>Handrail
-<ul class="wp-block-list">
-<li>Plowed if square wood balusters</li> <li>Solid if round balusters</li>
-</ul>
-</li> <li>Handrail brackets</li> <li>Wall returns</li> <li>Up or down easings</li> <li>Balusters
-<ul class="wp-block-list">
-<li>Shoes/knuckles if metal</li>
-</ul>
-</li> <li>Rosettes</li> <li>Double threaded screws</li>
-</ul>
-</li>
-</ul> <figure class="wp-block-image size-large"><img src="images/20200729_135918.jpg" alt="" class="wp-image-480" /></figure> <figure class="wp-block-image size-large"><img src="images/stairs-marked-up-2.png" alt="" class="wp-image-478" /></figure> <figure class="wp-block-image size-large"><img src="images/stairs-marked-up.jpg" alt="" class="wp-image-477" /></figure> <ul class="wp-block-jetpack-sharing-buttons has-normal-icon-size jetpack-sharing-buttons__services-list" id="jetpack-sharing-serivces-list"></ul>
-<p>
-    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-    <br>
-    <p><small>Last revised: 01/20/2026</small></p>
-</p>
+                <h1>Stairs</h1>
 
-<script>
-  // Share button
-  const shareBtn = document.getElementById('share-btn');
-  if (shareBtn && navigator.share) {
-    shareBtn.addEventListener('click', () => {
-      navigator.share({
-        title: 'Stairs',
-        url: window.location.href
-      }).catch(() => {
-        // user cancelled or share failed; do nothing
-      });
-    });
-  } else if (shareBtn) {
-    // Hide button if Web Share API isn't available
-    shareBtn.style.display = 'none';
-  }
-  // Print button
-  const printBtn = document.getElementById('print-btn');
-  if (printBtn) {
-    printBtn.addEventListener('click', () => {
-      window.print();
-    });
-  }
-</script>
+                <p>Staircases are one of the most heavily code-governed areas of a residential building. Most common stair components exist to satisfy these rules, although some manufacturers, especially of Luxury Vinyl Plank, make and sell non-compliant parts like nosings. Some stair builders prefer to handle the process start to finish so they can control everything from framing to finish; others specialize in one or the other.</p>
 
-            
-            <!-- page-feedback:start -->
-            <section class="page-feedback" aria-labelledby="page-feedback-heading">
-                <h2 id="page-feedback-heading">Feedback on this page</h2>
-                <p class="feedback-intro">Spot an error or have a suggestion? Send a quick note. Name and email are optional.</p>
-                <form class="feedback-form" onsubmit="return sendPageFeedback(this);">
-                    <div class="feedback-field">
-                        <label for="feedback-message">Your feedback</label>
-                        <textarea id="feedback-message" name="message" required placeholder="What could be clearer, more accurate, or more useful?"></textarea>
-                    </div>
-                    <div class="feedback-row">
+                <h2>Quick Reference</h2>
+                <ul>
+                    <li>Max riser height 7¾"; min tread depth 10" with nosing (11" without)</li>
+                    <li>Max ⅜" variation between largest and smallest riser or tread in a stairway</li>
+                    <li>Min 36" clear width; min 6'8" headroom</li>
+                    <li>Handrail required at 4 or more risers, 34"–38" above nosings, continuous between landings</li>
+                    <li>Landings required top and bottom, 36" min in direction of travel</li>
+                    <li>Account for finished floor thickness at the top and bottom of the run when cutting stringers</li>
+                </ul>
+
+                <h2>Components</h2>
+                <ul>
+                    <li><strong>Stringers:</strong> The structural part of the stairs that the treads and risers sit on. Traditionally cut from dimensional lumber, but some builders use engineered lumber like LVL because it is available in longer or deeper pieces and it is straight and stable.</li>
+                    <li><strong>Treads:</strong> The flat part of the staircase that you step on. These can be boxed in on both sides, return on one side, or return on two sides. Some modern stairs call for thick treads up to 3" or 4" so the gap between them is compliant, which allows the builder to omit the riser. These are often paired with a single steel "stringer" to give the staircase a floating appearance.</li>
+                    <li><strong>Risers:</strong> The vertical part behind the tread. Not strictly required by code, but often installed to comply with the requirement that there may not be any spaces larger than 4".</li>
+                    <li><strong>Cove:</strong> A trim element installed in the corner where the nosing from one tread projects past the riser below; both decorative and conceals the gap between the two boards.</li>
+                    <li><strong>Skirts:</strong> Cover the exposed edges of the risers. They typically mirror the shape of the stringer in trim on an open set of stairs, or fill the space to the wall on closed stairs.</li>
+                    <li><strong>Newel Posts:</strong> Decorative and structural; hold the handrail and balustrade or guardrail together.</li>
+                    <li><strong>Balusters:</strong> Individual spindles that make up a guardrail.</li>
+                    <li><strong>Handrail:</strong> The graspable part of the handrail that must be continuous between landings.</li>
+                </ul>
+
+                <h2>Code Requirements (IRC 2021/2024)</h2>
+                <ul>
+                    <li>Dimensional Standards
+                        <ul>
+                            <li><strong>Minimum Width:</strong> 36" clear width at all points above handrail (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7" target="_blank">IRC R311.7.1</a>)</li>
+                            <li><strong>Maximum Riser Height:</strong> 7¾" (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.1" target="_blank">IRC R311.7.5.1</a>)</li>
+                            <li><strong>Minimum Tread Depth:</strong> 10" with nosing, or 11" without nosing (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.2" target="_blank">IRC R311.7.5.2</a>)</li>
+                            <li><strong>Nosing Projection:</strong> ¾"–1¼" when required (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.3" target="_blank">IRC R311.7.5.3</a>)</li>
+                            <li><strong>Maximum Variation:</strong> ⅜" between largest and smallest riser or tread in same stairway (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.1" target="_blank">IRC R311.7.5.1</a>, <a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.5.2" target="_blank">R311.7.5.2</a>)</li>
+                            <li><strong>Minimum Headroom:</strong> 6'8" (80") measured vertically from sloped line connecting tread nosings (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.2" target="_blank">IRC R311.7.2</a>)</li>
+                            <li><strong>Maximum Total Rise:</strong> 12'7" between floor levels or landings (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.3" target="_blank">IRC R311.7.3</a>)</li>
+                        </ul>
+                    </li>
+                    <li>Handrail Requirements
+                        <ul>
+                            <li><strong>Required:</strong> On at least one side when four or more risers are present (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8" target="_blank">IRC R311.7.8</a>)</li>
+                            <li><strong>Height:</strong> 34"–38" above tread nosing to top of handrail (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8.1" target="_blank">IRC R311.7.8.1</a>)</li>
+                            <li><strong>Continuous:</strong> Must run between landings without interruption (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8.2" target="_blank">IRC R311.7.8.2</a>)</li>
+                            <li><strong>Graspable:</strong> 1¼"–2" diameter for circular rails (lots of other options as well, <a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8.5" target="_blank">IRC R311.7.8.5</a>)</li>
+                            <li><strong>Wall Clearance:</strong> Minimum 1½" from wall surface (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.8.3" target="_blank">IRC R311.7.8.3</a>)</li>
+                        </ul>
+                    </li>
+                    <li>Landing Requirements
+                        <ul>
+                            <li><strong>Required:</strong> At top and bottom of each stairway (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.6" target="_blank">IRC R311.7.6</a>)</li>
+                            <li><strong>Minimum Depth:</strong> 36 inches in direction of travel for straight runs (<a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.6" target="_blank">IRC R311.7.6</a>)</li>
+                            <li><strong>Maximum Slope:</strong> 1:48 (2% slope, <a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7.6" target="_blank">IRC R311.7.6</a>)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2>Installation Considerations</h2>
+                <ul>
+                    <li><strong>Handrails Encroaching on Width:</strong> When building stairs always consider the width of a staircase. For instance, if you design a 3' wide staircase for a deck and then need to install handrails on both sides, those handrails may encroach and take up considerable space if they are deck mounted.</li>
+                    <li><strong>Steep Stairs and Masonry:</strong> Stairs with treads shorter than 11" require a nosing; consider this when building masonry steps. It is difficult to form a compliant nosing, so plan to make the treads 11" or more.</li>
+                    <li><strong>Stringer Problems:</strong> In remodeling we often encounter existing stairs with 1 1/16" thick treads, but the floor at the top or bottom may be thinner and this is often overlooked. Stringers must account for floor thickness at the top and bottom of the run to comply with the rule that nothing can be more than ⅜" out of tolerance. You may have to trim the bottom of the bottom step or install the stringer lower to account for thinner floor at the top of a run.</li>
+                    <li><strong>Egress Doors and Landings:</strong> At required egress doors a single step down from the threshold to an exterior landing is allowed as long as the door does not swing out over the exterior landing. (<a href="https://codes.iccsafe.org/s/IRC2021P3/chapter-3-building-planning/IRC2021P3-Pt03-Ch03-SecR311.3" target="_blank">IRC R311.3</a>)</li>
+                    <li><strong>Additional Exterior Doors:</strong> At other exterior doors a single step (2 rises and 1 tread) is allowed instead of a full landing as long as the door does not swing out over the step. (<a href="https://codes.iccsafe.org/s/IRC2021P3/chapter-3-building-planning/IRC2021P3-Pt03-Ch03-SecR311.3" target="_blank">IRC R311.3</a>)</li>
+                </ul>
+
+                <h2>Common Challenges and Solutions</h2>
+                <ul>
+                    <li><strong>Challenge:</strong> Squeaky stairs from loose connections<br><strong>Solution:</strong> Attach treads with construction adhesive and fasteners; consider pocket hole screws from below if possible, trim screws through the top, or 15 gauge nails.</li>
+                    <li><strong>Challenge:</strong> Stringer is sagging or bouncy<br><strong>Solution:</strong> Reinforce stringers with 2x4 glued and fastened along the spine, or build with LVL</li>
+                    <li><strong>Challenge:</strong> Uneven riser heights creating trip hazards, especially in a remodel<br><strong>Solution:</strong> Adjust each step on the stringers by shimming incrementally. An example would be to add 1/16 to the first step, 1/8 to the second, 3/16 to the third, ¼ to the fourth, etc.</li>
+                    <li><strong>Challenge:</strong> Old staircase is way out of compliance and cannot be made to satisfy all requirements<br><strong>Solution:</strong> Check with local building authority. There are sometimes provisions for rebuilding existing stairs using the exact specs they presented originally, or only improving characteristics if they don't impact other rules. Appendix J (if adopted in your jurisdiction) can allow you to work on non-compliant staircases without bringing them all the way up to modern specifications. (<a href="https://codes.iccsafe.org/content/IRC2018/appendix-j-existing-buildings-and-structures" target="_blank">IRC Appendix J</a>)</li>
+                </ul>
+
+                <h2>Sample Material List</h2>
+                <ul>
+                    <li>Steps
+                        <ul>
+                            <li>Standard treads (square on both ends)</li>
+                            <li>Single return treads (treads with one returned side)</li>
+                            <li>Double return treads (treads with returns on both sides, order exact to size)</li>
+                            <li>Risers (typically 1x8)</li>
+                            <li>Skirts (typically 1x12)</li>
+                            <li>Cove</li>
+                        </ul>
+                    </li>
+                    <li>Handrail
+                        <ul>
+                            <li>Newel post with mounting kit</li>
+                            <li>Handrail
+                                <ul>
+                                    <li>Plowed if square wood balusters</li>
+                                    <li>Solid if round balusters</li>
+                                </ul>
+                            </li>
+                            <li>Handrail brackets</li>
+                            <li>Wall returns</li>
+                            <li>Up or down easings</li>
+                            <li>Balusters
+                                <ul>
+                                    <li>Shoes/knuckles if metal</li>
+                                </ul>
+                            </li>
+                            <li>Rosettes</li>
+                            <li>Double threaded screws</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <figure><img src="images/20200729_135918.jpg" alt="Finished staircase with returned treads and balustrade" /></figure>
+                <figure><img src="images/stairs-marked-up-2.png" alt="Stair diagram with components marked up" /></figure>
+                <figure><img src="images/stairs-marked-up.jpg" alt="Staircase photo with components marked up" /></figure>
+
+                <h2>Resources</h2>
+                <ul>
+                    <li><a href="stair-parts-order-sheet.html">Stair Parts Order Sheet</a></li>
+                    <li><a href="https://codes.iccsafe.org/s/IRC2021P2/part-iii-building-planning-and-construction/IRC2021P2-Pt03-Ch03-SecR311.7" target="_blank">IRC R311.7 Stairways</a></li>
+                    <li><a href="https://codes.iccsafe.org/content/IRC2018/appendix-j-existing-buildings-and-structures" target="_blank">IRC Appendix J: Existing Buildings and Structures</a></li>
+                </ul>
+
+                <p>
+                    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                    <br>
+                    <small>Last revised: 06/12/2026</small>
+                </p>
+
+                <!-- page-feedback:start -->
+                <section class="page-feedback" aria-labelledby="page-feedback-heading">
+                    <h2 id="page-feedback-heading">Feedback on this page</h2>
+                    <p class="feedback-intro">Spot an error or have a suggestion? Send a quick note. Name and email are optional.</p>
+                    <form class="feedback-form" onsubmit="return sendPageFeedback(this);">
                         <div class="feedback-field">
-                            <label for="feedback-name">Name <span class="optional">(optional)</span></label>
-                            <input type="text" id="feedback-name" name="name" autocomplete="name">
+                            <label for="feedback-message">Your feedback</label>
+                            <textarea id="feedback-message" name="message" required placeholder="What could be clearer, more accurate, or more useful?"></textarea>
                         </div>
-                        <div class="feedback-field">
-                            <label for="feedback-email">Email <span class="optional">(optional)</span></label>
-                            <input type="email" id="feedback-email" name="email" autocomplete="email">
+                        <div class="feedback-row">
+                            <div class="feedback-field">
+                                <label for="feedback-name">Name <span class="optional">(optional)</span></label>
+                                <input type="text" id="feedback-name" name="name" autocomplete="name">
+                            </div>
+                            <div class="feedback-field">
+                                <label for="feedback-email">Email <span class="optional">(optional)</span></label>
+                                <input type="email" id="feedback-email" name="email" autocomplete="email">
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="feedback-submit">Send feedback</button>
-                </form>
-            </section>
-            <!-- page-feedback:end -->
-        </article>
+                        <button type="submit" class="feedback-submit">Send feedback</button>
+                    </form>
+                </section>
+                <!-- page-feedback:end -->
+            </article>
         </main>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Remodelers Guide. Built by Jerry Tyrrell.</p>
-            <p><a href="about.html">Home</a> | <a href="mailto:geraldatyrrell@gmail.com">Contact</a></p>
-        </div>
-    </footer>
-
     <script>
+        // Share button
+        const shareBtn = document.getElementById('share-btn');
+        if (shareBtn && navigator.share) {
+            shareBtn.addEventListener('click', () => {
+                navigator.share({
+                    title: 'Stairs',
+                    url: window.location.href
+                }).catch(() => { });
+            });
+        } else if (shareBtn) {
+            shareBtn.style.display = 'none';
+        }
+        // Print button
+        const printBtn = document.getElementById('print-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', () => {
+                window.print();
+            });
+        }
         // Mobile navigation toggle
         document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.querySelector('.mobile-nav-toggle');
@@ -183,6 +288,9 @@
             }
         });
     </script>
+    <footer>
+        &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+    </footer>
 <!-- page-feedback-script:start -->
 <script>
     // Page feedback form: build a mailto: link and open the user's mail client.

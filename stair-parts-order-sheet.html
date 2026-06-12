@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stair Parts Order Sheet | Remodelers Guide">
+    <title>Stair Parts Order Sheet | Remodelers Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media print {
+            @page { margin: 0.5in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                display: block !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+                margin-left: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 0.8rem;
+            }
+            h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
+            h3.form-section { font-size: 0.8rem; margin: 0.35rem 0 0.15rem 0; padding-bottom: 0.1rem; }
+            .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
+            .job-header p { font-size: 0.8rem; margin: 0.1rem 0; }
+            .form-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.25rem;
+            }
+            .dims-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr 1fr !important;
+                gap: 0 1.25rem;
+            }
+            .form-row { font-size: 0.8rem; margin: 0.12rem 0; }
+            .notes-box { height: 1.6in; }
+            .print-credit { display: block; text-align: center; font-size: 0.7rem; color: #999; margin-top: 0.5rem; }
+        }
+
+        h1.form-title {
+            font-size: 1.4rem;
+            margin: 0 0 0.6rem 0;
+            color: #2C3E50;
+        }
+        h3.form-section {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+            margin: 0.9rem 0 0.35rem 0;
+            font-weight: 600;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .job-header p { margin: 0; font-size: 0.95rem; }
+        .fill-lg {
+            display: inline-block;
+            width: 160px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-md {
+            display: inline-block;
+            width: 110px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-sm {
+            display: inline-block;
+            width: 70px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-xs {
+            display: inline-block;
+            width: 40px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .dims-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0 2rem;
+        }
+        .form-row {
+            margin: 0.25rem 0;
+            font-size: 0.95rem;
+        }
+        .notes-box {
+            border: 1px solid #333;
+            height: 1.5in;
+            margin-top: 0.2rem;
+        }
+        .print-credit { display: none; }
+        .form-actions { margin-top: 1rem; }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="safety.html">Safety</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
+                <li class="nav-item"><a href="decks.html">Decks</a></li>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
+                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+                <li class="nav-item active-section"><a href="stairs.html" class="active">Stairs</a></li>
+                <li class="nav-item"><a href="resources.html">Resources</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <p class="breadcrumb"><a href="stairs.html">Stairs</a> &gt; Stair Parts Order Sheet</p>
+            <h1 class="form-title">Remodelers Guide: Stair Parts Order Sheet</h1>
+
+            <div class="job-header">
+                <p>Job Name:<span class="fill-lg"></span></p>
+                <p>Date:<span class="fill-md"></span></p>
+                <p>Stair Location:<span class="fill-md"></span></p>
+            </div>
+
+            <h3 class="form-section">Stair Dimensions</h3>
+            <div class="dims-grid">
+                <p class="form-row">Total rise:<span class="fill-sm"></span></p>
+                <p class="form-row">Riser height:<span class="fill-sm"></span></p>
+                <p class="form-row">Riser count:<span class="fill-sm"></span></p>
+                <p class="form-row">Total run:<span class="fill-sm"></span></p>
+                <p class="form-row">Tread depth:<span class="fill-sm"></span></p>
+                <p class="form-row">Tread count:<span class="fill-sm"></span></p>
+                <p class="form-row">Stair width:<span class="fill-sm"></span></p>
+                <p class="form-row">Floor thickness, top:<span class="fill-sm"></span></p>
+                <p class="form-row">Floor thickness, bottom:<span class="fill-sm"></span></p>
+            </div>
+
+            <div class="form-grid">
+                <div>
+                    <h3 class="form-section">Steps</h3>
+                    <p class="form-row">Standard treads (square both ends) &mdash; qty:<span class="fill-xs"></span> length:<span class="fill-sm"></span></p>
+                    <p class="form-row">Single return treads &mdash; left:<span class="fill-xs"></span> right:<span class="fill-xs"></span> length:<span class="fill-sm"></span></p>
+                    <p class="form-row">Double return treads (order exact to size) &mdash; qty:<span class="fill-xs"></span> length:<span class="fill-sm"></span></p>
+                    <p class="form-row">Risers (typically 1x8) &mdash; qty:<span class="fill-xs"></span></p>
+                    <p class="form-row">Skirts (typically 1x12) &mdash; qty:<span class="fill-xs"></span> length:<span class="fill-sm"></span></p>
+                    <p class="form-row">Cove &mdash; LF:<span class="fill-xs"></span></p>
+                    <p class="form-row">Stringers (2x12 or LVL) &mdash; qty:<span class="fill-xs"></span> length:<span class="fill-sm"></span></p>
+
+                    <h3 class="form-section">Species &amp; Finish</h3>
+                    <p class="form-row">Tread species:<span class="fill-md"></span></p>
+                    <p class="form-row">Riser / skirt material:<span class="fill-md"></span></p>
+                    <p class="form-row">Finish:&nbsp; ☐ Stain &nbsp; ☐ Paint &nbsp; ☐ Prefinished</p>
+
+                    <h3 class="form-section">Fasteners &amp; Adhesive</h3>
+                    <p class="form-row">☐ Construction adhesive</p>
+                    <p class="form-row">☐ Pocket hole screws</p>
+                    <p class="form-row">☐ Trim screws</p>
+                    <p class="form-row">☐ 15 gauge nails</p>
+                    <p class="form-row">☐ Shims</p>
+                </div>
+
+                <div>
+                    <h3 class="form-section">Handrail &amp; Balustrade</h3>
+                    <p class="form-row">Newel posts with mounting kits &mdash; qty:<span class="fill-xs"></span></p>
+                    <p class="form-row">Handrail:&nbsp; ☐ Plowed (square wood balusters) &nbsp; ☐ Solid (round balusters)</p>
+                    <p class="form-row">Handrail &mdash; LF:<span class="fill-xs"></span> profile:<span class="fill-sm"></span></p>
+                    <p class="form-row">Handrail brackets &mdash; qty:<span class="fill-xs"></span></p>
+                    <p class="form-row">Wall returns &mdash; qty:<span class="fill-xs"></span></p>
+                    <p class="form-row">Up easings &mdash; qty:<span class="fill-xs"></span></p>
+                    <p class="form-row">Down easings &mdash; qty:<span class="fill-xs"></span></p>
+                    <p class="form-row">Balusters &mdash; qty:<span class="fill-xs"></span> style:<span class="fill-sm"></span></p>
+                    <p class="form-row">Shoes / knuckles (if metal balusters) &mdash; qty:<span class="fill-xs"></span></p>
+                    <p class="form-row">Rosettes &mdash; qty:<span class="fill-xs"></span></p>
+                    <p class="form-row">☐ Double threaded screws</p>
+
+                    <h3 class="form-section">Code Reminders</h3>
+                    <p class="form-row">Max riser 7¾" &middot; min tread 10" w/ nosing &middot; max ⅜" variation</p>
+                    <p class="form-row">Handrail 34"&ndash;38", continuous, required at 4+ risers</p>
+                    <p class="form-row">Account for finished floor thickness top and bottom</p>
+                </div>
+            </div>
+
+            <h3 class="form-section">Notes / Special Instructions</h3>
+            <div class="notes-box"></div>
+
+            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+
+            <p class="form-actions">
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 06/12/2026</small>
+            </p>
+
+            <p class="breadcrumb"><a href="stairs.html">Stairs</a> &gt; Stair Parts Order Sheet</p>
+        </article>
+    </main>
+</div>
+
+<script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+        shareBtn.addEventListener('click', () => {
+            navigator.share({ title: document.title || 'Stair Parts Order Sheet', url: window.location.href }).catch(() => {});
+        });
+    } else if (shareBtn) {
+        shareBtn.style.display = 'none';
+    }
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) { printBtn.addEventListener('click', () => { window.print(); }); }
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
+                }
+            });
+        }
+    });
+</script>
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
+<!-- goatcounter-analytics:start -->
+<script data-goatcounter="https://rem-guide.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- goatcounter-analytics:end -->
+</body>
+</html>

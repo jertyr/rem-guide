@@ -3,9 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wage Calculator - The Remodelers Guide">
+    <meta name="description" content="Wage Calculator">
     <title>Wage Calculator | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .calc-wrap {
+            border: 1px solid #e2e8f0;
+            padding: 16px;
+            border-radius: 8px;
+            max-width: 820px;
+        }
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 24px;
+            margin-bottom: 12px;
+        }
+        .calc-field label {
+            display: block;
+            font-size: 0.88rem;
+            color: #2C3E50;
+            margin-bottom: 2px;
+        }
+        .calc-field input[type="number"] {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+        }
+        .calc-check {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            align-self: end;
+            padding-bottom: 6px;
+        }
+        .calc-check label { margin: 0; font-size: 0.88rem; color: #2C3E50; }
+        .calc-actions {
+            display: flex;
+            gap: 8px;
+            margin: 6px 0 12px 0;
+        }
+        .calc-actions button {
+            padding: 0.4rem 0.9rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        #calc-btn { background: #E67E22; border-color: #E67E22; color: #fff; }
+        #reset-btn { background: #f5f5f5; }
+        #calc-results {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 12px;
+        }
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px dashed #e5e7eb;
+            font-size: 0.95rem;
+        }
+        .calc-row.total { font-weight: 600; }
+        .calc-note {
+            color: #64748b;
+            font-size: 0.82rem;
+            margin-top: 8px;
+        }
+        #calc-results h3 { margin: 10px 0 4px 0; font-size: 1rem; color: #2C3E50; }
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            header, .sidebar, footer, .mobile-nav-toggle, .breadcrumb,
+            button, #share-btn, #print-btn, small, .page-feedback {
+                display: none !important;
+            }
+            .main-wrapper { margin: 0 !important; padding: 0 !important; }
+            main { margin: 0 !important; padding: 0 !important; }
+            article { margin: 0 !important; padding: 2rem !important; }
+            body { margin: 0; padding: 0; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,83 +96,232 @@
 
     <div class="main-wrapper">
         <aside class="sidebar">
-<nav>
+            <nav>
                 <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="safety.html">Safety</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="remediation.html">Remediation</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
-                <li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item"><a href="windows.html">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
-                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
-                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
-                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
-                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
-                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="resources.html">Resources</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item active-section"><a href="wage-calculator.html" class="active">Wage Calculator</a></li>
-				</ul>
+                    <li class="nav-item"><a href="about.html">Home</a></li>
+                    <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                    <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                    <li class="nav-item"><a href="safety.html">Safety</a></li>
+                    <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                    <li class="nav-item"><a href="footings.html">Footings</a></li>
+                    <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                    <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                    <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                    <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                    <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+                    <li class="nav-item"><a href="framing.html">Framing</a></li>
+                    <li class="nav-item"><a href="decks.html">Decks</a></li>
+                    <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                    <li class="nav-item"><a href="windows.html">Windows</a></li>
+                    <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                    <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                    <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                    <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                    <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                    <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                    <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                    <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                    <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+                    <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+                    <li class="nav-item"><a href="drywall.html">Drywall</a></li>
+                    <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+                    <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+                    <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                    <li class="nav-item"><a href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a href="products.html">Products</a></li>
+                    <li class="nav-item active-section"><a href="wage-calculator.html" class="active">Wage Calculator</a></li>
+                </ul>
             </nav>
         </aside>
 
         <main>
             <article>
-                <h2 class="wp-block-heading">Wage Calculator</h2> <div class="dbtcc-wrap" style="border:1px solid #e2e8f0;padding:16px;border-radius:8px;max-width:820px"> Total Compensation Calculator Gross pay per hour ($) Hours worked per week Overtime 1.5x over 40 hrs Holiday days per year Vacation days per year Employer health contribution ($/month) Employee health contribution ($/month) 401k employer match (% of pay) <div style="grid-column:1/-1;display:flex;gap:8px;margin-top:6px"> Calculate Reset </div> <div id="dbtcc_results" aria-live="polite" style="border-top:1px solid #e2e8f0;padding-top:12px;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial"></div> </div> (function(){ const HOURS_PER_DAY = 8; function $(id){ return document.getElementById(id); } function num(id){ return parseFloat($(id).value || 0); } function fmt0(n){ return n.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:0}); } function fmt2(n){ return n.toLocaleString(undefined,{style:'currency',currency:'USD',maximumFractionDigits:2}); } function calc(){ const hourly = num('dbtcc_hourly'); const hpw = num('dbtcc_hours_per_week'); const otEnabled = $('dbtcc_ot_toggle').checked; const holidayDays = num('dbtcc_holiday_days'); const vacationDays = num('dbtcc_vacation_days'); const empHealthMonth = num('dbtcc_health_employer_month'); const eeHealthMonth = num('dbtcc_health_employee_month'); const matchPct = num('dbtcc_match_percent') / 100; const baseHours = otEnabled ? Math.min(hpw, 40) : hpw; const otHours = otEnabled ? Math.max(hpw - 40, 0) : 0; const weeklyBase = baseHours * hourly; const weeklyOT = otHours * hourly * 1.5; const annualWages = (weeklyBase + weeklyOT) * 52; const paidHolidayValue = holidayDays * HOURS_PER_DAY * hourly; const paidVacationValue = vacationDays * HOURS_PER_DAY * hourly; const employerHealthAnnual = empHealthMonth * 12; const employerMatch = annualWages * matchPct; const totalAnnualComp = annualWages + paidHolidayValue + paidVacationValue + employerHealthAnnual + employerMatch; const annualWorkedHours = (baseHours + otHours) * 52; const paidDaysHours = (holidayDays + vacationDays) * HOURS_PER_DAY; const effectiveHours = annualWorkedHours + paidDaysHours; const effectiveHourly = effectiveHours > 0 ? (totalAnnualComp / effectiveHours) : 0; const rows = , , , , , , , ]; let html = '<h4 style="margin:8px 0">Annualized Breakdown</h4>'; rows.forEach((r, idx) => { const strong = idx === rows.length - 1 ? 'font-weight:600;' : ''; html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #e5e7eb">' + '<span style="'+strong+'">'+r+'</span><span style="'+strong+'">'+r+'</span></div>'; }); html += '<h4 style="margin:8px 0">Effective Rates</h4>'; html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #e5e7eb"><span>Effective hourly (incl. benefits):</span><span style="font-weight:600">'+fmt2(effectiveHourly)+'</span></div>'; html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed #e5e7eb"><span>Baseline hourly (input):</span><span>'+fmt2(hourly)+'</span></div>'; html += '<p style="color:#64748b;font-size:13px">Employee health entered: '+fmt0(eeHealthMonth*12)+' per year (not added to total compensation).</p>'; $('dbtcc_results').innerHTML = html; } function resetForm(){ $('dbtcc_hourly').value = 30; $('dbtcc_hours_per_week').value = 40; $('dbtcc_ot_toggle').checked = true; $('dbtcc_holiday_days').value = 6; $('dbtcc_vacation_days').value = 10; $('dbtcc_health_employer_month').value = 600; $('dbtcc_health_employee_month').value = 150; $('dbtcc_match_percent').value = 4; $('dbtcc_results').innerHTML = ''; } document.addEventListener('DOMContentLoaded', function(){ const c = document.getElementById('dbtcc_calc_btn'); const r = document.getElementById('dbtcc_reset_btn'); if(c) c.addEventListener('click', calc); if(r) r.addEventListener('click', resetForm); }); })();
-            
-            <!-- page-feedback:start -->
-            <section class="page-feedback" aria-labelledby="page-feedback-heading">
-                <h2 id="page-feedback-heading">Feedback on this page</h2>
-                <p class="feedback-intro">Spot an error or have a suggestion? Send a quick note. Name and email are optional.</p>
-                <form class="feedback-form" onsubmit="return sendPageFeedback(this);">
-                    <div class="feedback-field">
-                        <label for="feedback-message">Your feedback</label>
-                        <textarea id="feedback-message" name="message" required placeholder="What could be clearer, more accurate, or more useful?"></textarea>
-                    </div>
-                    <div class="feedback-row">
-                        <div class="feedback-field">
-                            <label for="feedback-name">Name <span class="optional">(optional)</span></label>
-                            <input type="text" id="feedback-name" name="name" autocomplete="name">
+                <h1>Wage Calculator</h1>
+                <p>Total compensation calculator. Enter wages and benefits to see the annualized package and the effective hourly rate with benefits included. Useful for costing an employee or showing a carpenter what their package is actually worth.</p>
+
+                <div class="calc-wrap">
+                    <form id="calc-form" class="calc-grid" autocomplete="off">
+                        <div class="calc-field">
+                            <label for="calc_hourly">Gross pay per hour ($)</label>
+                            <input type="number" id="calc_hourly" min="0" step="0.25" value="30">
                         </div>
-                        <div class="feedback-field">
-                            <label for="feedback-email">Email <span class="optional">(optional)</span></label>
-                            <input type="email" id="feedback-email" name="email" autocomplete="email">
+                        <div class="calc-field">
+                            <label for="calc_hours_per_week">Hours worked per week</label>
+                            <input type="number" id="calc_hours_per_week" min="0" step="1" value="40">
                         </div>
-                    </div>
-                    <button type="submit" class="feedback-submit">Send feedback</button>
-                </form>
-            </section>
-            <!-- page-feedback:end -->
-        </article>
+                        <div class="calc-check">
+                            <input type="checkbox" id="calc_ot_toggle" checked>
+                            <label for="calc_ot_toggle">Overtime 1.5x over 40 hrs</label>
+                        </div>
+                        <div class="calc-field">
+                            <label for="calc_holiday_days">Holiday days per year</label>
+                            <input type="number" id="calc_holiday_days" min="0" step="1" value="6">
+                        </div>
+                        <div class="calc-field">
+                            <label for="calc_vacation_days">Vacation days per year</label>
+                            <input type="number" id="calc_vacation_days" min="0" step="1" value="10">
+                        </div>
+                        <div class="calc-field">
+                            <label for="calc_health_employer_month">Employer health contribution ($/month)</label>
+                            <input type="number" id="calc_health_employer_month" min="0" step="10" value="600">
+                        </div>
+                        <div class="calc-field">
+                            <label for="calc_health_employee_month">Employee health contribution ($/month)</label>
+                            <input type="number" id="calc_health_employee_month" min="0" step="10" value="150">
+                        </div>
+                        <div class="calc-field">
+                            <label for="calc_match_percent">401k employer match (% of pay)</label>
+                            <input type="number" id="calc_match_percent" min="0" max="100" step="0.5" value="4">
+                        </div>
+                        <div class="calc-actions" style="grid-column: 1 / -1;">
+                            <button type="submit" id="calc-btn">Calculate</button>
+                            <button type="button" id="reset-btn">Reset</button>
+                        </div>
+                    </form>
+                    <div id="calc-results" aria-live="polite"></div>
+                    <p class="calc-note">Assumes 8-hour days and the entered weekly hours for all 52 weeks; holiday and vacation pay is valued on top of wages. Employee health contributions are shown for reference and not added to total compensation. Payroll taxes, workers comp, and liability insurance are not included.</p>
+                </div>
+
+                <p>
+                    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                    <br>
+                    <small>Last revised: 06/12/2026</small>
+                </p>
+
+                <!-- page-feedback:start -->
+                <section class="page-feedback" aria-labelledby="page-feedback-heading">
+                    <h2 id="page-feedback-heading">Feedback on this page</h2>
+                    <p class="feedback-intro">Spot an error or have a suggestion? Send a quick note. Name and email are optional.</p>
+                    <form class="feedback-form" onsubmit="return sendPageFeedback(this);">
+                        <div class="feedback-field">
+                            <label for="feedback-message">Your feedback</label>
+                            <textarea id="feedback-message" name="message" required placeholder="What could be clearer, more accurate, or more useful?"></textarea>
+                        </div>
+                        <div class="feedback-row">
+                            <div class="feedback-field">
+                                <label for="feedback-name">Name <span class="optional">(optional)</span></label>
+                                <input type="text" id="feedback-name" name="name" autocomplete="name">
+                            </div>
+                            <div class="feedback-field">
+                                <label for="feedback-email">Email <span class="optional">(optional)</span></label>
+                                <input type="email" id="feedback-email" name="email" autocomplete="email">
+                            </div>
+                        </div>
+                        <button type="submit" class="feedback-submit">Send feedback</button>
+                    </form>
+                </section>
+                <!-- page-feedback:end -->
+            </article>
         </main>
     </div>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Remodelers Guide. Built by Jerry Tyrrell.</p>
-            <p><a href="about.html">Home</a> | <a href="mailto:geraldatyrrell@gmail.com">Contact</a></p>
-        </div>
+        &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
     </footer>
 
     <script>
+        (function() {
+            const HOURS_PER_DAY = 8;
+            function $(id) { return document.getElementById(id); }
+            function num(id) { return Math.max(parseFloat($(id).value) || 0, 0); }
+            function fmt0(n) { return n.toLocaleString(undefined, { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }); }
+            function fmt2(n) { return n.toLocaleString(undefined, { style: 'currency', currency: 'USD', maximumFractionDigits: 2 }); }
+
+            function calc() {
+                const hourly = num('calc_hourly');
+                const hpw = num('calc_hours_per_week');
+                const otEnabled = $('calc_ot_toggle').checked;
+                const holidayDays = num('calc_holiday_days');
+                const vacationDays = num('calc_vacation_days');
+                const empHealthMonth = num('calc_health_employer_month');
+                const eeHealthMonth = num('calc_health_employee_month');
+                const matchPct = num('calc_match_percent') / 100;
+
+                const baseHours = otEnabled ? Math.min(hpw, 40) : hpw;
+                const otHours = otEnabled ? Math.max(hpw - 40, 0) : 0;
+                const weeklyBase = baseHours * hourly;
+                const weeklyOT = otHours * hourly * 1.5;
+                const annualBase = weeklyBase * 52;
+                const annualOT = weeklyOT * 52;
+                const annualWages = annualBase + annualOT;
+                const paidHolidayValue = holidayDays * HOURS_PER_DAY * hourly;
+                const paidVacationValue = vacationDays * HOURS_PER_DAY * hourly;
+                const employerHealthAnnual = empHealthMonth * 12;
+                const employerMatch = annualWages * matchPct;
+                const totalAnnualComp = annualWages + paidHolidayValue + paidVacationValue + employerHealthAnnual + employerMatch;
+
+                const annualWorkedHours = (baseHours + otHours) * 52;
+                const paidDaysHours = (holidayDays + vacationDays) * HOURS_PER_DAY;
+                const effectiveHours = annualWorkedHours + paidDaysHours;
+                const effectiveHourly = effectiveHours > 0 ? (totalAnnualComp / effectiveHours) : 0;
+                const costPerWorkedHour = annualWorkedHours > 0 ? (totalAnnualComp / annualWorkedHours) : 0;
+
+                const rows = [
+                    ['Base wages', fmt0(annualBase)],
+                    ['Overtime wages', fmt0(annualOT)],
+                    ['Paid holidays (' + holidayDays + ' days)', fmt0(paidHolidayValue)],
+                    ['Paid vacation (' + vacationDays + ' days)', fmt0(paidVacationValue)],
+                    ['Employer health contribution', fmt0(employerHealthAnnual)],
+                    ['401k employer match', fmt0(employerMatch)],
+                    ['Total annual compensation', fmt0(totalAnnualComp)]
+                ];
+
+                let html = '<h3>Annualized Breakdown</h3>';
+                rows.forEach(function(r, idx) {
+                    const cls = idx === rows.length - 1 ? 'calc-row total' : 'calc-row';
+                    html += '<div class="' + cls + '"><span>' + r[0] + '</span><span>' + r[1] + '</span></div>';
+                });
+                html += '<h3>Effective Rates</h3>';
+                html += '<div class="calc-row"><span>Baseline hourly (input)</span><span>' + fmt2(hourly) + '</span></div>';
+                html += '<div class="calc-row total"><span>Effective hourly (incl. benefits, per paid hour)</span><span>' + fmt2(effectiveHourly) + '</span></div>';
+                html += '<div class="calc-row total"><span>Cost per hour worked</span><span>' + fmt2(costPerWorkedHour) + '</span></div>';
+                html += '<p class="calc-note">Employee health entered: ' + fmt0(eeHealthMonth * 12) + ' per year (not added to total compensation).</p>';
+                $('calc-results').innerHTML = html;
+            }
+
+            function resetForm() {
+                $('calc_hourly').value = 30;
+                $('calc_hours_per_week').value = 40;
+                $('calc_ot_toggle').checked = true;
+                $('calc_holiday_days').value = 6;
+                $('calc_vacation_days').value = 10;
+                $('calc_health_employer_month').value = 600;
+                $('calc_health_employee_month').value = 150;
+                $('calc_match_percent').value = 4;
+                calc();
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = $('calc-form');
+                form.addEventListener('submit', function(e) { e.preventDefault(); calc(); });
+                form.addEventListener('input', calc);
+                $('reset-btn').addEventListener('click', resetForm);
+                calc();
+            });
+        })();
+    </script>
+
+    <script>
+        // Share button
+        const shareBtn = document.getElementById('share-btn');
+        if (shareBtn && navigator.share) {
+            shareBtn.addEventListener('click', () => {
+                navigator.share({
+                    title: 'Wage Calculator',
+                    url: window.location.href
+                }).catch(() => { });
+            });
+        } else if (shareBtn) {
+            shareBtn.style.display = 'none';
+        }
+        // Print button
+        const printBtn = document.getElementById('print-btn');
+        if (printBtn) {
+            printBtn.addEventListener('click', () => {
+                window.print();
+            });
+        }
         // Mobile navigation toggle
         document.addEventListener('DOMContentLoaded', function() {
             const navToggle = document.querySelector('.mobile-nav-toggle');

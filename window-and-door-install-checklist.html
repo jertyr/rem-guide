@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Window and Door Install Checklist | Remodelers Guide - The Remodelers Guide">
-    <title>Window and Door Install Checklist | Remodelers Guide</title>
+    <meta name="description" content="Window &amp; Door Install Checklist | Remodelers Guide">
+    <title>Window &amp; Door Install Checklist | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         @media print {
+            @page { margin: 0.5in; size: letter portrait; }
             header,
             .sidebar,
             footer,
             .mobile-nav-toggle,
             .breadcrumb,
+            .form-actions,
             button,
             #share-btn,
             #print-btn,
@@ -20,190 +22,244 @@
                 display: none !important;
             }
             .main-wrapper {
+                display: block !important;
                 margin: 0 !important;
                 padding: 0 !important;
             }
             main {
                 margin: 0 !important;
                 padding: 0 !important;
+                margin-left: 0 !important;
             }
             article {
                 margin: 0 !important;
-                padding: 2rem !important;
+                padding: 0 !important;
             }
             body {
                 margin: 0;
                 padding: 0;
+                font-size: 0.82rem;
             }
-            li {
-                page-break-inside: avoid;
-                margin-bottom: 0.5em;
+            h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
+            h3.form-section { font-size: 0.8rem; margin: 0.35rem 0 0.15rem 0; padding-bottom: 0.1rem; }
+            .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
+            .job-header p { font-size: 0.82rem; margin: 0.1rem 0; }
+            .checklist-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.5rem;
             }
-            ul {
-                list-style-type: none !important;
-            }
+            .checklist-ul li { margin-bottom: 0.15rem; font-size: 0.82rem; }
+            .checklist-ul ul li { margin-bottom: 0.1rem; }
+            .print-credit { display: block; text-align: center; font-size: 0.7rem; color: #999; margin-top: 0.5rem; }
         }
-        .nav-item.active-section .submenu {
-            display: block !important;
-            max-height: none !important;
-        }
-        .sidebar nav a.active {
-            background: #d4edda;
-            color: #155724;
-            font-weight: 700;
-            border-left-color: #2c5f2d;
-        }
-        .sidebar nav ul { padding-left: 0; margin: 0; }
-        .sidebar nav li { margin: 0; padding: 0; }
-        .sidebar nav a { padding: 0.4rem 1rem; display: block; }
-        .sidebar .submenu { padding-left: 0; margin: 0.2rem 0; }
-        .sidebar .submenu li { margin: 0; }
-        .sidebar .submenu a { padding: 0.3rem 1rem 0.3rem 2rem; }
-        article ul { margin-left: 0; padding-left: 2em; }
-        article ul ul { margin-left: 0; padding-left: 2em; }
-        article li { margin-bottom: 0.5em; }
-        article > ul { padding-left: 1.5em; }
-    </style>
 
+        h1.form-title {
+            font-size: 1.4rem;
+            margin: 0 0 0.6rem 0;
+            color: #2C3E50;
+        }
+        h3.form-section {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+            margin: 0.9rem 0 0.35rem 0;
+            font-weight: 600;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .job-header p { margin: 0; font-size: 0.95rem; }
+        .fill-lg {
+            display: inline-block;
+            width: 160px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-md {
+            display: inline-block;
+            width: 110px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        .checklist-ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .checklist-ul li {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+        .checklist-ul ul {
+            list-style-type: none;
+            padding-left: 1.2em;
+            margin: 0.2rem 0;
+        }
+        .print-credit { display: none; }
+        .form-actions { margin-top: 1rem; }
+    </style>
 </head>
 <body>
 <header>
-        <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
-    </header>
-
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
-
-    <div class="main-wrapper">
-        <aside class="sidebar">
-<nav>
-                <ul>
-					<li class="nav-item"><a href="about.html">Home</a></li>
-					<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-					<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-					<li class="nav-item"><a href="safety.html">Safety</a></li>
-					<li class="nav-item"><a href="excavation.html">Excavation</a></li>
-					<li class="nav-item"><a href="footings.html">Footings</a></li>
-					<li class="nav-item"><a href="foundations.html">Foundations</a></li>
-					<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-					<li class="nav-item"><a href="demolition.html">Demolition</a></li>
-					<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-					<li class="nav-item"><a href="remediation.html">Remediation</a></li>
-					<li class="nav-item"><a href="framing.html">Framing</a></li>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="safety.html">Safety</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
                 <li class="nav-item"><a href="decks.html">Decks</a></li>
-					<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-					<li class="nav-item active-section"><a href="windows.html" class="active">Windows</a></li>
-					<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-					<li class="nav-item"><a href="roofing.html">Roofing</a></li>
-					<li class="nav-item"><a href="siding-and-trim.html">Siding & Trim</a></li>
-					<li class="nav-item"><a href="gutters.html">Gutters</a></li>
-					<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-					<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-					<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-					<li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item active-section"><a href="windows.html" class="active">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
                 <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
                 <li class="nav-item"><a href="insulation.html">Insulation</a></li>
                 <li class="nav-item"><a href="drywall.html">Drywall</a></li>
                 <li class="nav-item"><a href="flooring.html">Flooring</a></li>
                 <li class="nav-item"><a href="countertops.html">Countertops</a></li>
-					<li class="nav-item"><a href="stairs.html">Stairs</a></li>
-					<li class="nav-item"><a href="resources.html">Resources</a></li>
-					<li class="nav-item"><a href="products.html">Products</a></li>
-					<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-				</ul>
-            </nav>
-        </aside>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="resources.html">Resources</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main style="margin-left: 280px; padding: 2rem;">
-            <article>
-                <p class="breadcrumb"><a href="windows.html">Windows</a> &gt; Window & Door Install Checklist</p>
-                <h2 class="wp-block-heading">Window and Door Install Checklist</h2>
-                <ul style="list-style-type: none">
-<li>☐ Lumber (packout)</li>
-<li>☐ Flashing tape</li>
-<li>☐ Sealant</li>
-<li>☐ Shims</li>
-<li>☐ 1.75" Roofing nails</li>
-<li>☐ Low expansion spray foam (backer rod and sealant)</li>
-<li>☐ Air sealing tape</li>
-<li>☐ Interior trim
-<ul style="list-style-type: none">
-<li>☐ Extension jamb</li>
-<li>☐ Sill (aka Stool)</li>
-<li>☐ Casing</li>
-<li>☐ Apron</li>
-<li>☐ Shoe moulding or cove</li>
-<li>☐ Painters caulking</li>
-</ul>
-</li>
-<li>☐ Exterior trim
-<ul style="list-style-type: none">
-<li>☐ Head flashing</li>
-<li>☐ Extension jamb</li>
-<li>☐ Sill</li>
-<li>☐ Casing</li>
-<li>☐ Apron</li>
-<li>☐ Exterior Sealant</li>
-</ul>
-</li>
-<li>☐ Misc
-<ul style="list-style-type: none">
-<li>☐ Treated lumber for bucks</li>
-<li>☐ Trim screws</li>
-</ul>
-</li>
-</ul>
-                <p>
-                    <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-                    <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-                    <br>
-                    <p><small>Last revised: 01/20/2026</small></p>
-                </p>
-                <p class="breadcrumb"><a href="windows.html">Windows</a> &gt; Window & Door Install Checklist</p>
-            </article>
-        </main>
-    </div>
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <p class="breadcrumb"><a href="windows.html">Windows</a> &gt; Window &amp; Door Install Checklist</p>
+            <h1 class="form-title">Remodelers Guide: Window &amp; Door Install Checklist</h1>
 
-    <script>
-        // Share button
-        const shareBtn = document.getElementById('share-btn');
-        if (shareBtn && navigator.share) {
-            shareBtn.addEventListener('click', () => {
-                navigator.share({
-                    title: document.title || 'Window & Door Install Checklist',
-                    url: window.location.href
-                }).catch(() => { });
-            });
-        } else if (shareBtn) {
-            shareBtn.style.display = 'none';
-        }
-        // Print button
-        const printBtn = document.getElementById('print-btn');
-        if (printBtn) {
-            printBtn.addEventListener('click', () => {
-                window.print();
-            });
-        }
-        // Mobile navigation toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.mobile-nav-toggle');
-            const sidebar = document.querySelector('.sidebar');
-            if (navToggle && sidebar) {
-                navToggle.addEventListener('click', function() {
-                    sidebar.classList.toggle('active');
-                });
-                document.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 768) {
-                        if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
-                            sidebar.classList.remove('active');
-                        }
-                    }
-                });
-            }
+            <div class="job-header">
+                <p>Job Name:<span class="fill-lg"></span></p>
+                <p>Date:<span class="fill-md"></span></p>
+            </div>
+
+            <div class="checklist-grid">
+                <div>
+                    <h3 class="form-section">Install Materials</h3>
+                    <ul class="checklist-ul">
+                        <li>☐ Lumber (packout)</li>
+                        <li>☐ Flashing tape</li>
+                        <li>☐ Sealant</li>
+                        <li>☐ Shims</li>
+                        <li>☐ 1.75" Roofing nails</li>
+                        <li>☐ Low expansion spray foam (backer rod and sealant)</li>
+                        <li>☐ Air sealing tape</li>
+                        <li>☐ Treated lumber for bucks</li>
+                        <li>☐ Trim screws</li>
+                    </ul>
+
+                    <h3 class="form-section">Install Verification</h3>
+                    <ul class="checklist-ul">
+                        <li>☐ Rough sill sloped ¼" with back-dam at interior edge</li>
+                        <li>☐ Sill pan flashing installed (take photos before covering)</li>
+                        <li>☐ Sealant bead behind top and side flanges; bottom left open to drain</li>
+                        <li>☐ Doors: set in a bed of silicone; sill bottom seals against the pan</li>
+                        <li>☐ Sill level, jambs plumb</li>
+                        <li>☐ Banks of windows level with each other and properly spaced</li>
+                        <li>☐ Exterior taped sides then top; bottom flange untaped for drainage</li>
+                        <li>☐ Interior air-sealed: low-expansion foam, backer rod and sealant, or tape</li>
+                        <li>☐ Window or door operates smoothly</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="form-section">Interior Trim</h3>
+                    <ul class="checklist-ul">
+                        <li>☐ Extension jamb</li>
+                        <li>☐ Sill (aka Stool)</li>
+                        <li>☐ Casing</li>
+                        <li>☐ Apron</li>
+                        <li>☐ Shoe moulding or cove</li>
+                        <li>☐ Painters caulking</li>
+                    </ul>
+
+                    <h3 class="form-section">Exterior Trim</h3>
+                    <ul class="checklist-ul">
+                        <li>☐ Head flashing</li>
+                        <li>☐ Extension jamb</li>
+                        <li>☐ Sill</li>
+                        <li>☐ Casing</li>
+                        <li>☐ Apron</li>
+                        <li>☐ Exterior Sealant</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+
+            <p class="form-actions">
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 06/12/2026</small>
+            </p>
+
+            <p class="breadcrumb"><a href="windows.html">Windows</a> &gt; Window &amp; Door Install Checklist</p>
+        </article>
+    </main>
+</div>
+
+<script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+        shareBtn.addEventListener('click', () => {
+            navigator.share({ title: document.title || 'Window &amp; Door Install Checklist', url: window.location.href }).catch(() => {});
         });
-    </script>
-    <footer>
-        &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
-    </footer>
+    } else if (shareBtn) {
+        shareBtn.style.display = 'none';
+    }
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) { printBtn.addEventListener('click', () => { window.print(); }); }
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
+                }
+            });
+        }
+    });
+</script>
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
 <!-- goatcounter-analytics:start -->
 <script data-goatcounter="https://rem-guide.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>

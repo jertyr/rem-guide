@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confined Space Entry Permit | Remodelers Guide">
+    <title>Confined Space Entry Permit | Remodelers Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @media print {
+            @page { margin: 0.5in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                display: block !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+                margin-left: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 0.72rem;
+            }
+            h1.form-title { font-size: 0.95rem; margin: 0 0 0.2rem 0; }
+            .form-sub { font-size: 0.7rem; margin: 0 0 0.3rem 0; }
+            h3.form-section { font-size: 0.74rem; margin: 0.3rem 0 0.12rem 0; padding-bottom: 0.06rem; }
+            .legend { font-size: 0.7rem; margin: 0 0 0.3rem 0; }
+            .job-header { margin-bottom: 0.3rem; gap: 1rem; }
+            .job-header p { font-size: 0.74rem; margin: 0.08rem 0; }
+            .form-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1.3rem; margin-bottom: 0.3rem; }
+            .insp-ul li { margin-bottom: 0.08rem; font-size: 0.74rem; line-height: 1.15; }
+            .cite { font-size: 0.64rem; color: #666; }
+            .test-table th, .test-table td { font-size: 0.7rem; padding: 0.1rem 0.2rem; }
+            .sign-row { margin-top: 0.2rem; }
+            .print-credit { display: block; text-align: center; font-size: 0.68rem; color: #999; margin-top: 0.3rem; }
+        }
+
+        h1.form-title {
+            font-size: 1.4rem;
+            margin: 0 0 0.3rem 0;
+            color: #2C3E50;
+        }
+        .form-sub { font-size: 0.85rem; color: #555; margin: 0 0 0.8rem 0; }
+        h3.form-section {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+            margin: 0.9rem 0 0.35rem 0;
+            font-weight: 600;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .job-header p { margin: 0; font-size: 0.95rem; }
+        .fill-lg {
+            display: inline-block;
+            width: 160px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-md {
+            display: inline-block;
+            width: 110px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-full {
+            display: inline-block;
+            width: 100%;
+            border-bottom: 1px solid #333;
+            margin-top: 0.4rem;
+        }
+        .legend { font-size: 0.85rem; color: #555; margin: 0 0 0.6rem 0; }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 0.8rem;
+        }
+        .insp-ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .insp-ul li {
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+        }
+        .cite { color: #888; font-size: 0.78rem; }
+        .test-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.3rem 0 0.6rem 0;
+        }
+        .test-table th, .test-table td {
+            border: 1px solid #333;
+            padding: 0.35rem 0.4rem;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        .test-table th { background: #f5f5f5; font-weight: 600; }
+        .sign-row {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 0.6rem;
+        }
+        .sign-row p { margin: 0; font-size: 0.95rem; }
+        .fill-sign {
+            display: inline-block;
+            width: 220px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .print-credit { display: none; }
+        .form-actions { margin-top: 1rem; }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item active-section"><a href="safety.html" class="active">Safety</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
+                <li class="nav-item"><a href="decks.html">Decks</a></li>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
+                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="resources.html">Resources</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <p class="breadcrumb"><a href="safety.html">Safety</a> &gt; Confined Space Entry Permit</p>
+            <h1 class="form-title">Remodelers Guide: Confined Space Entry Permit</h1>
+            <p class="form-sub">Permit-required confined space entry &mdash; OSHA 29 CFR <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1204" target="_blank" rel="noopener" style="color:inherit">1926.1204</a> (Subpart AA). Permit valid for one shift / task; post a copy at the entry point.</p>
+
+            <div class="job-header">
+                <p>Job Name:<span class="fill-lg"></span></p>
+                <p>Permit #:<span class="fill-md"></span></p>
+                <p>Date:<span class="fill-md"></span></p>
+            </div>
+
+            <h3 class="form-section">Space and Work</h3>
+            <div class="form-grid">
+                <div>
+                    <ul class="insp-ul">
+                        <li>Location / space:<span class="fill-md"></span></li>
+                        <li>Type: ☐ Attic&nbsp; ☐ Crawl space&nbsp; ☐ Other</li>
+                        <li>Work to be performed:<span class="fill-md"></span></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="insp-ul">
+                        <li>Entry start (date/time):<span class="fill-md"></span></li>
+                        <li>Permit expires (date/time):<span class="fill-md"></span></li>
+                        <li>Entry supervisor:<span class="fill-md"></span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="form-section">Hazards Identified (check all that apply)</h3>
+            <div class="form-grid">
+                <div>
+                    <ul class="insp-ul">
+                        <li>☐ Poor air quality / oxygen deficiency</li>
+                        <li>☐ Flammable / combustible atmosphere</li>
+                        <li>☐ Toxic gas or vapor</li>
+                        <li>☐ Heat or cold stress</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="insp-ul">
+                        <li>☐ Limited visibility</li>
+                        <li>☐ Electrical hazards</li>
+                        <li>☐ Physical / mechanical hazards</li>
+                        <li>☐ Engulfment / unstable material</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="form-section">Atmospheric Testing <span class="cite"><a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1204" target="_blank" rel="noopener" style="color:inherit">1926.1204(e)</a></span></h3>
+            <p class="legend">Test in order: oxygen, then flammable, then toxic. Retest as conditions change. Instrument: <span class="fill-md"></span> Calibrated: <span class="fill-md"></span></p>
+            <table class="test-table">
+                <tr>
+                    <th>Gas</th>
+                    <th><span style="color:red">Acceptable range</span></th>
+                    <th>Reading 1 / time</th>
+                    <th>Reading 2 / time</th>
+                    <th>Reading 3 / time</th>
+                </tr>
+                <tr>
+                    <td>Oxygen (O&#8322;)</td>
+                    <td><span style="color:red">19.5% &ndash; 23.5%</span></td>
+                    <td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Flammable (LEL)</td>
+                    <td><span style="color:red">&lt; 10% LEL</span></td>
+                    <td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Carbon monoxide (CO)</td>
+                    <td><span style="color:red">&lt; 25 ppm</span></td>
+                    <td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Hydrogen sulfide (H&#8322;S)</td>
+                    <td><span style="color:red">&lt; 10 ppm</span></td>
+                    <td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td>Other:</td>
+                    <td></td>
+                    <td></td><td></td><td></td>
+                </tr>
+            </table>
+            <p class="legend"><strong>If any reading is out of range, do not enter.</strong> Mechanically ventilate or provide a supplied-air (airline) respirator, then retest before entry.</p>
+
+            <h3 class="form-section">Pre-Entry Controls and Equipment</h3>
+            <div class="form-grid">
+                <div>
+                    <ul class="insp-ul">
+                        <li>☐ Mechanical ventilation in place</li>
+                        <li>☐ Energy sources isolated / locked out</li>
+                        <li>☐ Adequate lighting</li>
+                        <li>☐ Respiratory protection (type):<span class="fill-md"></span></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="insp-ul">
+                        <li>☐ Eye protection, gloves, suit as needed</li>
+                        <li>☐ Fire extinguisher present</li>
+                        <li>☐ Communication method between entrant and attendant</li>
+                        <li>☐ Retrieval / rescue equipment ready</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="form-section">Personnel <span class="cite"><a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1209" target="_blank" rel="noopener" style="color:inherit">1926.1209</a></span></h3>
+            <ul class="insp-ul">
+                <li>Authorized entrant(s):<span class="fill-full"></span></li>
+                <li>Attendant (stays outside):<span class="fill-full"></span></li>
+            </ul>
+
+            <h3 class="form-section">Rescue and Emergency <span class="cite"><a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1211" target="_blank" rel="noopener" style="color:inherit">1926.1211</a></span></h3>
+            <ul class="insp-ul">
+                <li>Rescue service / method:<span class="fill-full"></span></li>
+                <li>Emergency phone:<span class="fill-md"></span>&nbsp;&nbsp;Nearest hospital:<span class="fill-md"></span></li>
+            </ul>
+
+            <h3 class="form-section">Authorization</h3>
+            <div class="sign-row">
+                <p>Entry supervisor signature:<span class="fill-sign"></span></p>
+                <p>Date / time:<span class="fill-md"></span></p>
+            </div>
+            <div class="sign-row">
+                <p>Permit cancelled (entry complete / conditions changed):<span class="fill-md"></span></p>
+                <p>Time:<span class="fill-md"></span></p>
+            </div>
+
+            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+
+            <p class="form-actions">
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 06/21/2026</small>
+            </p>
+
+            <p class="breadcrumb"><a href="safety.html">Safety</a> &gt; Confined Space Entry Permit</p>
+        </article>
+    </main>
+</div>
+
+<script>
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+        shareBtn.addEventListener('click', () => {
+            navigator.share({ title: document.title || 'Confined Space Entry Permit', url: window.location.href }).catch(() => {});
+        });
+    } else if (shareBtn) {
+        shareBtn.style.display = 'none';
+    }
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) { printBtn.addEventListener('click', () => { window.print(); }); }
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
+                }
+            });
+        }
+    });
+</script>
+<footer>
+    &copy; 2025 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
+<!-- goatcounter-analytics:start -->
+<script data-goatcounter="https://rem-guide.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- goatcounter-analytics:end -->
+</body>
+</html>

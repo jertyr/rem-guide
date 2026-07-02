@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In-house safety toolbox training you can deliver: ladder, silica, and more | Remodelers Guide">
+    <title>Safety Training Presentation | Remodelers Guide</title>
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --accent: #E67E22;
+            --ink: #1c2733;
+            --muted: #6b7480;
+            --line: #d9dee3;
+            --bg: #eef1f4;
+            --card: #ffffff;
+        }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.45;
+            -webkit-text-size-adjust: 100%;
+        }
+        a { color: var(--accent); }
+        .cite { color: var(--muted); font-weight: 400; font-size: 0.8em; white-space: nowrap; }
+        .cite a { color: inherit; }
+        .flag { color: red; }
+
+        /* ---- Top bar ---- */
+        .topbar {
+            position: sticky; top: 0; z-index: 20;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+            padding: 0.6rem 1.1rem;
+            background: var(--primary); color: #fff;
+            font-size: 0.9rem;
+        }
+        .topbar a { color: #fff; text-decoration: none; opacity: 0.92; }
+        .topbar a:hover { opacity: 1; text-decoration: underline; }
+        .topbar .brand { font-weight: 700; }
+        .topbar button {
+            background: rgba(255,255,255,0.14); color: #fff;
+            border: 1px solid rgba(255,255,255,0.28); border-radius: 5px;
+            padding: 0.35rem 0.7rem; font-size: 0.82rem; cursor: pointer;
+        }
+        .topbar button:hover { background: rgba(255,255,255,0.26); }
+
+        .wrap { max-width: 880px; margin: 0 auto; padding: 0 1.1rem; }
+
+        /* ---- Hero ---- */
+        .hero {
+            background: linear-gradient(150deg, #2C3E50 0%, #3a5268 100%);
+            color: #fff; padding: 3rem 0 2.6rem; text-align: center;
+        }
+        .hero .kicker { color: var(--accent); }
+        .hero h1 { font-size: 2.6rem; line-height: 1.1; margin: 0.4rem 0 0.6rem; }
+        .hero p { font-size: 1.2rem; color: #d7dee6; margin: 0 auto; max-width: 40rem; }
+        .hero .fillline { margin-top: 1.8rem; font-size: 0.98rem; color: #c4cdd8; }
+        .hero .fill { border-bottom: 1px solid #8fa0b3; display: inline-block; min-width: 10rem; }
+
+        .kicker {
+            display: block; font-size: 0.78rem; letter-spacing: 0.09em;
+            text-transform: uppercase; font-weight: 700; color: var(--accent);
+        }
+
+        /* ---- Agenda strip ---- */
+        .agenda { background: var(--card); border-bottom: 1px solid var(--line); }
+        .agenda .wrap { padding-top: 1.4rem; padding-bottom: 1.4rem; }
+        .agenda ol {
+            list-style: none; counter-reset: a; margin: 0.6rem 0 0; padding: 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0.5rem 1.4rem;
+        }
+        .agenda li { counter-increment: a; font-size: 1.05rem; padding-left: 2rem; position: relative; }
+        .agenda li::before {
+            content: counter(a); position: absolute; left: 0; top: 0;
+            width: 1.5rem; height: 1.5rem; border-radius: 50%;
+            background: var(--accent); color: #fff; font-size: 0.85rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .agenda a { color: var(--ink); text-decoration: none; }
+        .agenda a:hover { color: var(--accent); }
+
+        /* ---- Rule banner ---- */
+        .rulebar { background: #fff4e8; border-bottom: 1px solid #f0d9bf; }
+        .rulebar .wrap { padding: 1.1rem; font-size: 1.02rem; }
+        .rulebar strong { color: var(--accent); }
+
+        /* ---- Modules ---- */
+        .module { padding: 2.4rem 0 0.8rem; }
+        .module + .module { border-top: 1px solid var(--line); }
+        .module-head { margin-bottom: 0.4rem; }
+        .module-head .modnum { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+        .module h2 { font-size: 2rem; line-height: 1.12; margin: 0.15rem 0 0.4rem; color: var(--primary); }
+        .module .intro { font-size: 1.12rem; color: var(--muted); margin: 0 0 0.4rem; }
+
+        .card {
+            background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+            padding: 1.2rem 1.5rem; margin: 1.1rem 0;
+            box-shadow: 0 2px 10px rgba(20,30,45,0.05);
+        }
+        .card h3 { margin: 0 0 0.5rem; font-size: 1.15rem; color: var(--primary); }
+        .card ul { margin: 0; padding-left: 1.25rem; }
+        .card li { font-size: 1.12rem; margin: 0.45rem 0; }
+        .card li ul { margin: 0.2rem 0; }
+        .card li li { font-size: 1rem; color: #33414f; }
+
+        .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .pill { display: inline-block; font-size: 0.85rem; font-weight: 700; padding: 0.15rem 0.6rem; border-radius: 999px; }
+        .pill.go { background: #e3f3e8; color: #1e7a44; }
+        .pill.stop { background: #fdeaea; color: #b3261e; }
+
+        .hook {
+            background: #fff7ef; border-left: 4px solid var(--accent);
+            padding: 0.7rem 1rem; border-radius: 0 6px 6px 0; margin: 0.9rem 0 0;
+            font-size: 1.08rem;
+        }
+        .hook strong { color: var(--accent); }
+
+        /* ---- Closing ---- */
+        .closing { background: var(--primary); color: #fff; margin-top: 2.4rem; padding: 2.6rem 0; text-align: center; }
+        .closing h2 { color: #fff; font-size: 2rem; margin: 0.3rem 0 0.5rem; }
+        .closing p { color: #d7dee6; font-size: 1.1rem; max-width: 38rem; margin: 0.4rem auto; }
+        .closing a { color: #f0b47f; }
+
+        .backlink { display: inline-block; margin: 1.6rem 0; color: var(--accent); text-decoration: none; font-weight: 600; }
+
+        footer.sitefoot { background: #1c2733; color: #aeb8c2; font-size: 0.85rem; text-align: center; padding: 1.2rem; }
+        footer.sitefoot a { color: #d7dee6; }
+
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2rem; }
+            .module h2 { font-size: 1.55rem; }
+            .twocol { grid-template-columns: 1fr; }
+            .card { padding: 1rem 1.1rem; }
+            .card li { font-size: 1.05rem; }
+        }
+
+        /* ---- Print: clean handout ---- */
+        @media print {
+            .topbar, .backlink, .no-print { display: none !important; }
+            body, .hero, .closing { background: #fff !important; color: #000 !important; }
+            .hero, .closing { padding: 1rem 0; }
+            .hero h1, .hero p, .closing h2, .closing p, .closing a { color: #000 !important; }
+            .module { padding: 1rem 0; page-break-inside: avoid; }
+            .card { box-shadow: none; page-break-inside: avoid; }
+            a { color: #000 !important; text-decoration: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar">
+    <span class="brand"><a href="safety.html">&#8592; Remodelers Guide: Safety</a></span>
+    <button id="print-btn" type="button">Print handout</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="wrap">
+        <span class="kicker">Toolbox Safety Training</span>
+        <h1>Jobsite Safety Training</h1>
+        <p>Training you can deliver in-house, in tight points the crew can actually remember.</p>
+        <div class="fillline">
+            Presenter: <span class="fill">&nbsp;</span> &nbsp;&nbsp; Date: <span class="fill">&nbsp;</span><br>
+            <em>Sign the training sheet before we start; that sheet is the proof it happened.</em>
+        </div>
+    </div>
+</section>
+
+<!-- WHO CAN TRAIN WHAT -->
+<section class="rulebar">
+    <div class="wrap">
+        <div class="twocol">
+            <div>
+                <span class="pill go">Deliver yourself</span>
+                <ul style="margin:0.5rem 0 0; padding-left:1.2rem;">
+                    <li>Ladder safety</li>
+                    <li>Silica awareness</li>
+                    <li>Fall protection</li>
+                    <li>Hazard communication (Right-to-Know / SDS)</li>
+                    <li>PPE basics</li>
+                    <li>Fire extinguisher use</li>
+                    <li>Power tool &amp; nail gun safety</li>
+                </ul>
+            </div>
+            <div>
+                <span class="pill stop">Bring in a pro</span>
+                <ul style="margin:0.5rem 0 0; padding-left:1.2rem;">
+                    <li>First aid / CPR <span class="cite">(certified instructor issues the card)</span></li>
+                    <li>Respirator fit test + medical eval <span class="cite flag">(needs a licensed provider)</span></li>
+                    <li>OSHA 10 / 30 <span class="cite flag">(authorized outreach trainer)</span></li>
+                    <li>Forklift / aerial lift / crane operator cards <span class="cite flag">(qualified trainer)</span></li>
+                </ul>
+            </div>
+        </div>
+        <p style="margin:1rem 0 0;"><strong>The rule for the ones you deliver:</strong> you are the competent person <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.32" target="_blank" rel="noopener">1926.32(f)</a>)</span>. Know the hazard, know the fix, and keep a sign-in sheet.</p>
+    </div>
+</section>
+
+<!-- AGENDA -->
+<section class="agenda">
+    <div class="wrap">
+        <span class="kicker">On this page</span>
+        <ol>
+            <li><a href="#ladder">Ladder safety</a></li>
+            <li><a href="#silica">Silica awareness</a></li>
+            <li><a href="#falls">Fall protection</a></li>
+            <li><a href="#hazcom">Hazard communication</a></li>
+            <li><a href="#ppe">PPE basics</a></li>
+            <li><a href="#fire">Fire extinguisher use</a></li>
+        </ol>
+    </div>
+</section>
+
+<!-- MODULE 1: LADDER -->
+<section class="module" id="ladder">
+    <div class="wrap">
+        <div class="module-head">
+            <span class="modnum">Module 1</span>
+            <h2>Ladder Safety</h2>
+            <p class="intro">Falls off ladders put more carpenters in the ER than almost anything else. Setup and climbing are where it goes wrong.</p>
+        </div>
+
+        <div class="card">
+            <h3>Before you climb, inspect it</h3>
+            <ul>
+                <li>Cracked or split rails, bent or loose rungs</li>
+                <li>Missing or worn feet, grease or mud on the rungs</li>
+                <li>Spreaders, locks, and rope on extension ladders all work</li>
+                <li>Bad ladder gets tagged and pulled from service <span class="cite flag">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053" target="_blank" rel="noopener">1926.1053(b)(16)</a>)</span>, not leaned in a corner</li>
+            </ul>
+            <p class="hook"><strong>If it is not right, it does not get climbed.</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Set it right</h3>
+            <ul>
+                <li><strong>Extension:</strong> 4 to 1 pitch, 1 foot out for every 4 feet up <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053" target="_blank" rel="noopener">1926.1053(b)(5)</a>)</span></li>
+                <li>Rails reach <strong>3 feet above the landing</strong>, or grab a solid handhold</li>
+                <li>Firm, level footing; tie off or foot the top and bottom</li>
+                <li><strong>Stepladder:</strong> open fully and lock the spreaders; never leaned closed against a wall</li>
+                <li>Not set in front of a door unless it is blocked, locked, or guarded <span class="cite flag">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053" target="_blank" rel="noopener">1926.1053(b)(8)</a>)</span></li>
+            </ul>
+            <p class="hook"><strong>4 in 1, and 3 feet above the roofline.</strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Climb it right</h3>
+            <ul>
+                <li><strong>Three points of contact</strong>, always, and face the ladder</li>
+                <li>Keep your <strong>belt buckle between the rails</strong>; reposition, don't overreach</li>
+                <li>Never the top cap or top step of a stepladder <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1053" target="_blank" rel="noopener">1926.1053(b)(13)</a>)</span></li>
+                <li>One person per ladder unless it is built for two</li>
+                <li>Hands free to climb; hoist tools, don't carry them up</li>
+                <li>Fiberglass near live electrical; keep metal ladders away from power</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- MODULE 2: SILICA -->
+<section class="module" id="silica">
+    <div class="wrap">
+        <div class="module-head">
+            <span class="modnum">Module 2</span>
+            <h2>Silica Awareness</h2>
+            <p class="intro">Cutting, grinding, and drilling concrete, block, brick, tile, and stone throws off dust you cannot see and cannot cough back out.</p>
+        </div>
+
+        <div class="card">
+            <h3>What it does to you</h3>
+            <ul>
+                <li>Respirable crystalline silica is the fine dust off masonry and stone</li>
+                <li>Too small to see; it lodges deep in the lungs</li>
+                <li class="flag">Causes silicosis (permanent scarring, no cure), lung cancer, COPD, and kidney disease</li>
+                <li class="flag">Damage builds over years; there is no bad day that warns you</li>
+                <li>The rule is <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1153" target="_blank" rel="noopener">1926.1153</a>)</span>; <span class="flag">exposure limit 50 &micro;g/m&sup3; over an 8-hour day</span></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Table 1 is your compliance</h3>
+            <p style="margin:0 0 0.5rem; color:var(--muted);">Match the task to the listed control and you are covered without air monitoring.</p>
+            <ul>
+                <li><strong>Saw cutting:</strong> water-fed (wet) blade</li>
+                <li><strong>Grinding / tuckpointing:</strong> shroud + HEPA vacuum</li>
+                <li><strong>Drilling:</strong> dust-collection bit or wet</li>
+                <li><strong>Handheld masonry saw:</strong> wet, or vacuum shroud</li>
+            </ul>
+            <p class="hook"><strong>Wet it or vac it at the blade.</strong> Controls first, respirator second.</p>
+        </div>
+
+        <div class="card">
+            <h3>The three hard rules</h3>
+            <ul>
+                <li>P100 respirator when Table 1 calls for one, or when controls don't hold the dust down</li>
+                <li><strong>Never dry-sweep and never blow it with compressed air</strong>; HEPA vac or wet-clean only</li>
+                <li>Written exposure control plan on site <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1153" target="_blank" rel="noopener">1153(g)</a>)</span>, plus this training <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.1153" target="_blank" rel="noopener">1153(i)</a>)</span> and a named competent person</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- MODULE 3: FALL PROTECTION -->
+<section class="module" id="falls">
+    <div class="wrap">
+        <div class="module-head">
+            <span class="modnum">Module 3</span>
+            <h2>Fall Protection</h2>
+            <p class="intro">The most-cited standard in construction. On a remodel the trigger height is 6 feet.</p>
+        </div>
+
+        <div class="card">
+            <h3>Protect at 6 feet</h3>
+            <ul>
+                <li>Open edges, floor holes, roof holes, and roofs at 6 ft <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501" target="_blank" rel="noopener">1926.501(b)(1)</a>)</span></li>
+                <li>Pick one: guardrails, a personal fall arrest system, or nets <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.502" target="_blank" rel="noopener">1926.502</a>)</span></li>
+                <li><strong>Cover and mark every hole the second you cut it</strong> <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501" target="_blank" rel="noopener">501(b)(4)</a>)</span>; <span class="flag">the cover holds twice the load that lands on it</span></li>
+                <li>Low-slope roofs: warning line plus a system at the edge <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501" target="_blank" rel="noopener">501(b)(10)</a>)</span></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3 class="flag">The ABCD of tie-off</h3>
+            <ul class="flag">
+                <li><strong>A</strong>nchor: rated 5,000 lb per worker, or engineered</li>
+                <li><strong>B</strong>ody harness: snug, dorsal (back) D-ring</li>
+                <li><strong>C</strong>onnector: shock-absorbing lanyard or self-retracting lifeline</li>
+                <li><strong>D</strong>eceleration: rig it so you cannot hit a lower level</li>
+            </ul>
+            <ul>
+                <li>Inspect every use: cut webbing, deployed shock pack, bent or corroded hardware; pull it if in doubt</li>
+            </ul>
+            <p class="hook"><strong>Anchor, Body, Connector, and clear Distance below.</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- MODULE 4: HAZCOM -->
+<section class="module" id="hazcom">
+    <div class="wrap">
+        <div class="module-head">
+            <span class="modnum">Module 4</span>
+            <h2>Hazard Communication</h2>
+            <p class="intro">Right-to-Know. You get to know every chemical you handle: solvents, adhesives, finishes, fuels, and dust.</p>
+        </div>
+
+        <div class="card">
+            <h3>Labels, SDS, training</h3>
+            <ul>
+                <li>Three parts of the standard <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.1200" target="_blank" rel="noopener">1910.1200</a>)</span>: container labels, Safety Data Sheets, and this training</li>
+                <li><strong>Label:</strong> product name, signal word (Danger / Warning), pictograms, hazard statement; <strong>never work from an unlabeled container</strong></li>
+                <li><strong>SDS:</strong> 16 sections, same order every time; kept on site, paper or on your phone</li>
+                <li class="flag">Know Section 4 (first aid), Section 7 (handling / storage), Section 8 (PPE)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>What you actually do</h3>
+            <ul>
+                <li class="flag">Learn the pictograms by shape: flame, health hazard, exclamation, corrosion, gas cylinder</li>
+                <li>Read the label before you open it; store it the way the SDS says</li>
+                <li>Wear the PPE the SDS lists for that product</li>
+                <li>Report a missing label or a chemical with no SDS</li>
+            </ul>
+            <p class="hook"><strong>No label, no SDS, no use.</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- MODULE 5: PPE -->
+<section class="module" id="ppe">
+    <div class="wrap">
+        <div class="module-head">
+            <span class="modnum">Module 5</span>
+            <h2>PPE Basics</h2>
+            <p class="intro">The company provides it. You wear it, inspect it, and swap it when it is worn out.</p>
+        </div>
+
+        <div class="card">
+            <h3>Wear it for the task</h3>
+            <ul>
+                <li><strong>Eyes:</strong> Z87 glasses cutting, nailing, grinding, or mudding overhead <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.102" target="_blank" rel="noopener">1926.102</a>)</span></li>
+                <li><strong>Head:</strong> hard hat under overhead work or in tight framing <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.100" target="_blank" rel="noopener">1926.100</a>)</span></li>
+                <li><strong>Ears:</strong> plugs on saws, routers, and nailers <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.52" target="_blank" rel="noopener">1926.52</a>)</span></li>
+                <li><strong>Lungs:</strong> N95 for nuisance dust, P100 for silica, mud, and masonry <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.134" target="_blank" rel="noopener">1910.134</a>)</span></li>
+                <li><strong>Hands / feet:</strong> cut gloves, chem gloves for solvents; rated boots <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.95" target="_blank" rel="noopener">1926.95</a>, <a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.96" target="_blank" rel="noopener">.96</a>)</span></li>
+            </ul>
+            <p class="hook"><strong>Right gear for the task, every task.</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- MODULE 6: FIRE -->
+<section class="module" id="fire">
+    <div class="wrap">
+        <div class="module-head">
+            <span class="modnum">Module 6</span>
+            <h2>Fire Extinguisher Use</h2>
+            <p class="intro">Small fire with an exit behind you, fight it. Growing fire, get out and call 911.</p>
+        </div>
+
+        <div class="card">
+            <h3>Remember PASS</h3>
+            <ul>
+                <li>One within 100 ft, and a 10B within 50 ft of more than 5 gal of flammable liquid <span class="cite">(<a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.150" target="_blank" rel="noopener">1926.150(c)</a>)</span></li>
+                <li><strong>Classes:</strong> A ordinary, B flammable liquid, C electrical; an ABC unit covers the site</li>
+                <li class="flag"><strong>P</strong>ull the pin &middot; <strong>A</strong>im at the base &middot; <strong>S</strong>queeze the handle &middot; <strong>S</strong>weep side to side</li>
+                <li>Only with an exit at your back; if it grows, leave and call 911</li>
+                <li>Check the gauge monthly; keep it mounted and visible</li>
+            </ul>
+        </div>
+
+        <a class="backlink" href="#ladder">&#8593; Back to the top</a>
+    </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+    <div class="wrap">
+        <span class="kicker">Wrap Up</span>
+        <h2>Questions, then sign</h2>
+        <p>Sign the training sheet: who, what, and the date. That sheet is the proof the training happened.</p>
+        <p>Full detail lives on the <a href="safety.html">Safety page</a>. Van copies: <a href="safety-reminders.html">Safety Reminders Card</a> and <a href="safety-equipment-checklist.html">PPE Checklist</a>.</p>
+    </div>
+</section>
+
+<footer class="sitefoot">
+    &copy; 2026 Remodelers Guide &middot; <a href="safety.html">Back to Safety</a> &middot; <a href="about.html">Home</a>
+</footer>
+
+<script>
+    document.getElementById('print-btn').addEventListener('click', function () { window.print(); });
+</script>
+
+</body>
+</html>

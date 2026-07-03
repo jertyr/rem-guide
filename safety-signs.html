@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Printable jobsite safety signs, one per page | Remodelers Guide">
+    <title>Printable Safety Signs | Remodelers Guide</title>
+    <style>
+        :root {
+            --red: #C8102E;
+            --orange: #FF7900;
+            --yellow: #FFD200;
+            --blue: #005EB8;
+            --green: #007A33;
+            --ink: #1c2733;
+            --muted: #6b7480;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: #eef1f4;
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.4;
+        }
+        .cite { color: var(--muted); font-weight: 400; font-size: 0.85em; white-space: nowrap; }
+        .flag { color: red; }
+
+        .controls {
+            position: sticky; top: 0; z-index: 10;
+            background: #2C3E50; color: #fff;
+            padding: 0.7rem 1.1rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+        }
+        .controls a { color: #fff; text-decoration: none; font-weight: 700; }
+        .controls a:hover { text-decoration: underline; }
+        .controls button {
+            background: var(--orange); color: #fff; border: none; border-radius: 5px;
+            padding: 0.45rem 1rem; font-size: 0.95rem; font-weight: 700; cursor: pointer;
+        }
+
+        .intro { max-width: 820px; margin: 1.4rem auto 0; padding: 0 1.2rem; }
+        .intro h1 { color: #2C3E50; margin: 0 0 0.4rem; }
+        .intro p { margin: 0.4rem 0; }
+
+        .sheet { max-width: 900px; margin: 1.4rem auto 3rem; padding: 0 1.2rem; }
+
+        /* ---- One sign ---- */
+        .sign { margin: 0 0 2rem; }
+        .sign-face {
+            border: 10px solid var(--ink);
+            background: #fff;
+            display: flex; flex-direction: column;
+            min-height: 300px;
+            overflow: hidden;
+        }
+        .band {
+            font-weight: 900; text-transform: uppercase; letter-spacing: 0.03em;
+            text-align: center; padding: 0.5rem 0.5rem; font-size: 2.6rem; line-height: 1;
+        }
+        .body {
+            flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 1.4rem 1rem;
+        }
+        .msg { font-size: 2.9rem; font-weight: 900; text-transform: uppercase; line-height: 1.05; }
+        .sub { font-size: 1.35rem; font-weight: 700; margin-top: 0.7rem; }
+
+        /* signal colors on the band + matching border */
+        .danger  .sign-face { border-color: var(--red); }
+        .danger  .band { background: var(--red); color: #fff; }
+        .warning .sign-face { border-color: var(--orange); }
+        .warning .band { background: var(--orange); color: #000; }
+        .caution .sign-face { border-color: var(--yellow); }
+        .caution .band { background: var(--yellow); color: #000; }
+        .notice  .sign-face { border-color: var(--blue); }
+        .notice  .band { background: var(--blue); color: #fff; }
+        .safety  .sign-face { border-color: var(--green); }
+        .safety  .band { background: var(--green); color: #fff; }
+
+        /* full-color location signs */
+        .fill .sign-face { border: 10px solid; }
+        .fill .body { color: #fff; }
+        .fill.green .sign-face { background: var(--green); border-color: #045c27; }
+        .fill.red   .sign-face { background: var(--red); border-color: #97001e; }
+        .fill .msg { font-size: 3.4rem; }
+
+        /* emergency info fillable sign */
+        .einfo .sign-face { border-color: var(--red); }
+        .einfo .band { background: var(--red); color: #fff; }
+        .einfo .body { align-items: stretch; text-align: left; padding: 1.2rem 1.6rem; }
+        .einfo .row { font-size: 1.25rem; font-weight: 700; margin: 0.35rem 0; display: flex; align-items: baseline; }
+        .einfo .row span.lbl { white-space: nowrap; }
+        .einfo .line { flex: 1; border-bottom: 2px solid #333; margin-left: 0.5rem; min-height: 1.2em; }
+
+        .meta { font-size: 0.95rem; color: var(--muted); margin: 0.5rem 0.2rem 0; }
+
+        footer.sitefoot { background: #1c2733; color: #aeb8c2; font-size: 0.85rem; text-align: center; padding: 1.2rem; }
+        footer.sitefoot a { color: #d7dee6; }
+
+        /* ---- Print: one clean sign per landscape page ---- */
+        @media print {
+            @page { size: letter landscape; margin: 0.4in; }
+            body { background: #fff; }
+            .controls, .intro, .meta, footer.sitefoot { display: none !important; }
+            .sheet { max-width: none; margin: 0; padding: 0; }
+            .sign { margin: 0; height: 7.4in; page-break-after: always; break-after: page; display: flex; }
+            .sign:last-child { page-break-after: auto; break-after: auto; }
+            .sign-face { flex: 1; min-height: 0; }
+            .band { font-size: 54pt; padding: 0.25in; }
+            .msg { font-size: 60pt; }
+            .fill .msg { font-size: 66pt; }
+            .sub { font-size: 24pt; }
+            .einfo .row { font-size: 20pt; margin: 0.14in 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <a href="safety.html">&#8592; Remodelers Guide: Safety</a>
+    <button id="print-btn" type="button">Print signs</button>
+</div>
+
+<div class="intro">
+    <h1>Printable Safety Signs</h1>
+    <p>Each sign is one full landscape page. Print the whole set, or open the print dialog and choose just the page numbers you need. Set the printer to <strong>Landscape</strong>. Sleeve or laminate for weather.</p>
+    <p class="flag">Signal words and colors follow ANSI Z535 (DANGER red, WARNING orange, CAUTION yellow, NOTICE blue, green for safety and exits). The specific word chosen for each sign is my call; adjust any you would rate differently.</p>
+    <p class="meta">The gray notes under each sign show where to post it and the OSHA reference. They are screen-only and do not print.</p>
+</div>
+
+<div class="sheet">
+
+    <!-- SITE ENTRY / ACCESS -->
+    <div class="sign warning">
+        <div class="sign-face">
+            <div class="band">Warning</div>
+            <div class="body">
+                <div class="msg">Construction Area</div>
+                <div class="sub">Authorized Personnel Only</div>
+            </div>
+        </div>
+        <p class="meta">Post at the entry to the work area to control access and warn the public. <span class="cite">(1926.200, 1926.201)</span></p>
+    </div>
+
+    <div class="sign notice">
+        <div class="sign-face">
+            <div class="band">Notice</div>
+            <div class="body">
+                <div class="msg">Hard Hat and Eye Protection Required Beyond This Point</div>
+            </div>
+        </div>
+        <p class="meta">Post at the entry to any PPE-required area. <span class="cite">(1926.200(h), 1926.100, 1926.102)</span></p>
+    </div>
+
+    <!-- PPE REQUIRED -->
+    <div class="sign notice">
+        <div class="sign-face">
+            <div class="band">Notice</div>
+            <div class="body"><div class="msg">Hard Hat Area</div></div>
+        </div>
+        <p class="meta">Post where overhead work or falling-object hazards exist. <span class="cite">(1926.100)</span></p>
+    </div>
+
+    <div class="sign notice">
+        <div class="sign-face">
+            <div class="band">Notice</div>
+            <div class="body"><div class="msg">Eye Protection Required</div></div>
+        </div>
+        <p class="meta">Post at cutting, grinding, and nailing areas. <span class="cite">(1926.102)</span></p>
+    </div>
+
+    <div class="sign notice">
+        <div class="sign-face">
+            <div class="band">Notice</div>
+            <div class="body"><div class="msg">Hearing Protection Required</div></div>
+        </div>
+        <p class="meta">Post where saws, routers, and other loud tools run. <span class="cite">(1926.101, 1926.52)</span></p>
+    </div>
+
+    <div class="sign notice">
+        <div class="sign-face">
+            <div class="band">Notice</div>
+            <div class="body"><div class="msg">Respirator Required</div></div>
+        </div>
+        <p class="meta">Post at silica, mud-sanding, and masonry-cutting areas. <span class="cite">(1910.134, 1926.1153)</span></p>
+    </div>
+
+    <!-- HAZARD WARNINGS -->
+    <div class="sign danger">
+        <div class="sign-face">
+            <div class="band">Danger</div>
+            <div class="body">
+                <div class="msg">High Voltage</div>
+                <div class="sub">Keep Out. Authorized Personnel Only.</div>
+            </div>
+        </div>
+        <p class="meta">Post at panels, temporary power, and exposed conductors. <span class="cite">(1926.200(b), 1926.403)</span></p>
+    </div>
+
+    <div class="sign danger">
+        <div class="sign-face">
+            <div class="band">Danger</div>
+            <div class="body">
+                <div class="msg">Open Hole</div>
+                <div class="sub">Fall Hazard. Keep Clear.</div>
+            </div>
+        </div>
+        <p class="meta">Post at floor openings, stair openings, and unguarded edges. <span class="cite flag">(1926.501; DANGER for open holes is my call)</span></p>
+    </div>
+
+    <div class="sign warning">
+        <div class="sign-face">
+            <div class="band">Warning</div>
+            <div class="body">
+                <div class="msg">Silica Dust Hazard</div>
+                <div class="sub">Wear a Respirator. Wet-Cut or Vacuum.</div>
+            </div>
+        </div>
+        <p class="meta">Post where concrete, masonry, tile, or stone is cut or ground. <span class="cite">(1926.1153, 1910.1200)</span></p>
+    </div>
+
+    <div class="sign danger">
+        <div class="sign-face">
+            <div class="band">Danger</div>
+            <div class="body">
+                <div class="msg">No Smoking</div>
+                <div class="sub">No Open Flames. Flammable Materials.</div>
+            </div>
+        </div>
+        <p class="meta">Post near fuel, solvents, and flammable storage. <span class="cite">(1926.151(a)(3))</span></p>
+    </div>
+
+    <div class="sign caution">
+        <div class="sign-face">
+            <div class="band">Caution</div>
+            <div class="body">
+                <div class="msg">Overhead Work</div>
+                <div class="sub">Falling Objects. Watch Above.</div>
+            </div>
+        </div>
+        <p class="meta">Post below active overhead work. <span class="cite">(1926.200(c))</span></p>
+    </div>
+
+    <!-- EMERGENCY & INFORMATION -->
+    <div class="sign fill green">
+        <div class="sign-face">
+            <div class="body"><div class="msg">First Aid Kit</div></div>
+        </div>
+        <p class="meta">Post at the first aid kit location. <span class="cite">(1926.50)</span></p>
+    </div>
+
+    <div class="sign fill red">
+        <div class="sign-face">
+            <div class="body"><div class="msg">Fire Extinguisher</div></div>
+        </div>
+        <p class="meta">Post at the extinguisher so it is visible from a distance. <span class="cite">(1926.150)</span></p>
+    </div>
+
+    <div class="sign fill green">
+        <div class="sign-face">
+            <div class="body"><div class="msg">Exit</div></div>
+        </div>
+        <p class="meta">Post at the designated emergency exit. <span class="cite">(1926.200(g))</span></p>
+    </div>
+
+    <!-- REQUIRED EMERGENCY POSTING -->
+    <div class="sign einfo">
+        <div class="sign-face">
+            <div class="band">Emergency Information</div>
+            <div class="body">
+                <div class="row"><span class="lbl">Site address:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Emergency:</span><span class="line"></span><span style="margin-left:0.6rem; white-space:nowrap;">9 1 1</span></div>
+                <div class="row"><span class="lbl">Nearest hospital:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Hospital phone:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Site supervisor:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Supervisor phone:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Competent person:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Gas / utility emergency:</span><span class="line"></span></div>
+            </div>
+        </div>
+        <p class="meta">Required posting: fill in and post by the entry or job box. OSHA requires the numbers for physicians, hospitals, and ambulances to be posted where 911 is not the sole means of contact. <span class="cite">(1926.50(f))</span></p>
+    </div>
+
+</div>
+
+<footer class="sitefoot">
+    &copy; 2026 Remodelers Guide &middot; <a href="safety.html">Back to Safety</a> &middot; <a href="resources.html">Resources</a>
+</footer>
+
+<script>
+    document.getElementById('print-btn').addEventListener('click', function () { window.print(); });
+</script>
+
+</body>
+</html>

@@ -91,6 +91,9 @@
         .einfo .row { font-size: 1.25rem; font-weight: 700; margin: 0.35rem 0; display: flex; align-items: baseline; }
         .einfo .row span.lbl { white-space: nowrap; }
         .einfo .line { flex: 1; border-bottom: 2px solid #333; margin-left: 0.5rem; min-height: 1.2em; }
+        .einfo .val { flex: 1; margin-left: 0.5rem; }
+        .einfo.clinic .sign-face { border-color: var(--blue); }
+        .einfo.clinic .band { background: var(--blue); color: #fff; }
 
         .meta { font-size: 0.95rem; color: var(--muted); margin: 0.5rem 0.2rem 0; }
 
@@ -129,6 +132,74 @@
 </div>
 
 <div class="sheet">
+
+    <!-- EMERGENCY CONTACTS (fillable) -->
+    <div class="sign einfo">
+        <div class="sign-face">
+            <div class="band">Emergency Information</div>
+            <div class="body">
+                <div class="row"><span class="lbl">Site address:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Emergency:</span><span class="line"></span><span style="margin-left:0.6rem; white-space:nowrap;">9 1 1</span></div>
+                <div class="row"><span class="lbl">Nearest hospital:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Hospital phone:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Site supervisor:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Supervisor phone:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Gas / utility emergency:</span><span class="line"></span></div>
+            </div>
+        </div>
+        <p class="meta">Required posting: fill in and post by the entry or job box. OSHA requires the numbers for physicians, hospitals, and ambulances to be posted where 911 is not the sole means of contact. <span class="cite">(1926.50(f))</span></p>
+    </div>
+
+    <!-- CHELSEA HOSPITAL (pre-filled ER) -->
+    <div class="sign einfo">
+        <div class="sign-face">
+            <div class="band">Emergency Information</div>
+            <div class="body">
+                <div class="row"><span class="lbl">Emergency:</span><span class="val" style="white-space:nowrap;">9 1 1</span></div>
+                <div class="row"><span class="lbl">Nearest hospital:</span><span class="val">Chelsea Hospital</span></div>
+                <div class="row"><span class="lbl">Address:</span><span class="val">775 S Main St, Chelsea, MI 48118</span></div>
+                <div class="row"><span class="lbl">Hospital phone:</span><span class="val">(734) 593-6000</span></div>
+                <div class="row"><span class="lbl">Site address:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Site supervisor:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Supervisor phone:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Gas / utility emergency:</span><span class="line"></span></div>
+            </div>
+        </div>
+        <p class="meta">Post for jobs nearest Chelsea. <span style="color:red">Address and phone researched (Trinity Health Chelsea Hospital); verify before posting.</span> <span class="cite">(1926.50(f))</span></p>
+    </div>
+
+    <!-- U OF M ANN ARBOR HOSPITAL (pre-filled ER) -->
+    <div class="sign einfo">
+        <div class="sign-face">
+            <div class="band">Emergency Information</div>
+            <div class="body">
+                <div class="row"><span class="lbl">Emergency:</span><span class="val" style="white-space:nowrap;">9 1 1</span></div>
+                <div class="row"><span class="lbl">Nearest hospital:</span><span class="val">University of Michigan Hospital (Adult ER)</span></div>
+                <div class="row"><span class="lbl">Address:</span><span class="val">1500 E Medical Center Dr, Ann Arbor, MI 48109</span></div>
+                <div class="row"><span class="lbl">Hospital phone:</span><span class="val">(734) 936-6666</span></div>
+                <div class="row"><span class="lbl">Site address:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Site supervisor:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Supervisor phone:</span><span class="line"></span></div>
+                <div class="row"><span class="lbl">Gas / utility emergency:</span><span class="line"></span></div>
+            </div>
+        </div>
+        <p class="meta">Post for jobs nearest Ann Arbor. <span style="color:red">Address and Adult Emergency Department phone researched (Michigan Medicine); verify before posting.</span> <span class="cite">(1926.50(f))</span></p>
+    </div>
+
+    <!-- CONCENTRA (pre-filled work-injury clinic, no fill lines) -->
+    <div class="sign einfo clinic">
+        <div class="sign-face">
+            <div class="band">Work Injury Clinic</div>
+            <div class="body">
+                <div class="row"><span class="lbl">Clinic:</span><span class="val">Concentra Urgent Care</span></div>
+                <div class="row"><span class="lbl">Address:</span><span class="val">3131 S State St, Ste 100, Ann Arbor, MI 48108</span></div>
+                <div class="row"><span class="lbl">Phone:</span><span class="val">(734) 213-6285</span></div>
+                <div class="row"><span class="lbl">Hours:</span><span class="val">Monday to Friday, 8 am to 6 pm</span></div>
+                <div class="row"><span class="lbl">Emergency:</span><span class="val" style="white-space:nowrap;">call 9 1 1</span></div>
+            </div>
+        </div>
+        <p class="meta">For non-emergency work injuries and drug screens. <span style="color:red">Address, phone, and hours researched (Concentra Ann Arbor); verify before posting.</span></p>
+    </div>
 
     <!-- SITE ENTRY / ACCESS -->
     <div class="sign warning">
@@ -261,24 +332,6 @@
             <div class="body"><div class="msg">Exit</div></div>
         </div>
         <p class="meta">Post at the designated emergency exit. <span class="cite">(1926.200(g))</span></p>
-    </div>
-
-    <!-- REQUIRED EMERGENCY POSTING -->
-    <div class="sign einfo">
-        <div class="sign-face">
-            <div class="band">Emergency Information</div>
-            <div class="body">
-                <div class="row"><span class="lbl">Site address:</span><span class="line"></span></div>
-                <div class="row"><span class="lbl">Emergency:</span><span class="line"></span><span style="margin-left:0.6rem; white-space:nowrap;">9 1 1</span></div>
-                <div class="row"><span class="lbl">Nearest hospital:</span><span class="line"></span></div>
-                <div class="row"><span class="lbl">Hospital phone:</span><span class="line"></span></div>
-                <div class="row"><span class="lbl">Site supervisor:</span><span class="line"></span></div>
-                <div class="row"><span class="lbl">Supervisor phone:</span><span class="line"></span></div>
-                <div class="row"><span class="lbl">Competent person:</span><span class="line"></span></div>
-                <div class="row"><span class="lbl">Gas / utility emergency:</span><span class="line"></span></div>
-            </div>
-        </div>
-        <p class="meta">Required posting: fill in and post by the entry or job box. OSHA requires the numbers for physicians, hospitals, and ambulances to be posted where 911 is not the sole means of contact. <span class="cite">(1926.50(f))</span></p>
     </div>
 
 </div>

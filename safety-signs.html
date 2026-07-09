@@ -84,6 +84,24 @@
         .fill.red   .sign-face { background: var(--red); border-color: #97001e; }
         .fill .msg { font-size: 3.4rem; }
 
+        /* general-purpose site entry sign (prints portrait) */
+        .general .sign-face { border-color: #000; min-height: 560px; }
+        .general .band { background: var(--yellow); color: #000; border-bottom: 8px solid #000; }
+        .general .body { justify-content: flex-start; padding: 1.1rem 1rem 1.3rem; }
+        .general .gtitle { font-size: 2.6rem; font-weight: 900; text-transform: uppercase; line-height: 1.05; }
+        .general .gsub { font-size: 1.25rem; font-weight: 700; margin-top: 0.35rem; }
+        .general .ppe { border: 3px solid #000; margin: 0.9rem 0 0; padding: 0.6rem 0.9rem; width: 100%; max-width: 640px; }
+        .general .ppe .h { font-size: 1.35rem; font-weight: 900; text-transform: uppercase; }
+        .general .ppe .s { font-size: 0.98rem; font-weight: 700; margin-top: 0.2rem; }
+        .general .gemerg { border: 3px solid var(--red); margin: 0.9rem 0 0; width: 100%; max-width: 640px; text-align: left; }
+        .general .gemerg .eh { background: var(--red); color: #fff; text-align: center; font-size: 1.15rem; font-weight: 900; text-transform: uppercase; padding: 0.3rem; }
+        .general .gemerg .rows { padding: 0.5rem 0.9rem; }
+        .general .gemerg .row { display: flex; align-items: baseline; font-size: 1.02rem; font-weight: 700; margin: 0.3rem 0; }
+        .general .gemerg .row .lbl { white-space: nowrap; }
+        .general .gemerg .row .line { flex: 1; border-bottom: 2px solid #333; margin-left: 0.5rem; min-height: 1.1em; }
+        .general .gemerg .call911 { text-align: center; font-size: 1.15rem; font-weight: 900; padding: 0.1rem 0 0.5rem; }
+        .general .gemerg .call911 .num { color: var(--red); }
+
         /* emergency info fillable sign */
         .einfo .sign-face { border-color: var(--red); }
         .einfo .band { background: var(--red); color: #fff; }
@@ -111,6 +129,17 @@
             .fill .msg { font-size: 66pt; }
             .sub { font-size: 24pt; }
             .einfo .row { font-size: 20pt; margin: 0.14in 0; }
+            /* general sign gets its own portrait page */
+            @page gpage { size: letter portrait; }
+            .general { page: gpage; height: 9.9in; }
+            .general .band { font-size: 60pt; padding: 0.2in; }
+            .general .gtitle { font-size: 46pt; }
+            .general .gsub { font-size: 20pt; }
+            .general .ppe .h { font-size: 22pt; }
+            .general .ppe .s { font-size: 13pt; }
+            .general .gemerg .eh { font-size: 18pt; }
+            .general .gemerg .row { font-size: 15pt; margin: 0.12in 0; }
+            .general .gemerg .call911 { font-size: 18pt; }
         }
     </style>
 </head>
@@ -123,12 +152,39 @@
 
 <div class="intro">
     <h1>Printable Safety Signs</h1>
-    <p>Each sign is one full landscape page. Print the whole set, or open the print dialog and choose just the page numbers you need. Set the printer to <strong>Landscape</strong>. Sleeve or laminate for weather.</p>
+    <p>Each sign is one full page. Print the whole set, or open the print dialog and choose just the page numbers you need. The first sign is the general-purpose site entry sign and prints portrait; the rest print landscape. Sleeve or laminate for weather.</p>
     <p class="flag">Signal words and colors follow ANSI Z535 (DANGER red, WARNING orange, CAUTION yellow, NOTICE blue, green for safety and exits). The specific word chosen for each sign is my call; adjust any you would rate differently.</p>
     <p class="meta">The gray notes under each sign show where to post it and the OSHA reference. They are screen-only and do not print.</p>
 </div>
 
 <div class="sheet">
+
+    <!-- GENERAL-PURPOSE SITE ENTRY SIGN (portrait page) -->
+    <div class="sign general">
+        <div class="sign-face">
+            <div class="band">Caution</div>
+            <div class="body">
+                <div class="gtitle">Construction Site</div>
+                <div class="gsub">Authorized Personnel Only</div>
+                <div class="ppe">
+                    <div class="h">Appropriate PPE Required</div>
+                    <div class="s">Wear the eye, head, hearing, and respiratory protection the work calls for.</div>
+                </div>
+                <div class="gemerg">
+                    <div class="eh">Emergency Information</div>
+                    <div class="rows">
+                        <div class="row"><span class="lbl">Site address:</span><span class="line"></span></div>
+                        <div class="row"><span class="lbl">Nearest hospital:</span><span class="line"></span></div>
+                        <div class="row"><span class="lbl">Hospital phone:</span><span class="line"></span></div>
+                        <div class="row"><span class="lbl">Site supervisor:</span><span class="line"></span></div>
+                        <div class="row"><span class="lbl">Supervisor phone:</span><span class="line"></span></div>
+                    </div>
+                    <div class="call911">In an emergency, call <span class="num">9 1 1</span></div>
+                </div>
+            </div>
+        </div>
+        <p class="meta">The one-sign option: post at the entry and it covers access control, PPE, and the required emergency posting (1926.50(f)) in a single page. Prints portrait; everything below prints landscape.</p>
+    </div>
 
     <!-- EMERGENCY CONTACTS (fillable) -->
     <div class="sign einfo">

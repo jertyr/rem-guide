@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-07-19
+Last updated: 2026-07-20
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,22 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-07-20 - Full-site review (automated)
+No content-page files changed since the 2026-07-19 pass (only that pass's own commit landed in between), so this was a verification and deeper-check pass rather than a fresh discovery pass.
+- **All 2026-07-19 findings reverified and still open**: red-flag files unchanged (`products.html`, `remediation.html`, `insulation.html`, `excavation.html`); `air-sealing.html` still missing Share/Print buttons and a `Last revised` line; `hazardous-materials.html` still has the missing-colon footer typo; `CLAUDE.md` Work Log still has not been backfilled for PRs #224-227.
+- **New finding - stale `Last revised` dates on two actively-edited pages**: `safety.html` and `safety-equipment-checklist.html` both display `Last revised: 06/04/2026`, but git history shows both were substantively edited as recently as 07/10/2026 (the Safety Reminders card merge and later removal). Checked via `git log --follow` against the footer date on every page; these two are the only mismatches found. Low-risk one-line fixes.
+- **Confirmed not a bug**: `safety-signs.html` and `safety-training-presentation.html` use a deliberately different, stripped-down `footer.sitefoot` (no Last revised, no Share/Print) with no date line at all. This matches documented user intent for those two pages ("no clutter," presenter/date lines stripped per user review in PRs #210-218), so it's left alone rather than flagged as missing chrome.
+- **Suggested priority for next session** (see plan below): this session recommends, in order, (1) surface the `remediation.html` red flags to the user for content approval since they're safety-procedure guidance already live and unapproved, not formatting, so it needs a decision rather than a fix. This is *not* implemented in this pass. (2) A single bundled "mechanical cleanup" PR (in the tradition of PR #198) covering the four zero-judgment fixes below - typo, missing footer chrome, two stale dates, and the `CLAUDE.md` backfill - none of which need user input since none touch content, red-flag, or spec-level judgment calls.
+
+**Proposed mechanical cleanup PR (no user decision needed, ready to implement on request):**
+1. `hazardous-materials.html` - fix footer to `Last revised: 05/01/2026` (add missing colon).
+2. `air-sealing.html` - add the standard footer chrome (Share/Print buttons + `Last revised` line) to match every other content page.
+3. `safety.html` and `safety-equipment-checklist.html` - update `Last revised` to `07/10/2026` to match actual last-edit date.
+4. `CLAUDE.md` - backfill Work Log entries for PRs #224-227 (fold Safety Reminders card into PPE checklist line-by-line, then drop the standalone `safety-reminders.html` page), matching the pattern of prior Work Log entries.
+
+**Flagged for user decision (not a mechanical fix, needs judgment):**
+- `remediation.html` red-flag review - six spans covering PPE minimums, containment/negative-air setup, and the ~19% wood moisture-content treatment threshold. This is procedural safety content already live on the page without approval. Recommend the user reviews and either approves, corrects, or asks for removal/citation before it sits any longer unflagged-but-unapproved.
 
 ### 2026-07-19 - Full-site review (automated)
 Read through the live site starting from `about.html`, checked internal links, red-flag spans, footer/nav consistency, and the existing backlog below against the current file state.

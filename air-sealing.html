@@ -208,8 +208,18 @@
                 <li><a href="https://www.greenbuildingadvisor.com/article/airtight-drywall" target="_blank" rel="noopener">Green Building Advisor &mdash; Airtight Drywall Approach</a></li>
             </ul>
 
+            <p>
+                <button id="share-btn" type="button" style="padding: 0.4rem 0.9rem; border-radius: 4px; border: 1px solid #ccc; background: #f5f5f5; cursor: pointer;">
+                    Share
+                </button>
+                <button id="print-btn" type="button" style="padding: 0.4rem 0.9rem; border-radius: 4px; border: 1px solid #ccc; background: #f5f5f5; cursor: pointer; margin-left: 0.5rem;">
+                    Print
+                </button>
+            </p>
 
-        
+            <p><small>Last revised: 06/04/2026</small></p>
+
+
             <!-- page-feedback:start -->
             <section class="page-feedback" aria-labelledby="page-feedback-heading">
                 <h2 id="page-feedback-heading">Feedback on this page</h2>
@@ -238,6 +248,27 @@
 </div>
 
 <script>
+    // Share button
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+        shareBtn.addEventListener('click', () => {
+            navigator
+                .share({
+                    title: document.title,
+                    url: window.location.href,
+                })
+                .catch(() => {});
+        });
+    } else if (shareBtn) {
+        shareBtn.style.display = 'none';
+    }
+
+    // Print button
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) {
+        printBtn.addEventListener('click', () => window.print());
+    }
+
     // Mobile navigation toggle
     document.addEventListener('DOMContentLoaded', function() {
         const navToggle = document.querySelector('.mobile-nav-toggle');

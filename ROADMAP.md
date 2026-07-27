@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-07-20
+Last updated: 2026-07-27
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,27 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-07-27 - Full-site review (automated)
+No content-page files changed since the 2026-07-20 pass landed (`main` only gained that pass's own ROADMAP.md commit), so this pass re-verified prior findings and implemented the zero-judgment mechanical cleanup that had been sitting ready since 2026-07-20.
+
+**Implemented this pass (mechanical, no user decision needed):**
+1. `hazardous-materials.html` - fixed footer typo, now reads `Last revised: 05/01/2026`.
+2. `air-sealing.html` - added the standard Share/Print buttons and `Last revised: 06/04/2026` line (matching every other content page's footer chrome), plus the corresponding button JS. The print stylesheet already anticipated `#share-btn`/`#print-btn` but the buttons themselves were never added.
+3. `safety.html` and `safety-equipment-checklist.html` - updated `Last revised` from `06/04/2026` to `07/10/2026` to match the actual last-edit date (the Safety Reminders fold-in, PRs #225-226).
+4. `CLAUDE.md` - backfilled the Work Log gap for PRs #224-227 (folding the Safety Reminders card into the PPE/equipment checklist line-by-line, then dropping the standalone `safety-reminders.html` page).
+
+**Reverified and still accurate:**
+- No broken internal links across all HTML files (scripted check of every `href="*.html"` against the file list).
+- Nav is still consistent: every content page carries `remediation.html`, `air-sealing.html`, and `safety.html` links; no drift since 2026-07-19.
+- Red-flag files unchanged: `products.html` (1 span), `remediation.html` (8 spans), `insulation.html` (2 spans), `excavation.html` (2 spans) - all still open, matching the 2026-07-19/07-20 findings. Note: `remediation.html` was previously described as "six spans"; a precise recount finds 8 (the small-area DIY threshold and the "no dust mask" line were undercounted before, not newly added). No new red-flag files found; `construction-dashboard.html` also carries flags but is a parked orphan page, not in scope.
+- `about.html` footer inconsistency still present, still parked as a discuss-first item (not fixed this pass).
+- `safety-signs.html` / `safety-training-presentation.html` still intentionally use the stripped-down footer with no date line; not a bug.
+
+**Still flagged for user decision (not mechanical, needs judgment - unchanged from 2026-07-19/20):**
+- `remediation.html` red-flag review - 8 spans (recount, see above) covering PPE minimums, containment/negative-air setup, and the ~19% wood moisture-content treatment threshold. This is procedural safety content already live on the page without approval. This is the single highest-priority open item on the site: recommend the user reviews and either approves, corrects, or asks for removal/citation before it sits any longer unflagged-but-unapproved.
+
+**Suggested priority for next session:** with the mechanical debt now cleared, the next highest-value move is a `remediation.html` red-flag review session (get user sign-off, one page, one PR), followed by picking an item from Roadmap section 1 (Content gaps) - the fireblocking checklist or flatwork/concrete order form are the two with no companion artifact at all yet.
 
 ### 2026-07-20 - Full-site review (automated)
 No content-page files changed since the 2026-07-19 pass (only that pass's own commit landed in between), so this was a verification and deeper-check pass rather than a fresh discovery pass.
@@ -80,12 +101,12 @@ Low-risk, high-tidiness items.
 
 - [ ] **Redirect-stub inventory** - `roofing-order-sheet-2.html`, `siding-and-trim-order-sheat.html` (note the misspelling), `tile-order-sheet.html`, and `safety-reminders.html` are all redirect stubs with zero remaining inbound links (verified 2026-07-19). Decide whether to keep them indefinitely for old bookmarks/print copies or sunset them on a date.
 - [x] **resources.html completeness** - Re-verified 2026-07-19: every current order sheet, checklist, and safety printable is indexed, including the recent PPE checklist consolidation.
-- [ ] **`air-sealing.html` missing standard footer chrome** - Unlike every other content page, it has no Share/Print buttons and no `Last revised` line. Found 2026-07-19; page was added in an earlier session without full parity to the standard footer.
-- [ ] **`hazardous-materials.html` footer typo** - Reads "Last revised 05/01/2026" with no colon; every other page uses "Last revised: MM/DD/YYYY". One-line fix.
+- [x] **`air-sealing.html` missing standard footer chrome** - Fixed 2026-07-27: added Share/Print buttons and a `Last revised: 06/04/2026` line.
+- [x] **`hazardous-materials.html` footer typo** - Fixed 2026-07-27: now reads "Last revised: 05/01/2026".
 - [ ] **`about.html` footer inconsistency (discuss, don't just fix)** - The home page uses an older, simpler footer with no Share/Print buttons, no feedback-form link, and no `Last revised` line, while all other pages (including utility pages like `wage-calculator.html`) share those elements. Could be intentional for the homepage; confirm with the user before changing.
-- [ ] **`CLAUDE.md` work log gap** - PRs #224-227 (fold Safety Reminders card into PPE checklist, then drop `safety-reminders.html`) are not recorded in the Work Log; the Redundancy Map note there is now stale. Backfill next time safety pages are touched.
+- [x] **`CLAUDE.md` work log gap** - Backfilled 2026-07-27: PRs #224-227 (fold Safety Reminders card into PPE checklist, then drop `safety-reminders.html`) now recorded in the Work Log.
 - [ ] **README is stale** - `README.md` still describes the AWS/S3 upload process and an "Active Navigation" version. The site is on GitHub Pages now. Rewrite it to reflect the current hosting, structure, and the conventions in `CLAUDE.md`.
-- [ ] **Last revised dates** - Spot-check that pages edited recently have current `Last revised:` footers.
+- [x] **Last revised dates** - Spot-checked 2026-07-27: `safety.html` and `safety-equipment-checklist.html` were stale (`06/04/2026` vs. actual last edit `07/10/2026`); fixed. No other mismatches found.
 
 ## 6. Orphan pages (parked - do not delete)
 Per user decision, these are NOT to be deleted; the user wants them migrated to his personal website repo, which is not yet accessible from these sessions.

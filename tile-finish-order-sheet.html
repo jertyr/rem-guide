@@ -21,24 +21,32 @@
             small {
                 display: none !important;
             }
-            .main-wrapper { margin: 0 !important; padding: 0 !important; }
-            main { margin: 0 !important; padding: 0 !important; }
-            article { margin: 0 !important; padding: 0 !important; }
-            body { margin: 0; padding: 0; font-size: 0.78rem; }
-            h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
-            h3.form-section { font-size: 0.78rem; margin: 0.35rem 0 0.15rem 0; padding-bottom: 0.1rem; }
-            .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
-            .job-header p { font-size: 0.78rem; margin: 0.1rem 0; }
-            .form-grid { gap: 1.2rem; margin-bottom: 0.3rem; }
-            .form-row { margin: 0.12rem 0; font-size: 0.78rem; }
-            .option-row { margin: 0.12rem 0; font-size: 0.78rem; }
-            .divider { margin: 0.4rem 0; }
-            .footnote { font-size: 0.68rem; margin-top: 0.3rem; }
+            .main-wrapper { display: block !important; margin: 0 !important; padding: 0 !important; }
+            main { margin: 0 !important; padding: 0 !important; margin-left: 0 !important; min-height: 0 !important; }
+            article { margin: 0 !important; padding: 0 !important; box-shadow: none !important; }
+            body { display: block !important; min-height: 0 !important; margin: 0; padding: 0; font-size: 0.76rem; }
+            h1.form-title { font-size: 1rem; margin: 0 0 0.3rem 0; }
+            h3.form-section { font-size: 0.76rem; margin: 0.25rem 0 0.1rem 0; padding-bottom: 0.08rem; }
+            h3.area-title { font-size: 0.85rem; margin: 0.3rem 0 0.15rem 0; }
+            .job-header { margin-bottom: 0.3rem; gap: 1.5rem; }
+            .job-header p { font-size: 0.76rem; margin: 0.1rem 0; }
+            .form-grid { gap: 1.2rem; margin-bottom: 0.2rem; }
+            .form-row { margin: 0.08rem 0; font-size: 0.76rem; line-height: 1.35; }
+            .option-row { margin: 0.08rem 0; font-size: 0.76rem; line-height: 1.35; }
+            .divider { margin: 0.35rem 0; }
+            .footnote { font-size: 0.66rem; margin-top: 0.25rem; }
             .fill-lg { width: 140px; }
             .fill-md { width: 95px; }
             .fill-sm { width: 60px; }
             .fill-xs { width: 38px; }
             .fill-xl { width: 220px; }
+            .print-credit {
+                display: block;
+                font-size: 0.65rem;
+                color: #666;
+                text-align: center;
+                margin-top: 0.35rem;
+            }
         }
 
         h1.form-title {
@@ -90,12 +98,17 @@
         .form-row { margin: 0.3rem 0; font-size: 0.95rem; }
         .option-row { margin: 0.3rem 0; font-size: 0.95rem; }
         .option-row .opts { color: #444; }
+        h3.area-title {
+            font-size: 1.05rem;
+            border-bottom: 1px solid #bbb;
+        }
         .divider {
             border: none;
             border-top: 1px solid #e0e0e0;
             margin: 0.8rem 0;
         }
         .footnote { font-size: 0.82rem; color: #666; margin-top: 0.6rem; }
+        .print-credit { display: none; }
     </style>
 </head>
 <body>
@@ -135,7 +148,8 @@
                 <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
                 <li class="nav-item"><a href="insulation.html">Insulation</a></li>
                 <li class="nav-item"><a href="drywall.html">Drywall</a></li>
-                <li class="nav-item active-section"><a href="flooring.html" class="active">Flooring</a></li>
+                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+                <li class="nav-item active-section"><a href="tile.html" class="active">Tile</a></li>
                 <li class="nav-item"><a href="countertops.html">Countertops</a></li>
                 <li class="nav-item"><a href="stairs.html">Stairs</a></li>
                 <li class="nav-item"><a href="resources.html">Resources</a></li>
@@ -147,7 +161,7 @@
 
     <main style="margin-left: 280px; padding: 2rem;">
         <article>
-            <p class="breadcrumb"><a href="flooring.html">Flooring</a> &gt; Tile Finish Order Sheet</p>
+            <p class="breadcrumb"><a href="tile.html">Tile</a> &gt; Tile Finish Order Sheet</p>
             <h1 class="form-title">Remodelers Guide: Tile Finish Order Sheet</h1>
 
             <div class="job-header">
@@ -156,7 +170,7 @@
             </div>
 
             <!-- ── Area 1 ── -->
-            <h3 class="form-section">Room / Location:<span class="fill-xl" style="font-weight:normal;"></span></h3>
+            <h3 class="form-section area-title">Room / Location:<span class="fill-xl" style="font-weight:normal;"></span></h3>
 
             <div class="form-grid">
                 <div>
@@ -191,7 +205,7 @@
             <hr class="divider">
 
             <!-- ── Area 2 ── -->
-            <h3 class="form-section">Room / Location:<span class="fill-xl" style="font-weight:normal;"></span></h3>
+            <h3 class="form-section area-title">Room / Location:<span class="fill-xl" style="font-weight:normal;"></span></h3>
 
             <div class="form-grid">
                 <div>
@@ -224,6 +238,8 @@
             </div>
 
 
+            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+
             <p class="footnote">* Complex layouts (herringbone, basket weave, diagonal) are non-standard and billed at a premium. Confirm pricing before ordering tile.</p>
 
             <p class="form-actions">
@@ -233,7 +249,7 @@
                 <small>Last revised: 05/03/2026</small>
             </p>
 
-            <p class="breadcrumb"><a href="flooring.html">Flooring</a> &gt; Tile Finish Order Sheet</p>
+            <p class="breadcrumb"><a href="tile.html">Tile</a> &gt; Tile Finish Order Sheet</p>
         </article>
     </main>
 </div>

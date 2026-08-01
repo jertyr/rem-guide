@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         @media print {
-            @page { margin: 0.45in; size: letter portrait; }
+            @page { margin: 0.5in; size: letter portrait; }
             header,
             .sidebar,
             footer,
@@ -21,19 +21,21 @@
             small {
                 display: none !important;
             }
-            .main-wrapper { margin: 0 !important; padding: 0 !important; }
-            main { margin: 0 !important; padding: 0 !important; }
-            article { margin: 0 !important; padding: 0 !important; }
-            body { margin: 0; padding: 0; font-size: 0.74rem; }
-            h1.form-title { font-size: 0.95rem; margin: 0 0 0.35rem 0; }
-            h3.form-section { font-size: 0.76rem; margin: 0.35rem 0 0.15rem 0; padding-bottom: 0.1rem; }
-            .job-header { margin-bottom: 0.35rem; }
-            .job-header p { font-size: 0.74rem; margin: 0.1rem 0; }
-            .form-grid { gap: 0.8rem; margin-bottom: 0.3rem; }
-            .form-row { margin: 0.12rem 0; font-size: 0.74rem; line-height: 1.5; }
+            .main-wrapper { display: block !important; margin: 0 !important; padding: 0 !important; }
+            main { margin: 0 !important; padding: 0 !important; margin-left: 0 !important; min-height: 0 !important; }
+            article { margin: 0 !important; padding: 0 !important; box-shadow: none !important; }
+            body { display: block !important; min-height: 0 !important; margin: 0; padding: 0; font-size: 0.72rem; }
+            h1.form-title { font-size: 0.95rem; margin: 0 0 0.3rem 0; }
+            h3.form-section { font-size: 0.74rem; margin: 0.24rem 0 0.1rem 0; padding-bottom: 0.08rem; }
+            .job-header { margin-bottom: 0.3rem; }
+            .job-header p { font-size: 0.72rem; margin: 0.1rem 0; }
+            .form-grid { gap: 0.8rem; margin-bottom: 0.2rem; }
+            .form-row { margin: 0.07rem 0; font-size: 0.72rem; line-height: 1.25; }
+            .option-row { margin: 0.07rem 0; font-size: 0.72rem; line-height: 1.25; }
+            .size-note { font-size: 0.66rem; }
             .notes-box { display: none; }
-            .order-table { font-size: 0.72rem; margin: 0.3rem 0 0.4rem 0; }
-            .order-table th, .order-table td { padding: 0.28rem 0.4rem; }
+            .order-table { font-size: 0.7rem; margin: 0.18rem 0 0.25rem 0; }
+            .order-table th, .order-table td { padding: 0.16rem 0.4rem; }
             .fill-sm { width: 55px; }
             .fill-md { width: 90px; }
             .print-credit {
@@ -41,7 +43,7 @@
                 font-size: 0.65rem;
                 color: #666;
                 text-align: center;
-                margin-top: 0.4rem;
+                margin-top: 0.35rem;
             }
             .kit-note { font-size: 0.68rem; color: #555; }
         }
@@ -101,6 +103,9 @@
             margin-bottom: 1rem;
         }
         .form-row { margin: 0.32rem 0; font-size: 0.95rem; }
+        .option-row { margin: 0.32rem 0; font-size: 0.95rem; }
+        .option-row .opts { color: #444; }
+        .size-note { color: #666; font-size: 0.85rem; }
         .kit-note { font-size: 0.82rem; color: #555; margin-left: 1.5rem; }
         .notes-box { height: 1in; margin-top: 0.4rem; }
         .order-table {
@@ -164,7 +169,8 @@
                 <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
                 <li class="nav-item"><a href="insulation.html">Insulation</a></li>
                 <li class="nav-item"><a href="drywall.html">Drywall</a></li>
-                <li class="nav-item active-section"><a href="flooring.html" class="active">Flooring</a></li>
+                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+                <li class="nav-item active-section"><a href="tile.html" class="active">Tile</a></li>
                 <li class="nav-item"><a href="countertops.html">Countertops</a></li>
                 <li class="nav-item"><a href="stairs.html">Stairs</a></li>
                 <li class="nav-item"><a href="resources.html">Resources</a></li>
@@ -176,12 +182,12 @@
 
     <main style="margin-left: 280px; padding: 2rem;">
         <article>
-            <p class="breadcrumb"><a href="flooring.html">Flooring</a> &gt; Tile Prep Order Sheet</p>
+            <p class="breadcrumb"><a href="tile.html">Tile</a> &gt; Tile Prep Order Sheet</p>
             <h1 class="form-title">Remodelers Guide: Tile Prep Order Sheet</h1>
 
             <div class="job-header">
-                <p><strong>Job:</strong> <span class="fill-lg"></span></p>
-                <p><strong>Date:</strong> <span class="fill-md"></span></p>
+                <p>Job:<span class="fill-lg"></span></p>
+                <p>Date:<span class="fill-md"></span></p>
             </div>
 
             <div class="form-grid">
@@ -189,43 +195,43 @@
                 <!-- LEFT: Floor substrate + Setting -->
                 <div>
                     <h3 class="form-section">Floor Substrate</h3>
-                    <p class="form-row"><span class="fill-sm"></span> Ditra <span>(3'3" × 16'4" roll)</span></p>
-                    <p class="form-row"><span class="fill-sm"></span> Ditra XL <span>(3'3" × 16'4" roll)</span></p>
-                    <p class="form-row"><span class="fill-sm"></span> Ditra Heat <span>(3'3" × 16'4" roll)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Ditra <span class="size-note">(3'3" × 16'4" roll)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Ditra XL <span class="size-note">(3'3" × 16'4" roll)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Ditra Heat <span class="size-note">(3'3" × 16'4" roll)</span></p>
                     <p class="form-row"><span class="fill-sm"></span> Ditra Heat cable kit</p>
                     <p class="form-row"><span class="fill-sm"></span> Ditra Heat thermostat</p>
-                    <p class="form-row"><span class="fill-sm"></span> Self leveler <span>(~40–50 sf at 1/8")</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Self leveler <span class="size-note">(~40–50 sf at 1/8")</span></p>
                     <p class="form-row"><span class="fill-sm"></span> Floor patch</p>
                     <p class="form-row"><span class="fill-sm"></span> Tile primer</p>
-                    <p class="form-row"><span class="fill-sm"></span> Wire mesh (leveler pours)</p>
-                    <p class="form-row"><span class="fill-sm"></span> Spray foam (dam edges)</p>
-                    <p class="form-row"><span class="fill-sm"></span> Kerdi-band <span>(4-7/8" × 49 LF roll)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Wire mesh <span class="size-note">(leveler pours)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Spray foam <span class="size-note">(dam edges)</span></p>
 
                     <h3 class="form-section">Setting Materials</h3>
-                    <p class="form-row"><span class="fill-sm"></span> All-Set thinset (bags)</p>
+                    <p class="form-row"><span class="fill-sm"></span> All-Set thinset <span class="size-note">(bags)</span></p>
 
-                    <p class="form-row" style="margin-top:0.5rem;"><strong>Shower tray (incl drain body and cover)</strong></p>
-                    <p class="option-row"><span class="opts">32×60 &nbsp;/&nbsp; 38×60 &nbsp;/&nbsp; 48×48 &nbsp;/&nbsp; 36×36</span></p>
+                    <h3 class="form-section">Shower Tray</h3>
+                    <p class="option-row">Size: <span class="opts">32×60 &nbsp;/&nbsp; 38×60 &nbsp;/&nbsp; 48×48 &nbsp;/&nbsp; 36×36</span></p>
+                    <p class="form-row"><span class="size-note">Includes drain body and cover</span></p>
                 </div>
 
                 <!-- RIGHT: Shower waterproofing -->
                 <div>
                     <h3 class="form-section">Shower Waterproofing</h3>
-                    <p class="form-row"><span class="fill-sm"></span> Kerdi membrane <span>(3'3" × 16'5" roll)</span></p>
-                    <p class="form-row"><span class="fill-sm"></span> Kerdi board <span>(30" × 58" sheet)</span></p>
-                    <p class="form-row"><span class="fill-sm"></span> Kerdi screws <span>(qty 50)</span></p>
-                    <p class="form-row"><span class="fill-sm"></span> Kerdi-band <span>(4-7/8" × 49 LF roll)</span></p>
-                    <p class="form-row"><span class="fill-sm"></span> Kerdi pipe seal — dia: <span class="fill-xs"></span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Kerdi membrane <span class="size-note">(3'3" × 16'5" roll)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Kerdi board <span class="size-note">(30" × 58" sheet)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Kerdi screws <span class="size-note">(qty 50)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Kerdi-band <span class="size-note">(4-7/8" × 49 LF roll)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Kerdi pipe seal, dia: <span class="fill-xs"></span></p>
                     <p class="form-row"><span class="fill-sm"></span> Kerdi mixing valve seal</p>
                     <p class="form-row"><span class="fill-sm"></span> Kerdi inside corners</p>
                     <p class="form-row"><span class="fill-sm"></span> Kerdi outside corners</p>
-                    <p class="form-row"><span class="fill-sm"></span> Kerdi Fix sealant <span>(10.5 oz tube)</span></p>
+                    <p class="form-row"><span class="fill-sm"></span> Kerdi Fix sealant <span class="size-note">(10.5 oz tube)</span></p>
                     <p class="form-row"><span class="fill-sm"></span> Linear / point drain</p>
 
-                    <p class="form-row" style="margin-top:0.5rem;"><strong>Shower niches</strong></p>
-                    <p class="form-row"><span class="fill-xs"></span> <span>Kerdi-Board-SN 12" × 24"</span></p>
-                    <p class="form-row"><span class="fill-xs"></span> <span>Kerdi-Board-SN 12" × 28"</span></p>
-                    <p class="form-row"><span class="fill-xs"></span> <span>Kerdi-Board-SN 24" × 24"</span></p>
+                    <h3 class="form-section">Shower Niches</h3>
+                    <p class="form-row"><span class="fill-xs"></span> Kerdi-Board-SN 12" × 24"</p>
+                    <p class="form-row"><span class="fill-xs"></span> Kerdi-Board-SN 12" × 28"</p>
+                    <p class="form-row"><span class="fill-xs"></span> Kerdi-Board-SN 24" × 24"</p>
                 </div>
 
             </div>
@@ -264,7 +270,6 @@
                     <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
                     <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
                     <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-                    <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
                 </tbody>
             </table>
 
@@ -277,7 +282,7 @@
                 <small>Last revised: 05/03/2026</small>
             </p>
 
-            <p class="breadcrumb"><a href="flooring.html">Flooring</a> &gt; Tile Prep Order Sheet</p>
+            <p class="breadcrumb"><a href="tile.html">Tile</a> &gt; Tile Prep Order Sheet</p>
         </article>
     </main>
 </div>

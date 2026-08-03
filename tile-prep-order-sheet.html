@@ -110,6 +110,7 @@
         .notes-box { height: 1in; margin-top: 0.4rem; }
         .order-table {
             border-collapse: collapse;
+            table-layout: fixed;
             width: 100%;
             margin: 0.5rem 0 1rem 0;
             font-size: 0.95rem;
@@ -119,16 +120,25 @@
             border: 1px solid #ccc;
             padding: 0.38rem 0.6rem;
             text-align: left;
+            overflow-wrap: break-word;
         }
         .order-table th {
             background: #f2f2f2;
             font-weight: 600;
         }
+        .order-table th.qty-cell,
         .order-table td.qty-cell {
             width: 60px;
-            min-width: 60px;
         }
         .order-table tbody tr td:first-child { font-weight: normal; }
+        .schluter-table th:nth-child(1), .schluter-table td:nth-child(1) { width: 42%; }
+        .schluter-table th:nth-child(2), .schluter-table td:nth-child(2) { width: 42%; }
+        .schluter-table th.qty-cell, .schluter-table td:nth-child(3) { width: 16%; }
+        .stone-table th:nth-child(1), .stone-table td:nth-child(1) { width: 22%; }
+        .stone-table th:nth-child(2), .stone-table td:nth-child(2) { width: 30%; }
+        .stone-table th:nth-child(3), .stone-table td:nth-child(3) { width: 17%; }
+        .stone-table th:nth-child(4), .stone-table td:nth-child(4) { width: 17%; }
+        .stone-table th.qty-cell, .stone-table td:nth-child(5) { width: 14%; }
         .print-credit { display: none; }
     </style>
 </head>
@@ -238,7 +248,7 @@
 
             <!-- Schluter Edge Profiles table -->
             <h3 class="form-section">Schluter Edge Profiles</h3>
-            <table class="order-table">
+            <table class="order-table schluter-table">
                 <thead>
                     <tr>
                         <th>Profile</th>
@@ -255,7 +265,7 @@
 
             <!-- Stone Pieces table -->
             <h3 class="form-section">Stone Pieces</h3>
-            <table class="order-table">
+            <table class="order-table stone-table">
                 <thead>
                     <tr>
                         <th>Use</th>

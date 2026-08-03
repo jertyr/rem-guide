@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-07-27
+Last updated: 2026-08-03
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,30 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-08-03 - Full-site review (automated)
+One content change landed since the 2026-07-27 pass: PR #231 split Tile out of Flooring into its own page (`tile.html`) and got both tile order sheets down to one print page. This pass checked that work plus reverified everything still open.
+
+**Implemented this pass (mechanical, no user decision needed):**
+1. `flooring.html`, `tile-prep-order-sheet.html`, `tile-finish-order-sheet.html` - all three carried stale `Last revised` dates (`02/16/2026` and two counts of `05/03/2026`) despite being substantively rewritten on 07/31/2026 for the tile split. Updated all three to `07/31/2026`, matching the pattern of the 07/20 and 07/27 date fixes on other pages.
+
+**New finding - unreviewed red flags on the new Tile page:**
+- `tile.html` carries 3 unapproved `color:red` spans from its 07/31 creation (per the `CLAUDE.md` work log): two Best Practices bullets (dry-lay complex patterns before setting; keep tile from one lot together in a room) and one Client Communication bullet (the flood test holds the shower for a day or more). These are reasonable field-practice notes, not safety-critical like the `remediation.html` flags, but they're still live, unflagged-to-the-user content per the red-flag workflow. Recommend a quick approval pass alongside the `remediation.html` review below.
+
+**Reverified and still accurate:**
+- No broken internal links across all HTML files (scripted check of every `href="*.html"` against the file list).
+- Nav is consistent: `tile.html` was correctly added to all 63 sidebar-carrying files that needed it; the one file missing it (`diagnostic-tools.html`) is a parked orphan page out of scope, not a miss.
+- Red-flag files unchanged otherwise: `products.html` (1 span), `remediation.html` (8 spans), `insulation.html` (2 spans), `excavation.html` (2 spans) - all still open, same counts as 07/27.
+- `about.html` footer inconsistency still present, still parked as a discuss-first item. Noted in passing: its copyright line also reads "© 2025" - one year stale in addition to lacking Share/Print/Last-revised chrome. Folding this into that same discuss-first conversation rather than fixing piecemeal.
+- README still describes the old "Active Navigation Version" / pre-GitHub-Pages setup; still open per section 5.
+- Content-gap items unchanged and confirmed still missing: no `flatwork-concrete` order form, no fireblocking/draftstopping checklist, `neighbor-letter.html` still has no fill-in blanks, rough-trade pages (plumbing/electrical/mechanical) still only cross-link via sidebar nav, not in their Resources sections.
+- Orphan pages (`construction-dashboard.html`, `building-diagnostics.html`, `diagnostic-tools.html`, `cte-presentation.html`, `newsletter_prompt.html`) unchanged, still parked pending personal-site repo access.
+
+**Still flagged for user decision (not mechanical, needs judgment - unchanged from prior passes):**
+- `remediation.html` red-flag review - 8 spans covering PPE minimums, containment/negative-air setup, and the ~19% wood moisture-content treatment threshold. Still the single highest-priority open item on the site: procedural safety content live without approval.
+- `tile.html` red-flag review (new, see above) - lower stakes than remediation but open the same way.
+
+**Suggested priority for next session:** approve/correct the `tile.html` flags (small, fast) while the remediation.html review is pending action from the user; after both flag reviews are cleared, move to a content-gap item - the fireblocking checklist and flatwork order form remain the two trades with no companion artifact at all.
 
 ### 2026-07-27 - Full-site review (automated)
 No content-page files changed since the 2026-07-20 pass landed (`main` only gained that pass's own ROADMAP.md commit), so this pass re-verified prior findings and implemented the zero-judgment mechanical cleanup that had been sitting ready since 2026-07-20.

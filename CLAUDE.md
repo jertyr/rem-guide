@@ -254,3 +254,10 @@ Not every page needs every section — content drives structure.
 - **Finish sheet**: added the print-only copyright credit line it was missing, and an `.area-title` class so each Room / Location block reads as a section divider
 - **Print-measurement technique (reusable)**: headless Chromium `--print-to-pdf` plus a page count, then binary-search `@page { size: 8.5in Xin }` to find the exact content height. Tells you how much slack a form has instead of just pass/fail
 - **Branch**: `claude/tile-page-order-sheet-6rzeck`
+
+### Session: 2026-08-07 — Foundations page: sump crock / radon mitigation inspection issue (PR #234)
+- **Field lesson from an active job**: addition on a crawl space foundation in a high-radon area. Installed a sump crock connected to interior drain tile with no pump; intended purely as a future radon mitigation connection point and as a place to pump groundwater if it ever became an issue. Compaction inspection failed because the inspector said the sump pit needed plumbing inspector review; the alternative offered was removing the pit and installing a standard passive radon system instead
+- **foundations.html changes**: added a Process prerequisite bullet (confirm with the building department whether a no-pump radon-prep sump crock needs plumbing sign-off before scheduling compaction inspection) and a Common Issues bullet documenting the failure mode and fallback
+- **Scope note**: `flatwork-concrete.html` also covers compaction inspection and drain tile/sump/radon prep in more detail (its own Process and Inspection sections) but was left untouched; user asked specifically for the foundation page
+- **No red flags used**: content is the user's own field account, not researched/added material
+- **Branch**: `claude/sump-crock-radon-mitigation-mf3vjc`

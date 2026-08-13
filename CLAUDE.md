@@ -261,3 +261,9 @@ Not every page needs every section — content drives structure.
 - **Scope note**: `flatwork-concrete.html` also covers compaction inspection and drain tile/sump/radon prep in more detail (its own Process and Inspection sections) but was left untouched; user asked specifically for the foundation page
 - **No red flags used**: content is the user's own field account, not researched/added material
 - **Branch**: `claude/sump-crock-radon-mitigation-mf3vjc`
+
+### Session: 2026-08-13 — Demolition page: downspout drainage note (PR #239)
+- **Field lesson**: demo removed a downspout extension; an excavation dug afterward for an addition ended up with the downspout draining straight into it
+- **Changes**: added "Extend downspouts away from the house" to `demolition-checklist.html`'s "Before You Leave" section; added a matching bullet to `demolition.html`'s end-of-day process list, noting it especially matters near open excavation
+- **No red flags used**: user's own field account
+- **Branch**: `claude/demolition-downspout-drainage`

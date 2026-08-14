@@ -42,20 +42,18 @@
                 min-height: 0 !important;
                 margin: 0;
                 padding: 0;
-                font-size: 0.75rem;
+                font-size: 0.82rem;
             }
-            h1.form-title { font-size: 0.95rem; margin: 0 0 0.25rem 0; }
-            h3.form-section { font-size: 0.75rem; margin: 0.25rem 0 0.12rem 0; padding-bottom: 0.08rem; }
-            .job-header { margin-bottom: 0.25rem; gap: 1.2rem; }
-            .job-header p { font-size: 0.75rem; margin: 0.08rem 0; }
-            .form-grid { gap: 1rem; margin-bottom: 0.35rem; }
-            .option-row { margin: 0.1rem 0; font-size: 0.72rem; }
-            .form-row { margin: 0.1rem 0; font-size: 0.72rem; }
-            .schedule-table { font-size: 0.72rem; }
-            .schedule-table th,
-            .schedule-table td { padding: 0.2rem 0.3rem; height: 1.05em; }
-            .hand-note { font-size: 0.68rem; margin: 0.15rem 0; }
-            .notes-box { height: 0.5in; }
+            h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
+            h3.form-section { font-size: 0.8rem; margin: 0.4rem 0 0.2rem 0; padding-bottom: 0.1rem; }
+            .job-header { margin-bottom: 0.4rem; gap: 1.5rem; }
+            .job-header p { font-size: 0.82rem; margin: 0.1rem 0; }
+            .form-grid { gap: 1.2rem; margin-bottom: 0.5rem; }
+            .form-row { margin: 0.15rem 0; font-size: 0.82rem; }
+            .option-row { margin: 0.15rem 0; font-size: 0.82rem; }
+            .hand-note { font-size: 0.72rem; margin: 0.1rem 0 0.2rem 0; }
+            .draw-box { height: 2.6in; }
+            .notes-box { height: 0.9in; }
             .print-credit {
                 display: block;
                 font-size: 0.65rem;
@@ -107,10 +105,17 @@
             margin-left: 0.3rem;
             vertical-align: bottom;
         }
+        .fill-xs {
+            display: inline-block;
+            width: 45px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
         .form-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             margin-bottom: 1rem;
         }
         .form-row {
@@ -124,36 +129,24 @@
         .option-row .opts {
             color: #444;
         }
-        .schedule-table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 0.4rem 0 0.6rem 0;
-            font-size: 0.9rem;
+        .option-row .opts-nowrap {
+            color: #444;
+            white-space: nowrap;
         }
-        .schedule-table th,
-        .schedule-table td {
-            border: 1px solid #ccc;
-            padding: 0.45rem 0.5rem;
-            text-align: left;
-        }
-        .schedule-table th {
-            background: #f2f2f2;
-            font-weight: 600;
-        }
-        .schedule-table col.col-loc { width: 22%; }
-        .schedule-table col.col-size { width: 13%; }
-        .schedule-table col.col-type { width: 15%; }
-        .schedule-table col.col-hand { width: 8%; }
-        .schedule-table col.col-jamb { width: 11%; }
-        .schedule-table col.col-hdw { width: 13%; }
-        .schedule-table col.col-notes { width: 18%; }
         .hand-note {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: #555;
-            margin: 0.3rem 0;
+            margin: 0.15rem 0 0.3rem 0;
+        }
+        .draw-box {
+            border: 1px solid #aaa;
+            height: 2.4in;
+            margin-top: 0.4rem;
+            position: relative;
+            background: #fff;
         }
         .notes-box {
-            height: 1in;
+            height: 1.2in;
             margin-top: 0.4rem;
         }
         .print-credit { display: none; }
@@ -217,93 +210,53 @@
 
             <!-- Job identification -->
             <div class="job-header">
-                <p>Job Name:<span class="fill-lg"></span></p>
-                <p>Date:<span class="fill-md"></span></p>
+                <p>Job Name:<span class="fill-md"></span></p>
+                <p>Location:<span class="fill-md"></span></p>
                 <p>Brand:<span class="fill-md"></span></p>
                 <p>Line:<span class="fill-md"></span></p>
             </div>
 
-            <!-- Job-wide specifications -->
+            <!-- Row 1: Configuration + Draw (left) / Sizing, Jamb, Hardware (right) -->
             <div class="form-grid">
                 <div>
-                    <h3 class="form-section">Door</h3>
+                    <h3 class="form-section">Configuration</h3>
                     <p class="option-row">Type: <span class="opts">Prehung &nbsp;/&nbsp; Slab</span></p>
-                    <p class="option-row">Panel: <span class="opts">Flush &nbsp;/&nbsp; 2 &nbsp;/&nbsp; 3 &nbsp;/&nbsp; 5 &nbsp;/&nbsp; 6 &nbsp;/&nbsp; Louver &nbsp;/&nbsp; Glass</span></p>
+                    <p class="option-row">Style: <span class="opts">Swing &nbsp;/&nbsp; Pocket &nbsp;/&nbsp; French &nbsp;/&nbsp; Bifold &nbsp;/&nbsp; Sliding</span></p>
+                    <p class="option-row">Hand: <span class="opts">Left&nbsp;Hand &nbsp;/&nbsp; Right&nbsp;Hand</span></p>
+                    <p class="hand-note"><span style="color:red">Stand on the side the door swings away from you; hinges on the left is left hand</span></p>
                     <p class="option-row">Core: <span class="opts">Hollow &nbsp;/&nbsp; Solid&nbsp;Core &nbsp;/&nbsp; Solid&nbsp;Wood</span></p>
                     <p class="option-row">Grade: <span class="opts">Paint &nbsp;/&nbsp; Stain:</span><span class="fill-sm"></span></p>
-                    <p class="option-row">Height: <span class="opts" style="color:red">6'8" &nbsp;/&nbsp; 7'0" &nbsp;/&nbsp; 8'0"</span></p>
-                    <p class="option-row">Thickness: <span class="opts" style="color:red">1&nbsp;3/8" &nbsp;/&nbsp; 1&nbsp;3/4"</span></p>
+
+                    <h3 class="form-section">Draw <span style="font-weight:normal; font-size:0.82rem; color:#666;">(panel / swing / lites)</span></h3>
+                    <div class="draw-box"></div>
                 </div>
 
                 <div>
+                    <h3 class="form-section">Sizing</h3>
+                    <p class="form-row">Width:<span class="fill-sm"></span></p>
+                    <p class="option-row">Height: <span class="opts-nowrap" style="color:red">6'8" &nbsp;/&nbsp; 7'0" &nbsp;/&nbsp; 8'0"</span> &nbsp;/&nbsp;<span class="fill-sm"></span></p>
+                    <p class="form-row">Rough Opening:<span class="fill-xs"></span> W &times;<span class="fill-xs"></span> H</p>
+                    <p class="option-row">Thickness: <span class="opts-nowrap" style="color:red">1&nbsp;3/8" &nbsp;/&nbsp; 1&nbsp;3/4"</span></p>
+
                     <h3 class="form-section">Jamb &amp; Casing</h3>
-                    <p class="option-row">Jamb: <span class="opts" style="color:red">4&nbsp;9/16" &nbsp;/&nbsp; 6&nbsp;9/16"</span> &nbsp;/&nbsp;<span class="fill-sm"></span></p>
-                    <p class="option-row">Jamb Material: <span class="opts">Primed&nbsp;FJ &nbsp;/&nbsp; Pine &nbsp;/&nbsp; MDF</span></p>
-                    <p class="form-row">Casing Profile:<span class="fill-sm"></span></p>
+                    <p class="option-row">Jamb: <span class="opts-nowrap" style="color:red">4&nbsp;9/16" &nbsp;/&nbsp; 6&nbsp;9/16"</span> &nbsp;/&nbsp;<span class="fill-sm"></span></p>
+                    <p class="form-row">Jamb Material:<span class="fill-md"></span></p>
+                    <p class="form-row">Casing Profile:<span class="fill-md"></span></p>
                     <p class="form-row">Casing Size:<span class="fill-sm"></span></p>
-                    <p class="form-row">Base Profile:<span class="fill-sm"></span></p>
+                    <p class="form-row">Base Profile:<span class="fill-md"></span></p>
                     <p class="form-row">Base Size:<span class="fill-sm"></span></p>
-                </div>
 
-                <div>
-                    <h3 class="form-section">Hardware &amp; Hinges</h3>
-                    <p class="option-row">Bore: <span class="opts" style="color:red">Pre-bored&nbsp;2&nbsp;1/8" &nbsp;/&nbsp; Not&nbsp;Bored</span></p>
-                    <p class="option-row">Backset: <span class="opts" style="color:red">2&nbsp;3/8" &nbsp;/&nbsp; 2&nbsp;3/4"</span></p>
-                    <p class="form-row">Hardware Style:<span class="fill-sm"></span></p>
-                    <p class="form-row">Hardware Finish:<span class="fill-sm"></span></p>
-                    <p class="option-row">Hinges: <span class="opts" style="color:red">3&nbsp;1/2" &nbsp;/&nbsp; 4"</span> &nbsp;&middot;&nbsp; <span class="opts" style="color:red">3 &nbsp;/&nbsp; 4 per door</span></p>
-                    <p class="form-row">Hinge Finish:<span class="fill-sm"></span></p>
+                    <h3 class="form-section">Hardware</h3>
+                    <p class="option-row">Bore: <span class="opts">None &nbsp;/&nbsp; Single &nbsp;/&nbsp; Double</span></p>
+                    <p class="option-row">Backset: <span class="opts-nowrap" style="color:red">2&nbsp;3/8" &nbsp;/&nbsp; 2&nbsp;3/4"</span></p>
+                    <p class="option-row">Function: <span class="opts">Passage &nbsp;/&nbsp; Privacy &nbsp;/&nbsp; Dummy &nbsp;/&nbsp; Keyed</span></p>
+                    <p class="form-row">Hardware Style:<span class="fill-md"></span></p>
+                    <p class="form-row">Hardware Finish:<span class="fill-md"></span></p>
+                    <p class="form-row">Hinge Finish:<span class="fill-md"></span></p>
                 </div>
             </div>
 
-            <!-- Door schedule -->
-            <h3 class="form-section">Door Schedule <span style="font-weight:normal; font-size:0.82rem; color:#666;">(one line per opening; note anything that differs from the specs above)</span></h3>
-
-            <table class="schedule-table">
-                <colgroup>
-                    <col class="col-loc">
-                    <col class="col-size">
-                    <col class="col-type">
-                    <col class="col-hand">
-                    <col class="col-jamb">
-                    <col class="col-hdw">
-                    <col class="col-notes">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th>Location</th>
-                        <th>Size W &times; H</th>
-                        <th>Type</th>
-                        <th>Hand</th>
-                        <th>Jamb</th>
-                        <th>Hardware</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                </tbody>
-            </table>
-
-            <p class="hand-note">
-                Type: Prehung / Slab / Bifold / Bypass / Pocket / Barn &nbsp;&middot;&nbsp;
-                Hardware: Passage / Privacy / Dummy / Keyed &nbsp;&middot;&nbsp;
-                <span style="color:red">Hand: stand on the side the door swings away from you; hinges on the left is left hand</span>
-            </p>
-
+            <!-- Notes -->
             <h3 class="form-section">Notes / Special Instructions</h3>
             <div class="notes-box"></div>
 

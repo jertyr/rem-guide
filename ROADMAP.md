@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-07-27
+Last updated: 2026-08-10
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,29 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-08-10 - Full-site review (automated)
+Since the 2026-07-27 pass: tile print-table-width fix (PR #233), the foundations.html sump crock/radon field note (PR #234), and a new Painting page + worksheet (PR #236, `painting.html` / `painting-worksheet.html`) landed on `main`.
+
+**Implemented this pass (mechanical, no user decision needed):**
+1. **`products.html` and `resources.html` were missing all standard footer chrome** - the single biggest finding of this pass. Both pages had no `@media print` stylesheet at all (so printing either page would include the sidebar, header, and buttons), no Share/Print buttons, no `Last revised` line, and no sitewide `<footer>` copyright/contact block - every other content page on the site has all four. This is notable because `resources.html` is the master index linked from every other page's Resources section, and `products.html` is the site's product/SKU reference; both are pages a contractor would actually try to print on a jobsite. Added the standard print stylesheet, Share/Print buttons + `Last revised: 08/10/2026` line, and sitewide footer to both, copied from the current standard (`painting.html`, the most recently built page). No content changed, only the missing chrome.
+2. `CLAUDE.md` - backfilled the Work Log gap for PR #236 (Painting page + worksheet, merged 2026-08-08, was never logged).
+
+**Reverified and still accurate:**
+- No broken internal links across all 80 HTML files (scripted check of every `href="*.html"` against the file list).
+- Nav is consistent: "Painting" link present on all 66 files that carry the sidebar; the 14 files without it are all legitimate exclusions (orphan pages, redirect stubs, `index.html`, and the two deliberately nav-less safety pages `safety-signs.html` / `safety-training-presentation.html`).
+- Red-flag files: `products.html` (1 span, unchanged), `remediation.html` (8 spans, unchanged, still the top-priority open item), `insulation.html` (2 spans, unchanged), `excavation.html` (2 spans, unchanged). **New since last pass**: `painting.html` (10 spans - PCA P1/P4, GA-214 finish levels, primer/temperature requirements) and `tile.html` (3 spans, carried over from the 2026-07-31 tile split, still open). Both new pages' flags are recent enough (added 2026-08-08 and 2026-07-31) that they likely just haven't been reviewed yet rather than being stuck.
+- `about.html` footer inconsistency still present, still parked as a discuss-first item (unchanged from prior passes).
+- `safety-signs.html` / `safety-training-presentation.html` confirmed to have no sidebar nav at all (by design, not a bug) - this is why they don't carry the Painting link either; not a new finding.
+
+**New minor finding, not fixed this pass (low priority, needs a judgment call, not mechanical):**
+- **Footer copyright text is inconsistent site-wide** - most pages read "&copy; [year] Remodelers Guide. All rights reserved. | Contact: ...", but `decks.html` alone reads "Licensed under CC BY 4.0" instead, and `wage-calculator.html` uses a different structure entirely ("Built by Jerry Tyrrell", no `Last revised`/Share/Print). Unclear which is intentional (a real licensing decision vs. a stray edit), so left alone. Worth a one-line answer from the user on which text is correct before touching it.
+
+**Still flagged for user decision (needs judgment, unchanged from prior passes):**
+- `remediation.html` red-flag review - 8 spans covering PPE minimums, containment/negative-air setup, and the ~19% wood moisture-content treatment threshold. Still the single highest-priority open item on the site: procedural safety content live on the page without approval.
+- `painting.html` red-flag review (new) - 10 spans of researched specs (PCA P1/P4, GA-214, primer/temp requirements) pending the same approve/correct/remove decision as any other new page.
+
+**Suggested priority for next session:** with the `products.html`/`resources.html` chrome gap closed, the two highest-value remaining moves are (1) a `remediation.html` red-flag review (oldest open item, safety-relevant) and (2) a `painting.html` red-flag review now that it's had time to settle, both one-page/one-PR sessions. After that, the Roadmap section 1 content gaps (fireblocking checklist, flatwork/concrete order form) remain the two trade areas with no companion printable at all.
 
 ### 2026-07-27 - Full-site review (automated)
 No content-page files changed since the 2026-07-20 pass landed (`main` only gained that pass's own ROADMAP.md commit), so this pass re-verified prior findings and implemented the zero-judgment mechanical cleanup that had been sitting ready since 2026-07-20.
@@ -107,6 +130,8 @@ Low-risk, high-tidiness items.
 - [x] **`CLAUDE.md` work log gap** - Backfilled 2026-07-27: PRs #224-227 (fold Safety Reminders card into PPE checklist, then drop `safety-reminders.html`) now recorded in the Work Log.
 - [ ] **README is stale** - `README.md` still describes the AWS/S3 upload process and an "Active Navigation" version. The site is on GitHub Pages now. Rewrite it to reflect the current hosting, structure, and the conventions in `CLAUDE.md`.
 - [x] **Last revised dates** - Spot-checked 2026-07-27: `safety.html` and `safety-equipment-checklist.html` were stale (`06/04/2026` vs. actual last edit `07/10/2026`); fixed. No other mismatches found.
+- [x] **`products.html` / `resources.html` missing all footer chrome** - Fixed 2026-08-10: both pages had no print stylesheet, no Share/Print buttons, no `Last revised` line, and no sitewide footer at all. Added the standard set matching every other content page.
+- [ ] **Footer copyright text inconsistency** - `decks.html` alone uses "Licensed under CC BY 4.0" instead of the standard "All rights reserved" text used on every other page; `wage-calculator.html` uses a different footer structure entirely ("Built by Jerry Tyrrell", no Last revised/Share/Print). Confirm with the user which is intentional before changing either.
 
 ## 6. Orphan pages (parked - do not delete)
 Per user decision, these are NOT to be deleted; the user wants them migrated to his personal website repo, which is not yet accessible from these sessions.

@@ -261,3 +261,10 @@ Not every page needs every section — content drives structure.
 - **Scope note**: `flatwork-concrete.html` also covers compaction inspection and drain tile/sump/radon prep in more detail (its own Process and Inspection sections) but was left untouched; user asked specifically for the foundation page
 - **No red flags used**: content is the user's own field account, not researched/added material
 - **Branch**: `claude/sump-crock-radon-mitigation-mf3vjc`
+
+### Session: 2026-08-08 — Painting page and worksheet (PR #236)
+- **New page** `painting.html`: built from user's field guide notes. Covers scope definition (surface by surface, room by room), the two-phase prime/finish sequence relative to flooring and fixtures, stain grade trim workflow, doors sent off site, protection responsibilities, color sign-off, and touch-up timing
+- **Red-flagged additions** (pending approval, 10 spans): researched PCA P1/P4 and GA-214 finish-level references, primer/temperature requirements, and other specs beyond the user's original notes
+- **New standalone form** `painting-worksheet.html`: Room / Element / Color / Sheen / Brand grid, blank rows, one print page; linked from Resources
+- **Nav**: "Painting" added after "Countertops" in all files carrying the sidebar; cross-linked from Drywall, Flooring, Tile, Countertops, and Exterior Doors
+- **Branch**: `claude/painting-remodelers-guide-krx6pt`

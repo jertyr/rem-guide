@@ -268,3 +268,22 @@ Not every page needs every section — content drives structure.
 - **New standalone form** `painting-worksheet.html`: Room / Element / Color / Sheen / Brand grid, blank rows, one print page; linked from Resources
 - **Nav**: "Painting" added after "Countertops" in all files carrying the sidebar; cross-linked from Drywall, Flooring, Tile, Countertops, and Exterior Doors
 - **Branch**: `claude/painting-remodelers-guide-krx6pt`
+
+### Session: 2026-08-13 — Demolition page: downspout drainage note (PR #239)
+- **Field lesson**: demo removed a downspout extension; an excavation dug afterward for an addition ended up with the downspout draining straight into it
+- **Changes**: added "Extend downspouts away from the house" to `demolition-checklist.html`'s "Before You Leave" section; added a matching bullet to `demolition.html`'s end-of-day process list, noting it especially matters near open excavation
+- **No red flags used**: user's own field account
+- **Branch**: `claude/demolition-downspout-drainage`
+
+### Session: 2026-08-14 — Interior Trim page + Interior Door Order Form (PRs #241, #243, #244)
+- **Context**: user wanted an interior door order form and noticed there was no Interior Trim page at all. Built the page first, then the form, then linked it as a resource
+- **New page** `interior-trim.html`: standard format (intro, Quick Reference, Prerequisites, Materials and Components, Process, Best Practices, Inspections, Client Communication, Resources). Covers prehung/slab/bifold/bypass/pocket/barn doors, casing, base, window stool and apron, paint grade vs stain grade. Cross-links Drywall, Flooring, Tile, Painting, Stairs
+- **Nav placement**: "Interior Trim" inserted after "Painting", before "Stairs", in all 66 sidebar-carrying files. Groups the finish carpentry (Interior Trim + Stairs) and sits next to Painting, its main coordination partner. Orphans, redirect stubs, and standalone printables correctly skipped (14 files)
+- **New printable** `interior-door-order-form.html`: linked from the Interior Trim page Resources and indexed on resources.html under Interior Finishes
+- **DESIGN ITERATION (important)**: first built as a job-wide spec block over a 14-row door schedule, on the reasoning that a house shares one door spec across many openings. **User rejected the schedule**: wants one sheet per door for clarity, matching the exterior door form. Rebuilt in PR #243 as one sheet per opening
+- **User's field corrections in PR #243**: Panel pick list replaced with a **draw box** (same pattern as the window and exterior door forms); Style added as Swing / Pocket / French / Bifold / Sliding; Hand added; jamb widths forced onto one line; Jamb Material changed from a pick list to a write-in; Bore changed to None / Single / Double; hinge size/count line removed (only Hinge Finish kept); Date swapped for Location in the job header since Location identifies the opening
+- **LESSON**: for door and window forms on this site, the user's model is **one sheet per opening with a draw box**, not a schedule. Do not propose schedule-style layouts for doors again
+- **Red flags cleared (PR #244)**: user approved the form's researched specs (heights, thickness, jamb widths, backset, hand convention). `interior-trim.html` still carries 13 unreviewed spans (door sizes, RO rule of thumb, hinge fastening, bore/backset, 3/16" casing reveal, nail gauges, acclimation, garage-to-house door code items)
+- **Garage door citation, handled carefully**: door construction requirement (1 3/8" solid wood, solid or honeycomb core steel, or 20 minute rated) is consistent across IRC editions and verified. The **self-closing / self-latching language has moved between code cycles**, so it was written as "confirm against the edition your jurisdiction has adopted" rather than stated flatly for the 2015 MRC. Could not verify the 2015 text directly; codes.iccsafe.org returns 403 to WebFetch and UpCodes only served the 2021 edition
+- **PRINT-MEASUREMENT GOTCHA (important, extends the technique note above)**: the probe copy must be written **into the repo directory**, not the scratchpad. A probe in /tmp cannot resolve `styles.css`, so it renders unstyled and every page count is wrong (measured 2 pages for a form that actually fits on 1). Write `zz-probe.html` next to styles.css, measure, then delete it
+- **Branches**: `claude/interior-trim-page-and-door-form`, `claude/interior-door-form-revisions`, `claude/interior-door-form-approve-flags`

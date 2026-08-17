@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-08-10
+Last updated: 2026-08-17
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,36 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-08-17 - Full-site review (automated)
+Since the 2026-08-10 pass: the downspout-drainage field note landed on demolition (PR #239), a new Interior Trim page plus a per-opening Interior Door Order Form landed (PRs #241/#243/#244, `interior-trim.html` / `interior-door-order-form.html`), and the tile prep sheet had its All-Set line merged into Floor Substrate/Shower Waterproofing (PR #247).
+
+**Implemented this pass (mechanical, no user decision needed):**
+1. Checked off **"Tile order consolidation follow-through"** (Section 1) - reverified `tile-order-sheet.html` is still a clean redirect stub (`meta refresh` to `flooring.html`) with zero remaining inbound `href` references from any other page.
+2. Checked off **"Deck order sheet - resolve open hardware flag"** (Section 2) - reverified `deck-order-sheet.html` has no `HDU5-SDS2.5` reference and `DTT2Z` is present carrying the lateral tie, matching the PR #206 decision.
+
+**New finding - unreviewed red flags on the new Interior Trim page:**
+- `interior-trim.html` carries **13 unapproved `color:red` spans** from its 08/14 creation (door sizes, RO rule of thumb, hinge fastening, bore/backset, 3/16" casing reveal, nail gauges, acclimation time, and the garage-to-house door code items). This is now the second-largest open red-flag file on the site after `remediation.html`. Per `CLAUDE.md`, the garage door self-closing/self-latching language was deliberately written as "confirm against the edition your jurisdiction has adopted" rather than stated flatly, because the source text couldn't be verified past the 2021 code cycle - that specific span may need a citation source before it can be approved as-is, not just a yes/no.
+- `interior-door-order-form.html`'s red flags were already cleared in PR #244 (approved 08/14) - not part of this finding.
+
+**Reverified and still accurate:**
+- No broken internal links across all HTML files (scripted check of every `href="*.html"` against the file list).
+- Nav is fully consistent: "Interior Trim" is present on all 69 sidebar-carrying files; no drift from the PR #241 rollout.
+- Footer chrome (Share/Print buttons, `Last revised` line) confirmed present and dated correctly on both new pages (`08/14/2026`, matching actual edit date).
+- Red-flag counts unchanged elsewhere: `products.html` (1 span), `remediation.html` (8 spans), `insulation.html` (2 spans), `excavation.html` (2 spans), `painting.html` (10 spans), `tile.html` (3 spans) - all still open, same as the 08/10 pass.
+- `about.html` footer inconsistency still present and still stale by an extra year (`&copy; 2025` vs. the `2026` every other page now carries) - unchanged, still parked as a discuss-first item.
+- Footer copyright text inconsistency (`decks.html` CC BY 4.0 wording; `wage-calculator.html` different structure entirely) still present, still needs a one-line answer from the user before touching.
+- README still describes the pre-GitHub-Pages AWS/S3 "Active Navigation Version" setup - unchanged, still open per Section 5.
+- Redirect stubs (`roofing-order-sheet-2.html`, `siding-and-trim-order-sheat.html`, `tile-order-sheet.html`, `safety-reminders.html`) all still redirect correctly with zero inbound links.
+- Content-gap items unchanged: no `flatwork-concrete` order form, no fireblocking/draftstopping checklist, `neighbor-letter.html` still has no fill-in blanks, rough-trade pages still don't cross-link each other in Resources sections.
+- Orphan pages unchanged, still parked pending personal-site repo access.
+
+**Still flagged for user decision (needs judgment, unchanged or newly added):**
+- `remediation.html` red-flag review - 8 spans, oldest open item on the site, procedural safety content (PPE minimums, containment/negative-air setup, moisture-content threshold) live without approval. Still the single highest-priority open item.
+- `painting.html` red-flag review - 10 spans of researched specs (PCA P1/P4, GA-214, primer/temperature requirements), now over a week old and settled.
+- `interior-trim.html` red-flag review (new) - 13 spans, the largest single batch added since the last pass; the garage door code-citation span in particular may need a source lookup rather than a simple approve/reject.
+
+**Suggested priority for next session:** three pages now sit with unapproved red flags of meaningfully different age and stakes - `remediation.html` (oldest, safety-relevant), `painting.html` (settled a week+), and `interior-trim.html` (newest, largest count). Recommend bundling all three into one review conversation with the user rather than three separate passes, since it's the same approve/correct/remove decision repeated three times and the user's time is the bottleneck, not the content. After that, Section 1's content gaps (fireblocking checklist, flatwork/concrete order form) remain the two trade areas with no companion printable at all.
 
 ### 2026-08-10 - Full-site review (automated)
 Since the 2026-07-27 pass: tile print-table-width fix (PR #233), the foundations.html sump crock/radon field note (PR #234), and a new Painting page + worksheet (PR #236, `painting.html` / `painting-worksheet.html`) landed on `main`.
@@ -115,13 +145,13 @@ These are referenced in field work or implied by existing pages but do not yet e
 - [ ] **Fireblocking & draftstopping checklist** - `fireblocking-and-draftstopping.html` is a strong page but has no printable jobsite checklist companion like the other trades have.
 - [ ] **Rough-trade cross-linking** - Plumbing, Electrical, Mechanical, and HVAC rough pages do not link each other in their Resources sections. A "Related rough trades" block on each would help crews jump between coordinated trades. (Sidebar nav links exist; in-content cross-links do not.)
 - [ ] **Neighbor letter fill-in blanks** - `neighbor-letter.html` reads as static prose. Add fill-in blanks (project address, start/end dates, contact name and phone, work hours) so it is actually usable as a template, matching the fillable-form direction of the rest of the site.
-- [ ] **Tile order consolidation follow-through** - `tile-order-sheet.html` is now a redirect stub superseded by the prep/finish split. Confirm no remaining inbound links point at the old sheet expecting content.
+- [x] **Tile order consolidation follow-through** - Reverified 2026-08-17: `tile-order-sheet.html` is a clean redirect stub with zero remaining inbound links.
 
 ## 2. Order forms - finish the Westbury-model pass
 Standing direction: present real, orderable options and constrain clients to common choices instead of open write-in lines; keep each form to a single print page where possible.
 
 - [ ] **Audit remaining open write-ins** - Sweep every order form for fields that come in fixed sizes/SKUs but are still open lines, and convert to pick lists (the siding reveal and countertop material/edge work in PR #206 is the model).
-- [ ] **Deck order sheet - resolve open hardware flag** - The HDU5-SDS2.5 hold-down was dropped in PR #206; re-verify the deck sheet reflects DTT2Z carrying lateral tie and that no stale SKUs remain.
+- [x] **Deck order sheet - resolve open hardware flag** - Reverified 2026-08-17: no `HDU5-SDS2.5` reference remains; `DTT2Z` is present carrying the lateral tie.
 - [ ] **Quantity-note verification** - Deck fastener pack/count notes (clips/bag, pcs/lb) were generalized to "supplier scales" reminders; revisit if the user wants hard counts for any specific product.
 - [ ] **Consistent form chrome** - Confirm every order form uses the standard `h1.form-title` "Remodelers Guide:" prefix, job-header fill lines, print-credit line, `.form-actions` wrapper, and `@page` rule. A few legacy sheets may predate the standard.
 
@@ -132,7 +162,9 @@ Per workflow, researched specs stay red until the user approves them. These are 
 - [ ] **Insulation soffit NFA rows** - Aluminum and vinyl soffit net-free-area numbers are still flagged; aluminum is likely understated (manufacturer full-vent panels run roughly 14-19.6 sq in/ft). Verify against current manufacturer data and unflag or correct.
 - [ ] **Excavation utility-coordination notes** - Two flags on `excavation.html`: electrical service drop relocation lead time ("sometimes weeks out") and the refrigerant-recovery-requires-licensed-tech line for AC condensers in the dig zone. Both read as reasonable but are unconfirmed against the user's actual field experience.
 - [ ] **Products page respirator note** - One flag on `products.html` on the Uqezagpa full-face respirator listing, asking to confirm the cartridge rating (organic vapor vs. P100) matches intended task use.
-- [ ] **Standing red-flag sweep** - Grep the site for `color:red` spans and triage each: approve, correct, or surface to the user. Keeps the "added content" debt visible. (As of this pass: `products.html`, `remediation.html`, `insulation.html`, `excavation.html` are the only files with open flags.)
+- [ ] **Painting page red flags** - `painting.html` has 10 spans of researched specs (PCA P1/P4, GA-214 finish levels, primer/temperature requirements) pending approval, open since 2026-08-08.
+- [ ] **Interior Trim page red flags (new, largest open batch)** - `interior-trim.html` has 13 spans (door sizes, RO rule of thumb, hinge fastening, bore/backset, casing reveal, nail gauges, acclimation time, garage-to-house door code items) pending approval, open since 2026-08-14. The garage door self-closing/self-latching span specifically needs a citation source, not just an approve/reject, since the exact code-cycle text couldn't be verified past the 2021 edition.
+- [ ] **Standing red-flag sweep** - Grep the site for `color:red` spans and triage each: approve, correct, or surface to the user. Keeps the "added content" debt visible. (As of 2026-08-17: `products.html`, `remediation.html`, `insulation.html`, `excavation.html`, `painting.html`, `tile.html`, `interior-trim.html` are the files with open flags.)
 
 ## 4. Structural / maintainability (the big one)
 The site has no templating: every one of the 70+ HTML files carries its own full copy of the sidebar nav, the inline mobile-nav script, and the print-style block. Any nav change touches every file.

@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-08-10
+Last updated: 2026-08-24
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,27 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-08-24 - Full-site review (automated)
+Since the 2026-08-10 pass: the demolition downspout-drainage field note (PR #239), a new Interior Trim page + Interior Door Order Form (PRs #241/#243/#244, `interior-trim.html` / `interior-door-order-form.html`), a `CLAUDE.md` history consolidation (PR #245), and a Tile Prep order sheet content merge (PR #247) landed on `main`.
+
+**Implemented this pass (mechanical, no user decision needed):**
+1. **Stale `Last revised` footers on three substantively-edited pages** - `demolition.html` and `demolition-checklist.html` both still read their original build dates (`01/03/2026` / `01/04/2026`) despite the 08/13/2026 downspout-drainage note added to each (PR #239); updated both to `08/13/2026`. `foundations.html` still read `01/01/2026` despite the 08/07/2026 sump-crock/radon field note (PR #234); updated to `08/07/2026`.
+2. **Missing-colon footer typo, found on 5 files this pass** - `demolition.html`, `foundations.html`, `flatwork-concrete.html`, and `neighbor-letter.html` all read `Last revised 01/0x/2026` (no colon, matching the pattern already fixed on `hazardous-materials.html` in the 2026-07-27 pass); `neighbor-letter.html` also had an unpadded month (`1/04/2026`). All five now read `Last revised: MM/DD/YYYY` consistent with every other page. (`demolition.html` and `foundations.html` overlap with finding 1 above - one edit fixed both issues on those two files.) `flatwork-concrete.html` and `neighbor-letter.html` had no evidence of a recent content edit, so only the colon was added; their dates were left as-is.
+
+**New finding, not fixed this pass (needs user review, not mechanical):**
+- **`interior-trim.html` carries 13 unreviewed `color:red` spans** - added with the page on 08/14/2026 (door/RO sizing rules of thumb, hinge fastening, bore/backset specs, casing reveal, nail gauges, acclimation timing, and the garage-to-house door code items). Ten days old as of this pass and not yet approved. The companion `interior-door-order-form.html`'s own flags were already cleared in PR #244; only the page itself is still open.
+
+**Reverified and still accurate:**
+- No broken internal links across all HTML files (scripted check of every `href="*.html"` against the file list).
+- Nav is consistent: "Interior Trim" link present on all 68 sidebar-carrying files; no drift.
+- `interior-door-order-form.html` is correctly indexed on `resources.html` under Interior Finishes and linked from `interior-trim.html`'s own Resources section.
+- Red-flag files otherwise unchanged and aging further: `remediation.html` (8 spans, open since before 07-19 - now over five weeks unreviewed, still the single highest-priority open item on the site), `painting.html` (10 spans, open since 08-08 - over two weeks), `tile.html` (3 spans, open since 07-31 - over three weeks), `insulation.html` (2 spans), `excavation.html` (2 spans), `products.html` (1 span).
+- Backlog items in sections 1, 5, and 6 below unchanged: no fireblocking checklist, no flatwork/concrete order form, `neighbor-letter.html` still has no fill-in blanks (beyond today's footer typo fix), `about.html` footer still reads "© 2025" with no Share/Print/Last-revised chrome, `decks.html`/`wage-calculator.html` footer copyright text still inconsistent with the site standard. All still parked pending a user decision, not re-fixed this pass.
+
+**Process note:** this session's git checkout is a shallow clone (`git log -1 -- <file>` returns the same tip-commit date for every file rather than each file's actual last-touched commit), so file-level git-log date comparisons are unreliable here. This pass cross-checked footer dates against the `CLAUDE.md` Work Log narrative instead. Future automated passes should do the same unless working from a full clone.
+
+**Suggested priority for next session:** the `remediation.html` red-flag review is now the oldest item on this list by a wide margin (five-plus weeks unreviewed, safety-relevant content) and should come first. After that, clear the newest flag set (`interior-trim.html`, 13 spans) while it's still fresh, then work backward through `painting.html` and `tile.html`. None of these need research; they're all approve/correct/remove decisions sitting on the user's desk.
 
 ### 2026-08-10 - Full-site review (automated)
 Since the 2026-07-27 pass: tile print-table-width fix (PR #233), the foundations.html sump crock/radon field note (PR #234), and a new Painting page + worksheet (PR #236, `painting.html` / `painting-worksheet.html`) landed on `main`.

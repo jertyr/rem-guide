@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Foundation Order Sheet | Remodelers Guide">
+    <title>Foundation Order Sheet | Remodelers Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+
+        /* Screen styles */
+        h1.form-title {
+            font-size: 1.4rem;
+            margin: 0 0 0.6rem 0;
+            color: #2C3E50;
+        }
+        h3.form-section {
+            font-size: 0.95rem;
+            color: #2C3E50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.2rem;
+            margin: 0.9rem 0 0.35rem 0;
+            font-weight: 600;
+        }
+        .job-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .job-header p { margin: 0; font-size: 0.95rem; }
+        .intro-text {
+            font-size: 0.9rem;
+            color: #444;
+            margin: 0 0 0.8rem 0;
+        }
+        .fill-xl {
+            display: inline-block;
+            width: 240px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-lg {
+            display: inline-block;
+            width: 160px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-md {
+            display: inline-block;
+            width: 110px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-sm {
+            display: inline-block;
+            width: 70px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .fill-xs {
+            display: inline-block;
+            width: 45px;
+            border-bottom: 1px solid #333;
+            margin-left: 0.3rem;
+            vertical-align: bottom;
+        }
+        .spec-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .spec-block { margin-bottom: 0.6rem; }
+        .spec-col { min-width: 0; }
+        .spec-block h3.form-section { margin-top: 0.4rem; }
+        .form-row {
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+        .option-row {
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+        }
+        .option-row .opts { color: #444; }
+        .opts-nowrap { color: #444; white-space: nowrap; }
+        .sub-row {
+            margin: 0.25rem 0 0.25rem 1.4rem;
+            font-size: 0.9rem;
+            color: #444;
+        }
+        .req-note {
+            font-size: 0.8rem;
+            color: #8a4b08;
+            font-style: italic;
+        }
+        .ref-box {
+            border: 1px solid #ddd;
+            background: #fafafa;
+            padding: 0.5rem 0.7rem;
+            margin: 0.4rem 0;
+            font-size: 0.85rem;
+        }
+        .ref-box p { margin: 0.15rem 0; }
+        .ref-box .ref-title {
+            font-weight: 600;
+            color: #2C3E50;
+        }
+        .notes-box {
+            height: 1.1in;
+            margin-top: 0.4rem;
+        }
+        .draw-box {
+            border: 1px solid #aaa;
+            height: 2.4in;
+            margin-top: 0.4rem;
+            background: #fff;
+        }
+        .signoff-row {
+            margin: 0.35rem 0;
+            font-size: 0.95rem;
+        }
+        .print-credit { display: none; }
+        .form-actions { margin-top: 1rem; }
+    
+        /* Print rules last so they override the screen rules above */
+        @media print {
+            @page { margin: 0.5in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                display: block !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+                margin-left: 0 !important;
+                min-height: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+            body {
+                display: block !important;
+                min-height: 0 !important;
+                margin: 0;
+                padding: 0;
+                font-size: 0.82rem;
+            }
+            h1.form-title { font-size: 1rem; margin: 0 0 0.35rem 0; }
+            h3.form-section { font-size: 0.82rem; margin: 0.45rem 0 0.2rem 0; padding-bottom: 0.1rem; }
+            .job-header { margin-bottom: 0.45rem; gap: 1.4rem; }
+            .job-header p { font-size: 0.85rem; margin: 0.08rem 0; }
+            .intro-text { display: none; }
+            .spec-columns { gap: 1.6rem; }
+            .spec-block { margin-bottom: 0.35rem; }
+            .form-row { margin: 0.16rem 0; font-size: 0.82rem; }
+            .option-row { margin: 0.16rem 0; font-size: 0.82rem; }
+            .sub-row { margin: 0.12rem 0 0.12rem 1rem; font-size: 0.74rem; }
+            .ref-box { font-size: 0.74rem; padding: 0.35rem 0.45rem; margin: 0.3rem 0; }
+            .ref-box p { margin: 0.12rem 0; }
+            .notes-box { height: 1.4in; }
+            .draw-box { height: 4.2in; }
+            .signoff-row { font-size: 0.88rem; margin: 0.3rem 0; }
+            .page-break { break-before: page; page-break-before: always; }
+            .print-credit {
+                display: block;
+                font-size: 0.65rem;
+                color: #666;
+                text-align: center;
+                margin-top: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+<div class="main-wrapper">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="about.html">Home</a></li>
+                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+                <li class="nav-item"><a href="safety.html">Safety</a></li>
+                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
+                <li class="nav-item"><a href="footings.html">Footings</a></li>
+                <li class="nav-item active-section"><a href="foundations.html" class="active">Foundations</a></li>
+                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
+                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+                <li class="nav-item"><a href="remediation.html">Remediation</a></li>
+                <li class="nav-item"><a href="framing.html">Framing</a></li>
+                <li class="nav-item"><a href="decks.html">Decks</a></li>
+                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+                <li class="nav-item"><a href="windows.html">Windows</a></li>
+                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
+                <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
+                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+                <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
+                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
+                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
+                <li class="nav-item"><a href="tile.html">Tile</a></li>
+                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
+                <li class="nav-item"><a href="painting.html">Painting</a></li>
+                <li class="nav-item"><a href="interior-trim.html">Interior Trim</a></li>
+                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
+                <li class="nav-item"><a href="resources.html">Resources</a></li>
+                <li class="nav-item"><a href="products.html">Products</a></li>
+                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main style="margin-left: 280px; padding: 2rem;">
+        <article>
+            <p class="breadcrumb"><a href="foundations.html">Foundations</a> &gt; Foundation Order Sheet</p>
+            <h1 class="form-title">Remodelers Guide: Foundation Order Sheet</h1>
+
+            <p class="intro-text">Design document for a foundation. Sales fills it out at the design stage, the estimator prices from it, and once approved it goes to production as the build spec. Anything left blank is a decision that has not been made yet.</p>
+
+            <div class="job-header">
+                <p>Client:<span class="fill-md"></span></p>
+                <p>Address:<span class="fill-lg"></span></p>
+                <p>Date:<span class="fill-sm"></span></p>
+                <p>By:<span class="fill-sm"></span></p>
+            </div>
+
+            <div class="spec-columns">
+                <div class="spec-col">
+                    <div class="spec-block">
+                        <h3 class="form-section">Foundation Type &amp; Structure</h3>
+                        <p class="option-row">Type: <span class="opts">&#9744; Basement &nbsp; &#9744; Crawl Space &nbsp; &#9744; Walkout</span></p>
+                        <p class="form-row">Dig Depth:<span class="fill-sm"></span></p>
+                        <p class="form-row">Wall Height:<span class="fill-sm"></span></p>
+                        <p class="form-row">Wall Thickness:<span class="fill-sm"></span></p>
+                        <p class="option-row">Wall: <span class="opts">&#9744; Poured &nbsp; &#9744; Block</span></p>
+                        <p class="form-row">Footing Size:<span class="fill-xs"></span> W &times;<span class="fill-xs"></span> D</p>
+                        <p class="option-row">Footing Style: <span class="opts">&#9744; Trench &nbsp; &#9744; Spread</span></p>
+                        <p class="option-row">Brick Ledge: <span class="opts">&#9744; Yes &nbsp; &#9744; No</span></p>
+                        <p class="form-row">Ledge Drop / Width:<span class="fill-sm"></span></p>
+                        <p class="option-row">Existing Wall at Tie-In: <span class="opts">&#9744; Block &nbsp; &#9744; Poured &nbsp; &#9744; N/A</span></p>
+                    </div>
+
+                    <div class="spec-block">
+                        <h3 class="form-section">Slab &amp; Under-Slab</h3>
+                        <p class="form-row">Slab Thickness:<span class="fill-sm"></span></p>
+                        <p class="form-row">Slab Size / Area:<span class="fill-md"></span></p>
+                        <p class="option-row">&#9744; Pea Stone &nbsp; Depth:<span class="fill-sm"></span></p>
+                        <p class="option-row">&#9744; EPS Under Slab &nbsp; Thickness:<span class="fill-sm"></span></p>
+                        <p class="option-row">&#9744; 6-mil Poly Vapor Barrier</p>
+                        <p class="form-row">Reinforcement:<span class="fill-md"></span></p>
+                    </div>
+
+                    <div class="spec-block">
+                        <h3 class="form-section">Drainage &amp; Radon</h3>
+                        <p class="option-row">&#9744; Full Drainage Package <span class="req-note">(required on basement)</span></p>
+                        <p class="sub-row">Exterior footing drains with weeps, plus interior drain tile to a sump pit</p>
+                        <p class="option-row">&#9744; Radon Prep Only <span class="req-note">(crawl space option)</span></p>
+                        <p class="sub-row">Drain tile to a crock for a future radon system, no pump. <span style="color:red">Confirm whether the pit needs plumbing sign-off before the compaction inspection</span></p>
+                        <p class="form-row">Sump Pit Location:<span class="fill-md"></span></p>
+                        <p class="form-row">Discharge Location:<span class="fill-md"></span></p>
+                        <p class="option-row">&#9744; Dig to Footing Drains <span class="opts">(egress well, crawl)</span></p>
+                        <p class="option-row">&#9744; Downspout Extensions &nbsp; Qty:<span class="fill-xs"></span></p>
+                    </div>
+                </div>
+
+                <div class="spec-col">
+                    <div class="spec-block">
+                        <h3 class="form-section">Damproofing &amp; Insulation</h3>
+                        <p class="option-row">Damproofing: <span class="opts">&#9744; Tar &nbsp; &#9744; Mel-Roll</span></p>
+                        <p class="option-row">&#9744; Exterior Foam &nbsp; Thickness:<span class="fill-sm"></span></p>
+                        <p class="option-row">&#9744; Interior Foam &nbsp; Thickness:<span class="fill-sm"></span> <span class="opts">(ignition barrier)</span></p>
+                        <div class="ref-box">
+                            <p class="ref-title">EPS reference, SE Michigan (zone 5)</p>
+                            <p><span style="color:red">Walls R-15 continuous exterior or R-19 cavity; slab edge R-10 down 2 ft (2015 MRC / IECC R402.1.2)</span></p>
+                            <p><span style="color:red">Type IX EPS ~R-4.2/in: 2"=R-8.4, 3"=R-12.6, 4"=R-16.8. Use 4" for walls, 3" at slab edge</span></p>
+                        </div>
+                    </div>
+
+                    <div class="spec-block">
+                        <h3 class="form-section">Openings &amp; Access</h3>
+                        <p class="option-row">&#9744; Windows &nbsp; Qty:<span class="fill-xs"></span> Size:<span class="fill-sm"></span></p>
+                        <p class="option-row">&#9744; Walkout Door &nbsp; Size:<span class="fill-sm"></span></p>
+                        <p class="option-row">&#9744; Egress Well &nbsp; Qty:<span class="fill-xs"></span> Type:<span class="fill-sm"></span></p>
+                        <p class="option-row">&#9744; Cut Access Through Existing Wall</p>
+                        <p class="sub-row">&#9744; Crawl access &nbsp; &#9744; Basement walk-through</p>
+                        <p class="sub-row">Wall to cut: &#9744; Block &nbsp; &#9744; Poured</p>
+                        <p class="sub-row">Opening size:<span class="fill-sm"></span> &nbsp; Header required: &#9744; Yes &nbsp; &#9744; No</p>
+                        <p class="form-row">Penetrations:<span class="fill-md"></span></p>
+                        <p class="sub-row">Dryer, hose bibs, outlets, vents, sump discharge</p>
+                    </div>
+
+                    <div class="spec-block">
+                        <h3 class="form-section">Layout &amp; Coordination</h3>
+                        <p class="form-row">Top of Wall Elevation:<span class="fill-md"></span></p>
+                        <p class="sub-row">On an addition, state what it matches. Existing floors are often out of level</p>
+                        <p class="form-row">Anchor Bolts / Hold-Downs:<span class="fill-md"></span></p>
+                        <p class="form-row">Window Wells:<span class="fill-md"></span></p>
+                        <p class="form-row">Underground Drain Design:<span class="fill-md"></span></p>
+                        <p class="form-row">Site Constraints:<span class="fill-md"></span></p>
+                        <p class="sub-row">Crane reach, spoils storage, utility locates</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-break"></div>
+
+            <h3 class="form-section">Special Reinforcement &amp; Notes</h3>
+            <div class="notes-box"></div>
+
+            <h3 class="form-section">Permit Inspections Required</h3>
+            <p class="option-row"><span class="opts">&#9744; Footing &nbsp;&nbsp; &#9744; Compaction &nbsp;&nbsp; &#9744; Backfill &nbsp;&nbsp; &#9744; Brick</span></p>
+            <p class="sub-row">Backfill inspection has to pass before any backfilling. Compaction is checked before the slab pour</p>
+
+            <h3 class="form-section">Sketch / Plan <span style="font-weight:normal; font-size:0.82rem; color:#666;">(footprint, dimensions, openings, tie-in points)</span></h3>
+            <div class="draw-box"></div>
+
+            <h3 class="form-section">Sign-Off</h3>
+            <p class="signoff-row">Designed by (Sales):<span class="fill-lg"></span> Date:<span class="fill-md"></span></p>
+            <p class="signoff-row">Priced by (Estimator):<span class="fill-lg"></span> Date:<span class="fill-md"></span></p>
+            <p class="signoff-row">Approved by (Client):<span class="fill-lg"></span> Date:<span class="fill-md"></span></p>
+            <p class="signoff-row">Released to Production:<span class="fill-lg"></span> Date:<span class="fill-md"></span></p>
+
+            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+
+            <p class="form-actions">
+                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+                <br>
+                <small>Last revised: 08/14/2026</small>
+            </p>
+
+            <p class="breadcrumb"><a href="foundations.html">Foundations</a> &gt; Foundation Order Sheet</p>
+        </article>
+    </main>
+</div>
+
+<script>
+    // Share button
+    const shareBtn = document.getElementById('share-btn');
+    if (shareBtn && navigator.share) {
+        shareBtn.addEventListener('click', () => {
+            navigator.share({
+                title: document.title || 'Foundation Order Sheet',
+                url: window.location.href
+            }).catch(() => { });
+        });
+    } else if (shareBtn) {
+        shareBtn.style.display = 'none';
+    }
+    // Print button
+    const printBtn = document.getElementById('print-btn');
+    if (printBtn) {
+        printBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
+    // Mobile navigation toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        if (navToggle && sidebar) {
+            navToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
+                        sidebar.classList.remove('active');
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<footer>
+    &copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
+<!-- goatcounter-analytics:start -->
+<script data-goatcounter="https://rem-guide.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+<!-- goatcounter-analytics:end -->
+</body>
+</html>

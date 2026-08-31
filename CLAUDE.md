@@ -299,3 +299,18 @@ Not every page needs every section — content drives structure.
 - **Final measurements**: page 1 is 8.10in and page 2 is 8.78in of the 10in printable area, so both have real headroom. Balancing the six spec blocks into two explicit column divs (rather than letting a grid auto-place them in rows) recovered about 2in of wasted whitespace, since each grid row had been as tall as its tallest column
 - **Open red flags after this session**: `remediation.html` 8 (oldest, safety), `interior-trim.html` 13, `painting.html` 10, `tile.html` 3, `foundation-order-sheet.html` 2, `insulation.html` 1, `excavation.html` 2, `products.html` 1. The orphaned `construction-dashboard.html` carries 37 pricing flags and is parked for migration
 - **Branch**: `claude/foundation-order-sheet`
+
+### Session: 2026-08-27 (cont.) — Foundation Order Sheet review pass (PRs #252, #254), backfilled 2026-08-31
+- **Backfill note**: this content landed on `main` via PRs #252/#254 but the memory PR documenting it (#253) never got merged; recorded here so future sessions have it
+- **User's field corrections applied**: footing size gained a linear feet field; brick ledge drop/width row dropped; downspout extensions gained Qty and LF; "Header required" moved to its own line; anchor bolts/hold-downs, window wells, underground drain design and site constraints removed from Layout & Coordination; intro paragraph and inspection explanation line removed; new checkboxes (Tight Site Conditions, Pump Truck Needed, Slinger Truck Needed) added to Layout & Coordination; sign-off section removed (sketch box kept)
+- **Radon prep correction**: on this sheet, "Radon Prep Only" is a 3" PVC tee stub under the slab, no crock, no pump — this does not contradict the PR #234 field lesson on `foundations.html` (a specific job where a crock was installed and failed inspection); the job account stays, the standard spec is the tee stub
+- **R-value clarification**: 2015 IECC/MRC Table R402.1.2 lists zone 5 basement wall and crawl space wall identically at 15/19; the crawl figure applies to an unvented crawl (wall is the insulated plane). EPS thickness math removed from the reference box per user; it now carries only the code requirement and "Type IX EPS ~R-4.2/in"
+- **Red flags cleared** in PR #254 (approved by user)
+- **Branch**: `claude/foundation-sheet-revisions` then `claude/foundation-sheet-approve-flags`
+
+### Session: 2026-08-31 — Automated full-site review pass (ROADMAP.md entry, mechanical fixes)
+- **Context**: recurring scheduled review task. Found this designated branch (`claude/inspiring-feynman-jfunf9`) had accumulated a tangle of local merges from other branches with no corresponding PR; restarted it fresh from `main` before doing the review
+- **Process finding**: three prior review/memory PRs (#248 "2026-08-17 review", #249 "2026-08-24 review", #253 foundation-sheet memory) were left open and unmerged, some two-plus weeks old; #248 and #249 both branched from the same stale commit rather than each other, so they duplicate findings without building on one another. Recommended the user close #248/#249 (superseded by the 2026-08-31 ROADMAP entry) and merge or close #253 on its own merits
+- **Mechanical fixes**: stale `Last revised` footers on `demolition.html`, `demolition-checklist.html`, `foundations.html` (updated to match their actual last content edit); colon-only fixes on `flatwork-concrete.html` and `neighbor-letter.html`; `foundation-order-sheet.html`'s date updated from its 08/14 creation date to 08/27 (its actual last revision)
+- **Full findings**: see the ROADMAP.md Review Log entry dated 2026-08-31 for the complete review (red-flag ages, nav/link verification, backlog checkbox updates)
+- **Branch**: `claude/inspiring-feynman-jfunf9`

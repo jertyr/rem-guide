@@ -7,58 +7,7 @@
     <title>Painting Worksheet | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        @media print {
-            @page { margin: 0.5in; size: letter portrait; }
-            header,
-            .sidebar,
-            footer,
-            .mobile-nav-toggle,
-            .breadcrumb,
-            .form-actions,
-            button,
-            #share-btn,
-            #print-btn,
-            small {
-                display: none !important;
-            }
-            .main-wrapper {
-                display: block !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            main {
-                margin: 0 !important;
-                padding: 0 !important;
-                margin-left: 0 !important;
-                min-height: 0 !important;
-            }
-            article {
-                margin: 0 !important;
-                padding: 0 !important;
-                box-shadow: none !important;
-            }
-            body {
-                display: block !important;
-                min-height: 0 !important;
-                margin: 0;
-                padding: 0;
-                font-size: 0.78rem;
-            }
-            h1.form-title { font-size: 1rem; margin: 0 0 0.3rem 0; }
-            h3.form-section { font-size: 0.78rem; margin: 0.3rem 0 0.15rem 0; padding-bottom: 0.1rem; }
-            .job-header { margin-bottom: 0.3rem; gap: 1.5rem; }
-            .job-header p { font-size: 0.78rem; margin: 0.1rem 0; }
-            .worksheet-table { font-size: 0.76rem; }
-            .worksheet-table th, .worksheet-table td { padding: 0.28rem 0.4rem; height: 1.15em; }
-            .notes-box { height: 0.9in; }
-            .print-credit {
-                display: block;
-                font-size: 0.65rem;
-                color: #666;
-                text-align: center;
-                margin-top: 0.3rem;
-            }
-        }
+        
 
         h1.form-title {
             font-size: 1.4rem;
@@ -121,6 +70,78 @@
         }
         .print-credit { display: none; }
         .form-actions { margin-top: 1rem; }
+    
+        /* Print rules last so they override the screen rules above */
+        @media print {
+            @page { margin: 0.5in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                display: block !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+                margin-left: 0 !important;
+                min-height: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+            body {
+                display: block !important;
+                min-height: 0 !important;
+                margin: 0;
+                padding: 0;
+                font-size: 0.78rem;
+            }
+            h1.form-title { font-size: 1rem; margin: 0 0 0.3rem 0; }
+            h3.form-section { font-size: 0.78rem; margin: 0.3rem 0 0.15rem 0; padding-bottom: 0.1rem; }
+            .job-header { margin-bottom: 0.3rem; gap: 1.5rem; }
+            .job-header p { font-size: 0.78rem; margin: 0.1rem 0; }
+            .worksheet-table { font-size: 0.76rem; }
+            .worksheet-table { font-size: 0.8rem; }
+            .worksheet-table th { padding: 0.2rem 0.4rem; }
+            .worksheet-table td { padding: 0.2rem 0.4rem; height: 0.3in; }
+            .notes-box { height: 0.9in; }
+            .print-credit {
+                display: block;
+                font-size: 0.65rem;
+                color: #666;
+                text-align: center;
+                margin-top: 0.3rem;
+            }
+            /* The print layout viewport is 7.5in = 720px, which is under the
+               768px mobile breakpoint in styles.css, so its mobile table rules
+               (display:block, overflow-x:auto, nowrap cells) apply and collapse
+               the table to content width. Undo them here. */
+            .worksheet-table {
+                display: table !important;
+                width: 100% !important;
+                max-width: none !important;
+                overflow-x: visible !important;
+                table-layout: fixed !important;
+            }
+            .worksheet-table th,
+            .worksheet-table td {
+                white-space: normal !important;
+            }
+            article { max-width: none !important; }
+        }
     </style>
 </head>
 <body>
@@ -219,7 +240,13 @@
                     <tr><td></td><td></td><td></td><td></td><td></td></tr>
                     <tr><td></td><td></td><td></td><td></td><td></td></tr>
                     <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                </tbody>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
             </table>
 
             <h3 class="form-section">Notes / Special Instructions</h3>

@@ -7,32 +7,7 @@
     <title>Wood / LVP Order Sheet | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        @media print {
-            @page { margin: 0.5in; size: letter portrait; }
-            header,
-            .sidebar,
-            footer,
-            .mobile-nav-toggle,
-            .breadcrumb,
-            .form-actions,
-            button,
-            #share-btn,
-            #print-btn,
-            small {
-                display: none !important;
-            }
-            .main-wrapper { margin: 0 !important; padding: 0 !important; }
-            main { margin: 0 !important; padding: 0 !important; }
-            article { margin: 0 !important; padding: 0 !important; }
-            body { margin: 0; padding: 0; font-size: 0.78rem; }
-            h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
-            h3.form-section { font-size: 0.8rem; margin: 0.4rem 0 0.2rem 0; padding-bottom: 0.1rem; }
-            .order-table { font-size: 0.78rem; }
-            .order-table th, .order-table td { padding: 0.18rem 0.4rem; }
-            .form-grid { gap: 1rem; margin-bottom: 0.3rem; }
-            .form-row { margin: 0.1rem 0; font-size: 0.78rem; }
-            .notes-box { display: none; }
-        }
+        
 
         h1.form-title {
             font-size: 1.4rem;
@@ -101,6 +76,51 @@
             color: #555;
             margin: 0 0 0.4rem 0;
             font-style: italic;
+        }
+    
+        /* Print rules last so they override the screen rules above */
+        @media print {
+            @page { margin: 0.5in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper { margin: 0 !important; padding: 0 !important; }
+            main { margin: 0 !important; padding: 0 !important; }
+            article { margin: 0 !important; padding: 0 !important; }
+            body { margin: 0; padding: 0; font-size: 0.78rem; }
+            h1.form-title { font-size: 1rem; margin: 0 0 0.4rem 0; }
+            h3.form-section { font-size: 0.8rem; margin: 0.4rem 0 0.2rem 0; padding-bottom: 0.1rem; }
+            .order-table { font-size: 0.78rem; }
+            /* The print layout viewport is 7.5in = 720px, under the 768px mobile
+               breakpoint in styles.css, so its mobile table rules (display:block,
+               overflow-x:auto, nowrap cells) apply while printing and collapse the
+               table. Undo them and give the blank rows a writing height. */
+            .order-table {
+                display: table !important;
+                width: 100% !important;
+                max-width: none !important;
+                overflow-x: visible !important;
+                table-layout: fixed !important;
+            }
+            .order-table th,
+            .order-table td {
+                white-space: normal !important;
+                padding: 0.2rem 0.4rem;
+            }
+            .order-table tbody td { height: 0.3in; }
+            article { max-width: none !important; }
+            .form-grid { gap: 1rem; margin-bottom: 0.3rem; }
+            .form-row { margin: 0.1rem 0; font-size: 0.78rem; }
+            .notes-box { display: none; }
         }
     </style>
 </head>

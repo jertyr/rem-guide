@@ -314,3 +314,26 @@ Not every page needs every section — content drives structure.
 - **Mechanical fixes**: stale `Last revised` footers on `demolition.html`, `demolition-checklist.html`, `foundations.html` (updated to match their actual last content edit); colon-only fixes on `flatwork-concrete.html` and `neighbor-letter.html`; `foundation-order-sheet.html`'s date updated from its 08/14 creation date to 08/27 (its actual last revision)
 - **Full findings**: see the ROADMAP.md Review Log entry dated 2026-08-31 for the complete review (red-flag ages, nav/link verification, backlog checkbox updates)
 - **Branch**: `claude/inspiring-feynman-jfunf9`
+
+### Session: 2026-09-02 — Print table rendering fixed on two sheets (PRs #256, #257)
+- **User reports**: the painting worksheet's table did not span the full page width in print and did not fill the page vertically; the wood/LVP order sheet's blank table rows were "not tall enough"
+- **ROOT CAUSE, affects every printed table on this site**: printing letter portrait at 0.5in margins gives a layout viewport of 7.5in, which is exactly **720 CSS px**. That is under the **768px mobile breakpoint** in `styles.css`, so the mobile rules apply *while printing*:
+  ```css
+  table { font-size: 0.85rem; display: block; overflow-x: auto; max-width: 100%; }
+  table th, table td { padding: 0.5rem 0.4rem; font-size: 0.85rem; white-space: nowrap; }
+  ```
+  A `display: block` table does not stretch to its container, so it collapses to content width. With empty cells that means both narrow columns and short rows. This explains both complaints at once
+- **Fix pattern for any printed table** (apply in the page's own print block):
+  ```css
+  .my-table { display: table !important; width: 100% !important; max-width: none !important;
+              overflow-x: visible !important; table-layout: fixed !important; }
+  .my-table th, .my-table td { white-space: normal !important; }
+  .my-table tbody td { height: 0.3in; }   /* real writing height for blank rows */
+  article { max-width: none !important; }
+  ```
+- **0.3in is the row height that reads as a writable line** in print; without an explicit height, empty cells collapse to near nothing
+- **Painting worksheet**: rows 18 → 24, which fills the page (26 spills to a second page). Also its print-only copyright line had never printed, because `.print-credit { display: block }` in the print block was beaten by the later `display: none` (the ordering bug below)
+- **Print block ordering bug fixed on both files** (see the 2026-08-27 entry): moved `@media print` after the unmediated rules so its tuning is not overridden. **Most other forms on the site still have the print block first and their print tuning is still inert**
+- **Measurement technique that found this**: render the print layout at the true page width by converting `@media print {` to `@media screen {` (block already last, so it wins) and screenshotting at **720x1010**. That reproduces exactly what prints, including the mobile-breakpoint problem, which a wider probe window hides
+- **Also this session**: delivered a Word (.docx) version of the Foundation Order Sheet to the user via chat, built with docx-js. Not committed; the site is HTML and a binary is not the pattern there. **LibreOffice is broken in this sandbox** (`soffice` fails to load even a plain .txt), so a .docx cannot be render-verified here; verify structurally instead by parsing `word/document.xml` for expected strings
+- **Branches**: `claude/painting-worksheet-print`, `claude/lvp-sheet-print`

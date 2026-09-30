@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>How I Run Jobs With Claude</title>
+  <meta name="description" content="A walkthrough of how a remodeling project manager uses Claude with email, calendar, BuilderTrend and voice notes." />
+  <style>
+    :root {
+      --bg: #f4f1eb;
+      --surface: #fbf9f5;
+      --surface-2: #efe9df;
+      --text: #221f1a;
+      --muted: #6b655c;
+      --line: #d8d1c5;
+      --accent: #8d5321;
+      --accent-soft: #e9dbc9;
+      --blue: #2c5d8a;
+      --blue-soft: #dbe7f1;
+      --green: #3f6b3a;
+      --green-soft: #dfe9d9;
+      --shadow: 0 14px 36px rgba(33, 28, 21, 0.08);
+      --radius: 20px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, #f7f4ef 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.58;
+    }
+    img { display: block; width: 100%; height: auto; border-radius: calc(var(--radius) - 6px); }
+    .wrap { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    .hero { padding: 84px 0 48px; }
+    .eyebrow {
+      display: inline-block; margin-bottom: 18px; padding: 7px 12px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent);
+      font: 700 0.76rem/1.1 Arial, Helvetica, sans-serif; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    h1, h2, h3 { margin: 0 0 14px; line-height: 1.08; font-weight: 700; }
+    h1 { font-size: clamp(2.5rem, 6vw, 5rem); max-width: 12ch; letter-spacing: -0.03em; }
+    h2 { font-size: clamp(1.9rem, 3vw, 3rem); letter-spacing: -0.02em; }
+    h3 { font-size: clamp(1.3rem, 2vw, 1.75rem); }
+    p { margin: 0 0 16px; max-width: 67ch; font-size: clamp(1.04rem, 1.2vw, 1.16rem); }
+    .lede { color: var(--muted); max-width: 64ch; font-size: clamp(1.08rem, 1.5vw, 1.28rem); }
+    .section { padding: 44px 0 60px; border-top: 1px solid var(--line); }
+    .section-head { margin-bottom: 28px; }
+    .section-head p { color: var(--muted); margin-bottom: 0; }
+    .num {
+      display: inline-block; margin-bottom: 10px; color: var(--accent);
+      font: 700 0.8rem/1 Arial, Helvetica, sans-serif; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+
+    /* flow diagram */
+    .flow { background: var(--surface); border: 1px solid rgba(34,31,26,.08); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; }
+    .flow svg { width: 100%; height: auto; display: block; }
+    .flow text { font-family: Arial, Helvetica, sans-serif; }
+
+    /* vertical steps */
+    .ex { margin: 0 0 56px; }
+    .ex h3 { margin-bottom: 18px; }
+    .steps { max-width: 760px; }
+    .step {
+      padding: 16px 20px; border-radius: 18px;
+      font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.5;
+    }
+    .step.me { background: var(--accent); color: #fff; border-top-left-radius: 6px; }
+    .step.me::before { content: "Me, usually by voice"; display: block; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; opacity: .75; margin-bottom: 6px; }
+    .step.ai { background: var(--surface-2); color: var(--text); border-top-left-radius: 6px; border: 1px solid var(--line); }
+    .step.ai::before { content: "Claude"; display: block; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .step ul { margin: 8px 0 8px 18px; padding: 0; }
+    .step li { margin: 0 0 4px; }
+    .arrow { display: flex; align-items: center; gap: 12px; padding: 6px 0 6px 22px; min-height: 34px; }
+    .arrow::before { content: ""; width: 0; height: 26px; border-left: 2px solid var(--accent); position: relative; }
+    .arrow::after { content: ""; position: absolute; }
+    .arrow { position: relative; }
+    .arrow span { color: var(--muted); font: italic 0.92rem/1.35 Georgia, serif; }
+    .arrow { background: linear-gradient(var(--accent), var(--accent)) no-repeat 22px 4px / 2px calc(100% - 12px); }
+    .arrow::before { display: none; }
+    .arrow::after { left: 17.5px; bottom: 0; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid var(--accent); }
+    .arrow span { margin-left: 22px; }
+    .work { }
+    .work .media { padding: 10px; }
+    .media { background: var(--surface); border: 1px solid rgba(34,31,26,.08); border-radius: var(--radius); padding: 12px; box-shadow: var(--shadow); }
+    .media img { border: 1px solid var(--line); }
+    .media.narrow { max-width: 420px; }
+    .media figcaption, .cap { margin: 10px 4px 0; color: var(--muted); font: 0.86rem/1.45 Arial, Helvetica, sans-serif; }
+    figure { margin: 0; }
+    .note { max-width: 760px; margin-top: 18px; padding: 14px 18px; border-left: 3px solid var(--accent); background: rgba(141,83,33,.05); color: var(--text); font-size: 1.02rem; }
+    .note::before { content: "What's going on"; display: block; font: 700 .68rem/1 Arial, Helvetica, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+
+    .tag {
+      display: inline-block; padding: 4px 10px; border-radius: 999px; margin: 0 6px 8px 0;
+      font: 700 0.7rem/1.2 Arial, Helvetica, sans-serif; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .tag.src { background: var(--blue-soft); color: var(--blue); }
+    .tag.out { background: var(--green-soft); color: var(--green); }
+    .tag.you { background: var(--accent-soft); color: var(--accent); }
+
+    /* email facsimile */
+    .mail { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+    .mail .hdr { padding: 12px 16px; background: #f3f2f1; border-bottom: 1px solid var(--line); font-size: .86rem; color: #333; }
+    .mail .hdr b { display: block; font-size: 1rem; color: #111; margin-bottom: 3px; }
+    .mail .body { padding: 16px; font-size: .95rem; line-height: 1.5; color: #111; white-space: pre-line; }
+    .mail .sig { color: #555; font-size: .85rem; }
+    .mail .red { color: #c82613; }
+    .mail .quote { border-left: 3px solid #ddd; margin: 12px 0 0; padding: 4px 12px; color: #555; font-size: .88rem; }
+
+    /* calendar facsimile */
+    .cal { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-family: Arial, Helvetica, sans-serif; }
+    .cal .day { background: #0f6cbd; color: #fff; padding: 8px 14px; font-weight: 700; font-size: .9rem; }
+    .cal .ev { display: grid; grid-template-columns: 78px 1fr; gap: 10px; padding: 10px 14px; border-bottom: 1px solid #eee; }
+    .cal .ev:last-child { border-bottom: 0; }
+    .cal .t { font-size: .82rem; color: #444; line-height: 1.3; }
+    .cal .t small { display: block; color: #888; }
+    .cal .b { background: #f6d5d7; border-left: 4px solid #c4314b; border-radius: 6px; padding: 8px 10px; color: #7a1f2e; font-size: .9rem; }
+    .cal .b small { display: block; color: #5a4a4c; margin-top: 4px; font-size: .8rem; line-height: 1.35; }
+
+    /* spreadsheet facsimile */
+    .sheet { overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+    .sheet table { border-collapse: collapse; font: .8rem/1.3 Arial, Helvetica, sans-serif; min-width: 640px; width: 100%; }
+    .sheet th, .sheet td { border: 1px solid #e3e3e3; padding: 6px 8px; text-align: left; white-space: nowrap; }
+    .sheet th { background: #217346; color: #fff; font-weight: 700; }
+    .sheet td.new { background: #fff3c4; }
+
+    /* cards */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 10px; }
+    .cards.four { max-width: 760px; grid-template-columns: 1fr 1fr; margin-top: 0; }
+    .card { background: var(--surface); border: 1px solid rgba(34,31,26,.08); border-radius: var(--radius); padding: 22px 22px 16px; box-shadow: var(--shadow); }
+    .card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .card p { font-size: 1rem; margin-bottom: 8px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .ba { background: var(--surface); border: 1px solid rgba(34,31,26,.08); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
+    .ba h3 { font-size: 1.1rem; color: var(--muted); font-family: Arial, Helvetica, sans-serif; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; margin-bottom: 12px; }
+    .ba ul { margin: 0; padding-left: 20px; }
+    .ba li { margin-bottom: 8px; font-size: 1.02rem; }
+
+    .footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; }
+    .footer a { color: var(--accent); }
+
+    @media (max-width: 820px) {
+      .hero { padding: 56px 0 36px; }
+      .before-after, .cards.four { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Dexter Builders &middot; Project Management</span>
+      <h1>How I run jobs with Claude</h1>
+      <p class="lede">What I hand it, what it can read on its own, and what comes out the other end. Everything on this page is from real jobs in the last two weeks.</p>
+      <p class="lede">Jerry Tyrrell, Project Manager</p>
+    </div>
+  </header>
+
+  <!-- 1. THE PICTURE -->
+  <section class="section" id="picture">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">01</span>
+        <h2>The picture</h2>
+        <p>Claude sits between the systems we already use. I hand it a voice note, it reads what it needs, and it writes back into those same systems.</p>
+      </div>
+
+      <div class="flow">
+        <svg viewBox="0 0 1160 560" role="img" aria-label="Flow diagram: what I hand Claude in chat comes in from the top, systems it can read on its own on the left, Claude in the middle, outputs on the right">
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#8d5321"/>
+            </marker>
+          </defs>
+
+          <!-- top: what I hand it -->
+          <text x="540" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#6b655c" letter-spacing="2">WHAT I HAND IT IN CHAT</text>
+          <rect x="380" y="46" width="320" height="64" rx="16" fill="#8d5321" opacity=".12"/>
+          <text x="540" y="72" text-anchor="middle" font-size="16" fill="#221f1a">Voice-to-text notes from my phone</text>
+          <text x="540" y="96" text-anchor="middle" font-size="16" fill="#221f1a">Photos, a forwarded email, a question</text>
+          <path d="M540,112 L540,205" stroke="#8d5321" stroke-width="2.5" fill="none" marker-end="url(#arr)"/>
+
+          <!-- column labels -->
+          <text x="150" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#6b655c" letter-spacing="2">WHAT IT READS ON ITS OWN</text>
+          <text x="980" y="150" text-anchor="middle" font-size="13" font-weight="700" fill="#6b655c" letter-spacing="2">WHAT COMES OUT</text>
+
+          <!-- source nodes -->
+          <g fill="#2c5d8a">
+            <circle cx="40" cy="200" r="9"/><circle cx="40" cy="265" r="9"/><circle cx="40" cy="330" r="9"/>
+            <circle cx="40" cy="395" r="9"/><circle cx="40" cy="460" r="9"/>
+          </g>
+          <g font-size="17" fill="#221f1a">
+            <text x="62" y="206">Outlook email</text>
+            <text x="62" y="271">Outlook calendar</text>
+            <text x="62" y="336">BuilderTrend daily logs</text>
+            <text x="62" y="401">BuilderTrend change orders</text>
+            <text x="62" y="466">Orders incoming (SharePoint)</text>
+          </g>
+          <g stroke="#2c5d8a" stroke-width="2" fill="none" opacity=".55">
+            <path d="M300,200 C400,200 420,330 460,330"/>
+            <path d="M300,265 C400,265 420,330 460,330"/>
+            <path d="M300,330 C400,330 420,330 460,330"/>
+            <path d="M300,395 C400,395 420,330 460,330"/>
+            <path d="M300,460 C400,460 420,330 460,330"/>
+          </g>
+
+          <!-- Claude node -->
+          <circle cx="540" cy="330" r="78" fill="#8d5321"/>
+          <text x="540" y="322" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">Claude</text>
+          <text x="540" y="348" text-anchor="middle" font-size="13" fill="#f3e6d6">reads, writes, remembers</text>
+          <text x="540" y="450" text-anchor="middle" font-size="15" fill="#6b655c">I talk. It does the digging and the typing.</text>
+          <text x="540" y="472" text-anchor="middle" font-size="15" fill="#6b655c">Blue: it goes and gets this itself.</text>
+
+          <!-- outputs -->
+          <g stroke="#3f6b3a" stroke-width="2" fill="none" opacity=".55" marker-end="url(#arr)">
+            <path d="M620,330 C660,330 700,200 790,200"/>
+            <path d="M620,330 C660,330 700,265 790,265"/>
+            <path d="M620,330 C660,330 700,330 790,330"/>
+            <path d="M620,330 C660,330 700,395 790,395"/>
+            <path d="M620,330 C660,330 700,460 790,460"/>
+            <path d="M620,330 C660,330 700,525 790,525"/>
+          </g>
+          <g fill="#3f6b3a">
+            <circle cx="812" cy="200" r="9"/><circle cx="812" cy="265" r="9"/><circle cx="812" cy="330" r="9"/>
+            <circle cx="812" cy="395" r="9"/><circle cx="812" cy="460" r="9"/><circle cx="812" cy="525" r="9"/>
+          </g>
+          <g font-size="17" fill="#221f1a">
+            <text x="834" y="206">Email drafted or sent, my voice</text>
+            <text x="834" y="271">Calendar block for a promise</text>
+            <text x="834" y="336">Daily log posted to BuilderTrend</text>
+            <text x="834" y="401">Change order written or revised</text>
+            <text x="834" y="466">Orders incoming row updated</text>
+            <text x="834" y="531">Next-day brief, status, proposals</text>
+          </g>
+        </svg>
+      </div>
+      <p class="cap" style="margin-top:12px">It can't hear my voice notes or see my photos on its own. I give it those in chat. Voice-to-text on the phone makes that a thirty second job.</p>
+    </div>
+  </section>
+
+  <!-- 2. ONE VOICE NOTE -->
+  <section class="section" id="voice">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">02</span>
+        <h2>One voice note, four outputs</h2>
+        <p>This is the part that changed how I work. I talk for a minute after leaving a site and the record keeping happens without me typing any of it.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step me">Just left Dorsey. Kathy wants the wall by the fridge out so the entry is wider, with a finished wood piece next to the fridge. There's an old capped drain in that wall that has to get cut flush and recapped, and the water lines have to move, so plumber time plus finish work. Tell her I'll have the change order to her by end of day tomorrow. Log it, and I still need to get her siding samples.</div>
+        <div class="arrow"><span>Claude splits it four ways</span></div>
+        <div class="cards four">
+          <div class="card"><span class="tag out">Email</span><h3>Reply to Kathy</h3><p>Short, in my voice, answers her questions in order, commits to end of day tomorrow. Drafted for me to read.</p></div>
+          <div class="card"><span class="tag out">BuilderTrend</span><h3>Daily log on Dorsey</h3><p>Progress, issues, subs, materials, on our template. Posted, not drafted.</p></div>
+          <div class="card"><span class="tag out">Calendar</span><h3>2:00 PM block tomorrow</h3><p>"Dorsey: write fridge wall change order, send to Kathy today," with the scope in the description.</p></div>
+          <div class="card"><span class="tag out">Brief</span><h3>Siding samples</h3><p>Nothing to order yet, so it lands as an open item in tomorrow's brief instead of the tracker.</p></div>
+        </div>
+        <div class="arrow"></div>
+        <div class="step ai">Reply to Kathy is drafted, log is posted on Dorsey, 2:00 tomorrow is blocked for the change order. Siding samples are on tomorrow's list. Want me to send the email?</div>
+        <div class="arrow"></div>
+        <div class="step me">Send it.</div>
+      </div>
+      <p class="cap" style="margin-top:14px">Rambling is fine. It sorts out what goes where.</p>
+    </div>
+  </section>
+
+  <!-- 3. REAL EXAMPLES -->
+  <section class="section" id="examples">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">03</span>
+        <h2>Real examples, in the order they happen</h2>
+        <p>Tan boxes are what I typed or said. Everything else is Claude's work. Screenshots are real; the prompts are retyped from what I actually said, since voice notes don't leave a transcript worth reading.</p>
+      </div>
+
+      <!-- A: Marissa email -->
+      <div class="ex">
+        <h3>A. An email that sounds like me</h3>
+        <div class="steps">
+          <div class="step me">Email Marissa. The second week of October she asked for was already taken, Dusty is on for the third week, the 19th. Ask if that works.</div>
+          <div class="arrow"><span>Claude checks the thread with Marissa, then drafts</span></div>
+          <div class="work">
+            <div class="mail">
+              <div class="hdr"><b>Carpenter schedule update</b>To: Marissa &middot; Draft</div>
+              <div class="body">Hi Marissa,
+
+When you asked last week to move the carpenter to the second week of October, that week was already taken. We have Dusty scheduled for the third week of October instead, the week of October 19. Let me know if that doesn't work for you.
+
+Thanks
+<span class="sig">Jerry Tyrrell
+Project Manager | Dexter Builders
+cell 734-417-7297</span></div>
+            </div>
+          </div>
+          <div class="arrow"></div>
+          <div class="step me">Send it.</div>
+          <div class="arrow"></div>
+          <div class="step ai">Sent to Marissa, Mon 9/28 at 1:15 PM. Want a calendar note for Dusty's week of 10/19?</div>
+        </div>
+        <div class="note">It learned my voice from my sent mail: one to three sentences, answer first, "Thanks" and stop. No "circling back." It knows my signature and adds it when it sends for me. I still read every client email before it goes. Internal quick replies I mostly just say "send."</div>
+      </div>
+
+      <!-- B: daily log -->
+      <div class="ex">
+        <h3>B. A daily log from a site visit</h3>
+        <div class="steps">
+          <div class="step me">Log this on the Tedford job. Met with Max and Sally, went over the change order, they took some items out and added others. Jason the painter walked the exterior with us, he's writing his own proposal direct to them for the siding. Light fixture is a 4 inch base. The back garage outlet the electrician put in isn't working consistently, and the cupola weathervane has east and west backwards, and the fogged panel on the upstairs slider, Max wants Wolverine Glass to look at it...</div>
+          <div class="arrow"><span>Claude opens BuilderTrend, picks the right Tedford job, sorts the note onto our template</span></div>
+          <div class="work">
+            <figure class="media">
+              <img src="images/claude-workflow/daily-log-tedford.jpg" alt="BuilderTrend daily log on the Tedford job dated September 29, with Progress, Issues, Hazards, Subs on site, and Material needed or delivered sections filled in" />
+              <figcaption>The actual log, posted under my name.</figcaption>
+            </figure>
+          </div>
+          <div class="arrow"></div>
+          <div class="step ai">Posted to Tedford, Sally &amp; Max 260119, dated Tue Sep 29. Progress, Issues, Subs and Materials filled in. Want me to revise change order 0002 with the items they added and removed?</div>
+        </div>
+        <div class="note">Before, this log would have been three lines typed in the truck, or not written at all. Now it is the full conversation, sorted under the right headings, in my words. It posts without waiting on me because I told it to; that's a setting I chose after a few weeks of reading them first.</div>
+      </div>
+
+      <!-- C: change order -->
+      <div class="ex">
+        <h3>C. Revising the change order from that log</h3>
+        <div class="steps">
+          <div class="step me">Yes, update the Tedford change order. Keep the door locks, tile, address numbers, closet knobs. Exterior painting is trim touch-up only, no siding. Drop the floor joist. Add the 220 circuit for the compressor and the welder plug, the dining room globe, and the smoke detectors.</div>
+          <div class="arrow"><span>Claude opens CO 0002 and edits the line items</span></div>
+          <div class="work">
+            <figure class="media">
+              <img src="images/claude-workflow/change-order-edit.jpg" alt="BuilderTrend change order editing screen for Tedford change order 0002, Additional Items 2, in Draft status" />
+              <figcaption>The edit screen. Status stays Draft until I price it and send.</figcaption>
+            </figure>
+          </div>
+          <div class="arrow"></div>
+          <div class="work">
+            <figure class="media">
+              <img src="images/claude-workflow/change-order-tedford.jpg" alt="Client preview of Tedford change order 0002 listing exterior door locks, door lock install, tile material, tile prep, tile labor, exterior painting, address numbers and closet knobs with descriptions" />
+              <figcaption>Client preview after the revision. Descriptions are written the way a client should read them.</figcaption>
+            </figure>
+          </div>
+          <div class="arrow"></div>
+          <div class="step ai">CO 0002 updated, 9 items, still in Draft. Pricing is yours. Say the word and I'll send it to Max and Sally.</div>
+        </div>
+        <div class="note">I price it and I send it. BuilderTrend has no connection for this, so Claude works it through the browser the same way I would, just faster.</div>
+      </div>
+
+      <!-- D: promise -> calendar -->
+      <div class="ex">
+        <h3>D. A promise in an email becomes a calendar block</h3>
+        <div class="steps">
+          <div class="step me">Reply to Kathy, answers in red under each of her questions. Wall by the fridge: we can do it, old capped drain has to be cut flush and recapped, water lines rerouted, plumber plus finish work, I'll have it written up for approval by end of day tomorrow...</div>
+          <div class="arrow"><span>Claude drafts the reply</span></div>
+          <div class="work">
+            <div class="mail">
+              <div class="hdr"><b>Re: Dorsey Lake Project</b>To: Kathy Dorsey, Mike Dorsey, Ron, Chelsea &middot; Tue 9/29</div>
+              <div class="body">6. Wall next to refrigerator, Jerry you were going to look into seeing if that could be removed... <span class="red">We can do this, I'm working on writing this up, there's an old drain line that is already capped but needs to be cut flush to the floor and capped again and then the water lines will need to be re-routed, so some additional work for the plumber and on the finishing side. I'll try to get that written and over for approval before the end of the day tomorrow.</span></div>
+            </div>
+          </div>
+          <div class="arrow"></div>
+          <div class="step me">Send.</div>
+          <div class="arrow"><span>Claude sends, then notices I promised something with a date on it</span></div>
+          <div class="work">
+            <div class="cal">
+              <div class="day">Wednesday, September 30</div>
+              <div class="ev"><div class="t">2:00 PM<small>1h</small></div><div class="b">Dorsey: write fridge wall change order, send to Kathy today<small>Promised Kathy by end of day 9/30. Remove wall next to fridge, cut old capped drain flush to floor and recap, reroute water lines, plumber plus finish work, wood piece beside fridge.</small></div></div>
+            </div>
+          </div>
+          <div class="arrow"></div>
+          <div class="step ai">Sent. I put an hour on your calendar tomorrow at 2:00 to write the change order, with the scope in the description.</div>
+        </div>
+        <div class="note">Same thing happened twice more this week. "I'll measure it tomorrow" in a reply to the metal roofers became an 8:30 site visit at Wiedmer with drive time from Chelsea built in. A daily log on Lemble became a 10:00 block to submit the revised drawing to the city. If I promise it, it's on the calendar with the detail attached.</div>
+      </div>
+
+      <!-- E: next-day prep -->
+      <div class="ex">
+        <h3>E. Prepping for tomorrow</h3>
+        <div class="steps">
+          <div class="step me">Prep me for tomorrow. Look at what's on the calendar, then dig into the daily logs and email for those jobs so I know where we're at.</div>
+          <div class="arrow"><span>Claude reads tomorrow's calendar</span></div>
+          <div class="work">
+            <figure class="media narrow">
+              <img src="images/claude-workflow/calendar-wed.jpg" alt="Outlook calendar for Wednesday September 30 with an all-day window delivery, a weekly check-in, and a 2:00 block to write the Dorsey change order" />
+              <figcaption>Wednesday's calendar as it found it.</figcaption>
+            </figure>
+          </div>
+          <div class="arrow"><span>Then the daily logs and email threads behind each item: Ruff, Allen, Brant, Dorsey, plus the weather and the Pella release</span></div>
+          <div class="work">
+            <figure class="media narrow">
+              <img src="images/claude-workflow/next-day-brief.jpg" alt="The next-day brief Claude wrote for Wednesday September 30, covering the Dorsey window delivery and weather, the weekly check-in job by job, and the Dorsey change order due to Kathy" />
+              <figcaption>The brief, work portion. The check-in section pulls status from four jobs' daily logs.</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="note">What comes back is not a list of my meetings. It is what I need to know walking into each one, plus anything I promised someone and haven't done. This runs on its own every evening now and I read it on my phone.</div>
+      </div>
+
+      <!-- F: orders incoming -->
+      <div class="ex">
+        <h3>F. Orders incoming, checked against email every day</h3>
+        <div class="steps">
+          <div class="step me">Run the orders check. Anything in today's email with an order, ship or delivery date, get it into the sheet.</div>
+          <div class="arrow"><span>Claude reads the day's vendor emails and BuilderTrend approval notices, then edits my tab in the workbook</span></div>
+          <div class="work">
+            <div class="sheet">
+              <table>
+                <thead><tr><th>Category</th><th>Job Name/PO#</th><th>Company</th><th>Item</th><th>Approved</th><th>Order Date</th><th>Ship Date</th><th>Date Delivered</th></tr></thead>
+                <tbody>
+                  <tr><td>Exterior Doors</td><td>Downing</td><td>Chelsea Lumber</td><td>ThermaTru Smooth Star Echo 4 lite entry</td><td>x</td><td class="new">9/15/2026</td><td class="new">10/14 (requested)</td><td></td></tr>
+                  <tr><td>Windows</td><td>Dorsey</td><td>Pella</td><td>Order 189LHC067A</td><td>x</td><td></td><td class="new">9/30/2026</td><td></td></tr>
+                  <tr><td>Plumbing</td><td>Allen</td><td>Ferguson</td><td>Seachrome shower bench SHAF-185155-W</td><td>x</td><td class="new">9/29/2026</td><td></td><td></td></tr>
+                  <tr><td>Trim</td><td>Brant</td><td>Chelsea Lumber</td><td>Windsor casing, poplar crown and parting stop</td><td>x</td><td class="new">9/28/2026</td><td class="new">Pickup Tue</td><td></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="cap">Highlighted cells are the ones it filled from email. Table reconstructed from the tracker for this page.</p>
+          </div>
+          <div class="arrow"></div>
+          <div class="step ai">Updated 4 rows on your tab. Downing door still has no delivery date from Dan; your reply asking him is sitting in Drafts. Nothing left for manual entry today.</div>
+        </div>
+        <div class="note">BuilderTrend can't tell you whether a selection was actually ordered, shipped or received, which is why this workbook exists. When Claude can't reach the file (laptop shut on the drive in), it puts the entries on a 30 minute calendar block for me to type in.</div>
+      </div>
+
+      <!-- G: status -->
+      <div class="ex">
+        <h3>G. "Where are we at on this job?"</h3>
+        <div class="steps">
+          <div class="step me">Where are we at on Dorsey and what do I owe them?</div>
+          <div class="arrow"><span>Claude reads the Dorsey daily logs, the email thread with Kathy, the calendar and the tracker</span></div>
+          <div class="step ai">Dig started Tuesday, six loads out. Fireplace demo is down to the lower section, which the excavator will take. Gas line still needs to be moved. Pella windows deliver tomorrow and the release says BUYER, so confirm where they get dropped with the excavation open. Heavy rain Thursday night.
+            <ul>
+              <li>Fridge wall change order, promised to Kathy by end of day Wednesday</li>
+              <li>Siding color samples, still not dropped off</li>
+              <li>Front door size check, next site visit</li>
+              <li>Lake steps: does she want the design and permit CO</li>
+              <li>Kitchen quote update from Deanna</li>
+              <li>Furnace in attic answer, which decides the W/D hookup</li>
+            </ul>
+            She's pushing back on the draw request, so expect timeline questions.</div>
+        </div>
+        <div class="note">I used to answer this by opening BuilderTrend, scrolling logs, then opening Outlook and searching the client's name. Now I ask once. The answer is only as good as the logs, which is the other reason the daily logs matter more now: they're what the next answer is built from.</div>
+      </div>
+
+      <!-- H: proposals -->
+      <div class="ex">
+        <h3>H. A proposal from a ten-minute voice note</h3>
+        <div class="steps">
+          <div class="step me">Just left the site meeting. Master bath gut, about 9 by 12. Keep the plumbing locations except the shower drain moves about 18 inches toward the exterior wall. Curbless shower with a linear drain, tile floor and walls to the ceiling, niche on the plumbing wall. Double vanity, 72 inch, they want a quartz top, undermount sinks. New exhaust fan on a timer. Pocket door into the closet. Heated floor. Paint everything. Electrical: two sconces, a can over the shower, GFCI outlets at each sink...</div>
+          <div class="arrow"><span>Claude prices each line from our cost code catalog and writes it the way our proposals read</span></div>
+          <div class="step ai">Proposal drafted across Demolition, Plumbing, Electrical, Tile, Cabinets and Tops, Trim and Paint. Priced from your catalog with standard markup. Three items I could not price from the note are flagged in red. CSV is ready for BuilderTrend import.</div>
+          <div class="arrow"></div>
+          <div class="step me">Tile labor is high, that's a small shower. Drop the heated floor to a 40 square foot mat, and add demo of the old tile floor, I forgot that.</div>
+          <div class="arrow"></div>
+          <div class="step ai">Done. Tile labor rechecked, heated floor mat at 40 sq ft, tile floor demo added under Demolition. Ready for Jeff.</div>
+        </div>
+        <div class="note">I keep a separate Claude project just for proposals. It holds our cost codes and unit rates, how our proposals read to clients, and how Jeff wants to see them for review. I get a full proposal in one shot and then edit instead of write. Anything it added that I didn't say is flagged in red so I catch it. Tony has asked about it; the same setup would work for anyone writing proposals in BuilderTrend.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHAT CHANGED -->
+  <section class="section" id="changed">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">04</span>
+        <h2>What actually changed</h2>
+        <p>Not everything, but the parts of the day that used to be typing and searching.</p>
+      </div>
+      <div class="before-after">
+        <div class="ba">
+          <h3>Before</h3>
+          <ul>
+            <li>Daily logs written when I got to it. Short, or skipped.</li>
+            <li>Opened Outlook constantly. Searched for what a client said three weeks ago.</li>
+            <li>Change orders and proposals written from scratch at a desk.</li>
+            <li>Promises made in email lived in my head until they didn't.</li>
+            <li>Order dates in vendor emails, not in the tracker.</li>
+            <li>Walked into meetings on memory.</li>
+          </ul>
+        </div>
+        <div class="ba">
+          <h3>Now</h3>
+          <ul>
+            <li>I talk into my phone leaving the site. The log is posted before I'm back on the road, and it's better than what I used to write.</li>
+            <li>I open email less. When I need something out of it, Claude finds it.</li>
+            <li>Change orders and proposals start from what I said on site. I edit instead of write.</li>
+            <li>If I promise it, it's on the calendar with the detail attached.</li>
+            <li>Orders incoming gets reconciled against email daily.</li>
+            <li>A brief every evening for tomorrow, built from the logs and threads behind each calendar item.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cards" style="margin-top:22px">
+        <div class="card"><h3>Rough edges</h3><p>Sometimes I have to explain myself a second time, a job name or a detail it got wrong. It's fast enough by voice that it's worth it.</p><p>BuilderTrend has no API, so daily logs and change orders go in through the browser. Slower than email or calendar, but it works.</p></div>
+        <div class="card"><h3>What I still do myself</h3><p>Read every client email before it sends. Price the change orders. Make the calls to clients who don't email. Decide what goes in the proposal.</p></div>
+        <div class="card"><h3>What it remembers</h3><p>How I write. Who our vendors are and how orders go to them. That Max Tedford only takes phone calls. That the Wednesday 10:00 check-in is a reminder, not a real block. It gets more useful the longer you use it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HOW TO START -->
+  <section class="section" id="start">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="num">05</span>
+        <h2>If you want to try it</h2>
+        <p>Start with one thing. The daily log is the easiest win.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><h3>1. Connect Outlook</h3><p>Email and calendar are where most of the value is, and it's a one-time connection in Claude's settings. Carpenters and runners don't have company email, so this part is for PMs and coordinators.</p></div>
+        <div class="card"><h3>2. Tell it who you are</h3><p>Your role, which jobs are yours, how you like to write. Paste in three of your own sent emails and say "write like this."</p></div>
+        <div class="card"><h3>3. Talk, don't type</h3><p>Use the microphone on your phone. Ramble. Say the job name. It sorts the rest out.</p></div>
+        <div class="card"><h3>4. Read it before it goes</h3><p>Anything to a client, read it first. Internal notes and logs you'll trust pretty quickly.</p></div>
+        <div class="card"><h3>5. Ask it where you're at</h3><p>Once a few logs are in, ask "where are we at on the Smith job?" That's when it clicks.</p></div>
+        <div class="card"><h3>6. Come find me</h3><p>I'll sit with anyone who wants to set this up. Half an hour is enough to get the first log posted.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>Jerry Tyrrell &middot; Project Manager, Dexter Builders &middot; <a href="tel:7344177297">734-417-7297</a> &middot; <a href="mailto:jtyrrell@dexterbuilders.com">jtyrrell@dexterbuilders.com</a></p>
+      <p>Screenshots are from BuilderTrend, Outlook and Claude on real jobs, September 2026.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -64,6 +64,8 @@
     .ex { margin: 0 0 56px; }
     .ex h3 { margin-bottom: 18px; }
     .steps { max-width: 760px; }
+    .steps:has(.work.wide) { max-width: none; }
+    .steps:has(.work.wide) > .step, .steps:has(.work.wide) > .arrow { max-width: 760px; }
     .step {
       padding: 16px 20px; border-radius: 18px;
       font-family: Arial, Helvetica, sans-serif; font-size: 1rem; line-height: 1.5;
@@ -126,6 +128,9 @@
     .sheet th, .sheet td { border: 1px solid #e3e3e3; padding: 6px 8px; text-align: left; white-space: nowrap; }
     .sheet th { background: #217346; color: #fff; font-weight: 700; }
     .sheet td.new { background: #fff3c4; }
+    .sheet.wrap th, .sheet.wrap td { white-space: normal; vertical-align: top; }
+    .sheet.wrap table { min-width: 0; }
+    .work.wide { width: min(100%, var(--max)); }
 
     /* cards */
     .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 10px; }
@@ -449,15 +454,45 @@ cell 734-417-7297</span></div>
       <div class="ex">
         <h3>H. A proposal from a ten-minute voice note</h3>
         <div class="steps">
-          <div class="step me">Just left the site meeting. Master bath gut, about 9 by 12. Keep the plumbing locations except the shower drain moves about 18 inches toward the exterior wall. Curbless shower with a linear drain, tile floor and walls to the ceiling, niche on the plumbing wall. Double vanity, 72 inch, they want a quartz top, undermount sinks. New exhaust fan on a timer. Pocket door into the closet. Heated floor. Paint everything. Electrical: two sconces, a can over the shower, GFCI outlets at each sink...</div>
-          <div class="arrow"><span>Claude prices each line from our cost code catalog and writes it the way our proposals read</span></div>
-          <div class="step ai">Proposal drafted across Demolition, Plumbing, Electrical, Tile, Cabinets and Tops, Trim and Paint. Priced from your catalog with standard markup. Three items I could not price from the note are flagged in red. CSV is ready for BuilderTrend import.</div>
+          <div class="step me">I'm at a sales call for Beth and Roger Nugent, dogs' names are Gus and Eliza. Dexter Block is doing some exterior work to solve water management and drainage issues. We have three projects to price out. One is a swing door on the left side into the garage. For that one we have demolition to remove existing siding, sheathing, studs, add a header for a 3 foot right hand outswing utility door with an $800 allowance. It's going in a 2x4 wall with a double bore, satin nickel hinges, weather stripping, six panel, painted black with white trim. Demolition, 2 guys for 2 hours, framing labor 2 guys for 6 hours, $300 in material...<br><br>...replace a quad door to the walkout basement with a new quad slider, where the two sliders slide out from the center. Demolition 2 guys for 4 hours, framing 2 guys for 4 hours to include prepping the opening and plywood. Should measure 141 and a quarter wide by 79 tall. Supplied and installed by Pella, allowance $7,000 with install $1,200...<br><br>...the third and largest section is remove and replace an existing deck. Demolish completely, removing posts, leaving concrete footings, everything back to the ledger including the ledger. 2 guys for 2 days and a 30 yard roll off. Porta john. Drawings, 32 hours. Permit, $900. No trades. New 19 foot by 14 foot deck, same height as existing, 5 by 5 landing on the right corner by the chimney bump, staircase about 14 rises to grade. 2x10 ledger, 2x10 joists, double 2x10 beam on five 6x6 posts. TimberTech, solid boards for stairs, fascia for risers, solid picture frame, grooved field with hidden fasteners. Black Westbury C10 rail around the perimeter and down the stairs. Framing 3 guys, 2 days. Five 16 inch footings 42 deep plus four 12 inch for the landing and stairs. Decking 3 guys 4 days including the staircase. Handrail 3 guys 4 days.</div>
+          <div class="arrow"><span>Claude splits it into three sections, assigns our cost codes, pulls unit rates from the catalog, writes each description the way our proposals read, and applies our markup</span></div>
+          <div class="step ai">Nugent, 23 lines. Builder cost and client price totaled.<br>Needs your eye before it goes out:
+            <ul>
+              <li>Painting: transcript says $4,500 for the garage door. Priced at $450.</li>
+              <li>Framing labor is 260 hrs. Handrail at 3g4d (96 hrs) is per your notes but reads high.</li>
+              <li>Deck framing read as 3 guys for 2 days (transcript "3 guys, 4. 2 days").</li>
+              <li>Garage door header stock came through as "12 by 108 foot." Carried as 2x12x8, flagged.</li>
+              <li>Home age unknown, so no lead containment line.</li>
+              <li>WAGs on footings, deck lumber, decking allowance ($3,500), Westbury rail ($4,500), exterior trim.</li>
+            </ul>
+            Pella supply and install are split into two 4300 lines. Decking is marked Allowance since collection and color aren't picked.</div>
+          <div class="arrow"><span>And the file it produced, ready to import into BuilderTrend</span></div>
+          <div class="work wide">
+            <div class="sheet wrap">
+              <table>
+                <thead><tr><th>Cost Code</th><th>Title</th><th>Description (client sees this)</th><th>Internal Notes (we see this)</th><th>Qty</th><th>Unit</th><th>Marked As</th></tr></thead>
+                <tbody>
+                  <tr><td>1010 Building Permits</td><td>Building Permit</td><td>Dexter Builders to obtain the building permit for the deck replacement and new door openings...</td><td>$900 township fee per field notes + $200 handling</td><td>1</td><td></td><td></td></tr>
+                  <tr><td>1035 Jobsite protection</td><td>Site/Project Protection</td><td>...Client is responsible for keeping Gus and Eliza out of the work area while crews are on site.</td><td>medium tier</td><td>1</td><td></td><td></td></tr>
+                  <tr><td>1110 Blueprints/Design</td><td>Deck Drawings</td><td>Construction drawings for the new deck, landing, and stairs for permit submittal.</td><td>1g32h per field notes</td><td>32</td><td>hours</td><td></td></tr>
+                  <tr><td>1300 Demolition</td><td>Demolition</td><td>Garage: remove siding, sheathing, and studs at the new door location. Cut the stem wall flush... Deck: remove the entire deck including posts and ledger. Existing concrete footings remain.</td><td>garage 2g2h, stem wall 2g2h, quad door 2g4h, deck 2g16h. Verify home age for lead containment</td><td>48</td><td>hours</td><td></td></tr>
+                  <tr><td>2116 Masonry sub</td><td>Deck Footings</td><td>Hand-dig and pour concrete post footings to 42" depth. (5) 16" for the main deck, (4) 12" for the landing and stairs.</td><td>WAG, verify 12" footing depth</td><td>9</td><td>ea</td><td></td></tr>
+                  <tr><td>3110 Lumber</td><td>Deck Framing Materials</td><td>Treated framing for the 19' x 14' deck, 5' x 5' landing, and stairs: 2x10 ledger, 2x10 joists, (2) 2x10 beam, (5) 6x6 posts...</td><td>WAG. 16) 2x10x14, 2) 2x10x20 ledger/rim, 5) 6x6x12, 4) 2x12x16 stringers...</td><td>1</td><td></td><td></td></tr>
+                  <tr><td>3110 Lumber</td><td>Composite Decking</td><td>TimberTech composite decking: grooved field boards with hidden fasteners, solid picture frame, solid stair treads, fascia risers. Collection and color selected after signing.</td><td>WAG, ~380 sf with waste</td><td>1</td><td></td><td class="new">Allowance</td></tr>
+                  <tr><td>3220 Framing labor</td><td>Framing Labor</td><td>Garage: frame the new opening with header and set the door. Walkout: prep the opening for the Pella slider. Deck: ledger, beam on posts, joists, landing, stringers, decking, railing...</td><td>garage 2g6h, slider prep 2g4h, deck framing 3g16h, decking 3g32h, handrail 3g32h (verify)</td><td>260</td><td>hours</td><td></td></tr>
+                  <tr><td>4300 Exterior doors</td><td>Garage Utility Door</td><td>One 3'-0" right-hand outswing six-panel utility door, prehung for a 2x4 wall with double bore, satin nickel hinges, weatherstripping. Allowance includes the lockset.</td><td>$800, lockset in allowance</td><td>1</td><td></td><td class="new">Allowance</td></tr>
+                  <tr><td>4300 Exterior doors</td><td>Pella Quad Slider</td><td>One Pella quad sliding door, 141-1/4" x 79" frame, two center panels sliding open to create one opening...</td><td>$7,000 Pella, verify frame size</td><td>1</td><td></td><td class="new">Allowance</td></tr>
+                  <tr><td>4600 Painting exterior</td><td>Exterior Painting</td><td>Paint the new garage utility door black on both faces and the brick mold white...</td><td class="new">transcript says $4500 for garage door paint, priced $450, verify</td><td>1</td><td></td><td></td></tr>
+                  <tr><td colspan="7" style="color:#888">...12 more lines: site protection, project management, disposal, port-a-john, slider prep, handrail, exterior trim material and labor, Pella install, interior trim, cleanup</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="cap">The real import file, trimmed to fit. Pricing columns left off this page. Every line carries a client-facing description and an internal note showing where the number came from.</p>
+          </div>
           <div class="arrow"></div>
-          <div class="step me">Tile labor is high, that's a small shower. Drop the heated floor to a 40 square foot mat, and add demo of the old tile floor, I forgot that.</div>
-          <div class="arrow"></div>
-          <div class="step ai">Done. Tile labor rechecked, heated floor mat at 40 sq ft, tile floor demo added under Demolition. Ready for Jeff.</div>
+          <div class="step me">Painting was $450, the transcript's wrong. Handrail is 2 guys 2 days, not 3 and 4. Rest looks right, I'll fix the header stock myself. Give me the CSV.</div>
         </div>
-        <div class="note">I keep a separate Claude project just for proposals. It holds our cost codes and unit rates, how our proposals read to clients, and how Jeff wants to see them for review. I get a full proposal in one shot and then edit instead of write. Anything it added that I didn't say is flagged in red so I catch it. Tony has asked about it; the same setup would work for anyone writing proposals in BuilderTrend.</div>
+        <div class="note">I keep a separate Claude project just for proposals. It holds our cost codes and unit rates, how our proposals read to clients, and how Jeff wants to see them for review. That whole transcript was a ten minute voice memo walking the site with the Nugents. What came back was 23 priced lines and a list of everything it wasn't sure about, which is the part I actually read. I edit instead of write. Tony has asked about it; the same setup would work for anyone writing proposals in BuilderTrend.</div>
       </div>
     </div>
   </section>

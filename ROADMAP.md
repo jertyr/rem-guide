@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-08-31
+Last updated: 2026-10-12
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,30 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-10-12 - Full-site review (automated)
+Since the 2026-08-31 pass, `main` gained: print-table fixes on the painting worksheet and wood/LVP sheet (PRs #256/#257), dead EPA links fixed on `hazardous-materials.html` (#259), neighbor letter reparented to Site Setup (#260), the Job Start Checklist consolidation (#261, `job-start-checklist.html`), and two new standalone presentation pages committed directly to `main` with no PR: `claude-workflow.html` (09-29) and `miosha-visit.html` (10-10 to 10-11), plus about 15 MB of new images. The 08-31 process finding is resolved: no review PRs are left open. No content edits were made this pass; this entry is the only change.
+
+**Most important finding: client details are public in `claude-workflow.html`.** The page is `noindex` but is served openly on GitHub Pages and contains real client names (Tedford, "Max and Sally", Beth and Roger Nugent, their dogs' names), a subcontractor name, Wolverine Glass, job-specific pricing and allowances ($800, $7,000, $900 permit, $4,500 rail), a BuilderTrend job number, and screenshots of client change orders and daily logs. It also conflicts with the 2026-07-08 decision that the guide is a national reference with generic content only. Recommend the user decide whether to anonymize (Client A, round the numbers, redact screenshots), move it to the personal website repo, or remove it before the audience link spreads. `miosha-visit.html` is milder (company and event specific: "Dexter Builders", BRAG Remodelers Council 10/14/2026, inspection photos) but is the same category.
+
+**Other findings:**
+- Both new pages lack the standard chrome: no sidebar nav, no Share/Print, no `Last revised`, no footer, no `styles.css`. Neither is linked from any page. That is fine for a talk, but they should be classed as parked/presentation pages (like `safety-training-presentation.html`) and listed in the orphan section, or migrated with the others.
+- `images/` is now 222 MB. Unresized phone photos are 4-9 MB each (`footing-prep-form-a-drain.jpg` 9.3 MB, `20261007_194932.jpg` 6.7 MB, several footing photos). This slows the deploy, and the 24h Pages outage in July happened at the file-sync step. Resizing to about 1600px wide would cut it by roughly 90%.
+- Redirect stubs remain, all with zero inbound links: `roofing-order-sheet-2`, `siding-and-trim-order-sheat`, `tile-order-sheet`, `safety-reminders`, `safety-signage`, `foundation-checklist`, `site-set-up-checklist`, `job-start-materials-checklist`, `construction-site-sign`. Nine is enough to justify a sunset date.
+- Every internal `href="*.html"` resolves (scripted check across all HTML files). No broken internal links.
+- Red flags unchanged, so now older: `remediation.html` 8 (safety, open since before 07-19, about 12 weeks), `interior-trim.html` 13 (8 weeks), `painting.html` 10 (9 weeks), `tile.html` 3 (10 weeks), `insulation.html` 2, `excavation.html` 2, `products.html` 1; `construction-dashboard.html` 37 (parked).
+- Unchanged and still waiting on the user: `about.html` footer, `decks.html`/`wage-calculator.html` footer text, README still describes AWS/S3, the content gaps in section 1, orphan migration.
+- The print-block ordering bug (print `@media` placed before unmediated rules, so print tuning is inert) is still present on most older forms; only the foundation sheet, painting worksheet, wood/LVP and tile sheets were fixed.
+- CLAUDE.md work log has no entries for the 09-29 and 10-10 commits.
+
+**Recommended revisions and plan (in order):**
+1. **Client privacy on `claude-workflow.html`** (15 min, needs user decision first). Ask: anonymize, move, or remove. If anonymize: replace names with Client A/B, round dollar figures, blur screenshot names, rename the image files. Highest priority because it is public and identifies real clients.
+2. **Remediation red-flag review** (one session, user conversation). Safety guidance a crew could act on; now 12 weeks open. Walk the 8 spans with the user: approve, correct, or remove.
+3. **Bundle the interior-trim / painting / tile flag review** (one session). 26 spans, same approve/correct/remove decision; do after #2.
+4. **Image compression PR** (small, mechanical). Resize images over 1 MB to about 1600px wide, same filenames, so no HTML changes. Lowers deploy risk.
+5. **Fix print-block ordering on legacy forms** (one PR per 5-6 forms, verify with the 720px print render). Do only on forms being touched, or as a batch if the user wants real one-page printing.
+6. **Document the two presentation pages** (tiny). Add them to the Orphan/parked section here and a CLAUDE.md work log line.
+7. **Stub sunset decision** (5 minutes of the user's time). Keep or delete the nine stubs.
 
 ### 2026-08-31 - Full-site review (automated)
 Since the 2026-08-10 pass, `main` gained: the demolition downspout-drainage field note (PR #239), Interior Trim page + Interior Door Order Form (PRs #241/#243/#244), a Tile Prep content merge (PR #247), and the Foundation Order Sheet replacing the foundation checklist (PRs #250/#252/#254, `foundation-order-sheet.html`) with its red flags cleared. Two automated review passes dated 2026-08-17 and 2026-08-24 were also run in this window but never made it into this log - see the process finding below.
@@ -188,6 +212,7 @@ Per user decision, these are NOT to be deleted; the user wants them migrated to 
 - `diagnostic-tools.html`
 - `cte-presentation.html`
 - `newsletter_prompt.html`
+- `claude-workflow.html` and `miosha-visit.html` (talk/presentation pages, unlinked, no site chrome; see 2026-10-12 review for the client-detail concern)
 
 - [ ] **Migration when repo access lands** - When the personal website repo becomes reachable, move these out of `rem-guide` and leave redirect stubs only if any are publicly linked.
 

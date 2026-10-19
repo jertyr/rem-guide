@@ -7,52 +7,6 @@
     <title>Siding and Trim Order Sheet | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        @media print {
-            @page { margin: 0.5in; size: letter portrait; }
-            header,
-            .sidebar,
-            footer,
-            .mobile-nav-toggle,
-            .breadcrumb,
-            .form-actions,
-            button,
-            #share-btn,
-            #print-btn,
-            small {
-                display: none !important;
-            }
-            .main-wrapper {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            main {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            article {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            body {
-                margin: 0;
-                padding: 0;
-                font-size: 0.75rem;
-            }
-            h1.form-title { font-size: 0.95rem; margin: 0 0 0.25rem 0; }
-            h3.form-section { font-size: 0.75rem; margin: 0.25rem 0 0.1rem 0; padding-bottom: 0.08rem; }
-            .trim-sub { font-size: 0.72rem; margin: 0.1rem 0 0.05rem 0; }
-            .job-header { margin-bottom: 0.25rem; gap: 1.2rem; }
-            .job-header p { font-size: 0.75rem; margin: 0.08rem 0; }
-            .form-grid { gap: 0.8rem; margin-bottom: 0.2rem; }
-            .form-grid-bottom { gap: 0.8rem; margin-bottom: 0.2rem; }
-            .form-row { margin: 0.08rem 0; font-size: 0.75rem; }
-            .option-row { margin: 0.08rem 0; font-size: 0.75rem; }
-            .trim-table { font-size: 0.75rem; margin: 0 0 0.2rem 0; }
-            .trim-table th, .trim-table td { padding: 0.1rem 0.4rem; }
-            .notes-box { display: none; }
-            .print-credit { display: block; margin-top: 0.4rem; }
-        }
-
         /* Screen styles */
         h1.form-title {
             font-size: 1.4rem;
@@ -164,6 +118,71 @@
             font-size: 0.72rem;
             color: #666;
             margin-top: 0.4rem;
+        }
+
+        @media print {
+            @page { margin: 0.5in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            main {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            article {
+                margin: 0 !important;
+                padding: 0 !important;
+                max-width: none !important;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 0.75rem;
+            }
+            h1.form-title { font-size: 0.95rem; margin: 0 0 0.25rem 0; }
+            h3.form-section { font-size: 0.75rem; margin: 0.25rem 0 0.1rem 0; padding-bottom: 0.08rem; }
+            .trim-sub { font-size: 0.72rem; margin: 0.1rem 0 0.05rem 0; }
+            .job-header { margin-bottom: 0.25rem; gap: 1.2rem; }
+            .job-header p { font-size: 0.75rem; margin: 0.08rem 0; }
+            .form-grid { gap: 0.8rem; margin-bottom: 0.2rem; }
+            .form-grid-bottom { gap: 0.8rem; margin-bottom: 0.2rem; }
+            .form-row { margin: 0.08rem 0; font-size: 0.75rem; }
+            .option-row { margin: 0.08rem 0; font-size: 0.75rem; }
+            .trim-table { font-size: 0.75rem; margin: 0 0 0.2rem 0; }
+            .trim-table th, .trim-table td { padding: 0.1rem 0.4rem; }
+            .notes-box { display: none; }
+            .print-credit { display: block; margin-top: 0.4rem; }
+            /* The print layout viewport is 7.5in = 720px, which is under the
+               768px mobile breakpoint in styles.css, so its mobile table rules
+               (display:block, overflow-x:auto, nowrap cells) apply and collapse
+               each table to content width. Undo them here; each table's own
+               colgroup percentages keep the Aluminum/Vinyl pair narrow (they
+               fill their .form-grid column, not the full page) while the
+               Other table fills the full page width. */
+            .trim-table {
+                display: table !important;
+                width: 100% !important;
+                max-width: none !important;
+                overflow-x: visible !important;
+                table-layout: fixed !important;
+            }
+            .trim-table th,
+            .trim-table td {
+                white-space: normal !important;
+            }
         }
     </style>
 </head>

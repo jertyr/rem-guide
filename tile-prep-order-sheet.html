@@ -7,47 +7,6 @@
     <title>Tile Prep Order Sheet | Remodelers Guide</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        @media print {
-            @page { margin: 0.5in; size: letter portrait; }
-            header,
-            .sidebar,
-            footer,
-            .mobile-nav-toggle,
-            .breadcrumb,
-            .form-actions,
-            button,
-            #share-btn,
-            #print-btn,
-            small {
-                display: none !important;
-            }
-            .main-wrapper { display: block !important; margin: 0 !important; padding: 0 !important; }
-            main { margin: 0 !important; padding: 0 !important; margin-left: 0 !important; min-height: 0 !important; }
-            article { margin: 0 !important; padding: 0 !important; box-shadow: none !important; }
-            body { display: block !important; min-height: 0 !important; margin: 0; padding: 0; font-size: 0.72rem; }
-            h1.form-title { font-size: 0.95rem; margin: 0 0 0.3rem 0; }
-            h3.form-section { font-size: 0.74rem; margin: 0.24rem 0 0.1rem 0; padding-bottom: 0.08rem; }
-            .job-header { margin-bottom: 0.3rem; }
-            .job-header p { font-size: 0.72rem; margin: 0.1rem 0; }
-            .form-grid { gap: 0.8rem; margin-bottom: 0.2rem; }
-            .form-row { margin: 0.07rem 0; font-size: 0.72rem; line-height: 1.25; }
-            .option-row { margin: 0.07rem 0; font-size: 0.72rem; line-height: 1.25; }
-            .size-note { font-size: 0.66rem; }
-            .notes-box { display: none; }
-            .order-table { font-size: 0.7rem; margin: 0.18rem 0 0.25rem 0; }
-            .order-table th, .order-table td { padding: 0.16rem 0.4rem; }
-            .fill-sm { width: 55px; }
-            .fill-md { width: 90px; }
-            .print-credit {
-                display: block;
-                font-size: 0.65rem;
-                color: #666;
-                text-align: center;
-                margin-top: 0.35rem;
-            }
-            .kit-note { font-size: 0.68rem; color: #555; }
-        }
-
         h1.form-title {
             font-size: 1.4rem;
             margin: 0 0 0.6rem 0;
@@ -140,6 +99,63 @@
         .stone-table th:nth-child(4), .stone-table td:nth-child(4) { width: 17%; }
         .stone-table th.qty-cell, .stone-table td:nth-child(5) { width: 14%; }
         .print-credit { display: none; }
+
+        @media print {
+            @page { margin: 0.5in; size: letter portrait; }
+            header,
+            .sidebar,
+            footer,
+            .mobile-nav-toggle,
+            .breadcrumb,
+            .form-actions,
+            button,
+            #share-btn,
+            #print-btn,
+            small {
+                display: none !important;
+            }
+            .main-wrapper { display: block !important; margin: 0 !important; padding: 0 !important; }
+            main { margin: 0 !important; padding: 0 !important; margin-left: 0 !important; min-height: 0 !important; }
+            article { margin: 0 !important; padding: 0 !important; box-shadow: none !important; max-width: none !important; }
+            body { display: block !important; min-height: 0 !important; margin: 0; padding: 0; font-size: 0.72rem; }
+            h1.form-title { font-size: 0.95rem; margin: 0 0 0.3rem 0; }
+            h3.form-section { font-size: 0.74rem; margin: 0.24rem 0 0.1rem 0; padding-bottom: 0.08rem; }
+            .job-header { margin-bottom: 0.3rem; }
+            .job-header p { font-size: 0.72rem; margin: 0.1rem 0; }
+            .form-grid { gap: 0.8rem; margin-bottom: 0.2rem; }
+            .form-row { margin: 0.07rem 0; font-size: 0.72rem; line-height: 1.25; }
+            .option-row { margin: 0.07rem 0; font-size: 0.72rem; line-height: 1.25; }
+            .size-note { font-size: 0.66rem; }
+            .notes-box { display: none; }
+            .order-table { font-size: 0.7rem; margin: 0.18rem 0 0.25rem 0; }
+            .order-table th, .order-table td { padding: 0.16rem 0.4rem; }
+            .fill-sm { width: 55px; }
+            .fill-md { width: 90px; }
+            .print-credit {
+                display: block;
+                font-size: 0.65rem;
+                color: #666;
+                text-align: center;
+                margin-top: 0.35rem;
+            }
+            .kit-note { font-size: 0.68rem; color: #555; }
+            /* The print layout viewport is 7.5in = 720px, which is under the
+               768px mobile breakpoint in styles.css, so its mobile table rules
+               (display:block, overflow-x:auto, nowrap cells) apply and collapse
+               the table to content width. Undo them here; the schluter/stone
+               column widths above stay in force under table-layout: fixed. */
+            .order-table {
+                display: table !important;
+                width: 100% !important;
+                max-width: none !important;
+                overflow-x: visible !important;
+                table-layout: fixed !important;
+            }
+            .order-table th,
+            .order-table td {
+                white-space: normal !important;
+            }
+        }
     </style>
 </head>
 <body>

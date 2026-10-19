@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-08-31
+Last updated: 2026-10-05
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,28 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-10-05 - Full-site review (automated)
+Branched fresh from `main` (4ed8ab7), not stacked on any open review PR. `main` gained one thing since the 2026-08-31 pass besides the 09-02 work already in `CLAUDE.md`: a new **`claude-workflow.html`** presentation page with five screenshots (2026-09-29, four direct commits to `main`, no PR). Everything else in this log is unchanged on `main`. Note that `main` does NOT carry the work from open PRs #264-#267 (print-table fix on three more forms, the `remediation.html` moisture correction, stale footer dates); those only exist on unmerged branches.
+
+**New finding, needs a user decision (most important new item): `claude-workflow.html` conflicts with the 2026-07-08 philosophy decision.** The Guide is a national reference with generic, unfilled content, and company or client-specific material gets removed from the site. This page (linked from nowhere, `noindex`, but live at a public URL) contains:
+- Real client names and job identifiers (Tedford job, "Sally & Max 260119", Dorsey job, Beth and Roger Nugent and their dogs' names), plus client-facing change order and daily-log screenshots from BuilderTrend.
+- Dollar figures from a live proposal (allowances, permit fee, labor hours), and company names (Dexter Builders, Dexter Block).
+- Five JPGs, about 970 KB total, one of them 580 KB.
+It reads as an internal or presentation walkthrough, not Guide content, and it has no sidebar, footer, or Last revised line. Options: (a) move it to the personal site with the other parked orphans, (b) keep it but anonymize names, jobs, and amounts and re-crop the screenshots, (c) leave as-is if it is a deliberately private link. Not changed this pass.
+
+**Reverified, unchanged:**
+- No broken internal links across all 85 HTML files. Nav (Tile link) is on all 67 sidebar-carrying pages; the 18 without it are known orphans, redirect stubs, and nav-less safety pages, plus the new `claude-workflow.html`.
+- Red-flag counts identical to 08-31: `remediation.html` 8 (now about 11 weeks open, safety relevant, still the oldest item), `interior-trim.html` 13, `painting.html` 10, `tile.html` 3, `insulation.html` 2, `excavation.html` 2, `products.html` 1. `construction-dashboard.html` 37 (parked orphan).
+- Open PR queue is now 8 PRs (#162, #163, #248, #249, #253, #263, #264-#267 chain), the same unresolved process problem as every pass since 08-31.
+- `about.html` footer, footer copyright inconsistency (`decks.html`, `wage-calculator.html`), stale README, content gaps (flatwork order form, fireblocking checklist, neighbor letter blanks, rough-trade cross-links), and parked orphans are all unchanged.
+
+**Suggested priority and plan:**
+1. **Clear the PR queue (5 minutes, user on GitHub).** Merge #267 (superset of #264-#266, carries the print-table fix and remediation correction); close #264, #265, #266, #248, #249, #253, #162, #163 without merging; merge or close #263. Without this, every future pass re-discovers the same findings.
+2. **Decide on `claude-workflow.html`** (option a, b, or c above). A one-line answer unblocks it; option (b) is one small PR.
+3. **`remediation.html` red-flag approval.** One page, one PR, approve/correct/remove. Do this right after step 1 so the moisture-content correction lands first.
+4. **Bundle the `interior-trim.html`, `painting.html`, `tile.html` flag review** into one conversation (same decision, 26 spans). The garage-door self-closing span needs a code source.
+5. **Then content gaps**: fireblocking checklist, flatwork order form, neighbor letter blanks, in that order.
 
 ### 2026-08-31 - Full-site review (automated)
 Since the 2026-08-10 pass, `main` gained: the demolition downspout-drainage field note (PR #239), Interior Trim page + Interior Door Order Form (PRs #241/#243/#244), a Tile Prep content merge (PR #247), and the Foundation Order Sheet replacing the foundation checklist (PRs #250/#252/#254, `foundation-order-sheet.html`) with its red flags cleared. Two automated review passes dated 2026-08-17 and 2026-08-24 were also run in this window but never made it into this log - see the process finding below.

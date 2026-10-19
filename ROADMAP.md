@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-08-31
+Last updated: 2026-10-19
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,37 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-10-19 - Full-site review (automated)
+Since the 2026-08-31 pass, `main` gained: print-table fixes on the painting worksheet and wood/LVP sheet (PRs #256/#257), EPA link-rot repair (#259), neighbor letter nav fix (#260), Site Setup + Job Start Materials merged into `job-start-checklist.html` (#261), and memory updates (#258/#262). Also, **five weeks of commits landed directly on `main` with no PR** (2026-09-29 to 10-11): two new presentation pages, `claude-workflow.html` and `miosha-visit.html`, plus about 17 MB of new images. Nothing in `CLAUDE.md` or this file recorded them until now. The stale review PRs flagged on 08-31 (#248/#249/#253) are no longer a concern for this pass; this branch started fresh from `main`.
+
+**New pages (undocumented until now):**
+- `miosha-visit.html` ("MIOSHA Inspection: What Happened and What We Changed"): a BRAG Remodelers Council talk from 2026-10-14. Timeline, four citations, $900 penalty reduced to $450, deadlines, corrective actions, resource links.
+- `claude-workflow.html` ("How I Run Jobs With Claude"): a scrolling walkthrough of daily logs, change orders, sales-call scope review and next-day briefs, with screenshots.
+- Both are `noindex,nofollow`, are not in the sidebar, are not linked from any page, carry no nav/footer/Last revised/print chrome, and use their own inline styling (a presentation style, like `safety-training-presentation.html`, not the standard page format). That is consistent with the CTE/orphan presentations, but see the decision items below.
+
+**Needs a user decision (not changed this pass):**
+1. **Philosophy conflict.** The 2026-07-08 decision was that the guide is a national reference with generic content, and company/location-specific material gets exported and removed. Both new pages are written in the first person and name Dexter Builders, the author, real client names (Tedford, Nugent, plus their dogs' names in the Claude demo prompt), a named estimating contact, and BuilderTrend screenshots with live job data. The MIOSHA page also states a company-specific citation history. `noindex` keeps them out of search but the URLs are public on GitHub Pages and the images and source are public in the repo. Options: (a) keep as unlisted presentation pages and redact client names/screenshots, (b) move both to the personal website repo with the other parked presentations, (c) generalize the MIOSHA page into a "what an inspection looks like and how to prepare" page in the standard format (the safety pages already hold the citations it references). Recommendation: (c) for MIOSHA, since it is the most useful thing to a national audience, and (b) for the Claude workflow page.
+2. **Repo weight.** `images/` is now 222 MB; one new photo (`20261007_194932.jpg`) is 6.6 MB and `claude-workflow/next-day-brief.jpg` is 580 KB. The `cte-presentation` (110 MB) and `diagnostics` (21 MB) folders belong to parked orphans. If the orphans migrate out, the repo shrinks by about 130 MB. Any large photos that stay should be resized to about 1600 px wide.
+
+**Link check (first full external sweep since 08-31, 151 distinct URLs):** 60 return 200. 82 return 403 and are almost entirely bot-blocking on `codes.iccsafe.org`, `osha.gov` and `onsetcomp.com` (consistent with earlier passes; not treated as broken). Genuinely dead (404):
+- `gypsum.org/technical/ga-214-recommended-levels-of-gypsum-board-finish/` on `painting.html:263`, inside a red-flagged span. GA-214 moved on gypsum.org; find the current URL or link the GA publications index instead.
+- `greenbuildingadvisor.com/article/airtight-drywall` on `air-sealing.html:211`. Article removed or renamed.
+- `amazon.com/dp/B0GWR5PG5S` (Uqezagpa respirator) on `products.html:216`. Listing gone; the flagged respirator note should be resolved by replacing the product, not just the cartridge question.
+- `homedepot.com` Trex category URL on `construction-dashboard.html` (parked orphan, ignore).
+- Unreachable from this sandbox (not confirmed dead): four `fred.stlouisfed.org` series (orphan dashboard), one 502 on `fpl.fs.usda.gov/.../fpl_gtr190.pdf` (cited on `remediation.html`; the Forest Products Lab moves files often, recheck).
+
+**Reverified and still accurate:** no broken internal `*.html` links across 86 HTML files. Red-flag counts unchanged since 08-31, so nothing was approved in the interim: `remediation.html` 8 (now **over three months** old and safety-relevant), `interior-trim.html` 13 (two months), `painting.html` 10 (10 weeks), `tile.html` 3 (11 weeks), `insulation.html` 2, `excavation.html` 2, `products.html` 1, `construction-dashboard.html` 37 (parked). Job-start consolidation left `site-set-up-checklist.html` and `job-start-materials-checklist.html` as clean stubs. `about.html`, footer-copyright, README and content-gap items from 08-31 are unchanged.
+
+**Implemented this pass:** this log entry and backlog updates only. No site content was edited; every open item above needs either a user decision or user-approved sourcing.
+
+**Most important revisions and plan (in order):**
+1. **Decide the fate of the two new presentation pages** (decision item 1). This is the only item with a privacy angle (client names and job screenshots are public). If the user says redact: one PR per page, replace client names with placeholders and swap or crop screenshots. If generalize MIOSHA: one PR creating a standard-format "OSHA/MIOSHA inspection preparation" page (what inspectors check first, what to have in the van, citation categories, the penalty-reduction/appeal timeline, linking `safety.html` and the PPE checklist), nav entry added to all sidebar files via a committed script.
+2. **Remediation red-flag review** (still the oldest, safety-relevant batch). Walk the 8 spans in one conversation: approve, correct or remove each. About 15 minutes of the user's time.
+3. **Replace the dead links**: GA-214 on `painting.html`, GBA article on `air-sealing.html`, and the respirator on `products.html`. One small PR; each replacement needs sourcing and goes in red until approved.
+4. **Bundle the interior-trim / painting / tile flag review** (26 spans) into a single approve/correct/remove pass.
+5. **Housekeeping PR**: compress or remove oversized new images; update README (still describes AWS/S3); commit the reusable `update-nav` script so the next nav addition is one command.
+6. **Process**: direct-to-`main` uploads bypass the PR and memory workflow, which is why these pages went unrecorded for five weeks. Either record future ones in `CLAUDE.md` when added or route them through a PR.
 
 ### 2026-08-31 - Full-site review (automated)
 Since the 2026-08-10 pass, `main` gained: the demolition downspout-drainage field note (PR #239), Interior Trim page + Interior Door Order Form (PRs #241/#243/#244), a Tile Prep content merge (PR #247), and the Foundation Order Sheet replacing the foundation checklist (PRs #250/#252/#254, `foundation-order-sheet.html`) with its red flags cleared. Two automated review passes dated 2026-08-17 and 2026-08-24 were also run in this window but never made it into this log - see the process finding below.
@@ -175,6 +206,9 @@ Low-risk, high-tidiness items.
 - [x] **`hazardous-materials.html` footer typo** - Fixed 2026-07-27: now reads "Last revised: 05/01/2026".
 - [ ] **`about.html` footer inconsistency (discuss, don't just fix)** - The home page uses an older, simpler footer with no Share/Print buttons, no feedback-form link, and no `Last revised` line, while all other pages (including utility pages like `wage-calculator.html`) share those elements. Could be intentional for the homepage; confirm with the user before changing.
 - [x] **`CLAUDE.md` work log gap** - Backfilled 2026-07-27: PRs #224-227 (fold Safety Reminders card into PPE checklist, then drop `safety-reminders.html`) now recorded in the Work Log.
+- [ ] **New presentation pages: privacy/philosophy decision** (added 2026-10-19) - `miosha-visit.html` and `claude-workflow.html` name real clients and company details and show live job screenshots; decide redact / move / generalize. See the 2026-10-19 Review Log entry.
+- [ ] **Dead external links** (added 2026-10-19) - GA-214 URL on `painting.html`, GBA airtight-drywall on `air-sealing.html`, Amazon respirator on `products.html`; recheck `fpl_gtr190.pdf` on `remediation.html`.
+- [ ] **Oversized images** (added 2026-10-19) - `images/` is 222 MB; resize large photos (e.g. `20261007_194932.jpg`, 6.6 MB).
 - [ ] **README is stale** - `README.md` still describes the AWS/S3 upload process and an "Active Navigation" version. The site is on GitHub Pages now. Rewrite it to reflect the current hosting, structure, and the conventions in `CLAUDE.md`.
 - [x] **Last revised dates** - Spot-checked 2026-07-27: `safety.html` and `safety-equipment-checklist.html` were stale (`06/04/2026` vs. actual last edit `07/10/2026`); fixed. No other mismatches found.
 - [x] **`products.html` / `resources.html` missing all footer chrome** - Fixed 2026-08-10: both pages had no print stylesheet, no Share/Print buttons, no `Last revised` line, and no sitewide footer at all. Added the standard set matching every other content page.

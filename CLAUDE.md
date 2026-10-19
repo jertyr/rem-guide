@@ -348,3 +348,9 @@ Not every page needs every section — content drives structure.
 - **Verification technique worth reusing for any merge**: scripted diff of the union of the old sheets' `<li>` items against the new sheet, with an explicit allowlist of items intentionally relocated. 54 lines became 36 with nothing dropped; the ten not appearing verbatim were all renames or merges
 - **`site-set-up-checklist.html` and `job-start-materials-checklist.html` are now redirect stubs**; links collapsed from two entries to one on `pre-construction.html`, `jobsite-protection.html`, and `resources.html`
 - **Branches**: `claude/fix-epa-resource-links`, `claude/neighbor-letter-nav`, `claude/consolidate-job-start-checklists`
+
+### Session: 2026-10-19 — Automated review pass (ROADMAP.md entry)
+- **Found**: `claude-workflow.html` (09-29) and `miosha-visit.html` (10-10/11) were pushed straight to `main` with no PR; both are noindex, unlinked, first-person presentation pages naming real clients and company details, with job screenshots. Conflicts with the 07-08 national-reference philosophy; decision pending (redact / move to personal site / generalize MIOSHA into a standard safety page)
+- **Dead links found**: GA-214 on `painting.html`, GBA article on `air-sealing.html`, Amazon respirator on `products.html`. `images/` is 222 MB
+- **No site content edited**; full detail and plan in the ROADMAP.md 2026-10-19 Review Log entry
+- **Branch**: `claude/inspiring-feynman-aqi838`

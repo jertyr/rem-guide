@@ -348,3 +348,10 @@ Not every page needs every section — content drives structure.
 - **Verification technique worth reusing for any merge**: scripted diff of the union of the old sheets' `<li>` items against the new sheet, with an explicit allowlist of items intentionally relocated. 54 lines became 36 with nothing dropped; the ten not appearing verbatim were all renames or merges
 - **`site-set-up-checklist.html` and `job-start-materials-checklist.html` are now redirect stubs**; links collapsed from two entries to one on `pre-construction.html`, `jobsite-protection.html`, and `resources.html`
 - **Branches**: `claude/fix-epa-resource-links`, `claude/neighbor-letter-nav`, `claude/consolidate-job-start-checklists`
+
+### Session: 2026-10-20 — Gap pass: Closeout, Cabinets, Selections and Change Orders (queue job)
+- **Context**: Jerry's job queue asked for a gap map of the guide against a full remodel, then drafts of the top 2 or 3 pages. Gap list lives in the private `jertyr/claude-queue` repo
+- **New pages** (standard format, built from the interior-trim template): `closeout.html` (punch list, finals, closeout package, financial and internal closeout), `cabinets.html` (layout, uppers, bases, appliance openings, finish), `selections-and-change-orders.html` (selections schedule worked back from lead times, allowances, change orders)
+- **Nav**: "Selections & Change Orders" after Home, "Cabinets" before Countertops, "Closeout" after Stairs, in all 67 sidebar files
+- **No user notes**: pages are drafted from general practice. Code and spec lines are red-flagged (closeout 2, cabinets 7); common practice is not, per the trust-field-knowledge rule
+- **Branch**: `claude/guide-gaps-closeout-cabinets-selections`

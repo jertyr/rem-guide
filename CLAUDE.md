@@ -348,3 +348,10 @@ Not every page needs every section — content drives structure.
 - **Verification technique worth reusing for any merge**: scripted diff of the union of the old sheets' `<li>` items against the new sheet, with an explicit allowlist of items intentionally relocated. 54 lines became 36 with nothing dropped; the ten not appearing verbatim were all renames or merges
 - **`site-set-up-checklist.html` and `job-start-materials-checklist.html` are now redirect stubs**; links collapsed from two entries to one on `pre-construction.html`, `jobsite-protection.html`, and `resources.html`
 - **Branches**: `claude/fix-epa-resource-links`, `claude/neighbor-letter-nav`, `claude/consolidate-job-start-checklists`
+
+### Session: 2026-10-20 — Field pages: Cabinets and Closeout (replaces PR #271)
+- **USER DECISION**: the guide is field focused. Business operations (selections process, allowances, change orders, invoicing, job costing, lien waivers, reviews) do not belong here. PR #271's Selections and Change Orders page was dropped for that reason
+- **New pages**: `cabinets.html` (layout, uppers, bases, appliance openings, finish) and `closeout.html` trimmed to field work: internal walk, finals, client punch walk, working the list, final clean, turnover items
+- **Nav**: "Cabinets" before Countertops, "Closeout" after Stairs
+- **Red flags**: cabinets 7, closeout 2 (code/spec lines only)
+- **Branch**: `claude/field-closeout-cabinets`

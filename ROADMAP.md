@@ -1,6 +1,6 @@
 # Remodelers Guide - Improvement Roadmap
 
-Last updated: 2026-08-31
+Last updated: 2026-10-26
 
 This is a running list of areas to improve the site. It is a planning document, not a commitment. Items are grouped by theme and roughly ordered by value-to-effort within each group. Nothing here changes the workflow rules in `CLAUDE.md` (small PRs, new branch per round, red-flag added content, no em-dashes, no unsolicited cleanup). Pick items off this list as you want them; each becomes its own scoped PR.
 
@@ -14,6 +14,25 @@ This is a running list of areas to improve the site. It is a planning document, 
 
 ## Review Log
 Dated record of full-site review passes, kept so we don't re-discover the same gaps or lose track of what's already been checked.
+
+### 2026-10-26 - Full-site review (automated)
+Since the 2026-08-31 pass, `main` gained: print-table fixes on the painting worksheet and wood/LVP sheet (PRs #256/#257), dead EPA link repairs (#259), the neighbor letter reparent (#260), the Job Start Checklist consolidation (#261), and four presentation pages pushed straight to `main` on 09-29 and 10-10/11 (`claude-workflow.html`, `miosha-visit.html`, plus a photo/QR upload series). No PRs have merged since 09-02.
+
+**Findings (nothing implemented this pass beyond this log entry):**
+1. **Two new pages are outside the site's own conventions.** `claude-workflow.html` and `miosha-visit.html` are standalone dark/serif presentations with their own CSS, no sidebar, no Share/Print/`Last revised`, `noindex`, and no inbound links. That is fine for talk handouts, but `claude-workflow.html` embeds a real client sales call (named clients, their dogs, a reviewer's name, dollar figures) and `miosha-visit.html` is Dexter Builders specific. The 2026-07-08 philosophy decision says company or location specific material is exported for the user and then removed from the site. **Needs a user call:** keep as unlinked handouts, move to the personal-site repo with the other orphans (section 6), or scrub client names first. `noindex` does not make a public GitHub Pages URL private.
+2. **Repo weight.** `images/` is 222 MB; `images/cte-presentation` alone is 112 MB (32 files over 2 MB, many multi-MB phone photos) and `images/diagnostics` 21 MB, all belonging to parked orphan pages. Every clone and every Pages deploy carries this. Resizing, or moving with the orphans, is the cheapest fix. The Pages outage in July involved sync failures, so keeping deploys light is worth it.
+3. **Red flags have not moved in 8 weeks.** `remediation.html` 8 (safety, open since before 07-19, now 14+ weeks), `interior-trim.html` 13, `painting.html` 10, `tile.html` 3, `insulation.html` 2, `excavation.html` 2, `products.html` 1. `construction-dashboard.html` 37 (parked orphan).
+4. **Review PRs #248, #249, #253** were recommended closed or merged on 08-31; no evidence of action. Branch fresh from `main` each pass.
+
+**Reverified:** zero broken internal `*.html` links across 86 files; every image `src` resolves; Interior Trim, Tile, Painting nav present on all sidebar-carrying pages (the files lacking it are stubs, printables, presentations, and orphans); backlog sections 1-6 unchanged (no fireblocking checklist, no flatwork order form, neighbor letter blanks, rough-trade cross-links, README stale, `about.html` footer, CC BY footer on `decks.html`).
+
+**Most important revisions, in order, with plan:**
+1. **Decide the two presentation pages** (5 min of user time). Plan: if they leave, PDF them to the user via chat, delete, add to the orphan migration list. If they stay, add a one-line note here and link them from nowhere.
+2. **Remediation red-flag review** (safety content, longest open). Plan: one PR that lists each of the 8 spans in chat for approve/correct/remove, then unflags in a follow-up PR.
+3. **Bundle the interior-trim, painting, and tile flags** into one review conversation (26 spans, same decision each).
+4. **Image diet.** Plan: one PR resizing oversized site-linked photos to about 1600 px; orphan image folders move with the orphan pages.
+5. **Fireblocking checklist and flatwork order form** (the two real content gaps), each as its own PR once the user picks one.
+6. **README rewrite** for GitHub Pages (small, no content risk).
 
 ### 2026-08-31 - Full-site review (automated)
 Since the 2026-08-10 pass, `main` gained: the demolition downspout-drainage field note (PR #239), Interior Trim page + Interior Door Order Form (PRs #241/#243/#244), a Tile Prep content merge (PR #247), and the Foundation Order Sheet replacing the foundation checklist (PRs #250/#252/#254, `foundation-order-sheet.html`) with its red flags cleared. Two automated review passes dated 2026-08-17 and 2026-08-24 were also run in this window but never made it into this log - see the process finding below.

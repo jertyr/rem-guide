@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Job Safety Analysis (JSA) | Remodelers Guide">
+<title>Job Safety Analysis (JSA) | Remodelers Guide</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+h1.form-title { font-size: 1.4rem; margin: 0 0 0.6rem 0; color: #2C3E50; }
+.form-note { font-size: 0.85rem; color: #666; margin: 0 0 1rem 0; }
+.form-actions { margin-top: 1rem; }
+.los-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+#los { width: 816px; line-height: normal; font-size: 12px; }
+#los, #los * { box-sizing: content-box; }
+#los h1 { font-family: inherit; line-height: normal; color: inherit; }
+#los table { display: table; width: 100%; margin: 0; box-shadow: none; background: #ffffff; }
+#los table thead { background: none; color: inherit; }
+#los table th, #los table td { padding: 0; text-align: center; border: 1px solid #111111; font-family: inherit; font-size: 12px; white-space: normal; color: #111111; }
+#los table tbody tr:nth-child(even), #los table tbody tr:hover { background: transparent; }
+#los .sec{display:flex;justify-content:space-between;align-items:baseline;height:20px;box-sizing:border-box;border-bottom:2px solid #111111;font-size:13px;font-weight:700;letter-spacing:0.5px}
+#los .sub{font-size:12px;font-weight:400;letter-spacing:0;color:#444444}
+#los .fld{display:flex;align-items:flex-end;gap:6px;height:24px;font-size:12px;font-weight:700}
+#los .line{flex:1;height:18px;border-bottom:1px solid #111111}
+#los .nl{height:22px;border-bottom:1px solid #bbbbbb}
+#los .tr{display:flex;align-items:flex-start;gap:6px;padding:2px 0;border-bottom:1px solid #bbbbbb}
+#los .tk{flex:none;width:164px;display:flex;align-items:flex-start;gap:6px;font-size:12px;font-weight:700;line-height:15px}
+#los .box{flex:none;width:12px;height:12px;border:1.5px solid #111111;margin-top:1px}
+#los .ar{flex:none;margin-top:3px}
+#los .cs{flex:1;display:flex;flex-wrap:wrap;column-gap:10px;row-gap:1px;font-size:12px;line-height:15px}
+#los .c{white-space:nowrap;display:inline-flex;align-items:center;gap:4px}
+#los .cb{flex:none;display:inline-block;width:10px;height:10px;border:1.5px solid #111111}
+@media print {
+@page { size: letter portrait; margin: 0; }
+header, .sidebar, footer, .mobile-nav-toggle, .breadcrumb, .form-actions, .form-note, h1.form-title, button, small { display: none !important; }
+.main-wrapper { display: block !important; margin: 0 !important; padding: 0 !important; }
+main { margin: 0 !important; padding: 0 !important; min-height: 0 !important; }
+article { margin: 0 !important; padding: 0 !important; box-shadow: none !important; max-width: none !important; }
+body { margin: 0; padding: 0; background: #ffffff; min-height: 0; }
+.los-scroll { overflow: visible !important; }
+#los, #los * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<header>
+<h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+<div class="main-wrapper">
+<aside class="sidebar">
+<nav>
+<ul>
+<li class="nav-item"><a href="about.html">Home</a></li>
+<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+<li class="nav-item active-section"><a href="safety.html" class="active">Safety</a></li>
+<li class="nav-item"><a href="excavation.html">Excavation</a></li>
+<li class="nav-item"><a href="footings.html">Footings</a></li>
+<li class="nav-item"><a href="foundations.html">Foundations</a></li>
+<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+<li class="nav-item"><a href="demolition.html">Demolition</a></li>
+<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+<li class="nav-item"><a href="remediation.html">Remediation</a></li>
+<li class="nav-item"><a href="framing.html">Framing</a></li>
+<li class="nav-item"><a href="decks.html">Decks</a></li>
+<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+<li class="nav-item"><a href="windows.html">Windows</a></li>
+<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+<li class="nav-item"><a href="roofing.html">Roofing</a></li>
+<li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+<li class="nav-item"><a href="gutters.html">Gutters</a></li>
+<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+<li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+<li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+<li class="nav-item"><a href="insulation.html">Insulation</a></li>
+<li class="nav-item"><a href="drywall.html">Drywall</a></li>
+<li class="nav-item"><a href="flooring.html">Flooring</a></li>
+<li class="nav-item"><a href="tile.html">Tile</a></li>
+<li class="nav-item"><a href="countertops.html">Countertops</a></li>
+<li class="nav-item"><a href="painting.html">Painting</a></li>
+<li class="nav-item"><a href="interior-trim.html">Interior Trim</a></li>
+<li class="nav-item"><a href="stairs.html">Stairs</a></li>
+<li class="nav-item"><a href="resources.html">Resources</a></li>
+<li class="nav-item"><a href="products.html">Products</a></li>
+<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+</ul>
+</nav>
+</aside>
+
+<main style="margin-left: 280px; padding: 2rem;">
+<article>
+<p class="breadcrumb"><a href="safety.html">Safety</a> &gt; Job Safety Analysis (JSA)</p>
+<h1 class="form-title">Job Safety Analysis (JSA)</h1>
+<p class="form-note">One page, Letter size. Fill it out before work starts each day or whenever the task changes: check the tasks on the day&#39;s work, check the controls in place, and go over it with the crew. Print with margins set to none.</p>
+
+<div class="los-scroll">
+<div id="los">
+<div style="width: 816px; height: 1056px; box-sizing: border-box; padding: 40px; background: #ffffff; color: #111111; font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif; display: flex; flex-direction: column; gap: 9px">
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid #111111; padding-bottom: 3px">
+<h1 style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 1px">JOB SAFETY ANALYSIS</h1>
+<div style="font-size: 14px; font-weight: 700">Remodelers Guide</div>
+</div>
+<div style="display: grid; grid-template-columns: 2.4fr 1fr 1.8fr 1.6fr; gap: 14px">
+<div class="fld"><span>Job Name</span><span class="line"></span></div>
+<div class="fld"><span>Date</span><span class="line"></span></div>
+<div class="fld"><span>Competent person</span><span class="line"></span></div>
+<div class="fld"><span>Filled out by</span><span class="line"></span></div>
+</div>
+<div style="font-size: 12px; line-height: 15px; margin-top: 3px">Check today's tasks and the controls in place, and go over it with the crew. Missing a control? Stop and call the competent person.</div>
+</div>
+
+<div>
+<div class="sec"><span>ON SITE</span><span class="sub">check what is here</span></div>
+<div class="tr" style="border-bottom: none; padding-top: 4px">
+<div class="cs">
+<span class="c"><span class="cb"></span>Fire extinguisher</span>
+<span class="c"><span class="cb"></span>GFCI on all cords</span>
+<span class="c"><span class="cb"></span>First aid kit</span>
+<span class="c"><span class="cb"></span>CPR-trained person</span>
+<span class="c"><span class="cb"></span>Emergency contacts</span>
+<span class="c"><span class="cb"></span>Safety data sheets</span>
+<span class="c"><span class="cb"></span>Safety program QR code posted</span>
+</div>
+</div>
+</div>
+
+<div>
+<div class="sec"><span>TASKS</span><span class="sub">N95 = general dust · P100 = silica, lead, mold</span></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Drywall or plaster demo</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Safety glasses</span>
+<span class="c"><span class="cb"></span>Work boots</span>
+<span class="c"><span class="cb"></span>N95 (drywall)</span>
+<span class="c"><span class="cb"></span>P100 (plaster)</span>
+<span class="c"><span class="cb"></span>Plastic walls and zip door</span>
+<span class="c"><span class="cb"></span>Cover vents</span>
+<span class="c"><span class="cb"></span>HEPA vac</span>
+<span class="c"><span class="cb"></span>Air scrubber</span>
+<span class="c"><span class="cb"></span>Test circuits dead</span>
+<span class="c"><span class="cb"></span>Ceilings: hard hat, goggles</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Tile demo</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Safety glasses</span>
+<span class="c"><span class="cb"></span>Work boots</span>
+<span class="c"><span class="cb"></span>P100</span>
+<span class="c"><span class="cb"></span>Hearing protection</span>
+<span class="c"><span class="cb"></span>Cut gloves</span>
+<span class="c"><span class="cb"></span>Plastic dust walls</span>
+<span class="c"><span class="cb"></span>Mist with water</span>
+<span class="c"><span class="cb"></span>HEPA vac</span>
+<span class="c"><span class="cb"></span>Face shield</span>
+<span class="c"><span class="cb"></span>No dry sweeping</span>
+<span class="c"><span class="cb"></span>Ceilings: hard hat, goggles</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Breaking up concrete inside</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Safety glasses</span>
+<span class="c"><span class="cb"></span>Work boots</span>
+<span class="c"><span class="cb"></span>Hearing protection</span>
+<span class="c"><span class="cb"></span>P100 (indoors)</span>
+<span class="c"><span class="cb"></span>Water spray or HEPA vac</span>
+<span class="c"><span class="cb"></span>Face shield</span>
+<span class="c"><span class="cb"></span>Plastic and air scrubber</span>
+<span class="c"><span class="cb"></span>Keep others out</span>
+<span class="c"><span class="cb"></span>Check slab for pipes, wires</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Cutting or grinding masonry, tile, stone, fiber cement</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Safety glasses</span>
+<span class="c"><span class="cb"></span>Hearing protection</span>
+<span class="c"><span class="cb"></span>Saw with water feed</span>
+<span class="c"><span class="cb"></span>Grinder shroud and HEPA vac</span>
+<span class="c"><span class="cb"></span>Cut outdoors</span>
+<span class="c"><span class="cb"></span>Never dry cut</span>
+<span class="c"><span class="cb"></span>Face shield</span>
+<span class="c"><span class="cb"></span>N95 (saw over 4 hrs)</span>
+<span class="c"><span class="cb"></span>P100 (long grinding)</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Windows and doors</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Safety glasses</span>
+<span class="c"><span class="cb"></span>Work boots</span>
+<span class="c"><span class="cb"></span>Cut gloves</span>
+<span class="c"><span class="cb"></span>Two-person lift</span>
+<span class="c"><span class="cb"></span>Ladder or scaffold for upper floors</span>
+<span class="c"><span class="cb"></span>Openings secured at end of day</span>
+<span class="c"><span class="cb"></span>Pre-1978: lead-safe packet</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Framing</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Safety glasses</span>
+<span class="c"><span class="cb"></span>Work boots</span>
+<span class="c"><span class="cb"></span>Hearing protection</span>
+<span class="c"><span class="cb"></span>Saw guards working</span>
+<span class="c"><span class="cb"></span>Clear nailer jams with air off</span>
+<span class="c"><span class="cb"></span>Cover and mark floor holes</span>
+<span class="c"><span class="cb"></span>Guardrails at 6 ft edges</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Setting trusses or rafters</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Hard hats</span>
+<span class="c"><span class="cb"></span>Fall protection plan reviewed</span>
+<span class="c"><span class="cb"></span>Harness fitted snug and tied off</span>
+<span class="c"><span class="cb"></span>Tag line</span>
+<span class="c"><span class="cb"></span>Clear of swing path</span>
+<span class="c"><span class="cb"></span>Temporary bracing per truss plan</span>
+<span class="c"><span class="cb"></span>10 ft from power lines</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Roof and sheathing work</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Harness and roof anchor</span>
+<span class="c"><span class="cb"></span>Roof brackets</span>
+<span class="c"><span class="cb"></span>Hard hats below</span>
+<span class="c"><span class="cb"></span>Drop zone marked off</span>
+<span class="c"><span class="cb"></span>Ladder tied off</span>
+<span class="c"><span class="cb"></span>Warning line (low slope)</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Ladders</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Inspected before use</span>
+<span class="c"><span class="cb"></span>Level footing</span>
+<span class="c"><span class="cb"></span>Set 4:1, 3 ft above landing</span>
+<span class="c"><span class="cb"></span>3 points of contact</span>
+<span class="c"><span class="cb"></span>Not on top step</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Scaffolding</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Inspected before use</span>
+<span class="c"><span class="cb"></span>Base plates or mudsills</span>
+<span class="c"><span class="cb"></span>Level and plumb</span>
+<span class="c"><span class="cb"></span>Fully planked</span>
+<span class="c"><span class="cb"></span>Guardrails</span>
+<span class="c"><span class="cb"></span>Safe access ladder</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Installing interior trim</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Safety glasses</span>
+<span class="c"><span class="cb"></span>Hearing protection</span>
+<span class="c"><span class="cb"></span>Saw guards working</span>
+<span class="c"><span class="cb"></span>Dust collection on saw</span>
+<span class="c"><span class="cb"></span>N95 (MDF dust)</span>
+<span class="c"><span class="cb"></span>Cords out of walkways</span>
+<span class="c"><span class="cb"></span>Clear nailer jams with air off</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Cabinets, countertops, heavy lifts</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Work boots</span>
+<span class="c"><span class="cb"></span>Two-person lift</span>
+<span class="c"><span class="cb"></span>Dolly or cart</span>
+<span class="c"><span class="cb"></span>Clear path</span>
+<span class="c"><span class="cb"></span>Uppers fastened before letting go</span>
+<span class="c"><span class="cb"></span>Cutting stone: water and P100</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Soldering, torch, hot work</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Fire extinguisher at hand</span>
+<span class="c"><span class="cb"></span>Heat shield</span>
+<span class="c"><span class="cb"></span>Combustibles moved</span>
+<span class="c"><span class="cb"></span>Fire watch after</span>
+<span class="c"><span class="cb"></span>Ventilation</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Insulation</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Gloves</span>
+<span class="c"><span class="cb"></span>Long sleeves</span>
+<span class="c"><span class="cb"></span>Tyvek suit</span>
+<span class="c"><span class="cb"></span>N95 and safety glasses</span>
+<span class="c"><span class="cb"></span>Full face respirator (keeps dust out of eyes)</span>
+<span class="c"><span class="cb"></span>Work lights</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Attic or crawlspace</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Someone outside knows you are in</span>
+<span class="c"><span class="cb"></span>Work lights</span>
+<span class="c"><span class="cb"></span>Gloves</span>
+<span class="c"><span class="cb"></span>N95 or P100</span>
+<span class="c"><span class="cb"></span>Watch for wires and nails</span>
+<span class="c"><span class="cb"></span>Confined space check</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Paint, adhesives, solvents</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>SDS reviewed</span>
+<span class="c"><span class="cb"></span>Ventilation or fans</span>
+<span class="c"><span class="cb"></span>Chemical gloves</span>
+<span class="c"><span class="cb"></span>No ignition sources</span>
+<span class="c"><span class="cb"></span>Oily rags in sealed metal can</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Mold or water damage</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Containment</span>
+<span class="c"><span class="cb"></span>P100</span>
+<span class="c"><span class="cb"></span>Tyvek suit</span>
+<span class="c"><span class="cb"></span>Nitrile gloves</span>
+<span class="c"><span class="cb"></span>HEPA vac</span>
+<span class="c"><span class="cb"></span>Bag and seal debris</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Lead work (pre-1978)</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Lead-safe packet</span>
+<span class="c"><span class="cb"></span>Warning signs posted</span>
+<span class="c"><span class="cb"></span>Plastic containment</span>
+<span class="c"><span class="cb"></span>Full face P100</span>
+<span class="c"><span class="cb"></span>Tyvek, shoe covers</span>
+<span class="c"><span class="cb"></span>HEPA vac, no dry sweeping</span>
+<span class="c"><span class="cb"></span>Wash up before eating</span>
+<span class="c"><span class="cb"></span>Cleaning verification card</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Digging and excavation</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>MISS DIG 811 ticket</span>
+<span class="c"><span class="cb"></span>Hi-vis</span>
+<span class="c"><span class="cb"></span>Barricade open holes</span>
+<span class="c"><span class="cb"></span>Spoils 2 ft back</span>
+<span class="c"><span class="cb"></span>Ladder in trench over 4 ft</span>
+<span class="c"><span class="cb"></span>Over 5 ft deep: slope, bench or shore</span>
+</div></div>
+
+<div class="tr"><div class="tk"><span class="box"></span><span>Debris, dumpster, deliveries</span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="cs">
+<span class="c"><span class="cb"></span>Work gloves</span>
+<span class="c"><span class="cb"></span>Work boots</span>
+<span class="c"><span class="cb"></span>Pull or bend nails</span>
+<span class="c"><span class="cb"></span>Chute debris from upper floors</span>
+<span class="c"><span class="cb"></span>Dumpster not overloaded</span>
+<span class="c"><span class="cb"></span>Spotter when backing</span>
+<span class="c"><span class="cb"></span>Hi-vis near traffic</span>
+</div></div>
+
+<div class="tr" style="align-items: flex-end"><div class="tk" style="width: auto; flex: 1; align-items: flex-end"><span class="box" style="margin-bottom: 2px"></span><span>Other task</span><span class="line" style="height: 16px"></span></div><svg class="ar" width="14" height="10" viewBox="0 0 14 10" aria-hidden="true" style="margin-bottom: 3px"><path d="M1 5h11M8 1l4 4-4 4" fill="none" stroke="#111111" stroke-width="1.5"></path></svg><div class="fld" style="flex: 1.6; height: 20px; font-weight: 400"><span>Controls</span><span class="line" style="height: 16px"></span></div></div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<div>
+<div class="sec"><span>OTHER HAZARDS AND NOTES</span></div>
+<div class="nl"></div>
+<div class="nl"></div>
+</div>
+<div>
+<div class="sec"><span>REVIEWED WITH CREW</span><span class="sub">print names</span></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px">
+<div class="nl"></div><div class="nl"></div>
+<div class="nl"></div><div class="nl"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<p class="form-actions">
+<button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+<button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+<br>
+<small>Last revised: 11/02/2026</small>
+</p>
+
+<p class="breadcrumb"><a href="safety.html">Safety</a> &gt; Job Safety Analysis (JSA)</p>
+</article>
+</main>
+</div>
+
+<script>
+const shareBtn = document.getElementById('share-btn');
+if (shareBtn && navigator.share) {
+shareBtn.addEventListener('click', () => {
+navigator.share({ title: document.title || 'Job Safety Analysis', url: window.location.href }).catch(() => {});
+});
+} else if (shareBtn) { shareBtn.style.display = 'none'; }
+const printBtn = document.getElementById('print-btn');
+if (printBtn) { printBtn.addEventListener('click', () => window.print()); }
+document.addEventListener('DOMContentLoaded', function() {
+const navToggle = document.querySelector('.mobile-nav-toggle');
+const sidebar = document.querySelector('.sidebar');
+if (navToggle && sidebar) {
+navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
+document.addEventListener('click', function(e) {
+if (window.innerWidth <= 768) {
+if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
+}
+});
+}
+});
+</script>
+
+<footer>
+&copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
+<!-- goatcounter-analytics:start -->
+<script data-goatcounter="https://rem-guide.goatcounter.com/count"
+async src="//gc.zgo.at/count.js"></script>
+<!-- goatcounter-analytics:end -->
+</body>
+</html>

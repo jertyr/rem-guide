@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Job Start & Demo Order Sheet | Remodelers Guide">
+<title>Job Start & Demo Order Sheet | Remodelers Guide</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+h1.form-title { font-size: 1.4rem; margin: 0 0 0.6rem 0; color: #2C3E50; }
+.form-note { font-size: 0.85rem; color: #666; margin: 0 0 1rem 0; }
+.form-actions { margin-top: 1rem; }
+.los-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+#los { width: 816px; line-height: normal; font-size: 12px; }
+#los, #los * { box-sizing: content-box; }
+#los h1 { font-family: inherit; line-height: normal; color: inherit; }
+#los table { display: table; width: 100%; margin: 0; box-shadow: none; background: #ffffff; }
+#los table thead { background: none; color: inherit; }
+#los table th, #los table td { padding: 0; text-align: center; border: 1px solid #111111; font-family: inherit; font-size: 12px; white-space: normal; color: #111111; }
+#los table tbody tr:nth-child(even), #los table tbody tr:hover { background: transparent; }
+#los .sec{display:flex;justify-content:space-between;align-items:baseline;height:20px;box-sizing:border-box;border-bottom:2px solid #111111;font-size:13px;font-weight:700;letter-spacing:0.5px}
+#los .sub{font-size:12px;font-weight:400;letter-spacing:0;color:#444444}
+#los .g{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px}
+#los .g th,#los .g td{border:1px solid #111111;height:20px;padding:0;text-align:center}
+#los .g thead th{height:18px;font-weight:700;background:#ececec}
+#los .g th.sz{text-align:left;padding-left:4px;font-weight:700;background:#ffffff}
+#los .g thead th.sz{background:#ececec}
+#los .g td.opt{text-align:left;padding-left:6px}
+#los .li{display:flex;align-items:center;gap:7px;height:19px;border-bottom:1px solid #bbbbbb;font-size:12px}
+#los .q{flex:none;width:36px;height:13px;border:1px solid #111111}
+#los .fld{display:flex;align-items:flex-end;gap:6px;height:24px;font-size:12px;font-weight:700}
+#los .line{flex:1;height:18px;border-bottom:1px solid #111111}
+#los .nl{height:21px;border-bottom:1px solid #bbbbbb}
+#los .box{flex:none;display:inline-block;width:13px;height:13px;border:1.5px solid #111111;margin-bottom:2px}
+#los .cb{display:inline-block;width:11px;height:11px;border:1.5px solid #111111;vertical-align:middle;margin-right:3px}
+#los .opt span.o{margin-right:12px;white-space:nowrap}
+@media print {
+@page { size: letter portrait; margin: 0; }
+header, .sidebar, footer, .mobile-nav-toggle, .breadcrumb, .form-actions, .form-note, h1.form-title, button, small { display: none !important; }
+.main-wrapper { display: block !important; margin: 0 !important; padding: 0 !important; }
+main { margin: 0 !important; padding: 0 !important; min-height: 0 !important; }
+article { margin: 0 !important; padding: 0 !important; box-shadow: none !important; max-width: none !important; }
+body { margin: 0; padding: 0; background: #ffffff; min-height: 0; }
+.los-scroll { overflow: visible !important; }
+#los, #los * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+#los .g thead th, #los .g thead th.sz { background: #ececec !important; }
+}
+</style>
+</head>
+<body>
+<header>
+<h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+</header>
+<button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+<div class="main-wrapper">
+<aside class="sidebar">
+<nav>
+<ul>
+<li class="nav-item"><a href="about.html">Home</a></li>
+<li class="nav-item active-section"><a href="pre-construction.html" class="active">Site Setup</a></li>
+<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+<li class="nav-item"><a href="safety.html">Safety</a></li>
+<li class="nav-item"><a href="excavation.html">Excavation</a></li>
+<li class="nav-item"><a href="footings.html">Footings</a></li>
+<li class="nav-item"><a href="foundations.html">Foundations</a></li>
+<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+<li class="nav-item"><a href="demolition.html">Demolition</a></li>
+<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+<li class="nav-item"><a href="remediation.html">Remediation</a></li>
+<li class="nav-item"><a href="framing.html">Framing</a></li>
+<li class="nav-item"><a href="decks.html">Decks</a></li>
+<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+<li class="nav-item"><a href="windows.html">Windows</a></li>
+<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+<li class="nav-item"><a href="roofing.html">Roofing</a></li>
+<li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+<li class="nav-item"><a href="gutters.html">Gutters</a></li>
+<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+<li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+<li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+<li class="nav-item"><a href="insulation.html">Insulation</a></li>
+<li class="nav-item"><a href="drywall.html">Drywall</a></li>
+<li class="nav-item"><a href="flooring.html">Flooring</a></li>
+<li class="nav-item"><a href="tile.html">Tile</a></li>
+<li class="nav-item"><a href="countertops.html">Countertops</a></li>
+<li class="nav-item"><a href="painting.html">Painting</a></li>
+<li class="nav-item"><a href="interior-trim.html">Interior Trim</a></li>
+<li class="nav-item"><a href="stairs.html">Stairs</a></li>
+<li class="nav-item"><a href="resources.html">Resources</a></li>
+<li class="nav-item"><a href="products.html">Products</a></li>
+<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+</ul>
+</nav>
+</aside>
+
+<main style="margin-left: 280px; padding: 2rem;">
+<article>
+<p class="breadcrumb"><a href="pre-construction.html">Site Setup</a> &gt; Job Start &amp; Demo Order Sheet</p>
+<h1 class="form-title">Job Start &amp; Demo Order Sheet</h1>
+<p class="form-note">One page, Letter size. Fill it out once at job start: schedule the site services, then write quantities in the boxes and text a photo of the sheet or hand it to whoever loads the job. Print with margins set to none. Protection materials and the order they go in are on the <a href="jobsite-protection-checklist.html">Jobsite Protection Checklist</a>; responsibilities are on the <a href="job-start-checklist.html">Job Start Checklist</a>.</p>
+
+<div class="los-scroll">
+<div id="los">
+<div style="width: 816px; height: 1056px; box-sizing: border-box; padding: 40px; background: #ffffff; color: #111111; font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif; display: flex; flex-direction: column; gap: 10px">
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid #111111; padding-bottom: 3px">
+<h1 style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 1px">JOB START AND DEMO</h1>
+<div style="font-size: 14px; font-weight: 700">Remodelers Guide</div>
+</div>
+<div style="display: grid; grid-template-columns: 2fr 3fr 1.2fr 1.5fr; gap: 14px">
+<div class="fld"><span>Job Name</span><span class="line"></span></div>
+<div class="fld"><span>Address</span><span class="line"></span></div>
+<div class="fld"><span>Date</span><span class="line"></span></div>
+<div class="fld" style="gap: 4px"><span class="box" aria-hidden="true"></span><span>Pre-1978 (lead-safe)</span></div>
+</div>
+</div>
+
+<div>
+<div class="sec"><span>SITE SERVICES</span></div>
+<table class="g">
+<thead><tr><th class="sz" style="width: 150px">Service</th><th style="width: 220px">Size / type</th><th style="width: 100px">Drop date</th><th>Where on site</th></tr></thead>
+<tbody>
+<tr><th class="sz">Dumpster</th><td class="opt"><span class="o"><span class="cb" aria-hidden="true"></span>10</span><span class="o"><span class="cb" aria-hidden="true"></span>15</span><span class="o"><span class="cb" aria-hidden="true"></span>20</span><span class="o"><span class="cb" aria-hidden="true"></span>30 yd</span></td><td></td><td></td></tr>
+<tr><th class="sz">Portable toilet</th><td class="opt"><span class="o"><span class="cb" aria-hidden="true"></span>Standard</span><span class="o"><span class="cb" aria-hidden="true"></span>Hand wash</span></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div>
+<div class="sec"><span>SIGNS AND PAPERWORK</span><span class="sub">each</span></div>
+<div class="li"><span class="q"></span><span>Jobsite sign</span></div>
+<div class="li"><span class="q"></span><span>Permit box</span></div>
+<div class="li"><span class="q"></span><span>Lockbox, code issued to trades</span></div>
+<div class="li"><span class="q"></span><span>Permit and approved blueprints</span></div>
+<div class="li"><span class="q"></span><span>Neighbor letters</span></div>
+<div class="li"><span class="q"></span><span>End of Day Reminders sheet</span></div>
+<div class="li"><span class="q"></span><span>Jobsite safety signs</span></div>
+</div>
+<div>
+<div class="sec"><span>SITE SAFETY</span><span class="sub">each</span></div>
+<div class="li"><span class="q"></span><span>Safety glasses (Z87)</span></div>
+<div class="li"><span class="q"></span><span>Hard hats (Z89.1)</span></div>
+<div class="li"><span class="q"></span><span>Hearing protection</span></div>
+<div class="li"><span class="q"></span><span>Dust masks (N95)</span></div>
+<div class="li"><span class="q"></span><span>Respirators (P100)</span></div>
+<div class="li"><span class="q"></span><span>Work gloves (cut and chemical)</span></div>
+<div class="li"><span class="q"></span><span>High-visibility vests</span></div>
+<div class="li"><span class="q"></span><span>Electrical pen (non-contact tester)</span></div>
+<div class="li"><span class="q"></span><span>First aid kit</span></div>
+<div class="li"><span class="q"></span><span>Fire extinguisher, 2A</span></div>
+<div class="li"><span class="q"></span><span>Fire extinguisher, 10B (flammables)</span></div>
+<div class="li"><span class="q"></span><span>GFCI cord end</span></div>
+<div class="li"><span class="q"></span><span>Emergency contacts posted</span></div>
+<div class="li"><span class="q"></span><span>Rain ponchos</span></div>
+</div>
+<div>
+<div class="sec"><span>ACCESS EQUIPMENT</span><span class="sub">each</span></div>
+<div class="li"><span class="q"></span><span>Step ladder, 6'</span></div>
+<div class="li"><span class="q"></span><span>Step ladder, 8'</span></div>
+<div class="li"><span class="q"></span><span>Extension ladder</span></div>
+<div class="li"><span class="q"></span><span>Ladder jacks</span></div>
+<div class="li"><span class="q"></span><span>Picks</span></div>
+<div class="li"><span class="q"></span><span>Scaffold frames</span></div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div>
+<div class="sec"><span>FLOOR PROTECTION</span><span class="sub">rolls unless noted</span></div>
+<div class="li"><span class="q"></span><span>Floorotex</span></div>
+<div class="li"><span class="q"></span><span>Reinforced builders paper</span></div>
+<div class="li"><span class="q"></span><span>Carpet shield (never on wood)</span></div>
+<div class="li"><span class="q"></span><span>Masonite (sheets)</span></div>
+<div class="li"><span class="q"></span><span>Tacky tape</span></div>
+<div class="li"><span class="q"></span><span>Purple painters tape</span></div>
+<div class="li"><span class="q"></span><span>White painters tape</span></div>
+<div class="li"><span class="q"></span><span>Drop cloths (each)</span></div>
+</div>
+<div>
+<div class="sec"><span>DUST CONTROL</span></div>
+<div class="li"><span class="q"></span><span>Painters plastic (light duty)</span></div>
+<div class="li"><span class="q"></span><span>Painters plastic 1 mil (standard)</span></div>
+<div class="li"><span class="q"></span><span>Plastic 3 mil (lead demo walls)</span></div>
+<div class="li"><span class="q"></span><span>Plastic 6 mil (lead demo floors)</span></div>
+<div class="li"><span class="q"></span><span>Zip poles</span></div>
+<div class="li"><span class="q"></span><span>Poly hanging tape</span></div>
+<div class="li"><span class="q"></span><span>Magnet doors</span></div>
+<div class="li"><span class="q"></span><span>Zipper doors</span></div>
+<div class="li"><span class="q"></span><span>Stapler and staples</span></div>
+<div class="li"><span class="q"></span><span>Lay flat duct</span></div>
+<div class="li"><span class="q"></span><span>Box fan and filter</span></div>
+<div class="li"><span class="q"></span><span>Air scrubber</span></div>
+</div>
+<div>
+<div class="sec"><span>CLEANUP AND DEBRIS</span></div>
+<div class="li"><span class="q"></span><span>Trash can</span></div>
+<div class="li"><span class="q"></span><span>Contractor bags, 6 mil (box)</span></div>
+<div class="li"><span class="q"></span><span>Broom</span></div>
+<div class="li"><span class="q"></span><span>Push broom</span></div>
+<div class="li"><span class="q"></span><span>Dust pan</span></div>
+<div class="li"><span class="q"></span><span>HEPA shop vac</span></div>
+<div class="li"><span class="q"></span><span>Vac bags</span></div>
+<div class="li"><span class="q"></span><span>Vac filters</span></div>
+<div class="li"><span class="q"></span><span>Magnetic sweeper</span></div>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div>
+<div class="sec"><span>DEMO TOOLS</span></div>
+<div class="li"><span class="q"></span><span>Sawzall blades, demo (pack)</span></div>
+<div class="li"><span class="q"></span><span>Sawzall blades, metal (pack)</span></div>
+<div class="li"><span class="q"></span><span>Oscillating blades</span></div>
+<div class="li"><span class="q"></span><span>Floor scraper</span></div>
+<div class="li"><span class="q"></span><span>Roofing shovel</span></div>
+<div class="li"><span class="q"></span><span>Appliance dolly</span></div>
+</div>
+<div>
+<div class="sec"><span>CAP AND COVER</span></div>
+<div class="li"><span class="q"></span><span>Wire nuts</span></div>
+<div class="li"><span class="q"></span><span>Push-to-connect caps, ½"</span></div>
+<div class="li"><span class="q"></span><span>Push-to-connect caps, ¾"</span></div>
+<div class="li"><span class="q"></span><span>Drain covers / test plugs</span></div>
+<div class="li"><span class="q"></span><span>Toilet flange cover</span></div>
+<div class="li"><span class="q"></span><span>Gel packets for toilets</span></div>
+<div class="li"><span class="q"></span><span>Vent covers</span></div>
+</div>
+<div>
+<div class="sec"><span>LEAD DEMOLITION KIT</span><span class="sub">RRP jobs</span></div>
+<div class="li"><span class="q"></span><span>Lead warning signs</span></div>
+<div class="li"><span class="q"></span><span>Full face respirators</span></div>
+<div class="li"><span class="q"></span><span>P100 cartridges</span></div>
+<div class="li"><span class="q"></span><span>Tyvek suits</span></div>
+<div class="li"><span class="q"></span><span>Shoe covers</span></div>
+<div class="li"><span class="q"></span><span>Wet wipes</span></div>
+<div class="li"><span class="q"></span><span>Spray bottle</span></div>
+<div class="li"><span class="q"></span><span>Duct tape</span></div>
+<div class="li"><span class="q"></span><span>Lead test kits</span></div>
+<div class="li"><span class="q"></span><span>Cleaning verification cards</span></div>
+</div>
+<div>
+<div class="sec"><span>EXTERIOR</span></div>
+<div class="li"><span class="q"></span><span>Silt fence and stakes</span></div>
+<div class="li"><span class="q"></span><span>Tarps</span></div>
+<div class="li"><span class="q"></span><span>Dumpster skid plates</span></div>
+<div class="li"><span class="q"></span><span>Downspout ext. (black corrugated pipe)</span></div>
+<div class="li"><span class="q"></span><span>Orange safety fence</span></div>
+<div class="li"><span class="q"></span><span>Square shovel</span></div>
+<div class="li"><span class="q"></span><span>Wheelbarrow</span></div>
+</div>
+</div>
+
+</div>
+
+<div>
+<div class="sec"><span>NOTES</span></div>
+<div class="nl"></div>
+<div class="nl"></div>
+<div class="nl"></div>
+</div>
+</div>
+</div>
+</div>
+
+<p class="form-actions">
+<button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+<button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+<br>
+<small>Last revised: 11/02/2026</small>
+</p>
+
+<p class="breadcrumb"><a href="pre-construction.html">Site Setup</a> &gt; Job Start &amp; Demo Order Sheet</p>
+</article>
+</main>
+</div>
+
+<script>
+const shareBtn = document.getElementById('share-btn');
+if (shareBtn && navigator.share) {
+shareBtn.addEventListener('click', () => {
+navigator.share({ title: document.title || 'Job Start & Demo Order Sheet', url: window.location.href }).catch(() => {});
+});
+} else if (shareBtn) { shareBtn.style.display = 'none'; }
+const printBtn = document.getElementById('print-btn');
+if (printBtn) { printBtn.addEventListener('click', () => window.print()); }
+document.addEventListener('DOMContentLoaded', function() {
+const navToggle = document.querySelector('.mobile-nav-toggle');
+const sidebar = document.querySelector('.sidebar');
+if (navToggle && sidebar) {
+navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
+document.addEventListener('click', function(e) {
+if (window.innerWidth <= 768) {
+if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
+}
+});
+}
+});
+</script>
+
+<footer>
+&copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+</footer>
+<!-- goatcounter-analytics:start -->
+<script data-goatcounter="https://rem-guide.goatcounter.com/count"
+async src="//gc.zgo.at/count.js"></script>
+<!-- goatcounter-analytics:end -->
+</body>
+</html>

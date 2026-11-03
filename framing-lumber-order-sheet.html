@@ -1,381 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Framing & Lumber Order Sheet | Remodelers Guide">
-    <title>Framing & Lumber Order Sheet | Remodelers Guide</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        @media print {
-            @page { margin: 0.45in; size: letter portrait; }
-            header,
-            .sidebar,
-            footer,
-            .mobile-nav-toggle,
-            .breadcrumb,
-            .form-actions,
-            button,
-            #share-btn,
-            #print-btn,
-            small {
-                display: none !important;
-            }
-            .main-wrapper { display: block !important; margin: 0 !important; padding: 0 !important; }
-            main { margin: 0 !important; padding: 0 !important; margin-left: 0 !important; }
-            article { margin: 0 !important; padding: 0 !important; }
-            body { margin: 0; padding: 0; font-size: 0.76rem; }
-            h1.form-title { font-size: 0.95rem; margin: 0 0 0.3rem 0; }
-            h3.form-section { font-size: 0.75rem; margin: 0.3rem 0 0.1rem 0; padding-bottom: 0.08rem; break-after: avoid; }
-            .job-header { margin-bottom: 0.3rem; gap: 1rem; }
-            .job-header p { font-size: 0.76rem; margin: 0.05rem 0; }
-            .option-row { margin: 0.1rem 0; font-size: 0.74rem; }
-            .form-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 1rem; margin-bottom: 0.2rem; }
-            .lumber-table { font-size: 0.72rem; margin: 0.1rem 0 0.3rem 0; }
-            .lumber-table th, .lumber-table td { padding: 0.1rem 0.25rem; }
-            .lumber-table td { height: 1.1rem; }
-            .lumber-table td:nth-child(2),
-            .lumber-table td:nth-child(3) { width: 13%; }
-            .lumber-table td:nth-child(4) { width: 7%; }
-            .form-note { font-size: 0.68rem; margin: -0.2rem 0 0.25rem; }
-            .form-row { margin: 0.05rem 0 0.15rem; font-size: 0.76rem; }
-            .lumber-table .fastener-divider td { font-size: 0.68rem; padding: 0.06rem 0.3rem; }
-            .print-credit { display: block; text-align: center; font-size: 0.68rem; color: #999; margin-top: 0.3rem; }
-            #wall-framing { break-before: page; }
-        }
-
-        h1.form-title {
-            font-size: 1.4rem;
-            margin: 0 0 0.6rem 0;
-            color: #2C3E50;
-        }
-        h3.form-section {
-            font-size: 0.95rem;
-            color: #2C3E50;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 0.2rem;
-            margin: 0.9rem 0 0.3rem 0;
-            font-weight: 600;
-        }
-        .job-header {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-        .job-header p { margin: 0; font-size: 0.95rem; }
-        .fill-lg {
-            display: inline-block;
-            width: 160px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
-        }
-        .fill-md {
-            display: inline-block;
-            width: 100px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
-        }
-        .fill-sm {
-            display: inline-block;
-            width: 65px;
-            border-bottom: 1px solid #333;
-            margin-left: 0.3rem;
-            vertical-align: bottom;
-        }
-        .option-row {
-            margin: 0.3rem 0;
-            font-size: 0.92rem;
-        }
-        .option-row .opts { color: #444; }
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 1rem;
-        }
-        .lumber-table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 0.2rem 0 0.8rem 0;
-            font-size: 0.88rem;
-        }
-        .lumber-table th,
-        .lumber-table td {
-            border: 1px solid #ccc;
-            padding: 0.25rem 0.5rem;
-        }
-        .lumber-table th {
-            background: #f2f2f2;
-            font-weight: 600;
-            font-size: 0.8rem;
-            text-align: center;
-        }
-        .lumber-table th:first-child { text-align: left; }
-        .lumber-table td { height: 1.5rem; }
-        .lumber-table td:not(:first-child) { text-align: center; }
-        .lumber-table td:nth-child(2),
-        .lumber-table td:nth-child(3) { width: 15%; }
-        .lumber-table td:nth-child(4) { width: 9%; }
-        .form-note {
-            font-size: 0.78rem;
-            color: #666;
-            font-style: italic;
-            margin: -0.5rem 0 0.6rem;
-        }
-        .print-credit { display: none; }
-        .form-actions { margin-top: 1rem; }
-        .form-row { margin: 0.3rem 0 0.4rem; font-size: 0.92rem; }
-        .lumber-table .fastener-divider td {
-            background: #f0f0f0;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: #555;
-            padding: 0.12rem 0.5rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Framing & Lumber Order Sheet | Remodelers Guide">
+<title>Framing & Lumber Order Sheet | Remodelers Guide</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+h1.form-title { font-size: 1.4rem; margin: 0 0 0.6rem 0; color: #2C3E50; }
+.form-note { font-size: 0.85rem; color: #666; margin: 0 0 1rem 0; }
+.form-actions { margin-top: 1rem; }
+.los-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+#los { width: 816px; line-height: normal; font-size: 12px; }
+#los, #los * { box-sizing: content-box; }
+#los h1 { font-family: inherit; line-height: normal; color: inherit; }
+#los table { display: table; width: 100%; margin: 0; box-shadow: none; background: #ffffff; }
+#los table thead { background: none; color: inherit; }
+#los table th, #los table td { padding: 0; text-align: center; border: 1px solid #111111; font-family: inherit; font-size: 12px; white-space: normal; color: #111111; }
+#los table tbody tr:nth-child(even), #los table tbody tr:hover { background: transparent; }
+#los .sec{display:flex;justify-content:space-between;align-items:baseline;height:20px;box-sizing:border-box;border-bottom:2px solid #111111;font-size:13px;font-weight:700;letter-spacing:0.5px}
+#los .sub{font-size:12px;font-weight:400;letter-spacing:0;color:#444444}
+#los .g{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px}
+#los .g th,#los .g td{border:1px solid #111111;height:20px;padding:0;text-align:center}
+#los .g thead th{height:18px;font-weight:700;background:#ececec}
+#los .g th.sz{width:54px;text-align:left;padding-left:4px;font-weight:700;background:#ffffff}
+#los .g thead th.sz{background:#ececec}
+#los .g td.na{background:#bdbdbd}
+#los .li{display:flex;align-items:center;gap:7px;height:19px;border-bottom:1px solid #bbbbbb;font-size:12px}
+#los .q{flex:none;width:36px;height:13px;border:1px solid #111111}
+#los .fld{display:flex;align-items:flex-end;gap:6px;height:24px;font-size:12px;font-weight:700}
+#los .line{flex:1;height:18px;border-bottom:1px solid #111111}
+#los .box{flex:none;display:inline-block;width:13px;height:13px;border:1.5px solid #111111;margin-bottom:2px}
+#los .cb{display:inline-block;width:11px;height:11px;border:1.5px solid #111111;vertical-align:middle}
+@media print {
+@page { size: letter portrait; margin: 0; }
+header, .sidebar, footer, .mobile-nav-toggle, .breadcrumb, .form-actions, .form-note, h1.form-title, button, small { display: none !important; }
+.main-wrapper { display: block !important; margin: 0 !important; padding: 0 !important; }
+main { margin: 0 !important; padding: 0 !important; min-height: 0 !important; }
+article { margin: 0 !important; padding: 0 !important; box-shadow: none !important; max-width: none !important; }
+body { margin: 0; padding: 0; background: #ffffff; min-height: 0; }
+.los-scroll { overflow: visible !important; }
+#los, #los * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+#los .g td.na { background: #bdbdbd !important; }
+#los .g thead th, #los .g thead th.sz { background: #ececec !important; }
+}
+</style>
 </head>
 <body>
 <header>
-    <h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
+<h1 class="site-title"><a href="about.html">Remodelers Guide</a></h1>
 </header>
 <button class="mobile-nav-toggle" aria-label="Toggle navigation">&#9776;</button>
 
 <div class="main-wrapper">
-    <aside class="sidebar">
-        <nav>
-            <ul>
-                <li class="nav-item"><a href="about.html">Home</a></li>
-                <li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
-                <li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
-                <li class="nav-item"><a href="safety.html">Safety</a></li>
-                <li class="nav-item"><a href="excavation.html">Excavation</a></li>
-                <li class="nav-item"><a href="footings.html">Footings</a></li>
-                <li class="nav-item"><a href="foundations.html">Foundations</a></li>
-                <li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
-                <li class="nav-item"><a href="demolition.html">Demolition</a></li>
-                <li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
-                <li class="nav-item"><a href="remediation.html">Remediation</a></li>
-                <li class="nav-item active-section"><a href="framing.html" class="active">Framing</a></li>
-                <li class="nav-item"><a href="decks.html">Decks</a></li>
-                <li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
-                <li class="nav-item"><a href="windows.html">Windows</a></li>
-                <li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
-                <li class="nav-item"><a href="roofing.html">Roofing</a></li>
-                <li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
-                <li class="nav-item"><a href="gutters.html">Gutters</a></li>
-                <li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
-                <li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
-                <li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
-                <li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
-                <li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
-                <li class="nav-item"><a href="insulation.html">Insulation</a></li>
-                <li class="nav-item"><a href="drywall.html">Drywall</a></li>
-                <li class="nav-item"><a href="flooring.html">Flooring</a></li>
-                <li class="nav-item"><a href="tile.html">Tile</a></li>
-                <li class="nav-item"><a href="countertops.html">Countertops</a></li>
-                <li class="nav-item"><a href="painting.html">Painting</a></li>
-                <li class="nav-item"><a href="interior-trim.html">Interior Trim</a></li>
-                <li class="nav-item"><a href="stairs.html">Stairs</a></li>
-                <li class="nav-item"><a href="resources.html">Resources</a></li>
-                <li class="nav-item"><a href="products.html">Products</a></li>
-                <li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
-            </ul>
-        </nav>
-    </aside>
+<aside class="sidebar">
+<nav>
+<ul>
+<li class="nav-item"><a href="about.html">Home</a></li>
+<li class="nav-item"><a href="pre-construction.html">Site Setup</a></li>
+<li class="nav-item"><a href="jobsite-protection.html">Jobsite Protection</a></li>
+<li class="nav-item"><a href="safety.html">Safety</a></li>
+<li class="nav-item"><a href="excavation.html">Excavation</a></li>
+<li class="nav-item"><a href="footings.html">Footings</a></li>
+<li class="nav-item"><a href="foundations.html">Foundations</a></li>
+<li class="nav-item"><a href="flatwork-concrete.html">Flatwork</a></li>
+<li class="nav-item"><a href="demolition.html">Demolition</a></li>
+<li class="nav-item"><a href="hazardous-materials.html">Hazardous Materials</a></li>
+<li class="nav-item"><a href="remediation.html">Remediation</a></li>
+<li class="nav-item active-section"><a href="framing.html" class="active">Framing</a></li>
+<li class="nav-item"><a href="decks.html">Decks</a></li>
+<li class="nav-item"><a href="fireblocking-and-draftstopping.html">Fireblocking</a></li>
+<li class="nav-item"><a href="windows.html">Windows</a></li>
+<li class="nav-item"><a href="exterior-doors.html">Exterior Doors</a></li>
+<li class="nav-item"><a href="roofing.html">Roofing</a></li>
+<li class="nav-item"><a href="siding-and-trim.html">Siding &amp; Trim</a></li>
+<li class="nav-item"><a href="gutters.html">Gutters</a></li>
+<li class="nav-item"><a href="pre-trade-checklist.html">Pre-Trade</a></li>
+<li class="nav-item"><a href="mechanical-rough-install.html">HVAC</a></li>
+<li class="nav-item"><a href="plumbing-rough-install.html">Plumbing</a></li>
+<li class="nav-item"><a href="electrical-rough-install.html">Electrical</a></li>
+<li class="nav-item"><a href="air-sealing.html">Air Sealing</a></li>
+<li class="nav-item"><a href="insulation.html">Insulation</a></li>
+<li class="nav-item"><a href="drywall.html">Drywall</a></li>
+<li class="nav-item"><a href="flooring.html">Flooring</a></li>
+<li class="nav-item"><a href="tile.html">Tile</a></li>
+<li class="nav-item"><a href="countertops.html">Countertops</a></li>
+<li class="nav-item"><a href="painting.html">Painting</a></li>
+<li class="nav-item"><a href="interior-trim.html">Interior Trim</a></li>
+<li class="nav-item"><a href="stairs.html">Stairs</a></li>
+<li class="nav-item"><a href="resources.html">Resources</a></li>
+<li class="nav-item"><a href="products.html">Products</a></li>
+<li class="nav-item"><a href="wage-calculator.html">Wage Calculator</a></li>
+</ul>
+</nav>
+</aside>
 
-    <main style="margin-left: 280px; padding: 2rem;">
-        <article>
-            <p class="breadcrumb"><a href="framing.html">Framing</a> &gt; Framing &amp; Lumber Order Sheet</p>
-            <h1 class="form-title">Remodelers Guide: Framing &amp; Lumber Order Sheet</h1>
+<main style="margin-left: 280px; padding: 2rem;">
+<article>
+<p class="breadcrumb"><a href="framing.html">Framing</a> &gt; Framing &amp; Lumber Order Sheet</p>
+<h1 class="form-title">Framing &amp; Lumber Order Sheet</h1>
+<p class="form-note">One page, Letter size. Write quantities in the boxes, then text a photo of the sheet or hand it to whoever places the order. Print with margins set to none.</p>
 
-            <div class="job-header">
-                <p>Job:<span class="fill-lg"></span></p>
-                <p>Date:<span class="fill-md"></span></p>
-                <p>Supplier:<span class="fill-md"></span></p>
-            </div>
+<div class="los-scroll">
+<div id="los">
+<div style="width: 816px; height: 1056px; box-sizing: border-box; padding: 40px; background: #ffffff; color: #111111; font-family: 'Roboto Condensed', 'Arial Narrow', Arial, sans-serif; display: flex; flex-direction: column; gap: 10px">
 
-            <p class="form-note">Stocked lengths: dimensional lumber 8' / 10' / 12' / 14' / 16'; precut studs 92&#8541;" (8' wall) and 104&#8541;" (9' wall). Order to the nearest stocked length.</p>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid #111111; padding-bottom: 3px">
+<h1 style="margin: 0; font-size: 23px; font-weight: 700; letter-spacing: 1px">LUMBER ORDER</h1>
+<div style="font-size: 14px; font-weight: 700">Remodelers Guide</div>
+</div>
+<div style="display: grid; grid-template-columns: 2fr 3fr 1.4fr; gap: 14px">
+<div class="fld"><span>Job / PO</span><span class="line"></span></div>
+<div class="fld"><span>Address</span><span class="line"></span></div>
+<div class="fld"><span>Ordered by</span><span class="line"></span></div>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr 1.4fr 2.6fr; gap: 14px">
+<div class="fld"><span>Date</span><span class="line"></span></div>
+<div class="fld"><span>Need by</span><span class="line"></span></div>
+<div class="fld" style="gap: 4px"><span class="box" aria-hidden="true"></span><span>Deliver</span><span class="box" aria-hidden="true" style="margin-left: 10px"></span><span>Pickup</span></div>
+<div class="fld"><span>Drop spot / notes</span><span class="line"></span></div>
+</div>
+</div>
 
-            <div class="form-grid">
+<div style="display: grid; grid-template-columns: 472px 252px; gap: 12px">
 
-                <!-- LEFT COLUMN -->
-                <div>
-                    <h3 class="form-section">Floor Framing</h3>
-                    <table class="lumber-table">
-                        <thead>
-                            <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Sill gasket / seal</td><td></td><td></td><td></td></tr>
-                            <tr><td>Mudsill / sill plate (PT)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Bottom plate — slab (PT)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Anchor bolts</td><td></td><td></td><td></td></tr>
-                            <tr><td>Floor joists</td><td></td><td></td><td></td></tr>
-                            <tr><td>Joist hangers (ex: LUS26)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Rim board / band joist</td><td></td><td></td><td></td></tr>
-                            <tr><td>Blocking</td><td></td><td></td><td></td></tr>
-                            <tr><td>3" galvanized nails</td><td></td><td></td><td></td></tr>
-                            <tr><td>Flush beam (LVL / PSL)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Headlok</td><td></td><td></td><td></td></tr>
-                            <tr><td>T&amp;G sheathing</td><td></td><td>— sq ft:</td><td></td></tr>
-                            <tr><td>2½" ring shanked nails</td><td></td><td></td><td></td></tr>
-                            <tr><td>2½" GRK screws</td><td></td><td></td><td></td></tr>
-                            <tr><td>Subfloor adhesive</td><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
-                    <p class="form-note">PT required where wood contacts concrete or masonry (IRC R317.1)</p>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div>
+<div class="sec"><span>FRAMING LUMBER</span><span class="sub">pcs · studs are precut</span></div>
+<table class="g">
+<thead><tr><th class="sz">Size</th><th>92⅝</th><th>104⅝</th><th>8'</th><th>10'</th><th>12'</th><th>14'</th><th>16'</th><th>18'</th><th>20'</th><th>22'</th><th>24'</th></tr></thead>
+<tbody>
+<tr><th class="sz">2x4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x6</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x8</th><td class="na"></td><td class="na"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x10</th><td class="na"></td><td class="na"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x12</th><td class="na"></td><td class="na"></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
 
-                    <h3 class="form-section" id="wall-framing">Wall Framing</h3>
-                    <p class="form-row">Wall height:<span class="fill-md"></span></p>
-                    <table class="lumber-table">
-                        <thead>
-                            <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Bottom plates</td><td></td><td></td><td></td></tr>
-                            <tr><td>Precut studs</td><td></td><td></td><td></td></tr>
-                            <tr><td>Headers (2x10 pref)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Top plates (×2)</td><td></td><td></td><td></td></tr>
-                            <tr><td>3" galvanized nails</td><td></td><td></td><td></td></tr>
-                            <tr><td>2⅞" Headlok (2-ply)</td><td></td><td></td><td></td></tr>
-                            <tr><td>4½" Headlok (3-ply)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Wall sheathing (OSB)</td><td></td><td></td><td></td></tr>
-                            <tr><td>½" x 2" crown staples</td><td></td><td></td><td></td></tr>
-                            <tr><td>2½" ring shanked nails</td><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
+<div>
+<div class="sec"><span>TREATED LUMBER</span><span class="sub">pcs · posts are ground contact</span></div>
+<table class="g">
+<thead><tr><th class="sz">Size</th><th>8'</th><th>10'</th><th>12'</th><th>14'</th><th>16'</th><th>18'</th><th>20'</th><th>22'</th><th>24'</th></tr></thead>
+<tbody>
+<tr><th class="sz">1x4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x6</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x8</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x10</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x12</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">4x4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">6x6</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">5/4x6</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+</div>
 
-                    <h3 class="form-section">Second Floor Wall Framing</h3>
-                    <p class="form-row">Wall height:<span class="fill-md"></span></p>
-                    <table class="lumber-table">
-                        <thead>
-                            <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Bottom plates</td><td></td><td></td><td></td></tr>
-                            <tr><td>Precut studs</td><td></td><td></td><td></td></tr>
-                            <tr><td>Headers (2x10 pref)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Top plates (×2)</td><td></td><td></td><td></td></tr>
-                            <tr><td>3" galvanized nails</td><td></td><td></td><td></td></tr>
-                            <tr><td>2⅞" Headlok (2-ply)</td><td></td><td></td><td></td></tr>
-                            <tr><td>4½" Headlok (3-ply)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Wall sheathing (OSB)</td><td></td><td></td><td></td></tr>
-                            <tr><td>½" x 2" crown staples</td><td></td><td></td><td></td></tr>
-                            <tr><td>2½" ring shanked nails</td><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
-                </div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div>
+<div class="sec"><span>SHEET GOODS</span><span class="sub">sheets</span></div>
+<table class="g">
+<thead><tr><th class="sz" style="width: 132px">Size</th><th>4x8</th><th>4x9</th><th>4x10</th></tr></thead>
+<tbody>
+<tr><th class="sz">7/16 OSB</th><td></td><td></td><td></td></tr>
+<tr><th class="sz">1/2 OSB</th><td></td><td></td><td></td></tr>
+<tr><th class="sz">7/16 ZIP wall</th><td></td><td></td><td></td></tr>
+<tr><th class="sz">1/2 ZIP wall</th><td></td><td></td><td></td></tr>
+<tr><th class="sz">3/4 AdvanTech T&amp;G</th><td></td><td class="na"></td><td class="na"></td></tr>
+<tr><th class="sz">1/2 CDX plywood</th><td></td><td class="na"></td><td class="na"></td></tr>
+<tr><th class="sz">3/4 CDX plywood</th><td></td><td class="na"></td><td class="na"></td></tr>
+<tr><th class="sz">1/2 treated plywood</th><td></td><td class="na"></td><td class="na"></td></tr>
+</tbody>
+</table>
+</div>
 
-                <!-- RIGHT COLUMN -->
-                <div>
-                    <h3 class="form-section">Ceiling Joists</h3>
-                    <table class="lumber-table">
-                        <thead>
-                            <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Ceiling joists</td><td></td><td></td><td></td></tr>
-                            <tr><td>Strongback</td><td></td><td></td><td></td></tr>
-                            <tr><td>3" framing nails</td><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
+<div>
+<div class="sec"><span>LVL AND LSL</span><span class="sub">pcs · LVL is 1¾" wide</span></div>
+<table class="g">
+<thead><tr><th class="sz">Size</th><th>Length</th><th>Qty</th><th>Length</th><th>Qty</th></tr></thead>
+<tbody>
+<tr><th class="sz">7¼"</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">9¼"</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">11¼"</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">11⅞"</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">14"</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x4 LSL</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">2x6 LSL</th><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
-                    <h3 class="form-section">Roof Framing</h3>
-                    <table class="lumber-table">
-                        <thead>
-                            <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Ridge board/beam</td><td></td><td></td><td></td></tr>
-                            <tr><td>Common rafters</td><td></td><td></td><td></td></tr>
-                            <tr><td>Rafter hangers (H1A)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Hurricane ties (ex: H2.5A)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Ridge straps (ex: LSTA18)</td><td></td><td></td><td></td></tr>
-                            <tr><td>3" framing nails</td><td></td><td></td><td></td></tr>
-                            <tr><td>Hanger nails 1½"</td><td></td><td></td><td></td></tr>
-                            <tr><td>Hanger nails 3"</td><td></td><td></td><td></td></tr>
-                            <tr><td>Hip rafters</td><td></td><td></td><td></td></tr>
-                            <tr><td>Valley rafters</td><td></td><td></td><td></td></tr>
-                            <tr><td>Jack rafters</td><td></td><td></td><td></td></tr>
-                            <tr><td>Collar ties</td><td></td><td></td><td></td></tr>
-                            <tr><td>Sub-fascia</td><td></td><td></td><td></td></tr>
-                            <tr><td>Fascia board</td><td></td><td></td><td></td></tr>
-                            <tr><td>Soffit lineal</td><td></td><td></td><td></td></tr>
-                            <tr><td>Roof sheathing (OSB)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Plywood clips (PSCL 1/2)</td><td></td><td></td><td></td></tr>
-                            <tr><td>3" GRK screws</td><td></td><td></td><td></td></tr>
-                            <tr><td>2½" ring shanked nails</td><td></td><td></td><td></td></tr>
-                            <tr><td>½" x 2" crown staples</td><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
+<div style="display: grid; grid-template-columns: 224px 244px 244px; gap: 12px">
 
-                    <h3 class="form-section">Beams &amp; Posts</h3>
-                    <table class="lumber-table">
-                        <thead>
-                            <tr><th>Item</th><th>Size</th><th>Length</th><th>Qty</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Lally columns</td><td></td><td></td><td></td></tr>
-                            <tr><td>Post bases (ex: ABA44Z)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Interior bearing posts</td><td></td><td></td><td></td></tr>
-                            <tr><td>Exterior posts (PT)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Post caps (ex: BC46)</td><td></td><td></td><td></td></tr>
-                            <tr><td>LVL / PSL beam</td><td></td><td></td><td></td></tr>
-                            <tr><td>Glulam beam</td><td></td><td></td><td></td></tr>
-                            <tr><td>LVL hangers (ex: HUC28-2)</td><td></td><td></td><td></td></tr>
-                            <tr><td>Stringer hangers (LSC)</td><td></td><td></td><td></td></tr>
-                        </tbody>
-                    </table>
-                </div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div>
+<div class="sec"><span>TRIM BOARDS</span><span class="sub">pcs</span></div>
+<table class="g">
+<thead><tr><th class="sz" style="width: 40px">Size</th><th>Windsor</th><th>Boral</th><th>Azek</th><th>Cedar</th></tr></thead>
+<tbody>
+<tr><th class="sz">1x3</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">1x4</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">1x6</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">1x8</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">1x10</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">1x12</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">5/4x4</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">5/4x6</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">5/4x8</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">5/4x10</th><td></td><td></td><td></td><td></td></tr>
+<tr><th class="sz">5/4x12</th><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="sec"><span>WRAP AND TAPE</span></div>
+<div class="li"><span class="q"></span><span>Tyvek 3' roll</span></div>
+<div class="li"><span class="q"></span><span>Tyvek 9' roll</span></div>
+<div class="li"><span class="q"></span><span>Tyvek 10' roll</span></div>
+<div class="li"><span class="q"></span><span>Tyvek tape</span></div>
+<div class="li"><span class="q"></span><span>ZIP tape</span></div>
+<div class="li"><span class="q"></span><span>ZIP stretch tape</span></div>
+<div class="li"><span class="q"></span><span>Protecto Wrap</span></div>
+</div>
+</div>
 
-            </div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div>
+<div class="sec"><span>HANGERS</span><span class="sub">pcs</span></div>
+<table class="g">
+<thead><tr><th class="sz" style="width: 52px">Size</th><th>Single</th><th>Double</th><th>Triple</th><th style="width: 62px">Concealed</th></tr></thead>
+<tbody>
+<tr><th class="sz">LUS26</th><td></td><td></td><td></td><td><span class="cb" aria-hidden="true"></span></td></tr>
+<tr><th class="sz">LUS28</th><td></td><td></td><td></td><td><span class="cb" aria-hidden="true"></span></td></tr>
+<tr><th class="sz">LUS210</th><td></td><td></td><td></td><td><span class="cb" aria-hidden="true"></span></td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<div class="sec"><span>HARDWARE AND FLASHING</span><span class="sub">each</span></div>
+<div class="li"><span class="q"></span><span>H2.5A hurricane ties</span></div>
+<div class="li"><span class="q"></span><span>ABU44 post base</span></div>
+<div class="li"><span class="q"></span><span>ABU66 post base</span></div>
+<div class="li"><span class="q"></span><span>LPC4 post cap</span></div>
+<div class="li"><span class="q"></span><span>LPC6 post cap</span></div>
+<div class="li"><span class="q"></span><span>A35 framing angle</span></div>
+<div class="li"><span class="q"></span><span>L50 angle</span></div>
+<div class="li"><span class="q"></span><span>L90 angle</span></div>
+<div class="li"><span class="q"></span><span>LSTA24 strap</span></div>
+<div class="li"><span class="q"></span><span>CS16 coil strap</span></div>
+<div class="li"><span class="q"></span><span>1/2" ply clips, PSCL (box)</span></div>
+<div class="li"><span class="q"></span><span>Johnson 1500 pocket door frame</span></div>
+<div class="li"><span class="q"></span><span>1x3 furring strips</span></div>
+<div class="li"><span class="q"></span><span>Deck ledger flashing 5" x 10'</span></div>
+<div class="li"><span class="q"></span><span>Z flashing 10'</span></div>
+<div class="li"><span class="q"></span><span>Drip edge 10'</span></div>
+</div>
+</div>
 
-            <p class="print-credit">&copy; 2026 Remodelers Guide &mdash; jertyr.github.io/rem-guide</p>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div>
+<div class="sec"><span>FASTENERS AND ADHESIVE</span><span class="sub">box</span></div>
+<div class="li"><span class="q"></span><span>3" x .131 framing nails, brite</span></div>
+<div class="li"><span class="q"></span><span>3" x .131 framing nails, galv</span></div>
+<div class="li"><span class="q"></span><span>2⅜" x .113 ring shank nails</span></div>
+<div class="li"><span class="q"></span><span>16d hand drive sinkers</span></div>
+<div class="li"><span class="q"></span><span>½" x 2" crown staples</span></div>
+<div class="li"><span class="q"></span><span>1½" hanger nails</span></div>
+<div class="li"><span class="q"></span><span>3" hanger nails</span></div>
+<div class="li"><span class="q"></span><span>3½" hanger nails</span></div>
+<div class="li"><span class="q"></span><span>GRK structural screws 2½"</span></div>
+<div class="li"><span class="q"></span><span>GRK structural screws 3"</span></div>
+<div class="li"><span class="q"></span><span>LedgerLok</span></div>
+<div class="li"><span class="q"></span><span>HeadLok 2⅞" (2-ply)</span></div>
+<div class="li"><span class="q"></span><span>HeadLok 4½" (3-ply)</span></div>
+<div class="li"><span class="q"></span><span>LVL Lok 2-ply</span></div>
+<div class="li"><span class="q"></span><span>LVL Lok 3-ply</span></div>
+<div class="li"><span class="q"></span><span>FrameFast 6"</span></div>
+<div class="li"><span class="q"></span><span>Subfloor adhesive 10 oz</span></div>
+<div class="li"><span class="q"></span><span>Subfloor adhesive 28 oz</span></div>
+<div class="li"><span class="q"></span><span>Sill seal 3½" for 2x4 (rolls)</span></div>
+<div class="li"><span class="q"></span><span>Sill seal 5½" for 2x6 (rolls)</span></div>
+<div class="li"><span class="q"></span><span>Shims (bundles)</span></div>
+</div>
+</div>
 
-            <p class="form-actions">
-                <button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
-                <button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
-                <br>
-                <small>Last revised: 06/24/2026</small>
-            </p>
+</div>
 
-            <p class="breadcrumb"><a href="framing.html">Framing</a> &gt; Framing &amp; Lumber Order Sheet</p>
-        </article>
-    </main>
+</div>
+</div>
+</div>
+
+<p class="form-actions">
+<button id="share-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer;">Share</button>
+<button id="print-btn" type="button" style="padding:0.4rem 0.9rem; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; margin-left:0.5rem;">Print</button>
+<br>
+<small>Last revised: 11/02/2026</small>
+</p>
+
+<p class="breadcrumb"><a href="framing.html">Framing</a> &gt; Framing &amp; Lumber Order Sheet</p>
+</article>
+</main>
 </div>
 
 <script>
-    const shareBtn = document.getElementById('share-btn');
-    if (shareBtn && navigator.share) {
-        shareBtn.addEventListener('click', () => {
-            navigator.share({ title: document.title || 'Framing & Lumber Order Sheet', url: window.location.href }).catch(() => {});
-        });
-    } else if (shareBtn) { shareBtn.style.display = 'none'; }
-    const printBtn = document.getElementById('print-btn');
-    if (printBtn) { printBtn.addEventListener('click', () => window.print()); }
-    document.addEventListener('DOMContentLoaded', function() {
-        const navToggle = document.querySelector('.mobile-nav-toggle');
-        const sidebar = document.querySelector('.sidebar');
-        if (navToggle && sidebar) {
-            navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
-            document.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
-                }
-            });
-        }
-    });
+const shareBtn = document.getElementById('share-btn');
+if (shareBtn && navigator.share) {
+shareBtn.addEventListener('click', () => {
+navigator.share({ title: document.title || 'Framing & Lumber Order Sheet', url: window.location.href }).catch(() => {});
+});
+} else if (shareBtn) { shareBtn.style.display = 'none'; }
+const printBtn = document.getElementById('print-btn');
+if (printBtn) { printBtn.addEventListener('click', () => window.print()); }
+document.addEventListener('DOMContentLoaded', function() {
+const navToggle = document.querySelector('.mobile-nav-toggle');
+const sidebar = document.querySelector('.sidebar');
+if (navToggle && sidebar) {
+navToggle.addEventListener('click', function() { sidebar.classList.toggle('active'); });
+document.addEventListener('click', function(e) {
+if (window.innerWidth <= 768) {
+if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) { sidebar.classList.remove('active'); }
+}
+});
+}
+});
 </script>
 
 <footer>
-    &copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
+&copy; 2026 Remodelers Guide. All rights reserved. | Contact: <a href="mailto:geraldatyrrell@gmail.com">geraldatyrrell@gmail.com</a>
 </footer>
 <!-- goatcounter-analytics:start -->
 <script data-goatcounter="https://rem-guide.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+async src="//gc.zgo.at/count.js"></script>
 <!-- goatcounter-analytics:end -->
 </body>
 </html>
